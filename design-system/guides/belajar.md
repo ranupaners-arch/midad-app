@@ -42,7 +42,7 @@ Halaman khusus untuk bertanya ke mentor manusia (komponen AskMentor):
 
 ## Tips belajar di layar loading
 
-Setiap loading menampilkan **نَصِيحَةٌ** (tips belajar bahasa Arab) yang bergantian, dalam bahasa Arab + terjemahan. Ada 16 tips di `assets/Rihlah/tips.json`, misalnya:
+Setiap loading menampilkan **نَصِيحَةٌ** (tips belajar bahasa Arab) yang bergantian, dalam bahasa Arab + terjemahan. Ada 16 tips di `assets/rihlah/tips.json`, misalnya:
 - اسْتَمِعْ كَثِيرًا قَبْلَ أَنْ تَتَكَلَّمَ. — Dengarkan banyak-banyak sebelum mulai berbicara.
 - احْفَظِ الاسْمَ مَعَ جَمْعِهِ. — Hafalkan kata benda bersama bentuk jamaknya.
 - لَاحِظِ الجُذُورَ: كَتَبَ، كِتَابٌ، مَكْتَبٌ. — Perhatikan akar kata.

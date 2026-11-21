@@ -7,5 +7,5 @@ Peta jalan (roadmap) **per rute bahasa ibu**: 8 etape (1 etape = 1 jilid = 8 wah
   - 🌙 **الوُصُولُ إِلَى بِلَادِ العَرَبِ** — tiba di dunia Arab (level 17)
   - **بِدُونِ تَشْكِيلٍ** — mode tanpa tasykil mulai (level 41)
   - **الاخْتِبَارُ النِّصْفِيُّ / النِّهَائِيُّ** — ujian di akhir jilid
-- Data: `assets/Rihlah/routes.json`. Bahasa ibu baru cukup menambah 2 etape pembuka dan titik masuk ke dunia Arab.
+- Data: `assets/rihlah/routes.json`. Bahasa ibu baru cukup menambah 2 etape pembuka dan titik masuk ke dunia Arab.
 - Di aplikasi, roadmap ini dibuka dari peta Rihlah (tombol "خَرِيطَةُ الرِّحْلَةِ"). Etape yang sudah lewat diberi centang, dan etape saat ini menampilkan maskot pengguna di kendaraannya.

@@ -16,8 +16,8 @@ File SVG di sini adalah ekspor default dengan warna tertanam. Untuk kustomisasi,
 `mascot.js` dan `vehicles.js` tetap dipakai preview lama lewat `<script>` (memasang `window.MidadMascot` / `window.MidadVehicles`). Untuk aplikasi, impor wrapper ES module yang punya tipe dan validasi:
 
 ```ts
-import { renderMascot, validateMascotConfig } from 'design-system/assets/Maskot/mascot.mjs';
-import { rideVehicle } from 'design-system/assets/Maskot/vehicles.mjs';
+import { renderMascot, validateMascotConfig } from 'design-system/assets/maskot/mascot.mjs';
+import { rideVehicle } from 'design-system/assets/maskot/vehicles.mjs';
 
 const cfg = validateMascotConfig(JSON.parse(localStorage.getItem('mascot') ?? 'null')); // nilai liar -> default
 el.innerHTML = renderMascot({ ...cfg, emote: 'cheer' }, { label: 'maskotku' });          // label di-escape

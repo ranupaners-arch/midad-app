@@ -59,7 +59,7 @@ Hook animasi di SVG: `.mm-all`, `.mm-front`, `.mm-eyes`, `.mm-spark`, `.vh-boat`
 
 ## Spesifikasi teknis (untuk developer & ilustrator)
 
-Semua digambar oleh `assets/Maskot/mascot.js`.
+Semua digambar oleh `assets/maskot/mascot.js`.
 
 - **Kanvas:** SVG `viewBox="0 0 512 512"`, garis tanah y = 480.
 - **Badan bersama:** telur di x 124–388, y 166–440.
@@ -76,7 +76,7 @@ Tempat lain cukup menambah `emote` (`cheer`, `sad`, `think`, `surprised`, `sleep
 
 ## Alur aset
 1. **Konsep (selesai):** sheet dari Gemini (Nano Banana) berisi lineup 5 hewan, 6 warna hudhud, 8 mata, 4 paruh + 8 mulut, 6 hidung, 6 jambul, 12 item.
-2. **Produksi (selesai, v1):** kelima hewan sudah digambar ulang jadi SVG berlapis di `assets/Maskot/mascot.js` dengan **satu postur yang sama**:
+2. **Produksi (selesai, v1):** kelima hewan sudah digambar ulang jadi SVG berlapis di `assets/maskot/mascot.js` dengan **satu postur yang sama**:
    - badan bulat telur ala chibi, menghadap depan, kaki pendek
    - sayap/tangan kanan terangkat memegang item, kiri di samping
    - posisi mata, hidung, mulut, kepala, dan tangan sama di kelima hewan

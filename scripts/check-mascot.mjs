@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-const dir = join(dirname(fileURLToPath(import.meta.url)), '../design-system/assets/Maskot');
+const dir = join(dirname(fileURLToPath(import.meta.url)), '../design-system/assets/maskot');
 const { MidadMascot, validateMascotConfig, renderMascot } = await import(join(dir, 'mascot.mjs'));
 const { MidadVehicles } = await import(join(dir, 'vehicles.mjs'));
 

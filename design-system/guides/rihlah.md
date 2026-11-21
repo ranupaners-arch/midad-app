@@ -15,7 +15,7 @@
 - **Dars di dalam wahdah = node pelajaran** (LessonNode) di antara dua pelabuhan.
 - **Ujian wahdah (اخْتِبَارُ الوَحْدَةِ)** di akhir setiap wahdah, berisi mufradat wahdah itu. Wajib lulus untuk membuka wahdah berikutnya.
 - **Ujian setengah kitab (الاخْتِبَارُ النِّصْفِيُّ)** di akhir jilid 1 dan **ujian akhir kitab (الاخْتِبَارُ النِّهَائِيُّ)** di akhir jilid 2. Keduanya jadi **gerbang hijrah**: kapal pindah ke wilayah baru dan kendaraannya berganti.
-- Setiap naik level, maskot pengguna berlayar ke pelabuhan berikutnya (komponen LevelUpTravel). Roadmap lengkap tiap rute ada di komponen RihlahRoadmap, datanya di `assets/Rihlah/routes.json`.
+- Setiap naik level, maskot pengguna berlayar ke pelabuhan berikutnya (komponen LevelUpTravel). Roadmap lengkap tiap rute ada di komponen RihlahRoadmap, datanya di `assets/rihlah/routes.json`.
 - Kitab ini juga punya kuis singkat tiap dua wahdah. Di Midad, kuis ini jadi node **peti harta (كَنْز)**.
 
 Sumber: deskripsi resmi seri dari penerbit (Arabic For All) dan toko buku. Kitab 1 berisi 144 dars dalam 16 wahdah, Kitab 2 berisi 208 dars, Kitab 3 dan 4 masing-masing 112 dars.
@@ -79,7 +79,7 @@ Hijrah terjadi setiap kali pengguna lulus ujian di akhir jilid:
 2. **Animasi hijrah:** kendaraan lama berlabuh, lalu maskot pindah ke **kendaraan baru** dan berlayar (atau berjalan dengan kafilah) ke wilayah berikutnya.
 3. Kartu wilayah baru tampil: nama wilayah dalam bahasa Arab + terjemahan, kendaraan barunya, dan 3 kosakata budaya.
 
-Kendaraan (`assets/Maskot/vehicles.js`, kanvas 512×320, maskot pengguna ikut naik):
+Kendaraan (`assets/maskot/vehicles.js`, kanvas 512×320, maskot pengguna ikut naik):
 
 | Kendaraan | Arab | Wilayah |
 |---|---|---|

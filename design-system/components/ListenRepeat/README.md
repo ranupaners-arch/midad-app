@@ -2,7 +2,7 @@
 
 Alur **اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ** (Lihat, Dengar, dan Ulangi) untuk hiwar dan teks bacaan, mengikuti metode Baina Yadaik yang membiasakan pengucapan yang benar sejak awal.
 
-**Ikon khas: tiga lencana terpisah, satu per langkah** (`assets/Ikon/`):
+**Ikon khas: tiga lencana terpisah, satu per langkah** (`assets/ikon/`):
 - `look-badge.svg` (اُنْظُرْ): teal, mata
 - `listen-badge.svg` (اسْتَمِعْ): emas, telinga + gelombang suara
 - `repeat-badge.svg` (أَعِدْ): kurma, mikrofon + panah ulang
