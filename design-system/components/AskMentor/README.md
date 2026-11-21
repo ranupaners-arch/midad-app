@@ -1,5 +1,7 @@
 # AskMentor
 
+> **Post-MVP.** Tidak masuk demo lomba (5 Des 2026); cukup disebut di rencana pengembangan.
+
 Halaman **اسْأَلِ المُعَلِّمَ** (tanya mentor). Pengguna mengirim pertanyaan ke mentor manusia (ustadz/pengajar bahasa Arab terverifikasi) dan mendapat jawaban di dalam aplikasi.
 
 **Bagian halaman:**

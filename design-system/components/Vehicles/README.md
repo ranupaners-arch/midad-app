@@ -1,6 +1,6 @@
 # Vehicles
 
-Kendaraan **hijrah**. Setiap wilayah (= satu jilid kitab) punya kendaraannya sendiri, dan maskot pengguna selalu ikut naik di atasnya.
+Kendaraan **hijrah**. Setiap wilayah (= satu etape, setengah marhalah) punya kendaraannya sendiri, dan maskot pengguna selalu ikut naik di atasnya.
 
 - `MidadVehicles.ride(id, userCfg)` menghasilkan SVG 512×320, dengan garis air di y = 250.
 - Laut: pinisi, jong, Thames barge, karavel, baghlah, boom, sambuk, felucca, xebec. Darat: kafilah unta (Syam & Irak).

@@ -9,6 +9,6 @@ Animasi **naik level**: maskot pengguna (lengkap dengan skin dan itemnya) berger
 4. Banner: **ارْتَقَيْتَ إِلَى المُسْتَوَى …!** + nama pelabuhan berikutnya (+ terjemahan bila aktif). Maskot memasang ekspresi `cheer`.
 5. Lanjut ke RewardSheet kalau ada hadiah.
 
-- Saat **hijrah** (akhir jilid), animasinya sama tetapi jalurnya keluar dari tepi layar, lalu kartu wilayah baru muncul dengan kendaraan baru.
+- Saat **hijrah** (setelah lulus tes nisfi atau nihai, tiap 8 level), animasinya sama tetapi jalurnya keluar dari tepi layar, lalu kartu wilayah baru muncul dengan kendaraan baru.
 - `prefers-reduced-motion`: kendaraan langsung tampil di pelabuhan baru tanpa gerak.
 - Pengumuman ke pembaca layar lewat `role="status"`.

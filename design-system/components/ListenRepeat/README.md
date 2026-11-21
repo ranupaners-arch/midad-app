@@ -1,6 +1,6 @@
 # ListenRepeat
 
-Alur **اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ** (Lihat, Dengar, dan Ulangi) untuk hiwar dan teks bacaan, mengikuti metode Baina Yadaik yang membiasakan pengucapan yang benar sejak awal.
+Alur **اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ** (Lihat, Dengar, dan Ulangi) untuk mufradat, hiwar, dan teks bacaan, supaya pengguna terbiasa dengan pengucapan yang benar sejak awal.
 
 **Ikon khas: tiga lencana terpisah, satu per langkah** (`assets/ikon/`):
 - `look-badge.svg` (اُنْظُرْ): teal, mata
@@ -22,6 +22,7 @@ Ketiganya tampil berurutan di header, di chip langkah, dan sebagai lencana pelaj
 
 **Pengecekan ucapan (spesifikasi teknis):**
 - Pengenalan suara `ar-SA`: Web Speech API kalau tersedia, selain itu server ASR (misalnya model Whisper).
+- **Dukungan browser (Web Speech API):** Chrome dan Edge (desktop & Android) mendukung `ar-SA` lewat server Google, jadi butuh internet. Safari hanya sebagian. **Firefox tidak mendukung.** Deteksi dukungan saat mulai; kalau tidak ada, soal bicara otomatis diganti soal dengar (sama seperti tombol tanpa mikrofon), dan tampilkan saran memakai Chrome. Demo lomba direkam di Chrome.
 - Normalisasi kedua teks sebelum dibandingkan: hapus harakat dan tatweel, samakan أ إ آ → ا, ى → ي, ة → ه, lalu buang tanda baca.
 - Pencocokan per kata (jarak Levenshtein). **Lulus kalau ≥ 80% kata cocok** dan tidak ada kata kunci yang hilang.
 - Catatan jujur: ASR hanya mengecek *kata yang diucapkan*, bukan kualitas makhraj secara mendalam. Penilaian pelafalan yang lebih detail bisa ditambah nanti dengan layanan *pronunciation assessment*.

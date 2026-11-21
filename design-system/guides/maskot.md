@@ -10,7 +10,7 @@ Avatar pengguna adalah **maskot hewan kartun** yang bisa dikustomisasi. **Hudhud
 | Kucing | قِطٌّ | Hewan kesayangan, Abu Hurairah | 200 تَمْر |
 | Unta | جَمَلٌ | Ikon Jazirah Arab | Selesai Mahattah 2 |
 | Penyu hijau | سُلَحْفَاةٌ | Penyu Ras al-Jinz Oman, tema pelayaran | Streak 7 hari |
-| Oryx Arab | المَهَا | Hewan khas Oman | Sampai pelabuhan Oman (Mahattah terakhir) |
+| Oryx Arab | المَهَا | Hewan khas Oman | Tiba di Oman (rute ID: level 17, gerbang dunia Arab · rute EN: level 57) |
 
 Menu kustomisasi sekaligus jadi pelajaran: setiap slot dan item ditampilkan dengan nama Arabnya (عَيْنٌ، أَنْفٌ، فَمٌ، مِنْقَارٌ، قَلَمٌ، فَانُوسٌ …).
 
@@ -41,9 +41,9 @@ Skin di-clip ke bentuk badan bersama, jadi **satu skin pas di kelima hewan**.
 | Tingkat | Arab | Skin | Cara dapat |
 |---|---|---|---|
 | Common | عَادِيٌّ | Baju pelaut, rompi, batik | Beli dengan kurma (100–150) |
-| Rare | نَادِرٌ | Dishdasha, baju koko | Tiba di Oman / 400 kurma |
-| Epic | مَلْحَمِيٌّ | Seragam nakhoda, jubah ulama | Tamat satu kitab / streak 30 hari |
-| Legendary | أُسْطُورِيٌّ | Bisht emas, tinta malam | Tamat 4 kitab / event 18 Desember |
+| Rare | نَادِرٌ | Dishdasha, baju koko | Tiba di Oman / 400 kurma / lulus tes setengah marhalah |
+| Epic | مَلْحَمِيٌّ | Seragam nakhoda, jubah ulama | Lulus tes marhalah / streak 30 hari |
+| Legendary | أُسْطُورِيٌّ | Bisht emas, tinta malam | Tamat 4 marhalah / event 18 Desember |
 
 Data: `{ skin: 'nakhoda' }`. Lihat komponen **SkinCard**.
 

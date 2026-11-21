@@ -2,7 +2,7 @@
 
 Tombol untuk menampilkan atau menyembunyikan terjemahan teks Arab ke **bahasa ibu** pengguna (Indonesia atau Inggris, dipilih di LanguagePicker).
 
-- **Default mati.** Imersi bahasa Arab adalah metode Baina Yadaik, jadi terjemahan hanya bantuan.
+- **Default mati.** Midad memakai imersi bahasa Arab, jadi terjemahan hanya bantuan.
 - Letaknya di header layar soal, kiri atas (sisi akhir dalam RTL). Versi ikon saja (`--icon`) dipakai di tempat sempit seperti FeedbackSheet dan kartu kosakata.
 - Kalau aktif, setiap teks Arab di layar mendapat terjemahan `.md-tr` tepat di bawahnya: instruksi, kalimat soal, dan dialog.
 - **Ukuran terjemahan selalu lebih kecil dari teks Arabnya:**

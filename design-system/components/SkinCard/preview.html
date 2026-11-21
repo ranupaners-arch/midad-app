@@ -8,7 +8,7 @@
 <script src="../../assets/maskot/vehicles.js"></script>
 <script>
 var S = [['sailor','common','قَمِيصُ البَحَّارِ','عَادِيٌّ','١٥٠ تَمْرَة'],['vest','common','صِدْرِيَّةٌ','عَادِيٌّ','١٠٠ تَمْرَة'],['batik','common','بَاتِيك','عَادِيٌّ','١٥٠ تَمْرَة'],['dishdasha','rare','دِشْدَاشَةٌ','نَادِرٌ','الوُصُولُ إِلَى عُمَانَ'],
-  ['koko','rare','قَمِيصُ كُوكُو','نَادِرٌ','٤٠٠ تَمْرَة'],['nakhoda','epic','زِيُّ النُّوخِذَةِ','مَلْحَمِيٌّ','إِنْهَاءُ كِتَابٍ'],['scholar','epic','جُبَّةُ العَالِمِ','مَلْحَمِيٌّ','سِلْسِلَةُ ٣٠ يَوْمًا'],['goldbisht','legendary','البِشْتُ الذَّهَبِيُّ','أُسْطُورِيٌّ','إِنْهَاءُ الكُتُبِ الأَرْبَعَةِ'],['nightink','legendary','مِدَادُ اللَّيْلِ','أُسْطُورِيٌّ','حَدَثُ ١٨ دِيسَمْبِر']];
+  ['koko','rare','قَمِيصُ كُوكُو','نَادِرٌ','٤٠٠ تَمْرَة'],['nakhoda','epic','زِيُّ النُّوخِذَةِ','مَلْحَمِيٌّ','إِنْهَاءُ مَرْحَلَةٍ'],['scholar','epic','جُبَّةُ العَالِمِ','مَلْحَمِيٌّ','سِلْسِلَةُ ٣٠ يَوْمًا'],['goldbisht','legendary','البِشْتُ الذَّهَبِيُّ','أُسْطُورِيٌّ','إِنْهَاءُ المَرَاحِلِ الأَرْبَعِ'],['nightink','legendary','مِدَادُ اللَّيْلِ','أُسْطُورِيٌّ','حَدَثُ ١٨ دِيسَمْبِر']];
 var A = ['hudhud','cat','camel','turtle','oryx'];
 document.getElementById('sk').innerHTML = S.map(function (s, i) { return '<div class="md-skin md-skin--' + s[1] + '">' + MidadMascot.render({ animal: A[i % 5], skin: s[0] }) + '<span class="md-skin__name">' + s[2] + '</span><span class="md-skin__tier">' + s[3] + '</span><span class="md-skin__how">' + s[4] + '</span></div>'; }).join('');
 </script>

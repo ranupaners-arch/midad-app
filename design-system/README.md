@@ -1,12 +1,12 @@
 # Midad (مِداد) — Design System
 
-**Midad** artinya *tinta*: alat para ulama menulis ilmu. Midad adalah aplikasi belajar bahasa Arab dengan gaya game. Materinya mengikuti kitab *Al-'Arabiyyah Baina Yadaik*, dan rak kitab lain bisa ditambah nanti. Pengguna punya avatar yang bisa dikustomisasi, berlayar menyusuri **jalur laut Nusantara → Oman**, dan mengumpulkan kurma serta menyalakan lentera setiap hari.
+**Midad** artinya *tinta*: alat para ulama menulis ilmu. Midad adalah aplikasi belajar bahasa Arab dengan gaya game. Materinya memakai **kurikulum Midad sendiri yang diselaraskan dengan CEFR**: 4 marhalah (A1–B2) × 16 wahdah = 64 level. Pengguna punya avatar yang bisa dikustomisasi, **berlayar dari negeri asalnya ke dunia Arab** (rute Indonesia: Nusantara → Samudra Hindia → **Oman sebagai gerbang** dunia Arab), dan mengumpulkan kurma serta menyalakan lentera setiap hari.
 
 > Tagline: **تَعَلَّمِ العَرَبِيَّةَ قَطْرَةً قَطْرَةً** — *Belajar bahasa Arab, setetes demi setetes.*
 
 ## Prinsip
 
-1. **Arab-first.** Seperti Baina Yadaik yang mengajar bahasa Arab *dengan* bahasa Arab, seluruh UI dan materi memakai bahasa Arab dengan layout **RTL**. Bahasa ibu hanya muncul sebagai terjemahan yang dibuka pengguna sendiri.
+1. **Arab-first.** Bahasa Arab diajarkan *dengan* bahasa Arab (imersi): seluruh UI dan materi memakai bahasa Arab dengan layout **RTL**. Bahasa ibu hanya muncul sebagai terjemahan yang dibuka pengguna sendiri.
 2. **Teks Arab adalah pahlawannya.** Harakat harus terbaca jelas. Terjemahan selalu lebih kecil dan lebih pudar daripada teks Arabnya.
 3. **Hangat, bukan kekanak-kanakan.** Kertas krem, tinta teal, dan emas kurma. Ramah untuk santri SMP sampai mahasiswa.
 4. **Bisa ditekan.** Tombol dan kartu punya *tepi 3D*: saat ditekan, elemen turun 4px.
@@ -28,7 +28,7 @@
 
 ### Harakat di UI
 - **Level 1–40:** seluruh teks UI dan pelajaran berharakat lengkap.
-- **Mulai level 41** (pertengahan Kitab 3): **mode tanpa tasykil** aktif. Teks tampil tanpa harakat, dan tombol **التَّشْكِيلُ** memunculkan harakat sementara, mirip tombol تَرْجَمَة. Detailnya ada di bagian **Rihlah**.
+- **Mulai level 41** (setengah kedua marhalah 3, B1): **mode tanpa tasykil** aktif. Teks tampil tanpa harakat, dan tombol **التَّشْكِيلُ** memunculkan harakat sementara, mirip tombol تَرْجَمَة. Detailnya ada di [guides/rihlah.md](guides/rihlah.md).
 
 ### Awal pemakaian
 Urutan onboarding: pilih bahasa ibu (LanguagePicker) → buat maskot → **mulai dari nol atau tes tahdid mustawa** (PlacementStart) → peta Rihlah dimulai dari negara bahasa ibu.
@@ -36,7 +36,7 @@ Urutan onboarding: pilih bahasa ibu (LanguagePicker) → buat maskot → **mulai
 ### اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ (Lihat, Dengar, dan Ulangi)
 Setiap hiwar dan teks bacaan memakai alur ini (komponen ListenRepeat). Sistem membacakan sebagian teks, pengguna mengulanginya, dan kalau ucapannya cocok, lanjut ke bagian berikutnya. Setiap langkah punya **lencana sendiri**: mata teal (انظر), telinga emas (استمع), dan mikrofon kurma dengan panah ulang (أعد). Detailnya ada di grup aset Ikon.
 
-Alur belajar lengkap (mufradat, ujian, hadiah, hint, mentor) ada di bagian **Belajar & Ujian**.
+Alur belajar lengkap (6 langkah wahdah, tes, hadiah, hint, mentor) ada di [guides/belajar.md](guides/belajar.md). Data kurikulum ada di `assets/rihlah/curriculum.json`.
 
 ### Angka
 Angka statistik (XP, kurma, streak) memakai 0–9 dengan gaya `num` supaya cepat terbaca. Angka di dalam teks Arab memakai ٠–٩.
@@ -83,7 +83,7 @@ Kontras teks sudah dicek ≥ 4.5:1 di kedua tema.
 | Grup | Font | Untuk |
 |---|---|---|
 | UI Arab | **IBM Plex Sans Arabic** | Semua teks antarmuka: tombol, judul, instruksi, menu |
-| Arab Pelajaran | **Noto Naskh Arabic** | Kalimat, kosakata, dan dialog dari kitab |
+| Arab Pelajaran | **Noto Naskh Arabic** | Kalimat, kosakata, dan dialog pelajaran |
 | Terjemahan | **Nunito** | Terjemahan ID/EN dan angka statistik |
 
 - Teks berharakat minimal `ar-sm` (22px). Line-height sekitar 1.8× supaya harakat tidak bertabrakan.
@@ -120,15 +120,15 @@ Yang **milik Midad sendiri** dan tidak boleh mirip Duolingo:
 - Warna: kertas krem + tinta teal + emas kurma. **Bukan** hijau terang di atas putih.
 - Font: IBM Plex Sans Arabic, Naskh, dan Nunito. **Bukan** Feather/DIN Rounded.
 - Maskot dan ilustrasi buatan sendiri. **Jangan** pakai burung hantu hijau atau karakter mirip itu, dan jangan tulis "Duolingo style" di prompt aset.
-- Tema dunia: pelayaran Nusantara → Oman, lentera, kurma, tinta. **Bukan** pohon/peta ala Duolingo.
+- Tema dunia: pelayaran dari negeri sendiri ke dunia Arab (rute ID: Nusantara → Oman sebagai gerbang), lentera, kurma, tinta. **Bukan** pohon/peta ala Duolingo.
 - Bunyi efek dibuat atau dilisensikan sendiri.
-- Metode: imersi Arab-first mengikuti Baina Yadaik, bukan terjemahan-first.
+- Metode: imersi Arab-first, bukan terjemahan-first.
 
 ## Ikon & ilustrasi
 
 - Ikon: garis 2px, ujung bulat, grid 24px. Ikon mata uang dan streak (kurma, lentera, bintang) versi **solid**.
 - Ilustrasi: flat 2D, bentuk bulat, tanpa gradien. Ornamen geometri Islam hanya sebagai tekstur tipis (≤ 8%).
-- **Maskot:** burung **hudhud memegang pena tinta** sebagai default. Avatar pengguna adalah maskot hewan yang bisa dikustomisasi (hudhud, kucing, unta, penyu, oryx), termasuk skin dari Common sampai Legendary. **Maskot buatan pengguna dipakai di mana-mana**: loading, peta, feedback, dan profil. Spesifikasi lengkapnya ada di bagian **Maskot & Kustomisasi**.
+- **Maskot:** burung **hudhud memegang pena tinta** sebagai default. Avatar pengguna adalah maskot hewan yang bisa dikustomisasi (hudhud, kucing, unta, penyu, oryx), termasuk skin dari Common sampai Legendary. **Maskot buatan pengguna dipakai di mana-mana**: loading, peta, feedback, dan profil. Spesifikasi lengkapnya ada di [guides/maskot.md](guides/maskot.md).
 - Aset awal (maskot, bagian kustomisasi, item, peta, ikon hadiah, ilustrasi kosakata) dibuat dengan **Gemini (Nano Banana)** sebagai referensi, lalu digambar ulang jadi SVG dan diunggah ke grup Assets.
 
 ## Komponen
@@ -155,9 +155,24 @@ Yang **milik Midad sendiri** dan tidak boleh mirip Duolingo:
 | TestProgress | Cincin % menuju ujian wahdah/nisfi/nihai + mufradat |
 | RewardSheet | Hadiah setelah lulus ujian |
 | HintPrompt | Maskot berpikir + hint terbatas (قَطَرَات) |
-| AskMentor | Halaman tanya mentor |
+| AskMentor | Halaman tanya mentor (**post-MVP**, tidak masuk demo lomba) |
 
-Class CSS berawalan `md-` dan ada di `components/bundle.css`. Semua komponen hanya membaca variabel token, jadi tema gelap otomatis ikut.
+Class CSS berawalan `md-` dan ada di `components/components.css`. Semua komponen hanya membaca variabel token, jadi tema gelap otomatis ikut.
+
+### Memakai di aplikasi
+
+```html
+<html lang="ar" dir="rtl">  <!-- tambah data-theme="dark" / "light" untuk memaksa tema; tanpa atribut = ikut sistem -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@500;700&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components/components.css">
+```
+
+- `tokens.css` **dibuat** dari `tokens.json` (`npm run build:css`). Ubah nilainya di `tokens.json`, jangan di CSS.
+- `bundle.css` hanya untuk design system interaktif lama (font + gaya preview + komponen).
+- Galeri komponen lokal: `npm run preview:ds`.
 
 ## Aksesibilitas
 
