@@ -1,0 +1,25 @@
+<!-- @dsCard group="Soal" height=580 subtitle="Maskot berpikir + hint terbatas (قَطَرَات)" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>HintPrompt — preview</title></head>
+<body>
+<div class="md-demo" style="display:block;max-width:440px">
+ <span class="md-cap">1 · Pengguna diam 20 detik atau salah 2× → maskot berpikir dan menawarkan hint</span>
+ <div class="md-hint" style="margin-top:var(--space-2)"><div class="md-hint__m" id="hm"></div>
+  <div class="md-hint__bubble"><p>يَبْدُو أَنَّكَ تُفَكِّرُ… هَلْ تُرِيدُ تَلْمِيحًا؟</p><span class="md-tr md-tr--sm" lang="id">Sepertinya kamu sedang berpikir… mau petunjuk?</span>
+   <div class="md-hint__row"><button class="md-btn">نَعَمْ</button><button class="md-btn md-btn--secondary">لَا، شُكْرًا</button><span class="md-drops" aria-label="قَطْرَتَانِ مُتَبَقِّيَتَانِ مِنْ ثَلَاثٍ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.5 4.6 6 8.2 6 11.2a6 6 0 0 1-12 0c0-3 2.5-6.6 6-11.2z"/><path d="M12 10.5v3M12 16.6v.1"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.5 4.6 6 8.2 6 11.2a6 6 0 0 1-12 0c0-3 2.5-6.6 6-11.2z"/><path d="M12 10.5v3M12 16.6v.1"/></svg><svg class="off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.5 4.6 6 8.2 6 11.2a6 6 0 0 1-12 0c0-3 2.5-6.6 6-11.2z"/><path d="M12 10.5v3M12 16.6v.1"/></svg></span></div></div></div>
+ <span class="md-cap" style="display:block;margin-top:var(--space-4)">2 · Hint muncul (bukan jawaban): satu pilihan salah dicoret + petunjuk akar kata</span>
+ <div class="md-col" style="margin-top:var(--space-2)">
+  <div class="md-hintcard">تَلْمِيحٌ: الكَلِمَةُ مِنْ جَذْرِ <b>ك ت ب</b><span class="md-tr md-tr--sm" lang="id">Petunjuk: kata ini berasal dari akar k-t-b</span></div>
+  <button class="md-option"><span class="md-option__key">1</span><span class="md-option__text md-option__ar" lang="ar">مَكْتَبٌ</span></button>
+  <button class="md-option is-out" aria-disabled="true"><span class="md-option__key">2</span><span class="md-option__text md-option__ar" lang="ar">مَطْبَخٌ</span></button>
+  <button class="md-option"><span class="md-option__key">3</span><span class="md-option__text md-option__ar" lang="ar">كِتَابٌ</span></button>
+ </div>
+</div>
+<script src="../../assets/Maskot/mascot.js"></script>
+<script src="../../assets/Maskot/vehicles.js"></script>
+<script>
+document.getElementById('hm').innerHTML = MidadMascot.render({ animal: 'hudhud', emote: 'think', hand: 'none' });
+</script>
+</body>
+</html>

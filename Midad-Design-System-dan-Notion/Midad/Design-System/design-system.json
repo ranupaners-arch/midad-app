@@ -1,0 +1,136 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-16T15:19:48Z"
+  },
+  "title": "Midad",
+  "namespace": "Midad",
+  "libraries": [],
+  "sections": {},
+  "groups": [
+    "Maskot",
+    "Ikon"
+  ],
+  "assetGroups": {
+    "Maskot": {
+      "name": "Maskot",
+      "tile": "l",
+      "order": [
+        "hudhud.svg",
+        "cat.svg",
+        "camel.svg",
+        "turtle.svg",
+        "oryx.svg"
+      ],
+      "files": {
+        "hudhud.svg": {
+          "name": "hudhud.svg",
+          "blob": "91bf7da74519c8bcdad5dbb8bbc3ce3a",
+          "size": 10091,
+          "type": "image/svg+xml"
+        },
+        "cat.svg": {
+          "name": "cat.svg",
+          "blob": "9bb4c18873813001fab732ccafc32d5a",
+          "size": 4951,
+          "type": "image/svg+xml"
+        },
+        "camel.svg": {
+          "name": "camel.svg",
+          "blob": "08d299d05deaa2a1841960cede490441",
+          "size": 5370,
+          "type": "image/svg+xml"
+        },
+        "turtle.svg": {
+          "name": "turtle.svg",
+          "blob": "0f158ae4d30822748362e4c6665572cc",
+          "size": 5330,
+          "type": "image/svg+xml"
+        },
+        "oryx.svg": {
+          "name": "oryx.svg",
+          "blob": "5a81e56e39c534f1986b4658e573a437",
+          "size": 6169,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Ikon": {
+      "name": "Ikon",
+      "tile": "s",
+      "order": [
+        "look-badge.svg",
+        "listen-badge.svg",
+        "repeat-badge.svg",
+        "look.svg",
+        "listen.svg",
+        "repeat.svg",
+        "hint-drop.svg",
+        "mentor.svg"
+      ],
+      "files": {
+        "look-badge.svg": {
+          "name": "look-badge.svg",
+          "blob": "88b86b9abf874cc0bbe4cc754a3b2af8",
+          "size": 522,
+          "type": "image/svg+xml"
+        },
+        "listen-badge.svg": {
+          "name": "listen-badge.svg",
+          "blob": "53481bb98ea3bfdd400a22190059228f",
+          "size": 603,
+          "type": "image/svg+xml"
+        },
+        "repeat-badge.svg": {
+          "name": "repeat-badge.svg",
+          "blob": "38b3334c7d0611a177c61e217f58505e",
+          "size": 787,
+          "type": "image/svg+xml"
+        },
+        "look.svg": {
+          "name": "look.svg",
+          "blob": "0e1480c539afbff855b689f2195464bf",
+          "size": 287,
+          "type": "image/svg+xml"
+        },
+        "listen.svg": {
+          "name": "listen.svg",
+          "blob": "28d5283663ee6fdb1b369ce8737670ae",
+          "size": 386,
+          "type": "image/svg+xml"
+        },
+        "repeat.svg": {
+          "name": "repeat.svg",
+          "blob": "335d722a03572abe70867588a428f32f",
+          "size": 384,
+          "type": "image/svg+xml"
+        },
+        "hint-drop.svg": {
+          "name": "hint-drop.svg",
+          "blob": "bc2b02f0a4ad8378a30a2eae24cad116",
+          "size": 284,
+          "type": "image/svg+xml"
+        },
+        "mentor.svg": {
+          "name": "mentor.svg",
+          "blob": "14ff08d2d2f62638e09c5fb5ac764cc3",
+          "size": 433,
+          "type": "image/svg+xml"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Claude",
+    "at": "2026-11-17T05:28:23Z",
+    "via": "Claude (chat)",
+    "note": "Spesifikasi teknis maskot disamakan dengan mascot.js (anchor, variabel warna, data). Disalin ke Notion."
+  }
+}

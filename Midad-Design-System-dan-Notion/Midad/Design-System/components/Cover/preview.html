@@ -1,0 +1,58 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Midad</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface-000); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; }
+  .brand { fill:var(--brand); }
+  .deep { fill:var(--ink); }
+  .gold { fill:var(--gold); }
+  .date { fill:var(--date); }
+  .disc { fill:var(--brand-ink); }
+  .cut { fill:var(--surface-000); }
+  .drip { fill:var(--brand); }
+  .xl { rx:var(--radius-xl); }
+  .lg { rx:var(--radius-lg); }
+  .md { rx:var(--radius-md); }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font-size:120px; line-height:.92; font-weight:800; letter-spacing:-.02em; color:var(--ink); }
+  .tag { margin:var(--space-2) 0 0 6px; font-family:var(--font-arabic-ui); font-size:16px; line-height:26px; font-weight:600; color:var(--ink-muted); text-align:left; }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art">
+<svg viewBox="0 0 480 288" width="480" height="288" aria-hidden="true">
+<!--
+  blocks      brand 144x264 slab bled off the top (Midad's teal ink, largest) · ink 180x208 bleeding off the right · gold 120x128 · date 56x64 · brand-ink disc r32 — about 35% of 960x288
+  arrangement one tall brand slab with satellites, bottoms on one line space-6 above the edge, space-4 gutters
+  pattern     literal motif: ink drops (Midad = "ink"), built from radius steps r8/12/16/20; cut out of the brand slab in surface-000, dripping on the ink block in brand — growing downward like ink filling a pen
+  scales      sides in space-2 multiples; gutters space-4; corners radius-xl (slab), radius-lg (blocks), radius-md (date); drop radii space-2, space-3, space-4, space-5
+-->
+<rect class="brand xl" x="24" y="-28" width="144" height="292" rx="28"/>
+<rect class="date md" x="184" y="56" width="56" height="64" rx="14"/>
+<circle class="disc" cx="288" cy="88" r="32"/>
+<rect class="gold lg" x="184" y="136" width="120" height="128" rx="20"/>
+<rect class="deep lg" x="320" y="56" width="180" height="208" rx="20"/>
+<path class="cut" d="M60,58.4 Q68.8,68.4 68,72 A8,8 0 1 1 52,72 Q51.2,68.4 60,58.4 Z"/>
+<path class="cut" d="M104,91.6 Q117.2,106.6 116,112 A12,12 0 1 1 92,112 Q90.8,106.6 104,91.6 Z"/>
+<path class="cut" d="M72,140.8 Q89.6,160.8 88,168 A16,16 0 1 1 56,168 Q54.4,160.8 72,140.8 Z"/>
+<path class="cut" d="M120,186.0 Q142.0,211.0 140,220 A20,20 0 1 1 100,220 Q98.0,211.0 120,186.0 Z"/>
+<path class="drip" d="M368,106.4 Q376.8,116.4 376,120 A8,8 0 1 1 360,120 Q359.2,116.4 368,106.4 Z"/>
+<path class="drip" d="M416,147.6 Q429.2,162.6 428,168 A12,12 0 1 1 404,168 Q402.8,162.6 416,147.6 Z"/>
+<path class="drip" d="M376,192.8 Q393.6,212.8 392,220 A16,16 0 1 1 360,220 Q358.4,212.8 376,192.8 Z"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Midad</h1>
+<p class="tag" lang="ar" dir="rtl">تَعَلَّمِ العَرَبِيَّةَ قَطْرَةً قَطْرَةً</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- @dsCard group="Maskot" height=470 subtitle="Loading dengan tips belajar & hijrah" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>MascotLoader — preview</title></head>
+<body>
+<div class="md-demo" style="align-items:center;gap:var(--space-8)">
+  <div class="md-loader" role="status" aria-live="polite">
+    <div class="md-loader__stage" id="ld"></div>
+    <div class="md-loader__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="md-loader__title">جَارٍ التَّحْمِيلُ…<span class="md-tr md-tr--sm" lang="id">Sedang memuat…</span></p>
+    <div class="md-loader__tip"><span class="md-cap" style="font-family:var(--font-arabic-ui)">نَصِيحَةٌ</span><b lang="ar" id="tip" style="font-size:21px;line-height:38px"></b><span class="md-tr" lang="id" id="tipt" style="text-align:center"></span></div>
+  </div>
+  <div class="md-col"><span class="md-cap">Animasi hijrah (pindah wilayah)</span><div class="md-hijrah" id="hj"></div></div>
+</div>
+<script src="../../assets/Maskot/mascot.js"></script>
+<script src="../../assets/Maskot/vehicles.js"></script>
+<script>
+var user = { animal: 'hudhud', skin: 'nakhoda', head: 'kumma' };
+var TIPS = [["اسْتَمِعْ كَثِيرًا قَبْلَ أَنْ تَتَكَلَّمَ.", "Dengarkan banyak-banyak sebelum mulai berbicara.", "Listen a lot before you speak."], ["كَرِّرِ الكَلِمَةَ الجَدِيدَةَ بِصَوْتٍ عَالٍ ثَلَاثَ مَرَّاتٍ.", "Ucapkan kata baru dengan suara keras tiga kali.", "Say each new word aloud three times."], ["احْفَظِ الاسْمَ مَعَ جَمْعِهِ.", "Hafalkan kata benda bersama bentuk jamaknya.", "Learn every noun with its plural."], ["احْفَظِ الفِعْلَ المَاضِيَ مَعَ المُضَارِعِ وَالمَصْدَرِ.", "Hafalkan fi'il madhi bersama mudhari' dan mashdarnya.", "Learn each past verb with its present form and verbal noun."], ["انْتَبِهْ إِلَى الحُرُوفِ المُتَقَارِبَةِ: ح وَ ه، ع وَ ء، ص وَ س.", "Perhatikan huruf yang bunyinya mirip: ح/ه, ع/ء, ص/س.", "Mind the similar sounds: ح/ه, ع/ء, ص/س."], ["خَمْسُ دَقَائِقَ كُلَّ يَوْمٍ خَيْرٌ مِنْ سَاعَةٍ فِي الأُسْبُوعِ.", "Lima menit setiap hari lebih baik daripada satu jam seminggu sekali.", "Five minutes a day beats one hour a week."], ["اكْتُبِ الكَلِمَاتِ الجَدِيدَةَ بِيَدِكَ.", "Tulis kata-kata baru dengan tanganmu sendiri.", "Write new words by hand."], ["ضَعْ أَسْمَاءً عَرَبِيَّةً عَلَى أَشْيَاءِ بَيْتِكَ.", "Tempel label nama Arab di benda-benda rumahmu.", "Label things at home with their Arabic names."], ["فَكِّرْ بِالعَرَبِيَّةِ، وَلَا تُتَرْجِمْ كُلَّ كَلِمَةٍ.", "Berpikirlah dalam bahasa Arab, jangan menerjemahkan kata per kata.", "Think in Arabic instead of translating word by word."], ["الخَطَأُ جُزْءٌ مِنَ التَّعَلُّمِ.", "Salah itu bagian dari belajar.", "Mistakes are part of learning."], ["اقْرَأْ بِصَوْتٍ مَسْمُوعٍ.", "Membacalah dengan suara yang terdengar, supaya lidahmu terbiasa.", "Read aloud so your tongue gets used to it."], ["رَاجِعْ مُفْرَدَاتِ الأَمْسِ قَبْلَ دَرْسِ اليَوْمِ.", "Ulangi kosakata kemarin sebelum pelajaran hari ini.", "Review yesterday's words before today's lesson."], ["لَاحِظِ الجُذُورَ: كَتَبَ، كِتَابٌ، مَكْتَبٌ.", "Perhatikan akar kata: كَتَبَ، كِتَابٌ، مَكْتَبٌ semuanya dari k-t-b.", "Notice roots: كَتَبَ، كِتَابٌ، مَكْتَبٌ all come from k-t-b."], ["اسْتَعْمِلِ الكَلِمَةَ الجَدِيدَةَ فِي جُمْلَةٍ مِنْ عِنْدِكَ.", "Pakai kata baru dalam kalimat buatanmu sendiri.", "Use each new word in a sentence of your own."], ["التَّشْكِيلُ يُسَاعِدُكَ عَلَى النُّطْقِ الصَّحِيحِ.", "Harakat membantumu mengucapkan dengan benar.", "Vowel marks help you pronounce correctly."], ["انْظُرْ، وَاسْتَمِعْ، وَأَعِدْ… ثُمَّ أَعِدْ مَرَّةً أُخْرَى!", "Lihat, dengar, ulangi… lalu ulangi sekali lagi!", "Look, listen, repeat… then repeat once more!"]];
+document.getElementById('ld').innerHTML = MidadMascot.render(user, { label: 'هدهد' });
+document.getElementById('hj').innerHTML = MidadVehicles.ride('baghlah', user);
+var i = 0; function tip() { var t = TIPS[i % TIPS.length]; document.getElementById('tip').textContent = t[0]; document.getElementById('tipt').textContent = t[1]; i++; }
+tip(); setInterval(tip, 3500);
+</script>
+</body>
+</html>

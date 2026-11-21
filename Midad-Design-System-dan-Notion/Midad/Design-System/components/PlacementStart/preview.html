@@ -1,0 +1,21 @@
+<!-- @dsCard group="Bahasa" height=420 subtitle="Onboarding: mulai dari nol atau tes tahdid mustawa" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>PlacementStart — preview</title></head>
+<body>
+<div class="md-demo" style="max-width:420px;display:block">
+ <div class="md-start" role="radiogroup">
+  <div><p class="md-q__title">مِنْ أَيْنَ تَبْدَأُ؟</p><span class="md-tr md-tr--sm" lang="id">Mulai dari mana?</span></div>
+  <button class="md-start__opt" role="radio" aria-checked="false"><span id="o1"></span><span><b>اِبْدَأْ مِنَ الصِّفْرِ</b><small>أَنَا جَدِيدٌ فِي العَرَبِيَّةِ</small><span class="md-tr md-tr--sm" lang="id">Mulai dari nol · Aku baru belajar bahasa Arab</span></span></button>
+  <button class="md-start__opt" role="radio" aria-checked="true"><span id="o2"></span><span><b>اِخْتِبَارُ تَحْدِيدِ المُسْتَوَى</b><small>أَعْرِفُ بَعْضَ العَرَبِيَّةِ · ١٠–١٥ دَقِيقَةً</small><span class="md-tr md-tr--sm" lang="id">Tes penempatan · Aku sudah bisa sedikit · 10–15 menit</span></span></button>
+  <button class="md-btn md-btn--block">مُتَابَعَة</button>
+ </div>
+</div>
+<script src="../../assets/Maskot/mascot.js"></script>
+<script src="../../assets/Maskot/vehicles.js"></script>
+<script>
+document.getElementById('o1').innerHTML = MidadMascot.render({ animal: 'hudhud', emote: 'cheer', hand: 'none' }, { viewBox: '96 20 320 320' });
+document.getElementById('o2').innerHTML = MidadMascot.render({ animal: 'hudhud', emote: 'think', hand: 'book' }, { viewBox: '96 20 340 340' });
+</script>
+</body>
+</html>

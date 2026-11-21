@@ -1,0 +1,28 @@
+<!-- @dsCard group="Ujian" height=560 subtitle="Hadiah setelah lulus ujian" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>RewardSheet — preview</title></head>
+<body>
+<div class="md-demo" style="display:block;max-width:420px">
+ <div class="md-reward" role="status">
+  <div class="md-reward__m" id="rm"></div>
+  <p class="md-reward__t">نَجَحْتَ فِي الاخْتِبَارِ النِّصْفِيِّ!</p>
+  <span class="md-tr md-tr--sm" lang="id" style="text-align:center">Kamu lulus ujian setengah kitab!</span>
+  <span class="md-reward__score">92%</span>
+  <div class="md-reward__items">
+   <div class="md-prize" style="color:var(--date)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" ><ellipse cx="12" cy="13.5" rx="6" ry="8.5"/><path d="M12 5c.5-1.5 1.8-2.6 3.5-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg><b>١٥٠ تَمْرَة</b><small>+150</small></div>
+   <div class="md-prize" style="border-color:#3b82c4" id="pz"></div>
+   <div class="md-prize" style="color:var(--date)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 10a6 4 0 0 1 16 0v1H4z"/><rect x="4" y="12" width="16" height="8" rx="2"/><rect x="10.5" y="10" width="3" height="5" rx="1" fill="#fff" opacity=".7"/></svg><b>كَنْزٌ</b><small>×1</small></div>
+  </div>
+  <button class="md-btn md-btn--gold md-btn--block">إِلَى الرِّحْلَةِ التَّالِيَةِ</button>
+ </div>
+</div>
+<script src="../../assets/Maskot/mascot.js"></script>
+<script src="../../assets/Maskot/vehicles.js"></script>
+<script>
+var user = { animal: 'hudhud', skin: 'dishdasha', emote: 'cheer' };
+document.getElementById('rm').innerHTML = MidadMascot.render(user);
+document.getElementById('pz').innerHTML = MidadMascot.render({ animal: 'hudhud', skin: 'dishdasha' }, { viewBox: '96 150 320 320' }) + '<b>دِشْدَاشَةٌ</b><small>RARE</small>';
+</script>
+</body>
+</html>

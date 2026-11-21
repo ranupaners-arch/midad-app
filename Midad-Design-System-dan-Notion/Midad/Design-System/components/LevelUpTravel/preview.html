@@ -1,0 +1,33 @@
+<!-- @dsCard group="Peta" height=560 subtitle="Naik level: maskot berlayar ke pelabuhan berikutnya" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>LevelUpTravel — preview</title></head>
+<body>
+<div class="md-demo" style="display:block">
+ <div class="md-lvl" role="status" aria-live="polite">
+  <svg class="md-lvl__map" viewBox="0 0 440 520" id="lvmap" aria-hidden="true">
+   <rect width="440" height="520" fill="#d6efeb"/>
+   <g fill="none" stroke="#a8e0d6" stroke-width="4" stroke-linecap="round"><path d="M20 120 q20 -10 40 0 t40 0"/><path d="M300 300 q20 -10 40 0 t40 0"/><path d="M40 420 q20 -10 40 0 t40 0"/></g>
+   <path d="M330 470 C 330 400 120 380 130 300 C 140 220 330 220 320 140 C 314 100 260 80 220 70" fill="none" stroke="#2a211a" stroke-width="5" stroke-dasharray="2 14" stroke-linecap="round" opacity=".5"/>
+   <path id="leg" d="M330 470 C 330 400 120 380 130 300 C 140 220 330 220 320 140" fill="none"/>
+   <g transform="translate(330 470)"><circle r="26" fill="#e9b949" stroke="#2a211a" stroke-width="5"/><path d="M -8 -1 l 6 7 l 11 -13" fill="none" stroke="#2a211a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+   <g transform="translate(320 140)"><circle r="30" fill="#0f766e" stroke="#2a211a" stroke-width="5"/><circle r="38" fill="none" stroke="#0f766e" stroke-width="4" opacity=".35"/><text y="9" text-anchor="middle" font-size="26" font-weight="700" fill="#fff" font-family="IBM Plex Sans Arabic, sans-serif">١٨</text></g>
+   <g transform="translate(220 70)"><circle r="18" fill="#f2eadb" stroke="#2a211a" stroke-width="5"/></g>
+   <g id="rider"><g id="veh"></g></g>
+  </svg>
+  <div class="md-lvl__banner"><b>ارْتَقَيْتَ إِلَى المُسْتَوَى ١٨!</b><span class="md-tr md-tr--sm" lang="id" style="text-align:center">Naik ke level 18! Menuju pelabuhan Sur</span></div>
+ </div>
+</div>
+<script src="../../assets/Maskot/mascot.js"></script>
+<script src="../../assets/Maskot/vehicles.js"></script>
+<script>
+var user = { animal: 'hudhud', skin: 'dishdasha' };
+var v = MidadVehicles.ride('baghlah', user, { attrs: 'x="-80" y="-78" width="160" height="100"' });
+document.getElementById('veh').innerHTML = v;
+var rider = document.getElementById('rider');
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduce) { rider.setAttribute('transform', 'translate(320 140)'); }
+else { rider.insertAdjacentHTML('afterbegin', '<animateMotion dur="3.4s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.8;1" calcMode="linear"><mpath href="#leg"/></animateMotion>'); }
+</script>
+</body>
+</html>

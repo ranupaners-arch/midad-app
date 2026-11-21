@@ -1,0 +1,15 @@
+<!-- @dsCard group="Maskot" height=300 subtitle="Ekspresi maskot di berbagai tempat" -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><title>MascotMoments — preview</title></head>
+<body>
+<div class="md-demo" id="mo" style="gap:var(--space-4)"></div>
+<script src="../../assets/Maskot/mascot.js"></script>
+<script src="../../assets/Maskot/vehicles.js"></script>
+<script>
+var user = { animal: 'cat', skin: 'koko' };
+var M = [['cheer','أَحْسَنْتَ!','Jawaban benar · naik level'],['sad','لَا بَأْسَ','Jawaban salah · streak padam'],['think','فَكِّرْ','Awal pelajaran · halaman kosong'],['surprised','وَاو!','Hadiah · peti harta'],['sleep','نَمْ جَيِّدًا','Pengingat malam']];
+document.getElementById('mo').innerHTML = M.map(function (m) { return '<div class="md-col" style="width:150px;align-items:center;text-align:center"><div style="width:130px">' + MidadMascot.render(Object.assign({ emote: m[0] }, user)) + '</div><b style="font-family:var(--font-arabic);font-size:20px">' + m[1] + '</b><span class="md-cap">' + m[2] + '</span></div>'; }).join('');
+</script>
+</body>
+</html>
