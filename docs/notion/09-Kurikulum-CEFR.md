@@ -20,7 +20,7 @@ Satu "kitab" lama sekarang menjadi satu marhalah. Angka level 1–64 tetap, jadi
 | 1 | المَرْحَلَةُ الأُولَى — الانْطِلَاق | 1–16 | A1 | Negara asal → laut lepas | Penuh |
 | 2 | المَرْحَلَةُ الثَّانِيَةُ — الوُصُول | 17–32 | A2 | Tiba di dunia Arab | Penuh |
 | 3 | المَرْحَلَةُ الثَّالِثَةُ — الاسْتِقْرَار | 33–48 | B1 | Kota-kota Arab | Penuh sampai level 40, mulai level 41 tanpa tasykil (bisa dinyalakan lagi) |
-| 4 | المَرْحَلَةُ الرَّابِعَةُ — الإِتْقَان | 49–64 | B2 | Pusat ilmu, termasuk Muscat | Tanpa tasykil, kecuali kata yang ambigu |
+| 4 | المَرْحَلَةُ الرَّابِعَةُ — الإِتْقَان | 49–64 | B2 | Pusat-pusat ilmu di dunia Arab (rute EN berakhir di Oman) | Tanpa tasykil, kecuali kata yang ambigu |
 
 **Tes dalam satu marhalah:** kuis mufradat di setiap wahdah, tes setengah marhalah setelah wahdah 8, dan tes marhalah setelah wahdah 16. Ikon persentase dan hadiahnya tetap seperti di design system.
 
@@ -39,7 +39,7 @@ Can-do di bawah ditulis ulang oleh tim berdasarkan arah tiap level CEFR, bukan k
 
 ## Rincian marhalah A1 (level 1–16)
 
-Total kosakata baru ±590 kata. Wahdah 8 dan 16 adalah wahdah ulangan berbentuk cerita perjalanan kapal, sekaligus tempat tes setengah marhalah dan tes marhalah. **Untuk demo lomba (5 Desember), cukup bangun wahdah 1–3 secara penuh.** Wahdah lain cukup tampil di roadmap.
+Total kosakata baru **570 kata** (jumlah tabel di bawah; target A1 ±600 kumulatif). Wahdah 8 dan 16 adalah wahdah ulangan berbentuk cerita perjalanan kapal, sekaligus tempat tes setengah marhalah dan tes marhalah. **Untuk demo lomba (5 Desember), cukup bangun wahdah 1–3 secara penuh.** Wahdah lain cukup tampil di roadmap.
 
 | No | Judul wahdah | Tema | Kata baru | Contoh pola kalimat | Setelah wahdah ini, pengguna bisa… |
 | --- | --- | --- | --- | --- | --- |
@@ -62,6 +62,8 @@ Total kosakata baru ±590 kata. Wahdah 8 dan 16 adalah wahdah ulangan berbentuk 
 
 ## Struktur satu wahdah dan penilaian
 
+> Keputusan 21 Nov 2026: kata baru per wahdah (30–45) dipecah jadi **3 sesi mufradat @10–15 kata** (wahdah ulangan: 2 sesi). Cincin % kuis wahdah dihitung dari semua kata wahdah. Untuk rute ID, **Oman tetap gerbang** dunia Arab di level 17 (marhalah A2), bukan di marhalah B2. Data lengkap: `design-system/assets/rihlah/curriculum.json`.
+
 Setiap wahdah berisi 6 langkah, sekitar 10–15 menit, dan melatih semua keterampilan CEFR: menyimak, berbicara, membaca, menulis, dan interaksi.
 
 1. **Mufradat** dengan alur اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ: gambar, audio, lalu pengguna mengulang (menyimak + berbicara).
@@ -80,7 +82,7 @@ Setiap wahdah berisi 6 langkah, sekitar 10–15 menit, dan melatih semua keteram
 - [ ] Tim menyetujui 16 tema A1 dan urutannya
 - [ ] Tulis daftar kosakata dan dialog wahdah 1–3 untuk demo
 - [ ] Rekam audio wahdah 1–3 (penutur fusha, suara jelas)
-- [ ] Ganti "kitab/jilid" menjadi "marhalah" di design system, Notion, dan catatan project
+- [x] Ganti "kitab/jilid" menjadi "marhalah" di design system dan Notion (21 Nov 2026). Design system interaktif (artifact) belum
 - [ ] Hapus semua penyebutan ABY dari aplikasi, video, dan PDF lomba
 
 ## Sumber

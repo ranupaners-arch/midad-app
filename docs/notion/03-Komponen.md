@@ -1,13 +1,13 @@
 # 03 · Komponen
 
-Preview hidup setiap komponen (tema terang/gelap) ada di [design system interaktif](https://claude.ai/artifact/FPWKJoUq5H1KbTjpnVx6wp). Class CSS berawalan `md-` dan ada di `components/bundle.css`.
+Preview hidup setiap komponen (tema terang/gelap) ada di [design system interaktif](https://claude.ai/artifact/FPWKJoUq5H1KbTjpnVx6wp). Class CSS berawalan `md-` dan ada di `components/components.css`, yang membaca variabel dari `tokens.css` (dibuat dari `tokens.json`).
 
 ## Dasar & soal
 
 | Komponen | Kegunaan | Aturan kunci |
 | --- | --- | --- |
 | **LanguagePicker** | Layar pertama: pilih bahasa ibu (ID/EN) | Satu-satunya layar dengan terjemahan selalu tampil. Tanpa bendera |
-| **PlacementStart** | Mulai dari nol atau tes tahdid mustawa | Hasil tes menempatkan pengguna di awal salah satu jilid |
+| **PlacementStart** | Mulai dari nol atau tes tahdid mustawa | Hasil tes menempatkan pengguna di awal salah satu marhalah (level 1, 17, 33, 49) |
 | **TranslateToggle** | Tombol تَرْجَمَة + teks terjemahan | Default mati. Terjemahan selalu lebih kecil dari teks Arab. Dikunci di soal arti |
 | **Button** | Aksi dengan tepi 3D | Satu tombol utama per layar. Label Arab, kata kerja perintah |
 | **AnswerOption** | Pilihan jawaban | State: default, terpilih, benar, salah. Shortcut 1–4 |
@@ -46,4 +46,4 @@ Preview hidup setiap komponen (tema terang/gelap) ada di [design system interakt
 
 | Komponen | Kegunaan | Aturan kunci |
 | --- | --- | --- |
-| **AskMentor** | Halaman tanya mentor | Konteks otomatis, lampiran suara/gambar, kuota 3/minggu |
+| **AskMentor** | Halaman tanya mentor (**post-MVP**) | Konteks otomatis, lampiran suara/gambar, kuota 3/minggu |

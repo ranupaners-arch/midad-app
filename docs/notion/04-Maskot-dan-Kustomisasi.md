@@ -12,7 +12,7 @@ Avatar pengguna adalah **maskot hewan kartun** yang bisa dikustomisasi. **Hudhud
 | Kucing | قِطّ | Hewan kesayangan, Abu Hurairah | 200 kurma |
 | Unta | جَمَل | Ikon Jazirah Arab | Selesai Mahattah 2 |
 | Penyu hijau | سُلَحْفَاة | Penyu Ras al-Jinz Oman, tema pelayaran | Streak 7 hari |
-| Oryx Arab | المَهَا | Hewan khas Oman | Saat tiba di Oman |
+| Oryx Arab | المَهَا | Hewan khas Oman | Saat tiba di Oman (rute ID: level 17, gerbang dunia Arab) |
 
 **Satu postur untuk semua hewan:** badan bulat telur ala chibi, menghadap depan, kaki pendek, tangan/sayap kanan terangkat memegang item, dan yang kiri di samping. Yang berbeda hanya ciri khasnya: jambul, telinga, tanduk, punuk, tempurung, ekor, dan corak.
 
@@ -41,9 +41,9 @@ Skin dipotong mengikuti bentuk badan bersama, jadi **satu skin pas di kelima hew
 | Tingkat | Arab | Skin | Cara dapat |
 | --- | --- | --- | --- |
 | Common | عَادِيّ | Baju pelaut, rompi, batik | Beli dengan kurma (100–150) |
-| Rare | نَادِر | Dishdasha, baju koko | Tiba di Oman / 400 kurma / lulus ujian nisfi |
-| Epic | مَلْحَمِيّ | Seragam nakhoda, jubah ulama | Lulus ujian nihai / streak 30 hari |
-| Legendary | أُسْطُورِيّ | Bisht emas, tinta malam (berkilau) | Tamat 4 kitab / event 18 Desember |
+| Rare | نَادِر | Dishdasha, baju koko | Tiba di Oman / 400 kurma / lulus tes setengah marhalah |
+| Epic | مَلْحَمِيّ | Seragam nakhoda, jubah ulama | Lulus tes marhalah / streak 30 hari |
+| Legendary | أُسْطُورِيّ | Bisht emas, tinta malam (berkilau) | Tamat 4 marhalah / event 18 Desember |
 
 ## Maskot pengguna dipakai di mana-mana
 
@@ -62,7 +62,7 @@ Konfigurasi yang disimpan pengguna dipakai di semua tempat yang butuh maskot. Ti
 
 ## Spesifikasi teknis
 
-Semua digambar oleh `assets/Maskot/mascot.js` (lihat **07 · Aset & Kode**).
+Semua digambar oleh `assets/maskot/mascot.js` (aplikasi: `mascot.mjs`) (lihat **07 · Aset & Kode**).
 
 - **Kanvas:** SVG `viewBox="0 0 512 512"`, garis tanah y = 480.
 - **Badan bersama:** telur di x 124–388, y 166–440.

@@ -48,7 +48,7 @@ Warna tingkat skin: Common `#9c8d7b` · Rare `#3b82c4` · Epic `#7c4dbd` · Lege
 | Grup | Font | Untuk |
 | --- | --- | --- |
 | UI Arab | **IBM Plex Sans Arabic** | Semua teks antarmuka |
-| Arab Pelajaran | **Noto Naskh Arabic** | Kalimat, kosakata, dan dialog dari kitab |
+| Arab Pelajaran | **Noto Naskh Arabic** | Kalimat, kosakata, dan dialog pelajaran |
 | Terjemahan | **Nunito** | Terjemahan ID/EN dan angka statistik |
 
 | Gaya | Ukuran / tinggi baris · tebal | Contoh | Pemakaian |

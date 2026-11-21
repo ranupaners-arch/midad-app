@@ -1,6 +1,6 @@
 # 10 Paket Aset (ZIP)
 
-> ⬇️ Taruh file **Midad-Aset.zip** (20 Nov 2026, ±890 KB, 48 file) di bawah callout ini.
+> ⬇️ Taruh file **Midad-Aset.zip** di bawah callout ini. Versi terbaru dibuat dari repo dengan `npm run build:paket` (21 Nov 2026: ±890 KB, 43 file).
 
 ## Isi paket
 
@@ -8,9 +8,9 @@
 | --- | --- |
 | Maskot/ | SVG 5 hewan (hudhud default), mascot.js (render + kustomisasi), vehicles.js (10 kendaraan hijrah), png/ ukuran 512 px |
 | Ikon/ | Lencana انظر / استمع / أعد (terpisah), ikon hint dan mentor, png/ |
-| Rihlah/ | routes.json (rute ID & EN, tiba level 17, tanpa tasykil mulai level 41), tips.json (16 tips loading) |
-| Token/ | tokens.json (warna terang/gelap, tipografi, spacing, radius) |
-| Komponen/ | bundle.css (kelas md-*) |
+| Rihlah/ | routes.json (rute ID & EN per marhalah, tiba level 17, tanpa tasykil mulai level 41), curriculum.json (kurikulum A1–B2), tips.json (16 tips loading) |
+| Token/ | tokens.json (sumber) dan tokens.css (variabel CSS terang/gelap) |
+| Komponen/ | components.css (kelas md-*, untuk aplikasi) dan bundle.css (versi lama) |
 | Prototipe/ | kustomisasi-maskot.html (buka di browser) |
 | Pratinjau/ | Gambar ringkas maskot dan kendaraan |
 

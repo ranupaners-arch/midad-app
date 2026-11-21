@@ -2,15 +2,20 @@
 
 ## Alur satu wahdah
 
-1. **Mufradat baru** (مُفْرَدَاتُ الوَحْدَةِ): sekitar 10–15 kata dari wahdah itu, dengan gambar dan audio. Setiap kata punya 3 titik penguasaan (benar 3× = hafal).
-2. **Dars-dars:** hiwar dengan alur **اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ**, latihan pilihan ganda, susun kalimat, dan dengar.
-3. **Peti harta** tiap dua dars (kuis singkat).
-4. **Ujian wahdah:** lulus ≥ 80% untuk membuka wahdah berikutnya.
-5. **Naik level:** animasi berlayar ke pelabuhan berikutnya, lalu layar hadiah.
+Enam langkah, sesuai **09 Kurikulum CEFR**:
+
+1. **Mufradat** (المُفْرَدَاتُ) dengan alur **اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ**: gambar, audio, lalu pengguna mengulang.
+2. **Pola kalimat** (التَّرَاكِيبُ): 1–2 pola baru, disusun dari kartu kata.
+3. **Hiwar** (الحِوَارُ): dialog bertokoh maskot, pengguna memainkan satu peran. Setelah hiwar muncul **peti harta** (kuis singkat).
+4. **Qira'ah** (القِرَاءَةُ): teks 3–6 kalimat + soal pemahaman.
+5. **Tadribat** (التَّدْرِيبَاتُ): latihan campuran, hint terbatas.
+6. **Kuis wahdah** (اخْتِبَارُ الوَحْدَةِ): lulus ≥ 80% untuk membuka wahdah berikutnya, lalu animasi berlayar dan layar hadiah.
+
+**Kosakata (pola hybrid):** wahdah biasa membawa 30–45 kata baru, dipecah jadi **3 sesi mufradat @10–15 kata** (wahdah ulangan: 20 kata, 2 sesi). Setiap kata punya 3 titik penguasaan (benar 3× = hafal), dan cincin % kuis wahdah dihitung dari **semua** kata wahdah.
 
 ## اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ (Lihat, Dengar, dan Ulangi)
 
-Metode khas Baina Yadaik untuk membiasakan pengucapan yang benar. Setiap langkah punya **lencana sendiri**:
+Alur untuk membiasakan pengucapan yang benar sejak awal. Setiap langkah punya **lencana sendiri**:
 
 | Langkah | Lencana | Yang terjadi |
 | --- | --- | --- |
@@ -32,9 +37,10 @@ Setiap ujian punya **cincin persentase** yang menunjukkan seberapa siap pengguna
 | Ujian | Arab | Posisi | % dihitung dari | Lulus | Hadiah |
 | --- | --- | --- | --- | --- | --- |
 | Wahdah | اخْتِبَارُ الوَحْدَةِ | Akhir tiap wahdah | Mufradat wahdah yang sudah hafal | ≥ 80% | 30 kurma + bintang 1–3 + peti kecil |
-| Setengah kitab | الاخْتِبَارُ النِّصْفِيُّ | Akhir jilid 1 | Wahdah jilid 1 yang lulus | ≥ 75% | 150 kurma + item/skin **Rare** • hijrah |
-| Akhir kitab | الاخْتِبَارُ النِّهَائِيُّ | Akhir jilid 2 | 16 wahdah kitab itu yang lulus | ≥ 75% | 300 kurma + skin **Epic** • شَهَادَة (sertifikat) + hijrah |
+| Setengah marhalah | الاخْتِبَارُ النِّصْفِيُّ | Setelah wahdah 8 | Wahdah 1–8 marhalah itu yang lulus | ≥ 75% | 150 kurma + item/skin **Rare** • hijrah |
+| Marhalah | الاخْتِبَارُ النِّهَائِيُّ | Setelah wahdah 16 | 16 wahdah marhalah itu yang lulus | ≥ 75% | 300 kurma + skin **Epic** • شَهَادَة (sertifikat) + hijrah |
 
+- Bobot tes setengah marhalah dan tes marhalah: menyimak 25%, membaca 25%, kosakata & tata bahasa 30%, berbicara 20%. Sertifikat bertuliskan «Setara A1 (diselaraskan dengan CEFR)».
 - Ujian bisa dimulai saat cincin 100%. Mulai dari 80% juga boleh, dengan peringatan.
 - **Terjemahan dan hint mati selama ujian.**
 - Gagal → lihat bagian yang salah → latihan ulang khusus bagian itu → coba lagi. Hadiah kurma hanya diberikan saat pertama kali lulus.
@@ -61,7 +67,7 @@ Halaman untuk bertanya ke mentor manusia (ustadz/pengajar terverifikasi):
 
 ## Tips belajar di layar loading
 
-Setiap loading menampilkan **نَصِيحَةٌ** yang bergantian (Arab + terjemahan). Ada 16 tips di `assets/Rihlah/tips.json`, misalnya:
+Setiap loading menampilkan **نَصِيحَةٌ** yang bergantian (Arab + terjemahan). Ada 16 tips di `assets/rihlah/tips.json`, misalnya:
 
 - اسْتَمِعْ كَثِيرًا قَبْلَ أَنْ تَتَكَلَّمَ. — Dengarkan banyak-banyak sebelum mulai berbicara.
 - احْفَظِ الاسْمَ مَعَ جَمْعِهِ. — Hafalkan kata benda bersama bentuk jamaknya.

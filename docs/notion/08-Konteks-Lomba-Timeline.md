@@ -25,14 +25,14 @@ Lomba teknologi untuk inisiatif bahasa digital dalam rangka Hari Bahasa Arab Sed
 - Target: penutur non-Arab, level pemula
 - Status: prototipe yang bisa dites
 
-> ⚠️ **Hak cipta kitab:** materi mengikuti *Al-'Arabiyyah Baina Yadaik* (penerbit Arabic For All). Tulis sendiri semua soal, kalimat, dan dialog dengan mengikuti urutan bab. Email permohonan izin rujukan kurikulum ke [info@arabicforall.net](mailto:info@arabicforall.net) (WhatsApp +966 55 458 4598) sudah didraf.
+> ⚠️ **Hak cipta & orisinalitas:** sejak 18 Nov 2026 Midad memakai **kurikulum sendiri yang diselaraskan dengan CEFR** (lihat 09), tidak lagi mengikuti buku ajar tertentu. Semua soal, kalimat, dialog, gambar, dan audio dibuat tim. Can-do CEFR ditulis ulang dengan kata-kata sendiri; jangan menyalin tabel deskriptor resmi. Jangan menyebut nama buku ajar atau penerbit lama di aplikasi, video, maupun PDF.
 
 ## Timeline kerja
 
 | Tanggal | Fase | Pekerjaan |
 | --- | --- | --- |
 | 16–17 Nov | Rencana & desain | ✅ Nama, brand, design system v6, maskot, rute, alur belajar |
-| 18–20 Nov | Desain + konten | Mockup alur demo, konten 2–3 wahdah pertama Kitab 1, rekam audio |
+| 18–20 Nov | Desain + konten | Mockup alur demo, konten wahdah 1–3 marhalah A1, rekam audio |
 | 21–29 Nov | Ngoding | Onboarding, peta, mesin soal + انظر واستمع وأعد, ujian wahdah, kustomisasi maskot, hadiah |
 | 30 Nov – 1 Des | Tes + deploy | Tes ke 5–10 santri, perbaiki bug, deploy ke link publik |
 | 1–3 Des | Bahan pengumpulan | Video ≤3 menit, PDF, ringkasan Arab |
@@ -49,4 +49,4 @@ Satu alur yang mulus, bukan banyak fitur setengah jadi:
 3. 2–3 wahdah: mufradat, hiwar dengan انظر واستمع وأعد, latihan, hint
 4. Ujian wahdah → naik level (animasi berlayar) → hadiah kurma + skin
 
-Fitur seperti mentor, rute EN, dan kitab 2–4 cukup **masuk rencana pengembangan** di PDF.
+Fitur seperti mentor, rute EN, dan marhalah A2–B2 cukup **masuk rencana pengembangan** di PDF.

@@ -1,6 +1,6 @@
 # Midad — Design System
 
-> 🖋️ **Midad (مِداد)** artinya *tinta*. Aplikasi belajar bahasa Arab bergaya game yang mengikuti kitab *Al-'Arabiyyah Baina Yadaik*, dibuat untuk Lomba Abjad (Hari Bahasa Arab Sedunia 2026, Sultan Qaboos Institute, Oman).
+> 🖋️ **Midad (مِداد)** artinya *tinta*. Aplikasi belajar bahasa Arab bergaya game dengan kurikulum sendiri yang diselaraskan dengan CEFR, dibuat untuk Lomba Abjad (Hari Bahasa Arab Sedunia 2026, Sultan Qaboos Institute, Oman).
 >
 > Tagline: **تَعَلَّمِ العَرَبِيَّةَ قَطْرَةً قَطْرَةً** — Belajar bahasa Arab, setetes demi setetes.
 
@@ -17,7 +17,7 @@
 - **Prototipe kustomisasi maskot** (bisa diklik): [claude.ai/artifact/2d2of7p6z2v9kaT3KGvNdw](https://claude.ai/artifact/2d2of7p6z2v9kaT3KGvNdw)
 - **Aset konsep Gemini (Nano Banana), link publik:** [share.gemini.google/tIXUlZarQhSH](https://share.gemini.google/tIXUlZarQhSH)
 
-> ⚠️ Sumber kebenaran untuk nilai token, kode, dan preview komponen adalah **design system interaktif** di atas. Halaman Notion ini ringkasan dan panduan kerja tim. Kalau ada perbedaan, ikuti design system lalu perbarui halaman ini.
+> ⚠️ **Sumber kebenaran:** nilai token, kode, aset, dan data rute ada di **repo project (`design-system/`)**. Kurikulum (marhalah, wahdah, tes) mengikuti halaman **09 Kurikulum CEFR**. Halaman Notion lain adalah ringkasan dan panduan kerja tim. Kalau ada perbedaan, ikuti repo atau halaman 09, lalu perbarui halaman ini. Design system interaktif di atas masih versi v6 (struktur lama) sampai diperbarui.
 
 ## Keputusan inti (ringkas)
 
@@ -25,16 +25,17 @@
 | --- | --- |
 | Bahasa | UI & materi full bahasa Arab (RTL). Bahasa ibu (ID/EN) hanya muncul sebagai terjemahan lewat tombol تَرْجَمَة |
 | Maskot | Hudhud memegang pena tinta (default) + 4 hewan lain, semuanya satu postur. Bisa dikustomisasi dan punya skin Common → Legendary |
-| Level | 4 kitab × 2 jilid × 8 wahdah = **64 level** |
-| Ujian | Ujian wahdah (≥ 80%), ujian nisfi & nihai (≥ 75%) + hadiah |
-| Rute | Dimulai dari negara bahasa ibu, tiba di dunia Arab di level 17 |
+| Level | 4 marhalah (A1–B2) × 16 wahdah = **64 level**, diselaraskan dengan CEFR |
+| Ujian | Kuis wahdah (≥ 80%), tes setengah marhalah & tes marhalah (≥ 75%) + hadiah |
+| Rute | Dimulai dari negara bahasa ibu, tiba di dunia Arab di level 17. Rute ID: **Oman sebagai gerbang** |
 | Metode | **اُنْظُرْ وَاسْتَمِعْ وَأَعِدْ** (lihat, dengar, ulangi) |
 | Tanpa tasykil | Mulai level 41 |
 | Bantuan | Hint terbatas (3 قَطَرَات/hari) + tanya mentor |
 
 ## Status
 
-- Design system: **v6** (17 Nov 2026)
+- Design system: **v7** (21 Nov 2026): migrasi ke marhalah/CEFR, token jadi CSS, repo git
+- Design system interaktif (artifact): masih v6
 - Deadline lomba: 2026-12-05 · Pengumuman: 2026-12-18
 
 ## Subhalaman

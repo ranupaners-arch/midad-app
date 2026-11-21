@@ -1,19 +1,21 @@
 # 07 · Aset & Kode
 
-Semua file di bawah ada di **design system interaktif** ([buka](https://claude.ai/artifact/FPWKJoUq5H1KbTjpnVx6wp)), di tab Assets/Files.
+Semua file di bawah ada di **repo project**, folder `design-system/` (sumber kebenaran). Paket siap bagi dibuat dengan `npm run build:paket`. Design system interaktif ([buka](https://claude.ai/artifact/FPWKJoUq5H1KbTjpnVx6wp)) masih versi v6.
 
 ## File penting
 
 | File | Isi |
 | --- | --- |
 | `tokens.json` | Semua token: warna (terang/gelap), tipografi, spacing, radius, shadow, ukuran |
-| `components/bundle.css` | CSS semua komponen (prefix `md-`), hanya membaca variabel token |
-| `assets/Maskot/mascot.js` | Penggambar maskot SVG berlapis: 5 hewan, warna, gaya, mata, hidung, mulut/paruh, item, skin, ekspresi |
-| `assets/Maskot/vehicles.js` | 10 kendaraan hijrah, dengan maskot pengguna ikut naik |
-| `assets/Maskot/*.svg` | Ekspor default 5 maskot (hudhud, cat, camel, turtle, oryx) |
-| `assets/Ikon/*.svg` | Lencana انظر / استمع / أعد, ikon 24px, tetes hint, mentor |
-| `assets/Rihlah/routes.json` | Data rute ID & EN: 8 etape, level, wilayah, kendaraan, pelabuhan |
-| `assets/Rihlah/tips.json` | 16 tips belajar untuk layar loading [ar, id, en] |
+| `tokens.css` | Variabel CSS hasil build dari `tokens.json` (`npm run build:css`), tema terang/gelap |
+| `components/components.css` | CSS semua komponen (prefix `md-`), hanya membaca variabel token. `bundle.css` = versi lama untuk design system interaktif |
+| `assets/maskot/mascot.js` · `mascot.mjs` | Penggambar maskot SVG berlapis: 5 hewan, warna, gaya, mata, hidung, mulut/paruh, item, skin, ekspresi. Versi `.mjs` = ES module + tipe + validasi konfigurasi |
+| `assets/maskot/vehicles.js` · `vehicles.mjs` | 10 kendaraan hijrah, dengan maskot pengguna ikut naik |
+| `assets/maskot/*.svg`, `png/` | Ekspor default 5 maskot (hudhud, cat, camel, turtle, oryx) |
+| `assets/ikon/*.svg`, `png/` | Lencana انظر / استمع / أعد, ikon 24px, tetes hint, mentor |
+| `assets/rihlah/routes.json` | Data rute ID & EN: 8 etape (marhalah + setengah), level, wilayah, kendaraan, pelabuhan, titik tes penempatan |
+| `assets/rihlah/curriculum.json` | Kurikulum: 4 marhalah, struktur 6 langkah, tes & bobot, 16 wahdah A1 |
+| `assets/rihlah/tips.json` | 16 tips belajar untuk layar loading [ar, id, en] |
 
 ## Cara pakai maskot
 
@@ -46,4 +48,4 @@ Daftar pilihan: `MidadMascot.ANIMALS[animal].colors` / `.styles`, `EYES`, `BEAKS
 
 - Hasil Gemini adalah **referensi**. Untuk dipakai berlapis, bagian-bagiannya harus digambar di kanvas 512 dengan anchor yang sama (lihat **04 · Maskot & Kustomisasi**).
 - Jangan menulis teks Arab di dalam gambar AI, karena hurufnya sering salah. Teks ditambahkan di kode.
-- Konten pelajaran **ditulis ulang sendiri** mengikuti urutan bab kitab. Jangan menyalin teks, dialog, atau gambar dari kitab tanpa izin penerbit (ada pernyataan orisinalitas di form lomba).
+- Konten pelajaran **ditulis sendiri** mengikuti kurikulum Midad (09 Kurikulum CEFR). Jangan menyalin teks, dialog, atau gambar dari buku ajar mana pun, dan jangan menyalin tabel deskriptor CEFR (ada pernyataan orisinalitas di form lomba).

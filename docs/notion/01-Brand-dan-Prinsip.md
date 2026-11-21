@@ -1,10 +1,10 @@
 # 01 · Brand & Prinsip
 
-**Midad** artinya *tinta*: alat para ulama menulis ilmu. Midad adalah aplikasi belajar bahasa Arab dengan gaya game. Materinya mengikuti kitab *Al-'Arabiyyah Baina Yadaik*, dan rak kitab lain bisa ditambah nanti.
+**Midad** artinya *tinta*: alat para ulama menulis ilmu. Midad adalah aplikasi belajar bahasa Arab dengan gaya game. Materinya memakai kurikulum Midad sendiri yang diselaraskan dengan CEFR (4 marhalah A1–B2 × 16 wahdah). Pengguna berlayar dari negeri asalnya ke dunia Arab; untuk rute Indonesia, Oman adalah gerbangnya.
 
 ## Prinsip
 
-1. **Arab-first.** Seperti Baina Yadaik yang mengajar bahasa Arab *dengan* bahasa Arab, seluruh UI dan materi memakai bahasa Arab dengan layout **RTL**. Bahasa ibu hanya muncul sebagai terjemahan yang dibuka pengguna sendiri.
+1. **Arab-first.** Bahasa Arab diajarkan *dengan* bahasa Arab (imersi): seluruh UI dan materi memakai bahasa Arab dengan layout **RTL**. Bahasa ibu hanya muncul sebagai terjemahan yang dibuka pengguna sendiri.
 2. **Teks Arab adalah pahlawannya.** Harakat harus terbaca jelas. Terjemahan selalu lebih kecil dan lebih pudar daripada teks Arabnya.
 3. **Hangat, bukan kekanak-kanakan.** Kertas krem, tinta teal, dan emas kurma. Ramah untuk santri SMP sampai mahasiswa.
 4. **Bisa ditekan.** Tombol dan kartu punya *tepi 3D*: saat ditekan, elemen turun 4px.
@@ -29,7 +29,7 @@
 ### Harakat
 
 - **Level 1–40:** seluruh teks UI dan pelajaran berharakat lengkap.
-- **Mulai level 41** (pertengahan Kitab 3): **mode tanpa tasykil**. Tombol **التَّشْكِيلُ** memunculkan harakat sementara.
+- **Mulai level 41** (setengah kedua marhalah 3, B1): **mode tanpa tasykil**. Tombol **التَّشْكِيلُ** memunculkan harakat sementara.
 
 ### Angka
 
@@ -82,7 +82,7 @@ Yang **milik Midad sendiri** dan tidak boleh mirip Duolingo:
 - Maskot dan ilustrasi buatan sendiri. **Jangan** pakai burung hantu hijau atau karakter mirip itu, dan jangan tulis "Duolingo style" di prompt aset.
 - Tema dunia: pelayaran dari negara bahasa ibu ke dunia Arab, lentera, kurma, tinta.
 - Bunyi efek dibuat atau dilisensikan sendiri.
-- Metode: imersi Arab-first mengikuti Baina Yadaik.
+- Metode: imersi Arab-first, bukan terjemahan-first.
 
 ## Ikon & ilustrasi
 
