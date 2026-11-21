@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview Komponen Midad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@500;700&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-200); color: var(--ink); }
+  header { position: sticky; top: 0; z-index: 1; display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center;
+    padding: var(--space-3) var(--space-4); background: var(--surface-100); border-bottom: 2px solid var(--line); }
+  header h1 { margin: 0; font-size: 18px; flex: 1; }
+  header button { font: inherit; font-weight: 700; padding: 6px 14px; border-radius: var(--radius-pill); border: 2px solid var(--line);
+    background: var(--surface-000); color: var(--ink); cursor: pointer; }
+  header button[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+  main { display: grid; gap: var(--space-4); padding: var(--space-4); }
+  section { background: var(--surface-100); border: 2px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+  section h2 { margin: 0; padding: var(--space-2) var(--space-4); font-size: 14px; border-bottom: 2px solid var(--line); }
+  iframe { display: block; width: 100%; border: 0; }
+  .err { padding: var(--space-4); color: var(--danger-ink); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Preview Komponen Midad</h1>
+  <button type="button" data-theme-btn="light">Terang</button>
+  <button type="button" data-theme-btn="dark">Gelap</button>
+  <button type="button" data-theme-btn="system">Ikuti sistem</button>
+</header>
+<main id="list"></main>
+<script>
+// Membuka components/<Nama>/preview.html di iframe, dengan tokens.css + components.css + preview.css
+// yang sama dengan aplikasi. Jalankan dari server statis di root repo:
+//   python3 -m http.server -d design-system 8000  ->  http://localhost:8000/preview/
+const COMPONENTS = ['Cover', 'LanguagePicker', 'TranslateToggle', 'Button', 'AnswerOption', 'WordTile', 'ProgressBar',
+  'StatPill', 'LessonNode', 'FeedbackSheet', 'ListenRepeat', 'PlacementStart', 'MascotLoader', 'MascotMoments',
+  'SkinCard', 'Vehicles', 'RihlahRoadmap', 'LevelUpTravel', 'TestProgress', 'RewardSheet', 'HintPrompt', 'AskMentor'];
+const params = new URLSearchParams(location.search);
+const only = params.get('c');
+let theme = params.get('theme') || 'system';
+const frames = [];
+
+const HEAD = (name) => `<base href="${new URL(`../components/${name}/`, location.href)}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@500;700&display=swap">
+<link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../preview.css"><link rel="stylesheet" href="../components.css">`;
+
+function applyTheme() {
+  const set = (root) => theme === 'system' ? root.removeAttribute('data-theme') : root.setAttribute('data-theme', theme);
+  set(document.documentElement);
+  for (const f of frames) { try { set(f.contentDocument.documentElement); } catch {} }
+  for (const b of document.querySelectorAll('[data-theme-btn]')) b.setAttribute('aria-pressed', String(b.dataset.themeBtn === theme));
+}
+
+async function load(name) {
+  const sec = document.createElement('section');
+  sec.innerHTML = `<h2>${name}</h2>`;
+  document.getElementById('list').append(sec);
+  try {
+    const res = await fetch(`../components/${name}/preview.html`);
+    if (!res.ok) throw new Error(res.status);
+    const html = (await res.text()).replace(/^<!--.*?-->\s*/s, '');
+    const m = html.match(/<!-- @dsCard[^>]*height=(\d+)/);
+    const f = document.createElement('iframe');
+    f.title = name;
+    f.srcdoc = /<head>/i.test(html) ? html.replace(/<head>/i, `<head>${HEAD(name)}`) : `${HEAD(name)}${html}`;
+    f.addEventListener('load', () => {
+      applyTheme();
+      const fit = () => { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; };
+      fit(); setTimeout(fit, 400); setTimeout(fit, 1500);
+    });
+    frames.push(f);
+    sec.append(f);
+  } catch (e) {
+    sec.insertAdjacentHTML('beforeend', `<p class="err">Gagal memuat: ${e.message}</p>`);
+  }
+}
+
+for (const b of document.querySelectorAll('[data-theme-btn]')) b.addEventListener('click', () => { theme = b.dataset.themeBtn; applyTheme(); });
+applyTheme();
+(only ? only.split(',') : COMPONENTS).forEach(load);
+</script>
+</body>
+</html>

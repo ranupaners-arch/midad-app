@@ -1,0 +1,234 @@
+/* DIBUAT OTOMATIS dari tokens.json oleh scripts/build-css.mjs. Jangan edit manual. */
+
+:root {
+  color-scheme: light;
+  /* warna & bayangan (tema terang) */
+  --surface-000: #fbf6ec;
+  --surface-100: #ffffff;
+  --surface-200: #f2eadb;
+  --line: #e6dcc8;
+  --line-strong: #cdbfa5;
+  --ink: #2a211a;
+  --ink-muted: #6b5d4f;
+  --ink-subtle: #9c8d7b;
+  --brand: #0f766e;
+  --brand-strong: #0b5a54;
+  --brand-soft: #d6efeb;
+  --brand-ink: #0b5a54;
+  --on-brand: #ffffff;
+  --gold: #e9b949;
+  --gold-strong: #b5871a;
+  --gold-soft: #fbefcc;
+  --on-gold: #3a2a06;
+  --date: #7c4a2d;
+  --date-soft: #f3e3d6;
+  --lantern: #ef8f24;
+  --lantern-soft: #fde8cf;
+  --lantern-ink: #9a4d0a;
+  --success: #1f7f46;
+  --success-strong: #155c32;
+  --success-soft: #dcf3e4;
+  --success-ink: #17603a;
+  --on-success: #ffffff;
+  --danger: #c44530;
+  --danger-strong: #8f2f1c;
+  --danger-soft: #fde3dc;
+  --danger-ink: #962e18;
+  --on-danger: #ffffff;
+  --focus: #1d4ed8;
+  --scrim: rgba(42,33,26,0.45);
+  --edge-card: 0 3px 0 0 #e6dcc8;
+  --edge-brand: 0 4px 0 0 #0b5a54;
+  --edge-gold: 0 4px 0 0 #b5871a;
+  --edge-success: 0 4px 0 0 #155c32;
+  --edge-danger: 0 4px 0 0 #8f2f1c;
+  --overlay: 0 12px 32px rgba(42,33,26,0.18);
+  /* keluarga font */
+  --font-arabic-ui: "IBM Plex Sans Arabic", "Noto Sans Arabic", system-ui, sans-serif;
+  --font-arabic: "Noto Naskh Arabic", "Amiri", "Traditional Arabic", serif;
+  --font-sans: "Nunito", "Segoe UI", system-ui, sans-serif;
+  /* skala tipografi */
+  --fs-display: 40px;
+  --lh-display: 60px;
+  --fw-display: 700;
+  --fs-title-lg: 28px;
+  --lh-title-lg: 44px;
+  --fw-title-lg: 700;
+  --fs-title-md: 22px;
+  --lh-title-md: 36px;
+  --fw-title-md: 700;
+  --fs-body-lg: 18px;
+  --lh-body-lg: 30px;
+  --fw-body-lg: 500;
+  --fs-body: 16px;
+  --lh-body: 28px;
+  --fw-body: 500;
+  --fs-label: 17px;
+  --lh-label: 24px;
+  --fw-label: 700;
+  --fs-caption: 14px;
+  --lh-caption: 22px;
+  --fw-caption: 600;
+  --fs-ar-hero: 56px;
+  --lh-ar-hero: 96px;
+  --fw-ar-hero: 700;
+  --fs-ar-lg: 32px;
+  --lh-ar-lg: 60px;
+  --fw-ar-lg: 500;
+  --fs-ar-md: 26px;
+  --lh-ar-md: 48px;
+  --fw-ar-md: 500;
+  --fs-ar-sm: 22px;
+  --lh-ar-sm: 40px;
+  --fw-ar-sm: 500;
+  --fs-tr-md: 15px;
+  --lh-tr-md: 22px;
+  --fw-tr-md: 600;
+  --fs-tr-sm: 13px;
+  --lh-tr-sm: 18px;
+  --fw-tr-sm: 600;
+  --fs-num: 15px;
+  --lh-num: 20px;
+  --fw-num: 800;
+  /* spacing, radius, ukuran */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+  --touch-min: 48px;
+  --button-h: 52px;
+  --node-size: 72px;
+  --screen-max: 480px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-000: #101817;
+  --surface-100: #18231f;
+  --surface-200: #22302c;
+  --line: #33443f;
+  --line-strong: #4b5f59;
+  --ink: #f4eee4;
+  --ink-muted: #b5ab9b;
+  --ink-subtle: #7d8a84;
+  --brand: #2fb8a6;
+  --brand-strong: #1f8f81;
+  --brand-soft: #133c37;
+  --brand-ink: #7fe0d2;
+  --on-brand: #04201d;
+  --gold: #f0c55e;
+  --gold-strong: #c99a2e;
+  --gold-soft: #3a2f12;
+  --on-gold: #2a1e03;
+  --date: #d29a70;
+  --date-soft: #3a271b;
+  --lantern: #f6a548;
+  --lantern-soft: #3d2810;
+  --lantern-ink: #f6a548;
+  --success: #4cc27b;
+  --success-strong: #2f9a5a;
+  --success-soft: #14321f;
+  --success-ink: #a6e8be;
+  --on-success: #04200f;
+  --danger: #f07a63;
+  --danger-strong: #c4553f;
+  --danger-soft: #3d1d16;
+  --danger-ink: #ffb5a6;
+  --on-danger: #2a0b05;
+  --focus: #8ab4ff;
+  --scrim: rgba(0,0,0,0.6);
+  --edge-card: 0 3px 0 0 #33443f;
+  --edge-brand: 0 4px 0 0 #1f8f81;
+  --edge-gold: 0 4px 0 0 #c99a2e;
+  --edge-success: 0 4px 0 0 #2f9a5a;
+  --edge-danger: 0 4px 0 0 #c4553f;
+  --overlay: 0 12px 32px rgba(0,0,0,0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-000: #101817;
+    --surface-100: #18231f;
+    --surface-200: #22302c;
+    --line: #33443f;
+    --line-strong: #4b5f59;
+    --ink: #f4eee4;
+    --ink-muted: #b5ab9b;
+    --ink-subtle: #7d8a84;
+    --brand: #2fb8a6;
+    --brand-strong: #1f8f81;
+    --brand-soft: #133c37;
+    --brand-ink: #7fe0d2;
+    --on-brand: #04201d;
+    --gold: #f0c55e;
+    --gold-strong: #c99a2e;
+    --gold-soft: #3a2f12;
+    --on-gold: #2a1e03;
+    --date: #d29a70;
+    --date-soft: #3a271b;
+    --lantern: #f6a548;
+    --lantern-soft: #3d2810;
+    --lantern-ink: #f6a548;
+    --success: #4cc27b;
+    --success-strong: #2f9a5a;
+    --success-soft: #14321f;
+    --success-ink: #a6e8be;
+    --on-success: #04200f;
+    --danger: #f07a63;
+    --danger-strong: #c4553f;
+    --danger-soft: #3d1d16;
+    --danger-ink: #ffb5a6;
+    --on-danger: #2a0b05;
+    --focus: #8ab4ff;
+    --scrim: rgba(0,0,0,0.6);
+    --edge-card: 0 3px 0 0 #33443f;
+    --edge-brand: 0 4px 0 0 #1f8f81;
+    --edge-gold: 0 4px 0 0 #c99a2e;
+    --edge-success: 0 4px 0 0 #2f9a5a;
+    --edge-danger: 0 4px 0 0 #c4553f;
+    --overlay: 0 12px 32px rgba(0,0,0,0.55);
+  }
+}
+
+/* kelas tipografi */
+
+.md-type-display { font-family: var(--font-arabic-ui); font-size: var(--fs-display); line-height: var(--lh-display); font-weight: var(--fw-display); }
+
+.md-type-title-lg { font-family: var(--font-arabic-ui); font-size: var(--fs-title-lg); line-height: var(--lh-title-lg); font-weight: var(--fw-title-lg); }
+
+.md-type-title-md { font-family: var(--font-arabic-ui); font-size: var(--fs-title-md); line-height: var(--lh-title-md); font-weight: var(--fw-title-md); }
+
+.md-type-body-lg { font-family: var(--font-arabic-ui); font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); font-weight: var(--fw-body-lg); }
+
+.md-type-body { font-family: var(--font-arabic-ui); font-size: var(--fs-body); line-height: var(--lh-body); font-weight: var(--fw-body); }
+
+.md-type-label { font-family: var(--font-arabic-ui); font-size: var(--fs-label); line-height: var(--lh-label); font-weight: var(--fw-label); }
+
+.md-type-caption { font-family: var(--font-arabic-ui); font-size: var(--fs-caption); line-height: var(--lh-caption); font-weight: var(--fw-caption); }
+
+.md-type-ar-hero { font-family: var(--font-arabic); font-size: var(--fs-ar-hero); line-height: var(--lh-ar-hero); font-weight: var(--fw-ar-hero); }
+
+.md-type-ar-lg { font-family: var(--font-arabic); font-size: var(--fs-ar-lg); line-height: var(--lh-ar-lg); font-weight: var(--fw-ar-lg); }
+
+.md-type-ar-md { font-family: var(--font-arabic); font-size: var(--fs-ar-md); line-height: var(--lh-ar-md); font-weight: var(--fw-ar-md); }
+
+.md-type-ar-sm { font-family: var(--font-arabic); font-size: var(--fs-ar-sm); line-height: var(--lh-ar-sm); font-weight: var(--fw-ar-sm); }
+
+.md-type-tr-md { font-family: var(--font-sans); font-size: var(--fs-tr-md); line-height: var(--lh-tr-md); font-weight: var(--fw-tr-md); }
+
+.md-type-tr-sm { font-family: var(--font-sans); font-size: var(--fs-tr-sm); line-height: var(--lh-tr-sm); font-weight: var(--fw-tr-sm); }
+
+.md-type-num { font-family: var(--font-sans); font-size: var(--fs-num); line-height: var(--lh-num); font-weight: var(--fw-num); }
+

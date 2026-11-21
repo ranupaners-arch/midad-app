@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@500;700&display=swap");
-
-/* ---------- base (previews) ---------- */
+/* DIBUAT OTOMATIS oleh scripts/build-css.mjs dari preview.css + components.css. Jangan edit manual.
+   Aplikasi memakai tokens.css + components.css, bukan file ini. */
+/* Gaya khusus halaman preview komponen. Jangan dipakai di aplikasi. */
 body { margin: 0; font-family: var(--font-arabic-ui); background: var(--surface-000); color: var(--ink); -webkit-font-smoothing: antialiased; }
 .md-demo { padding: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: flex-start; }
 .md-col { display: flex; flex-direction: column; gap: var(--space-3); }
 .md-cap { font-family: var(--font-sans); font-size: 13px; line-height: 18px; font-weight: 700; color: var(--ink-muted); }
+
+/* Midad — CSS komponen (prefix md-). Hanya membaca variabel dari tokens.css.
+   Font dimuat lewat <link> di HTML, bukan @import (lihat README). */
+/* ---------- base ---------- */
 .md-ar { font-family: var(--font-arabic); direction: rtl; }
 .md-icon { width: 20px; height: 20px; flex: none; display: block; }
 
@@ -73,7 +78,7 @@ body { margin: 0; font-family: var(--font-arabic-ui); background: var(--surface-
 /* ---------- ProgressBar ---------- */
 .md-progress { position: relative; height: 16px; border-radius: var(--radius-pill); background: var(--surface-200); overflow: hidden; }
 .md-progress__fill { position: absolute; inset-block: 0; inset-inline-start: 0; border-radius: var(--radius-pill); background: var(--brand); transition: width 300ms ease; }
-.md-progress__fill::after { content: ""; position: absolute; left: 8px; right: 8px; top: 4px; height: 4px; border-radius: var(--radius-pill); background: rgba(255,255,255,.35); }
+.md-progress__fill::after { content: ""; position: absolute; inset-inline: 8px; top: 4px; height: 4px; border-radius: var(--radius-pill); background: rgba(255,255,255,.35); }
 .md-progress--gold .md-progress__fill { background: var(--gold); }
 .md-lessonbar { display: flex; align-items: center; gap: var(--space-3); }
 .md-lessonbar .md-progress { flex: 1; }
@@ -224,6 +229,11 @@ body { margin: 0; font-family: var(--font-arabic-ui); background: var(--surface-
 [data-theme="dark"] .md-skin--rare { --tier-ink: #9cc8f0; }
 [data-theme="dark"] .md-skin--epic { --tier-ink: #c9b0f0; }
 [data-theme="dark"] .md-skin--legendary { --tier-ink: #f6d27a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .md-skin--rare { --tier-ink: #9cc8f0; }
+  :root:not([data-theme="light"]) .md-skin--epic { --tier-ink: #c9b0f0; }
+  :root:not([data-theme="light"]) .md-skin--legendary { --tier-ink: #f6d27a; }
+}
 
 /* ---------- ListenRepeat (اُنْظُرْ · اِسْتَمِعْ · كَرِّرْ) ---------- */
 .md-lr { display: flex; flex-direction: column; gap: var(--space-3); }
