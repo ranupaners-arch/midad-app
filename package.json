@@ -7,7 +7,7 @@
   "scripts": {
     "build:css": "node scripts/build-css.mjs",
     "build:paket": "node scripts/build-paket.mjs",
-    "check": "node scripts/build-css.mjs --check && node scripts/check-mascot.mjs",
+    "check": "node scripts/build-css.mjs --check && node scripts/check-mascot.mjs && node scripts/check-data.mjs",
     "preview:ds": "node scripts/serve.mjs"
   }
 }

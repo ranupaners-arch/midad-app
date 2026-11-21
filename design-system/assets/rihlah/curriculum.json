@@ -1,0 +1,122 @@
+{
+ "version": 1,
+ "note": "Kurikulum Midad, diselaraskan dengan CEFR (bukan kurikulum resmi CEFR). Can-do ditulis ulang oleh tim, bukan kutipan tabel Council of Europe. Bahasa: Fusha modern (MSA). Sumber: docs/notion/09-Kurikulum-CEFR.md + keputusan 21 Nov 2026.",
+ "levels": 64,
+ "levelsPerMarhalah": 16,
+ "marhalah": [
+  {
+   "n": 1, "cefr": "A1", "levels": [1, 16],
+   "name": { "ar": "المَرْحَلَةُ الأُولَى — الانْطِلَاق", "id": "Marhalah 1 — Berangkat", "en": "Stage 1 — Setting Off" },
+   "routeStage": { "id": "Negara asal → laut lepas", "en": "Home country → open sea" },
+   "tashkeel": "full",
+   "vocabCumulative": 600,
+   "cando": {
+    "id": "Memperkenalkan diri, menyebut keluarga, benda di sekitar, angka, dan waktu. Memahami kalimat pendek yang diucapkan pelan. Mengisi data diri sederhana.",
+    "en": "Introduce yourself, talk about family, nearby objects, numbers and time. Understand short sentences spoken slowly. Fill in simple personal details."
+   },
+   "grammar": ["Dhamir", "Jumlah ismiyyah", "هذا/هذه/ذلك/تلك", "Kata tanya", "Mudzakkar–muannats", "Idhafah sederhana", "Dhamir muttashil", "Huruf jar", "Fi'il mudhari' umum", "لَيْسَ/لَا", "Angka 1–20"]
+  },
+  {
+   "n": 2, "cefr": "A2", "levels": [17, 32],
+   "name": { "ar": "المَرْحَلَةُ الثَّانِيَةُ — الوُصُول", "id": "Marhalah 2 — Tiba", "en": "Stage 2 — Arrival" },
+   "routeStage": { "id": "Tiba di dunia Arab (rute ID: Oman sebagai gerbang)", "en": "Arriving in the Arab world" },
+   "tashkeel": "full",
+   "vocabCumulative": 1200,
+   "vocabEstimate": true,
+   "cando": {
+    "id": "Bercerita tentang kegiatan harian dan kejadian kemarin. Belanja, bertanya arah, dan membuat janji. Membaca pesan dan pengumuman pendek.",
+    "en": "Talk about daily activities and what happened yesterday. Shop, ask for directions and make appointments. Read short messages and notices."
+   },
+   "grammar": ["Fi'il madhi", "مَا/لَمْ", "سَـ/سَوْفَ", "Jamak salim dan jamak taksir umum", "Na't–man'ut", "Angka sampai 1.000", "Jam", "Fi'il amr", "Ism tafdhil"]
+  },
+  {
+   "n": 3, "cefr": "B1", "levels": [33, 48],
+   "name": { "ar": "المَرْحَلَةُ الثَّالِثَةُ — الاسْتِقْرَار", "id": "Marhalah 3 — Menetap", "en": "Stage 3 — Settling In" },
+   "routeStage": { "id": "Kota-kota Arab", "en": "Arab cities" },
+   "tashkeel": "full-until-40",
+   "vocabCumulative": 2200,
+   "vocabEstimate": true,
+   "cando": {
+    "id": "Menceritakan pengalaman, rencana, dan alasan. Mengikuti obrolan tentang topik yang dikenal. Membaca teks pendek tanpa tasykil mulai level 41. Menulis paragraf sederhana.",
+    "en": "Describe experiences, plans and reasons. Follow conversations on familiar topics. Read short texts without tashkeel from level 41. Write a simple paragraph."
+   },
+   "grammar": ["Wazan fi'il II–X yang umum", "أَنْ/أَنَّ", "Ism maushul", "كَانَ dan إِنَّ beserta saudaranya", "Mashdar", "إِذَا", "Majhul sederhana"]
+  },
+  {
+   "n": 4, "cefr": "B2", "levels": [49, 64],
+   "name": { "ar": "المَرْحَلَةُ الرَّابِعَةُ — الإِتْقَان", "id": "Marhalah 4 — Mahir", "en": "Stage 4 — Mastery" },
+   "routeStage": { "id": "Pusat-pusat ilmu di dunia Arab", "en": "Centres of learning in the Arab world" },
+   "tashkeel": "none-except-ambiguous",
+   "vocabCumulative": 3500,
+   "vocabEstimate": true,
+   "cando": {
+    "id": "Memahami ide utama berita dan ceramah singkat. Menyampaikan pendapat dengan alasan. Membaca artikel tanpa tasykil. Berdiskusi dengan cukup lancar.",
+    "en": "Understand the main ideas of news and short talks. Give opinions with reasons. Read articles without tashkeel. Take part in discussions fairly fluently."
+   },
+   "grammar": ["لَوْ/إِنْ", "Hal", "Tamyiz", "Maf'ul li-ajlih", "I'rab untuk membaca tanpa tasykil", "Kata sambung argumentasi"]
+  }
+ ],
+ "wahdahStructure": {
+  "minutes": [10, 15],
+  "vocab": {
+   "wordsPerSession": [10, 15],
+   "sessionsRegular": 3,
+   "sessionsReview": 2,
+   "masteryCorrectTimes": 3,
+   "note": "Kata baru wahdah (30–45) dipecah jadi beberapa sesi mufradat @10–15 kata. Cincin % kuis wahdah dihitung dari SEMUA kata wahdah yang sudah hafal (benar 3×)."
+  },
+  "steps": [
+   { "id": "mufradat", "ar": "المُفْرَدَاتُ", "label": { "id": "Mufradat", "en": "Vocabulary" }, "skills": ["listening", "speaking"], "flow": "look-listen-repeat" },
+   { "id": "pattern", "ar": "التَّرَاكِيبُ", "label": { "id": "Pola kalimat", "en": "Sentence patterns" }, "skills": ["writing"], "note": "1–2 pola baru, disusun dari kartu kata (WordTile)" },
+   { "id": "hiwar", "ar": "الحِوَارُ", "label": { "id": "Hiwar", "en": "Dialogue" }, "skills": ["interaction", "speaking"], "flow": "look-listen-repeat", "note": "Dialog bertokoh maskot, pengguna memainkan satu peran" },
+   { "id": "qiraah", "ar": "القِرَاءَةُ", "label": { "id": "Qira'ah", "en": "Reading" }, "skills": ["reading"], "note": "Teks 3–6 kalimat + soal pemahaman" },
+   { "id": "tadribat", "ar": "التَّدْرِيبَاتُ", "label": { "id": "Tadribat", "en": "Practice" }, "skills": ["listening", "reading", "writing"], "note": "Latihan campuran; hint terbatas, hanya bila pengguna setuju" },
+   { "id": "quiz", "ar": "اخْتِبَارُ الوَحْدَةِ", "label": { "id": "Kuis mufradat wahdah", "en": "Unit vocabulary quiz" }, "skills": ["vocabulary"], "passPct": 80 }
+  ],
+  "chestAfterStep": "hiwar"
+ },
+ "tests": {
+  "wahdah": {
+   "ar": "اخْتِبَارُ الوَحْدَةِ", "label": { "id": "Kuis wahdah", "en": "Unit quiz" },
+   "passPct": 80, "progressFrom": "Mufradat wahdah yang sudah hafal",
+   "reward": { "dates": 30, "stars": [1, 3], "chest": "small" }
+  },
+  "nisfi": {
+   "ar": "الاخْتِبَارُ النِّصْفِيُّ", "label": { "id": "Tes setengah marhalah", "en": "Mid-stage test" },
+   "afterWahdah": 8, "passPct": 75, "progressFrom": "Wahdah 1–8 marhalah ini yang lulus",
+   "weights": { "listening": 25, "reading": 25, "vocabGrammar": 30, "speaking": 20 },
+   "reward": { "dates": 150, "skinTier": "rare", "hijrah": true }
+  },
+  "nihai": {
+   "ar": "الاخْتِبَارُ النِّهَائِيُّ", "label": { "id": "Tes marhalah", "en": "Stage test" },
+   "afterWahdah": 16, "passPct": 75, "progressFrom": "Wahdah 1–16 marhalah ini yang lulus",
+   "weights": { "listening": 25, "reading": 25, "vocabGrammar": 30, "speaking": 20 },
+   "reward": { "dates": 300, "skinTier": "epic", "hijrah": true, "certificate": { "id": "Setara {cefr} (diselaraskan dengan CEFR)", "en": "{cefr} equivalent (aligned with the CEFR)" } }
+  },
+  "rules": {
+   "startFromPct": 80,
+   "translationAndHintsOff": true,
+   "rewardFirstPassOnly": true,
+   "bonusStarPct": 95,
+   "bonusDates": 20
+  }
+ },
+ "wahdah": [
+  { "level": 1, "marhalah": 1, "n": 1, "title": "السَّلَامُ", "theme": { "id": "Salam, sapaan, kata sopan", "en": "Greetings and polite words" }, "newWords": 30, "pattern": "صَبَاحُ الخَيْرِ، كَيْفَ حَالُكَ؟", "cando": { "id": "Memberi dan membalas salam sesuai waktu", "en": "Give and return greetings for the time of day" }, "demo": true },
+  { "level": 2, "marhalah": 1, "n": 2, "title": "مَنْ أَنْتَ؟", "theme": { "id": "Nama, asal negara, bahasa", "en": "Name, country, language" }, "newWords": 35, "pattern": "أَنَا مِنْ إِنْدُونِيسِيَا.", "cando": { "id": "Memperkenalkan diri dan bertanya asal orang lain", "en": "Introduce yourself and ask where others are from" }, "demo": true },
+  { "level": 3, "marhalah": 1, "n": 3, "title": "الأَرْقَامُ", "theme": { "id": "Angka 1–20, umur, nomor telepon", "en": "Numbers 1–20, age, phone numbers" }, "newWords": 35, "pattern": "عُمْرِي عِشْرُونَ سَنَةً.", "cando": { "id": "Menyebut dan memahami angka sehari-hari", "en": "Say and understand everyday numbers" }, "demo": true },
+  { "level": 4, "marhalah": 1, "n": 4, "title": "أُسْرَتِي", "theme": { "id": "Anggota keluarga, pekerjaan", "en": "Family members, jobs" }, "newWords": 40, "pattern": "هَذَا أَخِي، هُوَ مُهَنْدِسٌ.", "cando": { "id": "Mengenalkan keluarga dari sebuah foto", "en": "Introduce your family from a photo" } },
+  { "level": 5, "marhalah": 1, "n": 5, "title": "فِي الفَصْلِ", "theme": { "id": "Benda di kelas dan di meja", "en": "Things in the classroom and on the desk" }, "newWords": 40, "pattern": "مَا هَذِهِ؟ هَذِهِ سَبُّورَةٌ.", "cando": { "id": "Menanyakan dan menyebut nama benda", "en": "Ask for and name objects" } },
+  { "level": 6, "marhalah": 1, "n": 6, "title": "بَيْتِي", "theme": { "id": "Ruangan, perabot, posisi", "en": "Rooms, furniture, position" }, "newWords": 40, "pattern": "الكِتَابُ عَلَى المَكْتَبِ.", "cando": { "id": "Menjelaskan letak benda di rumah", "en": "Say where things are at home" } },
+  { "level": 7, "marhalah": 1, "n": 7, "title": "أَلْوَانٌ وَأَشْكَالٌ", "theme": { "id": "Warna, ukuran, sifat", "en": "Colours, sizes, qualities" }, "newWords": 35, "pattern": "السَّيَّارَةُ حَمْرَاءُ وَصَغِيرَةٌ.", "cando": { "id": "Mendeskripsikan benda dengan 2–3 sifat", "en": "Describe an object with 2–3 qualities" } },
+  { "level": 8, "marhalah": 1, "n": 8, "title": "مُرَاجَعَةٌ: عَلَى ظَهْرِ القَارِبِ", "theme": { "id": "Ulangan wahdah 1–7 lewat cerita", "en": "Review of units 1–7 through a story" }, "newWords": 20, "pattern": null, "cando": { "id": "Berkenalan dengan sesama penumpang kapal", "en": "Get to know fellow passengers on the boat" }, "review": true, "test": "nisfi" },
+  { "level": 9, "marhalah": 1, "n": 9, "title": "يَوْمِي", "theme": { "id": "Rutinitas pagi–malam", "en": "Daily routine" }, "newWords": 40, "pattern": "أَسْتَيْقِظُ مُبَكِّرًا ثُمَّ أُصَلِّي.", "cando": { "id": "Menceritakan kegiatan harian dengan fi'il mudhari'", "en": "Describe your day using present-tense verbs" } },
+  { "level": 10, "marhalah": 1, "n": 10, "title": "السَّاعَةُ وَالأَيَّامُ", "theme": { "id": "Jam, hari, bulan", "en": "Time, days, months" }, "newWords": 40, "pattern": "السَّاعَةُ الآنَ الثَّامِنَةُ.", "cando": { "id": "Menyebut jam dan jadwal mingguan", "en": "Tell the time and a weekly schedule" } },
+  { "level": 11, "marhalah": 1, "n": 11, "title": "الطَّعَامُ وَالشَّرَابُ", "theme": { "id": "Makanan, minuman, suka/tidak suka", "en": "Food, drink, likes and dislikes" }, "newWords": 45, "pattern": "أُحِبُّ الأَرُزَّ وَلَا أُحِبُّ السَّمَكَ.", "cando": { "id": "Memesan makanan dan menyatakan selera", "en": "Order food and say what you like" } },
+  { "level": 12, "marhalah": 1, "n": 12, "title": "فِي السُّوقِ", "theme": { "id": "Belanja, harga, jumlah", "en": "Shopping, prices, quantities" }, "newWords": 40, "pattern": "بِكَمْ هَذَا القَمِيصُ؟", "cando": { "id": "Menanyakan harga dan membeli barang", "en": "Ask prices and buy things" } },
+  { "level": 13, "marhalah": 1, "n": 13, "title": "فِي المَدِينَةِ", "theme": { "id": "Tempat umum, masjid, arah", "en": "Public places, the mosque, directions" }, "newWords": 40, "pattern": "أَيْنَ المَسْجِدُ؟ هُوَ بِجَانِبِ البَنْكِ.", "cando": { "id": "Bertanya dan menunjukkan lokasi", "en": "Ask for and give locations" } },
+  { "level": 14, "marhalah": 1, "n": 14, "title": "جِسْمِي وَصِحَّتِي", "theme": { "id": "Anggota tubuh, sakit ringan", "en": "Body parts, minor illness" }, "newWords": 35, "pattern": "عِنْدِي صُدَاعٌ.", "cando": { "id": "Mengatakan bagian tubuh yang sakit", "en": "Say which part of the body hurts" } },
+  { "level": 15, "marhalah": 1, "n": 15, "title": "الطَّقْسُ", "theme": { "id": "Cuaca, musim", "en": "Weather, seasons" }, "newWords": 35, "pattern": "الجَوُّ حَارٌّ اليَوْمَ.", "cando": { "id": "Membicarakan cuaca hari ini", "en": "Talk about today's weather" } },
+  { "level": 16, "marhalah": 1, "n": 16, "title": "مُرَاجَعَةٌ: وَصَلْنَا المِينَاءَ", "theme": { "id": "Ulangan wahdah 1–15 lewat cerita", "en": "Review of units 1–15 through a story" }, "newWords": 20, "pattern": null, "cando": { "id": "Mengurus kedatangan di pelabuhan dengan kalimat sederhana", "en": "Handle arrival at the port with simple sentences" }, "review": true, "test": "nihai" }
+ ]
+}

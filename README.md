@@ -12,7 +12,7 @@ design-system/          sumber kebenaran desain
   components/           components.css (aplikasi), preview.css, bundle.css (dibuat), 1 folder per komponen
   assets/maskot/        mascot.js/.mjs, vehicles.js/.mjs, SVG, png/
   assets/ikon/          ikon & lencana, png/
-  assets/rihlah/        routes.json, tips.json
+  assets/rihlah/        routes.json (rute), curriculum.json (marhalah & wahdah), tips.json
   guides/               panduan: belajar, maskot, rihlah
   preview/              galeri komponen (npm run preview:ds)
   prototypes/           prototipe HTML lepas
@@ -30,7 +30,7 @@ dist/                   hasil build, tidak di-commit
 | Perintah | Fungsi |
 |---|---|
 | `npm run build:css` | `tokens.json` → `tokens.css`, dan `bundle.css` dari `preview.css` + `components.css` |
-| `npm run check` | Memastikan CSS sinkron dan tipe maskot cocok dengan runtime |
+| `npm run check` | Memastikan CSS sinkron, tipe maskot cocok dengan runtime, dan data rute/kurikulum konsisten |
 | `npm run preview:ds` | Galeri komponen di http://127.0.0.1:8765/preview/ (terang/gelap) |
 | `npm run build:paket` | Paket aset siap bagi ke `dist/paket-aset/` + `dist/Midad-Aset.zip` |
 

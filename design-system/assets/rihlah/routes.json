@@ -1,410 +1,237 @@
 {
- "note": "Usulan rute. 1 wahdah = 1 level = 1 pelabuhan. Ujian nisfi di akhir jilid 1, ujian nihai di akhir jilid 2 setiap kitab. Tiba di dunia Arab: level 17. Mode tanpa tasykil: level 41.",
+ "version": 2,
+ "note": "Rute Rihlah. 1 wahdah = 1 level = 1 pelabuhan. 1 etape = setengah marhalah = 8 level. Tes setengah marhalah (nisfi) di akhir half 1, tes marhalah (nihai) di akhir half 2; lulus = hijrah ke etape berikutnya. Oman adalah gerbang dunia Arab untuk rute ID (level 17). Detail kurikulum: curriculum.json.",
+ "levels": 64,
  "arabArrivalLevel": 17,
  "noTashkeelFromLevel": 41,
+ "placementStarts": [1, 17, 33, 49],
  "routes": {
   "id": [
    {
-    "k": 1,
-    "j": 1,
-    "lv": [
-     1,
-     8
-    ],
-    "r": [
-     "نُوسَانْتَارَا",
-     "Nusantara",
-     "Nusantara"
-    ],
-    "v": "pinisi",
+    "marhalah": 1,
+    "half": 1,
+    "levels": [1, 8],
+    "region": {
+     "ar": "نُوسَانْتَارَا",
+     "id": "Nusantara",
+     "en": "Nusantara"
+    },
+    "vehicle": "pinisi",
     "arab": false,
-    "ports": [
-     "Jakarta",
-     "Banten",
-     "Lampung",
-     "Palembang",
-     "Bangka",
-     "Padang",
-     "Medan",
-     "Banda Aceh"
-    ]
+    "test": "nisfi",
+    "ports": ["Jakarta", "Banten", "Lampung", "Palembang", "Bangka", "Padang", "Medan", "Banda Aceh"]
    },
    {
-    "k": 1,
-    "j": 2,
-    "lv": [
-     9,
-     16
-    ],
-    "r": [
-     "المُحِيطُ الهِنْدِيُّ",
-     "Samudra Hindia",
-     "Indian Ocean"
-    ],
-    "v": "jong",
+    "marhalah": 1,
+    "half": 2,
+    "levels": [9, 16],
+    "region": {
+     "ar": "المُحِيطُ الهِنْدِيُّ",
+     "id": "Samudra Hindia",
+     "en": "Indian Ocean"
+    },
+    "vehicle": "jong",
     "arab": false,
-    "ports": [
-     "Melaka",
-     "Penang",
-     "Colombo",
-     "Kochi",
-     "Malé",
-     "Kozhikode",
-     "Surat",
-     "Gwadar"
-    ]
+    "test": "nihai",
+    "ports": ["Melaka", "Penang", "Colombo", "Kochi", "Malé", "Kozhikode", "Surat", "Gwadar"]
    },
    {
-    "k": 2,
-    "j": 1,
-    "lv": [
-     17,
-     24
-    ],
-    "r": [
-     "عُمَانُ",
-     "Oman",
-     "Oman"
-    ],
-    "v": "baghlah",
+    "marhalah": 2,
+    "half": 1,
+    "levels": [17, 24],
+    "region": {
+     "ar": "عُمَانُ",
+     "id": "Oman",
+     "en": "Oman"
+    },
+    "vehicle": "baghlah",
     "arab": true,
-    "ports": [
-     "Muscat",
-     "Sur",
-     "Ras al-Jinz",
-     "Nizwa",
-     "Bahla",
-     "Sohar",
-     "Khasab",
-     "Salalah"
-    ]
+    "test": "nisfi",
+    "ports": ["Muscat", "Sur", "Ras al-Jinz", "Nizwa", "Bahla", "Sohar", "Khasab", "Salalah"]
    },
    {
-    "k": 2,
-    "j": 2,
-    "lv": [
-     25,
-     32
-    ],
-    "r": [
-     "الخَلِيجُ",
-     "Teluk",
-     "The Gulf"
-    ],
-    "v": "boom",
+    "marhalah": 2,
+    "half": 2,
+    "levels": [25, 32],
+    "region": {
+     "ar": "الخَلِيجُ",
+     "id": "Teluk",
+     "en": "The Gulf"
+    },
+    "vehicle": "boom",
     "arab": true,
-    "ports": [
-     "Dubai",
-     "Sharjah",
-     "Abu Dhabi",
-     "Doha",
-     "Manama",
-     "Dammam",
-     "Al-Ahsa",
-     "Kuwait"
-    ]
+    "test": "nihai",
+    "ports": ["Dubai", "Sharjah", "Abu Dhabi", "Doha", "Manama", "Dammam", "Al-Ahsa", "Kuwait"]
    },
    {
-    "k": 3,
-    "j": 1,
-    "lv": [
-     33,
-     40
-    ],
-    "r": [
-     "اليَمَنُ وَالحِجَازُ",
-     "Yaman & Hijaz",
-     "Yemen & Hijaz"
-    ],
-    "v": "sambuk",
+    "marhalah": 3,
+    "half": 1,
+    "levels": [33, 40],
+    "region": {
+     "ar": "اليَمَنُ وَالحِجَازُ",
+     "id": "Yaman & Hijaz",
+     "en": "Yemen & Hijaz"
+    },
+    "vehicle": "sambuk",
     "arab": true,
-    "ports": [
-     "Mukalla",
-     "Tarim",
-     "Aden",
-     "Sana'a",
-     "Abha",
-     "Taif",
-     "Jeddah",
-     "Madinah"
-    ]
+    "test": "nisfi",
+    "ports": ["Mukalla", "Tarim", "Aden", "Sana'a", "Abha", "Taif", "Jeddah", "Madinah"]
    },
    {
-    "k": 3,
-    "j": 2,
-    "lv": [
-     41,
-     48
-    ],
-    "r": [
-     "الشَّامُ وَالعِرَاقُ",
-     "Syam & Irak",
-     "Levant & Iraq"
-    ],
-    "v": "qafilah",
+    "marhalah": 3,
+    "half": 2,
+    "levels": [41, 48],
+    "region": {
+     "ar": "الشَّامُ وَالعِرَاقُ",
+     "id": "Syam & Irak",
+     "en": "Levant & Iraq"
+    },
+    "vehicle": "qafilah",
     "arab": true,
-    "ports": [
-     "Aqaba",
-     "Petra",
-     "Amman",
-     "Damascus",
-     "Beirut",
-     "Aleppo",
-     "Baghdad",
-     "Basra"
-    ]
+    "test": "nihai",
+    "ports": ["Aqaba", "Petra", "Amman", "Damascus", "Beirut", "Aleppo", "Baghdad", "Basra"]
    },
    {
-    "k": 4,
-    "j": 1,
-    "lv": [
-     49,
-     56
-    ],
-    "r": [
-     "مِصْرُ وَالسُّودَانُ",
-     "Mesir & Sudan",
-     "Egypt & Sudan"
-    ],
-    "v": "felucca",
+    "marhalah": 4,
+    "half": 1,
+    "levels": [49, 56],
+    "region": {
+     "ar": "مِصْرُ وَالسُّودَانُ",
+     "id": "Mesir & Sudan",
+     "en": "Egypt & Sudan"
+    },
+    "vehicle": "felucca",
     "arab": true,
-    "ports": [
-     "Port Said",
-     "Alexandria",
-     "Cairo",
-     "Giza",
-     "Luxor",
-     "Aswan",
-     "Siwa",
-     "Khartoum"
-    ]
+    "test": "nisfi",
+    "ports": ["Port Said", "Alexandria", "Cairo", "Giza", "Luxor", "Aswan", "Siwa", "Khartoum"]
    },
    {
-    "k": 4,
-    "j": 2,
-    "lv": [
-     57,
-     64
-    ],
-    "r": [
-     "المَغْرِبُ العَرَبِيُّ",
-     "Maghrib",
-     "Maghreb"
-    ],
-    "v": "xebec",
+    "marhalah": 4,
+    "half": 2,
+    "levels": [57, 64],
+    "region": {
+     "ar": "المَغْرِبُ العَرَبِيُّ",
+     "id": "Maghrib",
+     "en": "Maghreb"
+    },
+    "vehicle": "xebec",
     "arab": true,
-    "ports": [
-     "Tripoli",
-     "Tunis",
-     "Kairouan",
-     "Algiers",
-     "Fez",
-     "Marrakesh",
-     "Chinguetti",
-     "Tangier"
-    ]
+    "test": "nihai",
+    "ports": ["Tripoli", "Tunis", "Kairouan", "Algiers", "Fez", "Marrakesh", "Chinguetti", "Tangier"]
    }
   ],
   "en": [
    {
-    "k": 1,
-    "j": 1,
-    "lv": [
-     1,
-     8
-    ],
-    "r": [
-     "بِرِيطَانِيَا",
-     "Britania",
-     "Britain"
-    ],
-    "v": "barge",
+    "marhalah": 1,
+    "half": 1,
+    "levels": [1, 8],
+    "region": {
+     "ar": "بِرِيطَانِيَا",
+     "id": "Britania",
+     "en": "Britain"
+    },
+    "vehicle": "barge",
     "arab": false,
-    "ports": [
-     "London",
-     "Dover",
-     "Southampton",
-     "Plymouth",
-     "Falmouth",
-     "Cardiff",
-     "Liverpool",
-     "Edinburgh"
-    ]
+    "test": "nisfi",
+    "ports": ["London", "Dover", "Southampton", "Plymouth", "Falmouth", "Cardiff", "Liverpool", "Edinburgh"]
    },
    {
-    "k": 1,
-    "j": 2,
-    "lv": [
-     9,
-     16
-    ],
-    "r": [
-     "الأَطْلَسِيُّ وَإِيبِيرِيَا",
-     "Atlantik & Iberia",
-     "Atlantic & Iberia"
-    ],
-    "v": "caravel",
+    "marhalah": 1,
+    "half": 2,
+    "levels": [9, 16],
+    "region": {
+     "ar": "الأَطْلَسِيُّ وَإِيبِيرِيَا",
+     "id": "Atlantik & Iberia",
+     "en": "Atlantic & Iberia"
+    },
+    "vehicle": "caravel",
     "arab": false,
-    "ports": [
-     "Brest",
-     "Bordeaux",
-     "Bilbao",
-     "A Coruña",
-     "Porto",
-     "Lisbon",
-     "Cádiz",
-     "Gibraltar"
-    ]
+    "test": "nihai",
+    "ports": ["Brest", "Bordeaux", "Bilbao", "A Coruña", "Porto", "Lisbon", "Cádiz", "Gibraltar"]
    },
    {
-    "k": 2,
-    "j": 1,
-    "lv": [
-     17,
-     24
-    ],
-    "r": [
-     "المَغْرِبُ العَرَبِيُّ",
-     "Maghrib",
-     "Maghreb"
-    ],
-    "v": "xebec",
+    "marhalah": 2,
+    "half": 1,
+    "levels": [17, 24],
+    "region": {
+     "ar": "المَغْرِبُ العَرَبِيُّ",
+     "id": "Maghrib",
+     "en": "Maghreb"
+    },
+    "vehicle": "xebec",
     "arab": true,
-    "ports": [
-     "Tangier",
-     "Fez",
-     "Marrakesh",
-     "Chinguetti",
-     "Algiers",
-     "Tunis",
-     "Kairouan",
-     "Tripoli"
-    ]
+    "test": "nisfi",
+    "ports": ["Tangier", "Fez", "Marrakesh", "Chinguetti", "Algiers", "Tunis", "Kairouan", "Tripoli"]
    },
    {
-    "k": 2,
-    "j": 2,
-    "lv": [
-     25,
-     32
-    ],
-    "r": [
-     "مِصْرُ وَالسُّودَانُ",
-     "Mesir & Sudan",
-     "Egypt & Sudan"
-    ],
-    "v": "felucca",
+    "marhalah": 2,
+    "half": 2,
+    "levels": [25, 32],
+    "region": {
+     "ar": "مِصْرُ وَالسُّودَانُ",
+     "id": "Mesir & Sudan",
+     "en": "Egypt & Sudan"
+    },
+    "vehicle": "felucca",
     "arab": true,
-    "ports": [
-     "Alexandria",
-     "Cairo",
-     "Giza",
-     "Siwa",
-     "Luxor",
-     "Aswan",
-     "Khartoum",
-     "Port Said"
-    ]
+    "test": "nihai",
+    "ports": ["Alexandria", "Cairo", "Giza", "Siwa", "Luxor", "Aswan", "Khartoum", "Port Said"]
    },
    {
-    "k": 3,
-    "j": 1,
-    "lv": [
-     33,
-     40
-    ],
-    "r": [
-     "الشَّامُ وَالعِرَاقُ",
-     "Syam & Irak",
-     "Levant & Iraq"
-    ],
-    "v": "qafilah",
+    "marhalah": 3,
+    "half": 1,
+    "levels": [33, 40],
+    "region": {
+     "ar": "الشَّامُ وَالعِرَاقُ",
+     "id": "Syam & Irak",
+     "en": "Levant & Iraq"
+    },
+    "vehicle": "qafilah",
     "arab": true,
-    "ports": [
-     "Beirut",
-     "Damascus",
-     "Aleppo",
-     "Amman",
-     "Petra",
-     "Aqaba",
-     "Baghdad",
-     "Basra"
-    ]
+    "test": "nisfi",
+    "ports": ["Beirut", "Damascus", "Aleppo", "Amman", "Petra", "Aqaba", "Baghdad", "Basra"]
    },
    {
-    "k": 3,
-    "j": 2,
-    "lv": [
-     41,
-     48
-    ],
-    "r": [
-     "الحِجَازُ وَاليَمَنُ",
-     "Hijaz & Yaman",
-     "Hijaz & Yemen"
-    ],
-    "v": "sambuk",
+    "marhalah": 3,
+    "half": 2,
+    "levels": [41, 48],
+    "region": {
+     "ar": "الحِجَازُ وَاليَمَنُ",
+     "id": "Hijaz & Yaman",
+     "en": "Hijaz & Yemen"
+    },
+    "vehicle": "sambuk",
     "arab": true,
-    "ports": [
-     "Madinah",
-     "Jeddah",
-     "Taif",
-     "Abha",
-     "Sana'a",
-     "Aden",
-     "Tarim",
-     "Mukalla"
-    ]
+    "test": "nihai",
+    "ports": ["Madinah", "Jeddah", "Taif", "Abha", "Sana'a", "Aden", "Tarim", "Mukalla"]
    },
    {
-    "k": 4,
-    "j": 1,
-    "lv": [
-     49,
-     56
-    ],
-    "r": [
-     "الخَلِيجُ",
-     "Teluk",
-     "The Gulf"
-    ],
-    "v": "boom",
+    "marhalah": 4,
+    "half": 1,
+    "levels": [49, 56],
+    "region": {
+     "ar": "الخَلِيجُ",
+     "id": "Teluk",
+     "en": "The Gulf"
+    },
+    "vehicle": "boom",
     "arab": true,
-    "ports": [
-     "Kuwait",
-     "Al-Ahsa",
-     "Dammam",
-     "Manama",
-     "Doha",
-     "Abu Dhabi",
-     "Sharjah",
-     "Dubai"
-    ]
+    "test": "nisfi",
+    "ports": ["Kuwait", "Al-Ahsa", "Dammam", "Manama", "Doha", "Abu Dhabi", "Sharjah", "Dubai"]
    },
    {
-    "k": 4,
-    "j": 2,
-    "lv": [
-     57,
-     64
-    ],
-    "r": [
-     "عُمَانُ",
-     "Oman",
-     "Oman"
-    ],
-    "v": "baghlah",
+    "marhalah": 4,
+    "half": 2,
+    "levels": [57, 64],
+    "region": {
+     "ar": "عُمَانُ",
+     "id": "Oman",
+     "en": "Oman"
+    },
+    "vehicle": "baghlah",
     "arab": true,
-    "ports": [
-     "Khasab",
-     "Sohar",
-     "Muscat",
-     "Nizwa",
-     "Bahla",
-     "Sur",
-     "Ras al-Jinz",
-     "Salalah"
-    ]
+    "test": "nihai",
+    "ports": ["Khasab", "Sohar", "Muscat", "Nizwa", "Bahla", "Sur", "Ras al-Jinz", "Salalah"]
    }
   ]
  }

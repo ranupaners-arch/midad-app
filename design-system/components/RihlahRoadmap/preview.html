@@ -10,21 +10,28 @@
 <script src="../../assets/maskot/mascot.js"></script>
 <script src="../../assets/maskot/vehicles.js"></script>
 <script>
-var D = {"note": "Usulan rute. 1 wahdah = 1 level = 1 pelabuhan. Ujian nisfi di akhir jilid 1, ujian nihai di akhir jilid 2 setiap kitab. Tiba di dunia Arab: level 17. Mode tanpa tasykil: level 41.", "arabArrivalLevel": 17, "noTashkeelFromLevel": 41, "routes": {"id": [{"k": 1, "j": 1, "lv": [1, 8], "r": ["نُوسَانْتَارَا", "Nusantara", "Nusantara"], "v": "pinisi", "arab": false, "ports": ["Jakarta", "Banten", "Lampung", "Palembang", "Bangka", "Padang", "Medan", "Banda Aceh"]}, {"k": 1, "j": 2, "lv": [9, 16], "r": ["المُحِيطُ الهِنْدِيُّ", "Samudra Hindia", "Indian Ocean"], "v": "jong", "arab": false, "ports": ["Melaka", "Penang", "Colombo", "Kochi", "Malé", "Kozhikode", "Surat", "Gwadar"]}, {"k": 2, "j": 1, "lv": [17, 24], "r": ["عُمَانُ", "Oman", "Oman"], "v": "baghlah", "arab": true, "ports": ["Muscat", "Sur", "Ras al-Jinz", "Nizwa", "Bahla", "Sohar", "Khasab", "Salalah"]}, {"k": 2, "j": 2, "lv": [25, 32], "r": ["الخَلِيجُ", "Teluk", "The Gulf"], "v": "boom", "arab": true, "ports": ["Dubai", "Sharjah", "Abu Dhabi", "Doha", "Manama", "Dammam", "Al-Ahsa", "Kuwait"]}, {"k": 3, "j": 1, "lv": [33, 40], "r": ["اليَمَنُ وَالحِجَازُ", "Yaman & Hijaz", "Yemen & Hijaz"], "v": "sambuk", "arab": true, "ports": ["Mukalla", "Tarim", "Aden", "Sana'a", "Abha", "Taif", "Jeddah", "Madinah"]}, {"k": 3, "j": 2, "lv": [41, 48], "r": ["الشَّامُ وَالعِرَاقُ", "Syam & Irak", "Levant & Iraq"], "v": "qafilah", "arab": true, "ports": ["Aqaba", "Petra", "Amman", "Damascus", "Beirut", "Aleppo", "Baghdad", "Basra"]}, {"k": 4, "j": 1, "lv": [49, 56], "r": ["مِصْرُ وَالسُّودَانُ", "Mesir & Sudan", "Egypt & Sudan"], "v": "felucca", "arab": true, "ports": ["Port Said", "Alexandria", "Cairo", "Giza", "Luxor", "Aswan", "Siwa", "Khartoum"]}, {"k": 4, "j": 2, "lv": [57, 64], "r": ["المَغْرِبُ العَرَبِيُّ", "Maghrib", "Maghreb"], "v": "xebec", "arab": true, "ports": ["Tripoli", "Tunis", "Kairouan", "Algiers", "Fez", "Marrakesh", "Chinguetti", "Tangier"]}], "en": [{"k": 1, "j": 1, "lv": [1, 8], "r": ["بِرِيطَانِيَا", "Britania", "Britain"], "v": "barge", "arab": false, "ports": ["London", "Dover", "Southampton", "Plymouth", "Falmouth", "Cardiff", "Liverpool", "Edinburgh"]}, {"k": 1, "j": 2, "lv": [9, 16], "r": ["الأَطْلَسِيُّ وَإِيبِيرِيَا", "Atlantik & Iberia", "Atlantic & Iberia"], "v": "caravel", "arab": false, "ports": ["Brest", "Bordeaux", "Bilbao", "A Coruña", "Porto", "Lisbon", "Cádiz", "Gibraltar"]}, {"k": 2, "j": 1, "lv": [17, 24], "r": ["المَغْرِبُ العَرَبِيُّ", "Maghrib", "Maghreb"], "v": "xebec", "arab": true, "ports": ["Tangier", "Fez", "Marrakesh", "Chinguetti", "Algiers", "Tunis", "Kairouan", "Tripoli"]}, {"k": 2, "j": 2, "lv": [25, 32], "r": ["مِصْرُ وَالسُّودَانُ", "Mesir & Sudan", "Egypt & Sudan"], "v": "felucca", "arab": true, "ports": ["Alexandria", "Cairo", "Giza", "Siwa", "Luxor", "Aswan", "Khartoum", "Port Said"]}, {"k": 3, "j": 1, "lv": [33, 40], "r": ["الشَّامُ وَالعِرَاقُ", "Syam & Irak", "Levant & Iraq"], "v": "qafilah", "arab": true, "ports": ["Beirut", "Damascus", "Aleppo", "Amman", "Petra", "Aqaba", "Baghdad", "Basra"]}, {"k": 3, "j": 2, "lv": [41, 48], "r": ["الحِجَازُ وَاليَمَنُ", "Hijaz & Yaman", "Hijaz & Yemen"], "v": "sambuk", "arab": true, "ports": ["Madinah", "Jeddah", "Taif", "Abha", "Sana'a", "Aden", "Tarim", "Mukalla"]}, {"k": 4, "j": 1, "lv": [49, 56], "r": ["الخَلِيجُ", "Teluk", "The Gulf"], "v": "boom", "arab": true, "ports": ["Kuwait", "Al-Ahsa", "Dammam", "Manama", "Doha", "Abu Dhabi", "Sharjah", "Dubai"]}, {"k": 4, "j": 2, "lv": [57, 64], "r": ["عُمَانُ", "Oman", "Oman"], "v": "baghlah", "arab": true, "ports": ["Khasab", "Sohar", "Muscat", "Nizwa", "Bahla", "Sur", "Ras al-Jinz", "Salalah"]}]}};
-var KITAB = ['','الكِتَابُ الأَوَّلُ','الكِتَابُ الثَّانِي','الكِتَابُ الثَّالِثُ','الكِتَابُ الرَّابِعُ'], JILD = ['','الجُزْءُ الأَوَّلُ','الجُزْءُ الثَّانِي'];
+// Data dari assets/rihlah/routes.json (sumber tunggal).
+var MARHALAH = ['','المَرْحَلَةُ الأُولَى','المَرْحَلَةُ الثَّانِيَةُ','المَرْحَلَةُ الثَّالِثَةُ','المَرْحَلَةُ الرَّابِعَةُ'], HALF = ['','النِّصْفُ الأَوَّلُ','النِّصْفُ الثَّانِي'];
+var TEST = { nisfi: 'الاخْتِبَارُ النِّصْفِيُّ', nihai: 'الاخْتِبَارُ النِّهَائِيُّ' };
 var N = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩']; function ar(n) { return String(n).replace(/[0-9]/g, function (d) { return N[d]; }); }
+var D;
 function draw(r) {
-  document.getElementById('road').innerHTML = D.routes[r].map(function (g, i) {
+  document.getElementById('road').innerHTML = D.routes[r].map(function (g) {
     var chips = '';
-    if (g.lv[0] === D.arabArrivalLevel) chips += '<span class="md-chip md-chip--arab">🌙 الوُصُولُ إِلَى بِلَادِ العَرَبِ</span>';
-    if (g.lv[0] === D.noTashkeelFromLevel) chips += '<span class="md-chip md-chip--tash">بِدُونِ تَشْكِيلٍ</span>';
-    chips += '<span class="md-chip md-chip--test">' + (g.j === 1 ? 'الاخْتِبَارُ النِّصْفِيُّ' : 'الاخْتِبَارُ النِّهَائِيُّ') + '</span>';
-    return '<div class="md-leg"><div class="md-leg__v">' + MidadVehicles.ride(g.v, { animal: 'hudhud' }) + '</div><div><span class="md-leg__k">' + KITAB[g.k] + ' · ' + JILD[g.j] + ' · المُسْتَوَى ' + ar(g.lv[0]) + '–' + ar(g.lv[1]) + '</span><p class="md-leg__r">' + g.r[0] + '</p><span class="md-tr md-tr--sm" lang="' + r + '">' + (r === 'en' ? g.r[2] : g.r[1]) + ' · ' + MidadVehicles.V[g.v].name[r === 'en' ? 2 : 1] + '</span><div class="md-leg__p">' + g.ports.join(' → ') + '</div><div class="md-leg__chips">' + chips + '</div></div></div>';
+    if (g.levels[0] === D.arabArrivalLevel) chips += '<span class="md-chip md-chip--arab">🌙 الوُصُولُ إِلَى بِلَادِ العَرَبِ</span>';
+    if (g.levels[0] === D.noTashkeelFromLevel) chips += '<span class="md-chip md-chip--tash">بِدُونِ تَشْكِيلٍ</span>';
+    chips += '<span class="md-chip md-chip--test">' + TEST[g.test] + '</span>';
+    return '<div class="md-leg"><div class="md-leg__v">' + MidadVehicles.ride(g.vehicle, { animal: 'hudhud' }) + '</div><div><span class="md-leg__k">' + MARHALAH[g.marhalah] + ' · ' + HALF[g.half] + ' · المُسْتَوَى ' + ar(g.levels[0]) + '–' + ar(g.levels[1]) + '</span><p class="md-leg__r">' + g.region.ar + '</p><span class="md-tr md-tr--sm" lang="' + r + '">' + g.region[r] + ' · ' + MidadVehicles.V[g.vehicle].name[r === 'en' ? 2 : 1] + '</span><div class="md-leg__p">' + g.ports.join(' → ') + '</div><div class="md-leg__chips">' + chips + '</div></div></div>';
   }).join('');
   document.querySelectorAll('[data-r]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.r === r); });
 }
-document.querySelectorAll('[data-r]').forEach(function (b) { b.onclick = function () { draw(b.dataset.r); }; });
-draw('id');
+fetch('../../assets/rihlah/routes.json').then(function (res) { return res.json(); }).then(function (data) {
+  D = data;
+  document.querySelectorAll('[data-r]').forEach(function (b) { b.onclick = function () { draw(b.dataset.r); }; });
+  draw('id');
+}).catch(function () {
+  document.getElementById('road').textContent = 'Gagal memuat routes.json (buka lewat npm run preview:ds).';
+});
 </script>
 </body>
 </html>
