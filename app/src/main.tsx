@@ -1,0 +1,21 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+import { ProfileProvider } from './store';
+import App from './App';
+import { PwaProvider } from './pwa';
+import '@fontsource/ibm-plex-sans-arabic/arabic-500.css';
+import '@fontsource/ibm-plex-sans-arabic/arabic-600.css';
+import '@fontsource/ibm-plex-sans-arabic/arabic-700.css';
+import '@fontsource/noto-naskh-arabic/arabic-400.css';
+import '@fontsource/noto-naskh-arabic/arabic-500.css';
+import '@fontsource/noto-naskh-arabic/arabic-700.css';
+import '@fontsource/nunito/latin-500.css';
+import '@fontsource/nunito/latin-600.css';
+import '@fontsource/nunito/latin-700.css';
+import '@fontsource/nunito/latin-800.css';
+import '../../design-system/tokens.css';
+import '../../design-system/components/components.css';
+import './styles.css';
+
+createRoot(document.getElementById('root')!).render(<StrictMode><HashRouter><ProfileProvider><PwaProvider><App /></PwaProvider></ProfileProvider></HashRouter></StrictMode>);
