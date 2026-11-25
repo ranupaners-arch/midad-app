@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "_catatan": "DRAFT, ditulis Shaharil 24 Nov 2026. Semua teks Arab cek user (harakat, nahwu, sharaf). Soal marhalah 1 dan 2 saja untuk demo; 5 soal per marhalah. Aturan hasil dari tim: skor per marhalah >= 70% -> naik ke marhalah berikutnya. Untuk listen-pick, audio = teks opsi yang benar.",
+  "items": [
+    {
+      "id": "t01",
+      "type": "listen-pick",
+      "marhalah": 1,
+      "options": [
+        {
+          "ar": "صَبَاحُ الْخَيْرِ",
+          "tr": {
+            "id": "Selamat pagi",
+            "en": "Good morning"
+          },
+          "correct": true
+        },
+        {
+          "ar": "مَسَاءُ الْخَيْرِ",
+          "tr": {
+            "id": "Selamat sore",
+            "en": "Good evening"
+          }
+        },
+        {
+          "ar": "مَعَ السَّلَامَةِ",
+          "tr": {
+            "id": "Selamat jalan",
+            "en": "Goodbye"
+          }
+        }
+      ],
+      "audio": null,
+      "note": null
+    },
+    {
+      "id": "t02",
+      "type": "listen-pick",
+      "marhalah": 1,
+      "options": [
+        {
+          "ar": "أَنَا مِنَ الْيَابَانِ.",
+          "tr": {
+            "id": "Saya dari Jepang.",
+            "en": "I am from Japan."
+          },
+          "correct": true
+        },
+        {
+          "ar": "أَنَا مِنْ إِنْدُونِيسِيَا.",
+          "tr": {
+            "id": "Saya dari Indonesia.",
+            "en": "I am from Indonesia."
+          }
+        },
+        {
+          "ar": "أَنَا مِنْ مِصْرَ.",
+          "tr": {
+            "id": "Saya dari Mesir.",
+            "en": "I am from Egypt."
+          }
+        }
+      ],
+      "audio": null,
+      "note": null
+    },
+    {
+      "id": "t03",
+      "type": "order-words",
+      "marhalah": 1,
+      "ar": "هَذِهِ سَيَّارَةٌ صَغِيرَةٌ.",
+      "tr": {
+        "id": "Ini mobil kecil.",
+        "en": "This is a small car."
+      },
+      "extraWords": [
+        "هَذَا"
+      ],
+      "alt": [],
+      "audio": null
+    },
+    {
+      "id": "t04",
+      "type": "harakat",
+      "marhalah": 1,
+      "prompt": {
+        "id": "Buku itu di atas meja.",
+        "en": "The book is on the desk."
+      },
+      "options": [
+        "الْكِتَابُ عَلَى الْمَكْتَبِ.",
+        "الْكِتَابَ عَلَى الْمَكْتَبُ.",
+        "الْكِتَابِ عَلَى الْمَكْتَبَ."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "t05",
+      "type": "match",
+      "marhalah": 1,
+      "mode": "ar-tr",
+      "pairs": [
+        {
+          "ar": "أَبٌ",
+          "tr": {
+            "id": "ayah",
+            "en": "father"
+          }
+        },
+        {
+          "ar": "أُمٌّ",
+          "tr": {
+            "id": "ibu",
+            "en": "mother"
+          }
+        },
+        {
+          "ar": "أَخٌ",
+          "tr": {
+            "id": "saudara laki-laki",
+            "en": "brother"
+          }
+        },
+        {
+          "ar": "بَيْتٌ",
+          "tr": {
+            "id": "rumah",
+            "en": "house"
+          }
+        }
+      ]
+    },
+    {
+      "id": "t06",
+      "type": "listen-pick",
+      "marhalah": 2,
+      "options": [
+        {
+          "ar": "ذَهَبْتُ إِلَى السُّوقِ أَمْسِ.",
+          "tr": {
+            "id": "Saya pergi ke pasar kemarin.",
+            "en": "I went to the market yesterday."
+          },
+          "correct": true
+        },
+        {
+          "ar": "أَذْهَبُ إِلَى السُّوقِ كُلَّ يَوْمٍ.",
+          "tr": {
+            "id": "Saya pergi ke pasar setiap hari.",
+            "en": "I go to the market every day."
+          }
+        },
+        {
+          "ar": "سَأَذْهَبُ إِلَى السُّوقِ غَدًا.",
+          "tr": {
+            "id": "Saya akan pergi ke pasar besok.",
+            "en": "I will go to the market tomorrow."
+          }
+        }
+      ],
+      "audio": null,
+      "note": null
+    },
+    {
+      "id": "t07",
+      "type": "order-words",
+      "marhalah": 2,
+      "ar": "سَأُسَافِرُ إِلَى مَالِيزِيَا غَدًا.",
+      "tr": {
+        "id": "Saya akan bepergian ke Malaysia besok.",
+        "en": "I will travel to Malaysia tomorrow."
+      },
+      "extraWords": [
+        "أَمْسِ"
+      ],
+      "alt": [],
+      "audio": null
+    },
+    {
+      "id": "t08",
+      "type": "harakat",
+      "marhalah": 2,
+      "prompt": {
+        "id": "Saya (sudah) menulis surat.",
+        "en": "I wrote a letter."
+      },
+      "options": [
+        "كَتَبْتُ رِسَالَةً.",
+        "كَتَبْتَ رِسَالَةً.",
+        "كَتَبْتُ رِسَالَةٌ."
+      ],
+      "answer": 0
+    },
+    {
+      "id": "t09",
+      "type": "listen-pick",
+      "marhalah": 2,
+      "options": [
+        {
+          "ar": "السَّاعَةُ الْآنَ الثَّالِثَةُ وَالنِّصْفُ.",
+          "tr": {
+            "id": "Sekarang pukul setengah empat (3.30).",
+            "en": "It is half past three."
+          },
+          "correct": true
+        },
+        {
+          "ar": "السَّاعَةُ الْآنَ الثَّالِثَةُ إِلَّا رُبْعًا.",
+          "tr": {
+            "id": "Sekarang pukul tiga kurang seperempat (2.45).",
+            "en": "It is a quarter to three."
+          }
+        },
+        {
+          "ar": "السَّاعَةُ الْآنَ الثَّانِيَةُ وَالنِّصْفُ.",
+          "tr": {
+            "id": "Sekarang pukul setengah tiga (2.30).",
+            "en": "It is half past two."
+          }
+        }
+      ],
+      "audio": null,
+      "note": null
+    },
+    {
+      "id": "t10",
+      "type": "match",
+      "marhalah": 2,
+      "mode": "ar-tr",
+      "pairs": [
+        {
+          "ar": "أَمْسِ",
+          "tr": {
+            "id": "kemarin",
+            "en": "yesterday"
+          }
+        },
+        {
+          "ar": "غَدًا",
+          "tr": {
+            "id": "besok",
+            "en": "tomorrow"
+          }
+        },
+        {
+          "ar": "اشْتَرَيْتُ",
+          "tr": {
+            "id": "saya (sudah) membeli",
+            "en": "I bought"
+          }
+        },
+        {
+          "ar": "سَافَرْنَا",
+          "tr": {
+            "id": "kami (sudah) bepergian",
+            "en": "we travelled"
+          }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "ragu": [
+      "t09: urutan dan harakat ungkapan jam (الثَّالِثَةُ إِلَّا رُبْعًا). Mohon cek."
+    ],
+    "decisions": [
+      "t03–t05 memakai kosakata wahdah 4–7 (keluarga, benda, rumah, sifat) yang belum ditulis. Mohon cek apakah sesuai rencana kosakata tim.",
+      "t09: jam bulat ada di A1 wahdah 10; jam 'setengah' dan 'kurang seperempat' saya anggap A2. Setuju?"
+    ]
+  }
+}

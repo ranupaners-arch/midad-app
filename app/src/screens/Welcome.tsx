@@ -5,17 +5,20 @@ import { l } from '../domain/content';
 import { validateMascotConfig } from '../../../design-system/assets/maskot/mascot.mjs';
 import { Button, Mascot, Text, Vehicle } from '../ui/Common';
 import { Icon, Logo } from '../ui/Icon';
+import Placement from './Placement';
 
 export default function Welcome() {
   const { profile, update } = useProfile(), navigate = useNavigate();
   const [step, setStep] = useState(0);
-  useEffect(() => { document.getElementById('main-title')?.focus({ preventScroll: true }); }, [step]);
+  const [takingPlacement, setTakingPlacement] = useState(false);
+  useEffect(() => { document.getElementById('main-title')?.focus({ preventScroll: true }); }, [step, takingPlacement]);
   const colors = [['orange', 'بُرْتُقَالِيٌّ', '#f2a03d'], ['teal', 'فَيْرُوزِيٌّ', '#2a9d8f'], ['pink', 'وَرْدِيٌّ', '#ef7f9a'], ['sky', 'سَمَاوِيٌّ', '#5fa8e0'], ['lavender', 'بَنَفْسَجِيٌّ', '#a68bd6'], ['mint', 'نَعْنَاعِيٌّ', '#74c69d']];
   const next = () => { setStep(s => s + 1); window.scrollTo(0, 0); };
+  const start = () => { update(p => ({ ...p, onboarded: true })); navigate('/', { replace: true }); };
   return <main className="welcome">
     <header className="welcome-header"><Logo /><span className="onboarding-step" role="img" aria-label={`الْخُطْوَةُ ${step + 1} مِنْ ٣`}>{[0, 1, 2].map(n => <i key={n} className={n <= step ? 'filled' : ''} />)}</span></header>
     <div className="welcome-content" key={step}>
-      {step === 0 ? <>
+      {takingPlacement ? <Placement onBack={() => setTakingPlacement(false)} onStart={start} /> : step === 0 ? <>
         <div className="welcome-art"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><Vehicle /><span className="floating-drop"><Icon name="drop" /></span></div>
         <span className="eyebrow">أَهْلًا بِكَ فِي مِدَاد</span>
         <h1 id="main-title" tabIndex={-1}>تَعَلَّمِ الْعَرَبِيَّةَ<br /><span className="brand-text">قَطْرَةً قَطْرَةً.</span></h1>
@@ -37,7 +40,8 @@ export default function Welcome() {
         <span className="eyebrow">نُوسَانْتَارَا · الْمَرْحَلَةُ الْأُولَى</span><h1 id="main-title" tabIndex={-1}><Text text={l('لِنَبْدَأِ الرِّحْلَةَ!', 'Ayo mulai perjalanan!', 'Let the journey begin!')} force /></h1>
         <div className="starting-level"><span className="level-tag" lang="en" dir="ltr">A1</span><div><b>اِبْدَأْ مِنَ الصِّفْرِ</b><Text text={l('السَّلَامُ، ثُمَّ التَّعَارُفُ، ثُمَّ الْأَرْقَامُ.', 'Salam, berkenalan, lalu angka. Tiga pelabuhan pertamamu.', 'Greetings, introductions, then numbers. Your first three ports.')} force /></div><Icon name="compass" /></div>
         <p className="muted center"><Text text={l('قَلِيلٌ كُلَّ يَوْمٍ خَيْرٌ مِنْ كَثِيرٍ يَنْقَطِعُ.', 'Sedikit setiap hari, terus melangkah.', 'A little every day. Keep moving forward.')} force /></p>
-        <Button className="full-width" onClick={() => { update(p => ({ ...p, onboarded: true })); navigate('/', { replace: true }); }}>اِبْدَأْ</Button><button className="text-button" onClick={() => setStep(1)}>رُجُوعٌ</button>
+        <Button className="full-width" onClick={start}>اِبْدَأْ</Button>
+        <Button variant="secondary" className="full-width" onClick={() => setTakingPlacement(true)}><Text force text={l('اخْتِبَارُ تَحْدِيدِ الْمُسْتَوَى', 'Ikut tes tahdid mustawa', 'Take the placement test')} /></Button><button className="text-button" onClick={() => setStep(1)}>رُجُوعٌ</button>
         <p className="welcome-note" lang={profile.language} dir="ltr">{profile.language === 'id' ? 'Progres tersimpan di browser perangkat ini, tanpa perlu akun.' : 'Your progress stays in this browser, without an account.'}</p>
       </>}
     </div>

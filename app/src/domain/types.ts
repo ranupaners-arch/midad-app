@@ -15,6 +15,7 @@ export type Question = {
   choices?: Choice[];
   answer?: string;
   words?: string[];
+  orderAlternatives?: string[];
   meaningTest?: boolean;
   reading?: Localized;
 };
