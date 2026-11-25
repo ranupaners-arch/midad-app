@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useProfile } from './store';
 import { localDay, streak } from './domain/progress';
@@ -17,6 +17,8 @@ import AppAvailability from './ui/AppAvailability';
 import Vocabulary from './screens/Vocabulary';
 import Summary from './screens/Summary';
 
+const JourneyMap = lazy(() => import('./ui/JourneyMap'));
+
 const navigation = [
   { to: '/', icon: 'route', label: l('رِحْلَتِي', 'Perjalananku', 'My journey') },
   { to: '/wardrobe', icon: 'wardrobe', label: l('رَفِيقِي', 'Teman belajarku', 'My companion') },
@@ -26,6 +28,7 @@ export default function App() {
   const { profile, update, storageError } = useProfile();
   const location = useLocation();
   const reviewing = location.pathname === '/review';
+  const showingMap = location.pathname === '/map';
   const lesson = location.pathname.includes('/lesson/') || reviewing && !!profile.reviewSession;
   const activeUnit = unitsFor(profile).find(u => u.id === profile.session?.unitId);
   const activeActivity = activeUnit && activities(activeUnit).find(a => a.id === profile.session?.activityId);
@@ -33,17 +36,17 @@ export default function App() {
   const reviewQuestion = profile.reviewSession && questionSource(profile.reviewSession.questionIds[profile.reviewSession.cursor], profile.language)?.question;
   const translationLocked = reviewing ? !!reviewQuestion?.meaningTest : lesson && (activeActivity?.kind === 'quiz' || !!activeQuestion?.meaningTest);
   useEffect(() => {
-    document.title = `مِدَاد — ${location.pathname === '/summary' ? 'حَصِيلَةُ رِحْلَتِي' : location.pathname.includes('wardrobe') ? 'رَفِيقِي' : location.pathname.includes('profile') ? 'حِسَابِي' : location.pathname.includes('unit') ? 'تَعَلَّمِ الْعَرَبِيَّةَ' : reviewing ? 'الْمُرَاجَعَةُ' : 'رِحْلَتِي'}`;
+    document.title = `مِدَاد — ${showingMap ? 'الْخَرِيطَةُ' : location.pathname === '/summary' ? 'حَصِيلَةُ رِحْلَتِي' : location.pathname.includes('wardrobe') ? 'رَفِيقِي' : location.pathname.includes('profile') ? 'حِسَابِي' : location.pathname.includes('unit') ? 'تَعَلَّمِ الْعَرَبِيَّةَ' : reviewing ? 'الْمُرَاجَعَةُ' : 'رِحْلَتِي'}`;
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.querySelector<HTMLElement>('#main-title')?.focus({ preventScroll: true });
-  }, [location.pathname]);
+  }, [location.pathname, showingMap]);
   const count = Object.values(profile.mastery).filter(n => n >= 3).length;
   const total = unitsFor(profile).reduce((n, u) => n + u.words.length, 0);
   return <>
     <a className="skip-link" href="#main-title" onClick={event => { event.preventDefault(); document.getElementById('main-title')?.focus(); }}>اِنْتَقِلْ إِلَى الْمُحْتَوَى</a>
     <AppAvailability learning={lesson} />
     {storageError && <div className="storage-warning" role="status"><Text text={l('تَعَذَّرَ حِفْظُ التَّقَدُّمِ عَلَى هَذَا الْجِهَازِ. سَيَضِيعُ التَّقَدُّمُ الْجَدِيدُ عِنْدَ إِغْلَاقِ الصَّفْحَةِ.', 'Penyimpanan tidak tersedia atau datanya tidak terbaca. Progres baru hanya bertahan selama halaman terbuka. Data lama tidak ditimpa.', 'Storage is unavailable or unreadable. New progress lasts only while this page is open. Existing data is not overwritten.')} force /></div>}
-    {!profile.onboarded ? <Routes><Route path="/welcome" element={<Welcome />} /><Route path="*" element={<Navigate to="/welcome" replace />} /></Routes> : <div className={`app-layout ${lesson ? 'in-lesson' : ''}`}>
+    {!profile.onboarded ? <Routes><Route path="/welcome" element={<Welcome />} /><Route path="*" element={<Navigate to="/welcome" replace />} /></Routes> : showingMap ? <Suspense><JourneyMap /></Suspense> : <div className={`app-layout ${lesson ? 'in-lesson' : ''}`}>
       <aside className="sidebar">
         <NavLink to="/" className="brand-link" aria-label="مِدَاد — رِحْلَتِي"><Logo /></NavLink>
         <nav aria-label="التَّنَقُّلُ الرَّئِيسِيُّ" className="desktop-nav">{navigation.map(n => <NavLink key={n.to} to={n.to} end={n.to === '/'} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><Icon name={n.icon} /><span><Text text={n.label} /></span></NavLink>)}</nav>

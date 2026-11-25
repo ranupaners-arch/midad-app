@@ -28,6 +28,10 @@ test('production precaches lessons, fonts and mascot assets and restores progres
   await page.reload();
   await expect(page.locator('.journey-screen')).toBeVisible();
   await expect(page.locator('.availability-banner')).toContainText('بِدُونِ اتِّصَالٍ');
+  await page.getByRole('link', { name: 'خَرِيطَةُ الرِّحْلَةِ', exact: true }).click();
+  await expect(page).toHaveURL(/#\/map$/);
+  await expect(page.locator('.globe-canvas[data-land="ready"]')).toBeVisible();
+  await page.getByRole('link', { name: 'Kembali ke perjalanan' }).click();
   await page.goto('/#/wardrobe');
   await page.getByRole('radio', { name: 'وَرْدِيٌّ', exact: true }).locator('..').click();
   await page.getByRole('button', { name: 'احْفَظْ رَفِيقَكَ', exact: true }).click();
