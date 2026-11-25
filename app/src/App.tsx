@@ -46,9 +46,8 @@ export default function App() {
     {!profile.onboarded ? <Routes><Route path="/welcome" element={<Welcome />} /><Route path="*" element={<Navigate to="/welcome" replace />} /></Routes> : <div className={`app-layout ${lesson ? 'in-lesson' : ''}`}>
       <aside className="sidebar">
         <NavLink to="/" className="brand-link" aria-label="مِدَاد — رِحْلَتِي"><Logo /></NavLink>
-        <p className="sidebar-caption">قَطْرَةٌ كُلَّ يَوْمٍ، عِلْمٌ مَدَى الْحَيَاةِ</p>
         <nav aria-label="التَّنَقُّلُ الرَّئِيسِيُّ" className="desktop-nav">{navigation.map(n => <NavLink key={n.to} to={n.to} end={n.to === '/'} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><Icon name={n.icon} /><span><Text text={n.label} /></span></NavLink>)}</nav>
-        <div className="sidebar-bottom"><Mascot className="sidebar-mascot" decorative /><p>رِحْلَةُ أَلْفِ كَلِمَةٍ<br />تَبْدَأُ بِكَلِمَةٍ.</p><span className="small-label" lang="en" dir="ltr">MIDAD · A LITTLE, EVERY DAY</span></div>
+        <div className="sidebar-bottom"><Mascot className="sidebar-mascot" decorative /></div>
       </aside>
       <div className="main-column">
         <header className="topbar">
@@ -75,9 +74,8 @@ export default function App() {
       </div>
       <aside className="journey-aside">
         <div className="aside-card"><div className="aside-title"><span className="mini-badge"><Icon name="book" /></span><h2>قَطَرَاتُ الْمَعْرِفَةِ</h2></div><p className="mastery-count"><b className="number">{count}</b><span> / <span className="number">{total}</span></span></p><p className="muted"><Text text={l('كَلِمَةً أَتْقَنْتَهَا', 'Kosakata yang sudah dikuasai', 'Vocabulary entries mastered')} /></p><Progress value={count / total * 100} label="الْمُفْرَدَاتُ الْمَحْفُوظَةُ" /></div>
-        <div className="aside-card daily-card"><Icon name="lantern" /><h2>{profile.activityDays.includes(localDay()) ? 'فَانُوسُكَ مُضِيءٌ الْيَوْمَ!' : 'أَضِئْ فَانُوسَكَ الْيَوْمَ'}</h2><p className="muted"><Text text={l('بِضْعُ دَقَائِقَ كُلَّ يَوْمٍ تَصْنَعُ فَرْقًا.', 'Beberapa menit setiap hari membuat perbedaan.', 'A few minutes every day make a difference.')} /></p></div>
+        <div className="aside-card daily-card"><Icon name="lantern" /><h2>{profile.activityDays.includes(localDay()) ? 'فَانُوسُكَ مُضِيءٌ الْيَوْمَ!' : 'أَضِئْ فَانُوسَكَ الْيَوْمَ'}</h2></div>
         {pendingReviews(profile).length > 0 && <NavLink className="aside-review-link" to="/review"><Icon name="repeat" /> الْمُرَاجَعَةُ <span className="number">{pendingReviews(profile).length}</span></NavLink>}
-        <p className="aside-footnote"><Icon name="drop" /> تَعَلَّمِ الْعَرَبِيَّةَ قَطْرَةً قَطْرَةً</p>
       </aside>
     </div>}
   </>;
