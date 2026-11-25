@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { activities, questions, UNITS } from '../app/src/domain/content';
+import { placementQuestions } from '../app/src/domain/placement';
 import { createProfile, STORAGE_KEY } from '../app/src/domain/progress';
 import type { Question } from '../app/src/domain/types';
 import { recordLearningAnswer } from '../app/src/domain/reviews';
@@ -456,3 +457,30 @@ test('the completion summary remains unavailable until all three units have been
   const profile = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   expect(profile.dates).toBe(0); expect(profile.ownedSkins).not.toContain('sailor');
 });
+
+for (const passedA1 of [false, true]) {
+  test(`placement ${passedA1 ? 'opens the A2 section and reports its limit' : 'recommends A1 below the threshold'}`, async ({ page }) => {
+    await page.goto('/');
+    const next = page.getByRole('button', { name: 'مُتَابَعَة', exact: true });
+    await next.click();
+    await next.click();
+    await page.getByRole('button', { name: /Ikut tes tahdid mustawa/ }).click();
+    const bank = [...placementQuestions(1, 'id'), ...(passedA1 ? placementQuestions(2, 'id') : [])];
+    for (const q of bank) {
+      await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', q.id);
+      if (q.kind === 'order') {
+        const words = q.id === 't07' ? [q.words!.at(-1)!, ...q.words!.slice(0, -1)] : q.words!;
+        for (const word of words) await page.locator('.word-bank button:enabled').and(page.getByRole('button', { name: word, exact: true })).first().click();
+      } else {
+        const correct = passedA1 || q.kind === 'listen';
+        const choice = q.choices!.find(c => (c.id === q.answer) === correct)!;
+        await page.locator(`input[type="radio"][value="${choice.id}"]`).locator('..').click();
+      }
+      await page.getByTestId('check-answer').click();
+    }
+    await expect(page.getByRole('heading', { name: /Hasil tes tahdid/ })).toBeVisible();
+    await expect(page.getByText(passedA1 ? 'A1 · 5/5 · A2 · 5/5' : 'A1 · 3/5', { exact: true })).toBeVisible();
+    await page.getByRole('button', { name: /Mulai belajar A1/ }).click();
+    await expect(page.locator('.journey-screen')).toBeVisible();
+  });
+}

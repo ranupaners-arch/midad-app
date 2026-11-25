@@ -17,6 +17,12 @@ export default function QuestionBody({ question: q, locked, quiz, hinted, onAnsw
     if (match.passed) onAnswer(true);
     else { setAttempts(n => n + 1); setSpeechMessage(`حَاوِلْ مَرَّةً أُخْرَى. رَاجِعْ: ${match.missed.join('، ')}`); }
   });
+  const checkOrder = () => {
+    const normalize = (sentence: string) => sentence.replace(/[.،؟!?]/g, '');
+    const response = ordered.map(i => q.words![i]).join(' ');
+    if (!q.orderAlternatives) return response === q.words?.join(' ');
+    return [q.words!.join(' '), ...q.orderAlternatives].some(sentence => normalize(sentence) === normalize(response));
+  };
   const isListeningQuestion = q.kind === 'listen';
   const [revealed, setRevealed] = useState(false);
   const hiddenChoice = hinted ? q.choices?.find(c => c.id !== q.answer)?.id : undefined;
@@ -44,7 +50,7 @@ export default function QuestionBody({ question: q, locked, quiz, hinted, onAnsw
       {(recognition.error || speechMessage) && <p className="speech-message" role="status">{recognition.error || speechMessage}</p>}{transcript && <p className="transcript" lang="ar">{transcript}</p>}
       {!locked && <Button variant="secondary" className="full-width" onClick={() => { recognition.stop(); onAnswer(false, true); }}>{recognition.supported && attempts < 3 ? 'لَا أَسْتَطِيعُ التَّحَدُّثَ الْآنَ' : 'مُتَابَعَة بِدُونِ مِيكْرُوفُونٍ'}</Button>}
     </div>}
-    {!locked && (q.kind === 'choice' || q.kind === 'listen' || q.kind === 'order') && <Button className="full-width check-answer" data-testid="check-answer" disabled={q.kind === 'order' ? ordered.length !== q.words?.length : !effectiveSelection} onClick={() => onAnswer(q.kind === 'order' ? ordered.map(i => q.words![i]).join(' ') === q.words?.join(' ') : effectiveSelection === q.answer)}>تَحَقَّقْ</Button>}
+    {!locked && (q.kind === 'choice' || q.kind === 'listen' || q.kind === 'order') && <Button className="full-width check-answer" data-testid="check-answer" disabled={q.kind === 'order' ? ordered.length !== q.words?.length : !effectiveSelection} onClick={() => onAnswer(q.kind === 'order' ? checkOrder() : effectiveSelection === q.answer)}>تَحَقَّقْ</Button>}
     {hinted && q.kind !== 'order' && <p className="hint-content"><Text text={l(q.kind === 'speak' ? 'اِسْتَمِعْ بِبُطْءٍ وَقَسِّمِ الْجُمْلَةَ إِلَى أَجْزَاءٍ.' : 'حَذَفْنَا خِيَارًا خَاطِئًا. أَنْتَ تَسْتَطِيعُ!', q.kind === 'speak' ? 'Dengarkan perlahan dan bagi kalimat menjadi bagian kecil.' : 'Satu pilihan salah sudah dicoret. Kamu bisa!', q.kind === 'speak' ? 'Listen slowly and break the sentence into smaller parts.' : 'One incorrect option has been crossed out. You can do this!')} /></p>}
   </div>;
 }

@@ -90,4 +90,6 @@ Override `workbox-build > glob` memakai versi 14.0.2 atau patch kompatibel berik
 
 Tes browser memakai Chromium sistem jika `/usr/bin/chromium` tersedia. Di mesin lain jalankan `npx playwright install chromium`, atau isi `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Tes pengenalan suara mencakup jalur tanpa mikrofon serta transkrip dan penolakan izin yang disimulasikan. Kualitas suara, mikrofon nyata, pemasangan pada perangkat fisik, Safari/Firefox, serta peninjauan materi perlu diuji tersendiri.
 
-Di luar MVP: tes penempatan adaptif, mentor, rute Inggris, konten wahdah 4–64, tes nisfi/nihai, backend, sinkronisasi lintas perangkat, dan rekaman audio penutur. Roadmap yang terkunci tidak mengklaim konten tersebut sudah tersedia.
+- **Tes tahdid demo** tersedia dari langkah akhir onboarding. Bank Shaharil mencakup lima soal A1 dan lima soal A2. Nilai minimal 70% pada bagian A1 membuka bagian A2. Hasil bersifat rekomendasi dan tombol lanjut membuka tiga wahdah A1. Tes tidak memberi XP atau membuka marhalah lain. Soal mencocokkan diadaptasi menjadi pilihan arti, dan soal audio memakai suara Arab perangkat atau teks jika suara tidak tersedia. Percobaan dimulai ulang setelah keluar atau memuat ulang halaman.
+
+Di luar MVP: penempatan hingga B2 dan tes ulang dari pengaturan, mentor, rute Inggris, konten wahdah 4–64, tes nisfi/nihai, backend, sinkronisasi lintas perangkat, dan rekaman audio penutur. Roadmap yang terkunci tidak mengklaim konten tersebut sudah tersedia.
