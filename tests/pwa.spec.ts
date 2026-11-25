@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import type { Page } from '@playwright/test';
 import { createProfile, STORAGE_KEY } from '../app/src/domain/progress';
-import { activities, questions, UNITS } from '../app/src/domain/content';
+import { activities, questions, SHAHARIL_UNITS, UNITS } from '../app/src/domain/content';
 import AxeBuilder from '@axe-core/playwright';
 
 async function prepare(page: Page, changes = {}) {
@@ -19,7 +19,7 @@ test('production precaches lessons, fonts and mascot assets and restores progres
   const external: string[] = [], errors: string[] = [];
   page.on('request', req => { if (new URL(req.url()).origin !== 'http://127.0.0.1:4173') external.push(req.url()); });
   page.on('pageerror', e => errors.push(e.message));
-  await prepare(page, { completedActivities: ['u1:vocab-1'] });
+  await prepare(page, { curriculum: 'shaharil', completedActivities: ['u1:vocab-1'] });
   await page.goto('/');
   await ready(page);
   const manifest = await page.evaluate(async () => (await fetch(document.querySelector<HTMLLinkElement>('link[rel=manifest]')!.href)).json());
@@ -32,7 +32,8 @@ test('production precaches lessons, fonts and mascot assets and restores progres
   await page.getByRole('radio', { name: 'وَرْدِيٌّ', exact: true }).locator('..').click();
   await page.getByRole('button', { name: 'احْفَظْ رَفِيقَكَ', exact: true }).click();
   await page.goto('/#/unit/1/lesson/vocab-1');
-  const bank = questions(UNITS[0], activities(UNITS[0])[0], 'id');
+  const firstUnit = SHAHARIL_UNITS[0];
+  const bank = questions(firstUnit, activities(firstUnit)[0], 'id');
   for (let i = 0; i < 10; i++) await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click();
   const q = bank[10];
   await page.locator(`input[value="${q.answer}"]`).locator('..').click();

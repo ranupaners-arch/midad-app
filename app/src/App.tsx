@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useProfile } from './store';
 import { localDay, streak } from './domain/progress';
-import { activities, l, questions, UNITS } from './domain/content';
+import { activities, l, questions, unitsFor } from './domain/content';
 import { Icon, Logo } from './ui/Icon';
 import { Mascot, Text, Progress } from './ui/Common';
 import Welcome from './screens/Welcome';
@@ -27,7 +27,7 @@ export default function App() {
   const location = useLocation();
   const reviewing = location.pathname === '/review';
   const lesson = location.pathname.includes('/lesson/') || reviewing && !!profile.reviewSession;
-  const activeUnit = UNITS.find(u => u.id === profile.session?.unitId);
+  const activeUnit = unitsFor(profile).find(u => u.id === profile.session?.unitId);
   const activeActivity = activeUnit && activities(activeUnit).find(a => a.id === profile.session?.activityId);
   const activeQuestion = activeUnit && activeActivity && questions(activeUnit, activeActivity, profile.language, profile.session!.questionVersion ?? 1)[profile.session!.cursor];
   const reviewQuestion = profile.reviewSession && questionSource(profile.reviewSession.questionIds[profile.reviewSession.cursor], profile.language)?.question;
@@ -38,7 +38,7 @@ export default function App() {
     document.querySelector<HTMLElement>('#main-title')?.focus({ preventScroll: true });
   }, [location.pathname]);
   const count = Object.values(profile.mastery).filter(n => n >= 3).length;
-  const total = UNITS.reduce((n, u) => n + u.words.length, 0);
+  const total = unitsFor(profile).reduce((n, u) => n + u.words.length, 0);
   return <>
     <a className="skip-link" href="#main-title" onClick={event => { event.preventDefault(); document.getElementById('main-title')?.focus(); }}>اِنْتَقِلْ إِلَى الْمُحْتَوَى</a>
     <AppAvailability learning={lesson} />

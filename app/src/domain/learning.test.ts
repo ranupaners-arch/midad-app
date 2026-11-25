@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { activities, questions, UNITS } from './content';
+import { activities, questions, SHAHARIL_UNITS, UNITS, unitsFor } from './content';
 import { advanceSession, answerQuestion, beginSession, completeSession, createProfile, parseProfile } from './progress';
 import { answerReview, beginReview, questionSource } from './reviews';
 import { filterVocabulary, vocabularySessionId } from './vocabulary';
+import type { Profile } from './types';
 import { hasRepeatedMistakes } from './hints';
 
 const now = new Date(2026, 10, 23, 14), unit = UNITS[0], quiz = activities(unit).find(a => a.kind === 'quiz')!;
@@ -74,5 +75,39 @@ describe('vocabulary browsing and hint eligibility', () => {
     expect(hasRepeatedMistakes({ ...base, answers: [wrong, wrong, { ...wrong, correct: true }] })).toBe(false);
     expect(hasRepeatedMistakes({ ...base, activityId: 'quiz', answers: [wrong, wrong] })).toBe(false);
     expect(hasRepeatedMistakes(null)).toBe(false);
+  });
+});
+
+
+describe('Shaharil demo material', () => {
+  it('exposes three complete units with resolvable bilingual questions', () => {
+    expect(SHAHARIL_UNITS.map(unit => unit.words.length)).toEqual([30, 34, 29]);
+    for (const unit of SHAHARIL_UNITS) for (const lang of ['id', 'en'] as const) {
+      const bank = activities(unit).flatMap(activity => questions(unit, activity, lang));
+      expect(bank.filter(q => q.reading)).toHaveLength(5);
+      expect(bank.filter(q => q.id.includes('-quiz-'))).toHaveLength(10);
+      expect(new Set(bank.map(q => q.id)).size).toBe(bank.length);
+      for (const q of bank) {
+        expect(questionSource(q.id, lang)?.question).toEqual(q);
+        if (q.choices) {
+          expect(q.choices.some(choice => choice.id === q.answer)).toBe(true);
+          expect(q.choices.every(choice => choice.text.length > 0)).toBe(true);
+        }
+      }
+    }
+  });
+
+  it('preserves curriculum and the corresponding checkpoint after profile import', () => {
+    for (const curriculum of [undefined, 'shaharil'] as const) {
+      let profile: Profile = { ...createProfile(now), curriculum };
+      const [unit] = unitsFor(profile);
+      const [activity] = activities(unit);
+      profile = beginSession(profile, unit.id, activity.id);
+      const [q] = questions(unit, activity, 'id');
+      profile = answerQuestion(profile, q, true, false, now);
+      const restored = parseProfile(JSON.parse(JSON.stringify(profile)), now);
+      expect(restored.curriculum).toBe(curriculum);
+      expect(restored.session?.answers[0]?.questionId).toBe(q.id);
+    }
   });
 });

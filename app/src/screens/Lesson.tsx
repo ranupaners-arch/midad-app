@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import type { Activity, Question, Unit } from '../domain/types';
 import type { UnitReward } from '../domain/progress';
-import { activities, l, questions, UNITS } from '../domain/content';
+import { activities, l, questions, unitsFor } from '../domain/content';
 import { advanceSession, answerQuestion, availableHints, beginSession, completeSession, isActivityUnlocked, lessonCheckpoint, masteryPct, sessionScore, useHint } from '../domain/progress';
 import { useProfile } from '../store';
 import { Button, Mascot, Progress, Text, Tr, Vehicle } from '../ui/Common';
@@ -16,7 +16,7 @@ import { useIdleHint } from '../ui/useIdleHint';
 export default function LessonRoute() {
   const { unitId, activityId } = useParams(), { profile } = useProfile();
   const [confirmedQuiz, setConfirmedQuiz] = useState<number | null>(null);
-  const unit = UNITS.find(u => u.id === Number(unitId)), activity = unit && activities(unit).find(a => a.id === activityId);
+  const unit = unitsFor(profile).find(u => u.id === Number(unitId)), activity = unit && activities(unit).find(a => a.id === activityId);
   if (!unit || !activity || !isActivityUnlocked(profile, unit, activity.id)) return <Navigate to={unit ? `/unit/${unit.id}` : '/'} replace />;
   const resuming = !!lessonCheckpoint(profile, unit.id, activity.id);
   if (activity.kind === 'quiz' && masteryPct(profile, unit) < 100 && !resuming && confirmedQuiz !== unit.id) return <div className="screen quiz-readiness"><Link className="back-link" to={`/unit/${unit.id}`}><Icon name="back" /> {unit.title.ar}</Link><Mascot emote="think" decorative /><span className="eyebrow">قَبْلَ الْاِخْتِبَارِ</span><h1 id="main-title" tabIndex={-1}><Text text={l('هَلْ أَنْتَ مُسْتَعِدٌّ؟', 'Siap mencoba kuis?', 'Ready to try the quiz?')} /></h1><p className="readiness-percentage number">{masteryPct(profile, unit)}%</p><Progress value={masteryPct(profile, unit)} label="إِتْقَانُ الْمُفْرَدَاتِ قَبْلَ الْاِخْتِبَارِ" /><p className="readiness-explanation"><Text text={l('لَمْ تَتْقِنْ كُلَّ الْمُفْرَدَاتِ بَعْدُ. يُمْكِنُكَ تَجْرِبَةُ الْاِخْتِبَارِ الْآنَ، أَوِ الرُّجُوعُ لِلْمُرَاجَعَةِ. النَّجَاحُ مِنْ ٨٠٪.', 'Sebagian kosakata belum dikuasai. Kamu boleh mencoba sekarang atau kembali belajar. Nilai lulus tetap 80%; terjemahan dan hint dimatikan selama kuis.', 'Some vocabulary is not mastered yet. You may try now or keep practicing. The pass mark remains 80%; translation and hints are disabled during the quiz.')} force /></p><div className="result-actions"><Button className="full-width" onClick={() => setConfirmedQuiz(unit.id)}>جَرِّبِ الْاِخْتِبَارَ</Button><Link className="md-btn md-btn--secondary full-width" to={`/unit/${unit.id}/words`}>أَكْمِلِ الْمُرَاجَعَةَ</Link></div></div>;
@@ -51,7 +51,7 @@ function Lesson({ unit, activity }: { unit: Unit; activity: Activity }) {
   return <div className="lesson-screen" data-testid="lesson-content">
     <header className="lesson-header"><Link className="icon-button" to={`/unit/${unit.id}`} aria-label="حِفْظُ الدَّرْسِ وَالْعَوْدَةُ"><Icon name="cross" /></Link><Progress value={session.cursor / bank.length * 100} label="تَقَدُّمُ الدَّرْسِ" /><span className="number small-label">{session.cursor + 1}/{bank.length}</span></header>
     <div className="lesson-kicker"><span>{activity.title.ar}{activity.session ? ` · ${activity.session}/3` : ''}</span>{quiz && <span><Icon name="lock" /> الْاِخْتِبَارُ</span>}</div>
-    <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} />}</h1>
+    <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} force={unit.curriculum === 'shaharil' && !!q.reading} />}</h1>
     <QuestionBody key={q.id} question={q} locked={!!response} quiz={quiz} hinted={session.hintAt === session.cursor} onAnswer={handleAnswer} onStudy={() => update(p => advanceSession(answerQuestion(p, q, true)))} />
     {!response && !quiz && q.kind !== 'study' && <HintOffer question={q} />}
     {response && <div className={`feedback-panel ${response.skipped ? 'skipped' : response.correct ? 'correct' : 'wrong'}`} role="status">

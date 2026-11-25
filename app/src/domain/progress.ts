@@ -1,5 +1,5 @@
 import { validateMascotConfig } from '../../../design-system/assets/maskot/mascot.mjs';
-import { UNITS, activities, activityKey, questions } from './content';
+import { UNITS, unitsFor, activities, activityKey, questions } from './content';
 import type { Answer, Language, Profile, Question, Session, Unit } from './types';
 import { dayNumber, localDay, validDay } from './calendar';
 import { parseReviews, parseReviewSession, questionSource, recordLearningAnswer } from './reviews';
@@ -21,12 +21,12 @@ const array = (value: unknown): unknown[] => Array.isArray(value) ? value : [];
 const strings = (value: unknown) => [...new Set(array(value).filter((v): v is string => typeof v === 'string'))];
 const record = (value: unknown): Record<string, unknown> => value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {};
 const activityKeys = UNITS.flatMap(u => activities(u).map(a => activityKey(u.id, a.id)));
-const wordKeys = new Set(UNITS.flatMap(u => u.words.map(w => w.idKey)));
 const itemKeys = ['hand:none', 'hand:qalam', 'hand:inkpot', 'hand:book', 'hand:lantern', 'hand:dates', 'hand:dhow', 'hand:telescope', 'hand:scroll', 'head:none', 'head:kumma', 'head:mussar', 'head:peci', 'neck:none', 'neck:scarf'];
 export const skinKeys = ['none', 'sailor', 'vest', 'batik', 'dishdasha', 'koko', 'nakhoda', 'scholar', 'goldbisht', 'nightink'];
 
-function parseSession(raw: unknown, language: Language): Session | null {
-  const s = record(raw), unit = UNITS.find(u => u.id === s.unitId);
+function parseSession(raw: unknown, profile: Pick<Profile, 'language' | 'curriculum'>): Session | null {
+  const { language } = profile;
+  const s = record(raw), unit = unitsFor(profile).find(u => u.id === s.unitId);
   const activity = unit && activities(unit).find(a => a.id === s.activityId);
   if (!unit || !activity) return null;
   const questionVersion = s.questionVersion === undefined ? 1 : s.questionVersion;
@@ -45,8 +45,10 @@ export function parseProfile(raw: unknown, now = new Date()): Profile {
   const r = record(raw);
   if (r.version !== 1) throw new Error('Unsupported or damaged profile');
   const base = createProfile(now);
+  const curriculum = r.curriculum === 'shaharil' ? 'shaharil' : undefined;
+  const wordKeys = new Set(unitsFor({ curriculum }).flatMap(u => u.words.map(w => w.idKey)));
   const p: Profile = {
-    ...base, language: r.language === 'en' ? 'en' : 'id', onboarded: r.onboarded === true,
+    ...base, curriculum, language: r.language === 'en' ? 'en' : 'id', onboarded: r.onboarded === true,
     mascot: validateMascotConfig(r.mascot), theme: r.theme === 'light' || r.theme === 'dark' ? r.theme : 'system',
     translation: r.translation === true, sound: r.sound !== false, dates: integer(r.dates), xp: integer(r.xp),
     activityDays: strings(r.activityDays).filter(validDay).sort(),
@@ -67,10 +69,10 @@ export function parseProfile(raw: unknown, now = new Date()): Profile {
   if (!p.ownedSkins.includes(p.mascot.skin)) p.mascot.skin = 'none';
   if (!p.ownedItems.includes(`hand:${p.mascot.hand}`)) p.mascot.hand = 'qalam';
   for (const slot of ['head', 'neck'] as const) if (!p.ownedItems.includes(`${slot}:${p.mascot[slot]}`)) p.mascot[slot] = 'none';
-  p.session = parseSession(r.session, p.language);
+  p.session = parseSession(r.session, p);
   p.savedSessions = Object.fromEntries(Object.entries(record(r.savedSessions)).flatMap(([key, value]) => {
     if (!activityKeys.includes(key)) return [];
-    const saved = parseSession(value, p.language);
+    const saved = parseSession(value, p);
     return saved && activityKey(saved.unitId, saved.activityId) === key ? [[key, saved]] : [];
   }));
   if (p.session) {
@@ -109,7 +111,7 @@ export function lessonCheckpoint(p: Profile, unitId: number, activityId: string)
 }
 
 export function beginSession(p: Profile, unitId: number, activityId: string): Profile {
-  const unit = UNITS.find(u => u.id === unitId);
+  const unit = unitsFor(p).find(u => u.id === unitId);
   if (!unit || !isActivityUnlocked(p, unit, activityId)) return p;
   if (p.session?.unitId === unitId && p.session.activityId === activityId) return p;
   const session = lessonCheckpoint(p, unitId, activityId) ?? { unitId, activityId, questionVersion: 2, cursor: 0, answers: [], hintAt: null };
@@ -122,7 +124,7 @@ export function beginSession(p: Profile, unitId: number, activityId: string): Pr
 export function answerQuestion(p: Profile, q: Question, correct: boolean, skipped = false, now = new Date()): Profile {
   const s = p.session;
   if (!s || s.answers.length > s.cursor) return p;
-  const unit = UNITS.find(u => u.id === s.unitId)!;
+  const unit = unitsFor(p).find(u => u.id === s.unitId)!;
   const activity = activities(unit).find(a => a.id === s.activityId)!;
   if (questions(unit, activity, p.language, s.questionVersion ?? 1)[s.cursor]?.id !== q.id) return p;
   const hinted = s.hintAt === s.cursor;
@@ -148,7 +150,7 @@ export type UnitReward = { firstPass: boolean; dates: number; score: number; sta
 export function completeSession(p: Profile, now = new Date()): { profile: Profile; reward: UnitReward | null } {
   const s = p.session;
   if (!s) return { profile: p, reward: null };
-  const unit = UNITS.find(u => u.id === s.unitId)!;
+  const unit = unitsFor(p).find(u => u.id === s.unitId)!;
   const activity = activities(unit).find(a => a.id === s.activityId)!;
   const bank = questions(unit, activity, p.language, s.questionVersion ?? 1);
   if (s.cursor < bank.length || s.answers.length < bank.length) return { profile: p, reward: null };

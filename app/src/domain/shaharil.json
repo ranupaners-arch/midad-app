@@ -1,0 +1,2170 @@
+[
+  {
+    "wahdah": 1,
+    "title": {
+      "ar": "السَّلَامُ",
+      "tr": {
+        "id": "Salam",
+        "en": "Greetings"
+      }
+    },
+    "canDo": {
+      "id": "Saya bisa memberi salam dan membalasnya, menyapa pagi, sore, dan malam, menanyakan kabar, berterima kasih, meminta maaf, dan berpamitan.",
+      "en": "I can greet someone and answer a greeting, say good morning, evening and night, ask how someone is, say thank you, say sorry and say goodbye."
+    },
+    "vocab": [
+      {
+        "id": "v01",
+        "ar": "صَبَاحٌ",
+        "tr": {
+          "id": "pagi",
+          "en": "morning"
+        },
+        "digit": null
+      },
+      {
+        "id": "v02",
+        "ar": "مَسَاءٌ",
+        "tr": {
+          "id": "sore, petang",
+          "en": "evening"
+        },
+        "digit": null
+      },
+      {
+        "id": "v03",
+        "ar": "لَيْلٌ",
+        "tr": {
+          "id": "malam",
+          "en": "night"
+        },
+        "digit": null
+      },
+      {
+        "id": "v04",
+        "ar": "السَّلَامُ عَلَيْكُمْ",
+        "tr": {
+          "id": "assalamu'alaikum (semoga keselamatan atasmu)",
+          "en": "peace be upon you (greeting)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v05",
+        "ar": "وَعَلَيْكُمُ السَّلَامُ",
+        "tr": {
+          "id": "wa'alaikumussalam (balasan salam)",
+          "en": "and peace be upon you (reply)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v06",
+        "ar": "صَبَاحُ الْخَيْرِ",
+        "tr": {
+          "id": "selamat pagi",
+          "en": "good morning"
+        },
+        "digit": null
+      },
+      {
+        "id": "v07",
+        "ar": "صَبَاحُ النُّورِ",
+        "tr": {
+          "id": "selamat pagi (balasan)",
+          "en": "good morning (reply)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v08",
+        "ar": "مَسَاءُ الْخَيْرِ",
+        "tr": {
+          "id": "selamat sore, selamat petang",
+          "en": "good evening"
+        },
+        "digit": null
+      },
+      {
+        "id": "v09",
+        "ar": "مَسَاءُ النُّورِ",
+        "tr": {
+          "id": "selamat sore (balasan)",
+          "en": "good evening (reply)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v10",
+        "ar": "أَهْلًا وَسَهْلًا",
+        "tr": {
+          "id": "selamat datang, halo",
+          "en": "welcome, hello"
+        },
+        "digit": null
+      },
+      {
+        "id": "v11",
+        "ar": "مَرْحَبًا",
+        "tr": {
+          "id": "halo",
+          "en": "hello"
+        },
+        "digit": null
+      },
+      {
+        "id": "v12",
+        "ar": "تُصْبِحُ عَلَى خَيْرٍ",
+        "tr": {
+          "id": "selamat malam, selamat tidur (kepada laki-laki)",
+          "en": "good night (to a male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v13",
+        "ar": "وَأَنْتَ مِنْ أَهْلِهِ",
+        "tr": {
+          "id": "kamu juga (balasan selamat malam, kepada laki-laki)",
+          "en": "you too (reply to good night, to a male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v14",
+        "ar": "كَيْفَ حَالُكَ؟",
+        "tr": {
+          "id": "apa kabar? (kepada laki-laki)",
+          "en": "how are you? (to a male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v15",
+        "ar": "أَنَا بِخَيْرٍ",
+        "tr": {
+          "id": "saya baik",
+          "en": "I am fine"
+        },
+        "digit": null
+      },
+      {
+        "id": "v16",
+        "ar": "الْحَمْدُ لِلَّهِ",
+        "tr": {
+          "id": "alhamdulillah (segala puji bagi Allah)",
+          "en": "praise be to God"
+        },
+        "digit": null
+      },
+      {
+        "id": "v17",
+        "ar": "أَنَا",
+        "tr": {
+          "id": "saya, aku",
+          "en": "I"
+        },
+        "digit": null
+      },
+      {
+        "id": "v18",
+        "ar": "أَنْتَ",
+        "tr": {
+          "id": "kamu (laki-laki)",
+          "en": "you (male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v19",
+        "ar": "أَنْتِ",
+        "tr": {
+          "id": "kamu (perempuan)",
+          "en": "you (female)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v20",
+        "ar": "وَ",
+        "tr": {
+          "id": "dan",
+          "en": "and"
+        },
+        "digit": null
+      },
+      {
+        "id": "v21",
+        "ar": "يَا",
+        "tr": {
+          "id": "hai, wahai (sebelum nama orang yang dipanggil)",
+          "en": "word used before the name of someone you call"
+        },
+        "digit": null
+      },
+      {
+        "id": "v22",
+        "ar": "شُكْرًا",
+        "tr": {
+          "id": "terima kasih",
+          "en": "thank you"
+        },
+        "digit": null
+      },
+      {
+        "id": "v23",
+        "ar": "عَفْوًا",
+        "tr": {
+          "id": "sama-sama",
+          "en": "you're welcome"
+        },
+        "digit": null
+      },
+      {
+        "id": "v24",
+        "ar": "مِنْ فَضْلِكَ",
+        "tr": {
+          "id": "tolong, silakan (kepada laki-laki)",
+          "en": "please (to a male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v25",
+        "ar": "آسِفٌ",
+        "tr": {
+          "id": "maaf (pembicara laki-laki)",
+          "en": "sorry (male speaker)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v26",
+        "ar": "لَا بَأْسَ",
+        "tr": {
+          "id": "tidak apa-apa",
+          "en": "it's okay, no problem"
+        },
+        "digit": null
+      },
+      {
+        "id": "v27",
+        "ar": "نَعَمْ",
+        "tr": {
+          "id": "ya",
+          "en": "yes"
+        },
+        "digit": null
+      },
+      {
+        "id": "v28",
+        "ar": "لَا",
+        "tr": {
+          "id": "tidak, bukan",
+          "en": "no"
+        },
+        "digit": null
+      },
+      {
+        "id": "v29",
+        "ar": "مَعَ السَّلَامَةِ",
+        "tr": {
+          "id": "selamat jalan, dadah",
+          "en": "goodbye"
+        },
+        "digit": null
+      },
+      {
+        "id": "v30",
+        "ar": "إِلَى اللِّقَاءِ",
+        "tr": {
+          "id": "sampai jumpa lagi",
+          "en": "see you"
+        },
+        "digit": null
+      }
+    ],
+    "patterns": [
+      {
+        "ar": "صَبَاحُ الْخَيْرِ يَا نُورُ.",
+        "tr": {
+          "id": "Selamat pagi, Nur.",
+          "en": "Good morning, Nur."
+        }
+      },
+      {
+        "ar": "مَسَاءُ الْخَيْرِ يَا سَالِمُ.",
+        "tr": {
+          "id": "Selamat sore, Salim.",
+          "en": "Good evening, Salim."
+        }
+      },
+      {
+        "ar": "كَيْفَ حَالُكِ يَا يُوكِي؟",
+        "tr": {
+          "id": "Apa kabar, Yuki?",
+          "en": "How are you, Yuki?"
+        }
+      },
+      {
+        "ar": "أَنَا بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ.",
+        "tr": {
+          "id": "Saya baik, alhamdulillah.",
+          "en": "I'm fine, praise be to God."
+        }
+      },
+      {
+        "ar": "أَنَا بِخَيْرٍ وَالْحَمْدُ لِلَّهِ.",
+        "tr": {
+          "id": "Saya baik, alhamdulillah.",
+          "en": "I'm fine, praise be to God."
+        }
+      },
+      {
+        "ar": "مَسَاءُ النُّورِ يَا سَالِمُ.",
+        "tr": {
+          "id": "Selamat sore (balasan), Salim.",
+          "en": "Good evening (reply), Salim."
+        }
+      },
+      {
+        "ar": "كَيْفَ حَالُكَ يَا مُوسَى؟",
+        "tr": {
+          "id": "Apa kabar, Musa?",
+          "en": "How are you, Musa?"
+        }
+      },
+      {
+        "ar": "وَعَلَيْكُمُ السَّلَامُ يَا يُوكِي.",
+        "tr": {
+          "id": "Wa'alaikumussalam, Yuki.",
+          "en": "And peace be upon you, Yuki."
+        }
+      }
+    ],
+    "dialogue": [
+      {
+        "ar": "السَّلَامُ عَلَيْكُمْ يَا نُورُ.",
+        "tr": {
+          "id": "Assalamu'alaikum, Nur.",
+          "en": "Peace be upon you, Nur."
+        },
+        "speaker": "رِزْقِي"
+      },
+      {
+        "ar": "وَعَلَيْكُمُ السَّلَامُ يَا رِزْقِي.",
+        "tr": {
+          "id": "Wa'alaikumussalam, Rizki.",
+          "en": "And peace be upon you, Rizki."
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "صَبَاحُ الْخَيْرِ!",
+        "tr": {
+          "id": "Selamat pagi!",
+          "en": "Good morning!"
+        },
+        "speaker": "رِزْقِي"
+      },
+      {
+        "ar": "صَبَاحُ النُّورِ. كَيْفَ حَالُكَ؟",
+        "tr": {
+          "id": "Selamat pagi. Apa kabar?",
+          "en": "Good morning. How are you?"
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "أَنَا بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ. وَأَنْتِ؟",
+        "tr": {
+          "id": "Saya baik, alhamdulillah. Kamu?",
+          "en": "I'm fine, praise be to God. And you?"
+        },
+        "speaker": "رِزْقِي"
+      },
+      {
+        "ar": "الْحَمْدُ لِلَّهِ، أَنَا بِخَيْرٍ. شُكْرًا.",
+        "tr": {
+          "id": "Alhamdulillah, saya baik. Terima kasih.",
+          "en": "Praise be to God, I'm fine. Thank you."
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "آسِفَةٌ!",
+        "tr": {
+          "id": "Maaf!",
+          "en": "Sorry!"
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "لَا بَأْسَ. مَسَاءُ الْخَيْرِ.",
+        "tr": {
+          "id": "Tidak apa-apa. Selamat malam.",
+          "en": "It's okay. Good evening."
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "مَسَاءُ النُّورِ. كَيْفَ حَالُكَ؟",
+        "tr": {
+          "id": "Selamat malam. Apa kabar?",
+          "en": "Good evening. How are you?"
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "أَنَا بِخَيْرٍ، شُكْرًا.",
+        "tr": {
+          "id": "Saya baik, terima kasih.",
+          "en": "I'm fine, thank you."
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "تُصْبِحُ عَلَى خَيْرٍ.",
+        "tr": {
+          "id": "Selamat tidur.",
+          "en": "Good night."
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "وَأَنْتِ مِنْ أَهْلِهِ. مَعَ السَّلَامَةِ.",
+        "tr": {
+          "id": "Kamu juga. Selamat jalan.",
+          "en": "You too. Goodbye."
+        },
+        "speaker": "سَالِم"
+      }
+    ],
+    "qiraah": {
+      "sentences": [
+        {
+          "ar": "السَّلَامُ عَلَيْكُمْ يَا رِزْقِي.",
+          "tr": {
+            "id": "Assalamu'alaikum, Rizki.",
+            "en": "Peace be upon you, Rizki."
+          }
+        },
+        {
+          "ar": "مَسَاءُ الْخَيْرِ!",
+          "tr": {
+            "id": "Selamat sore!",
+            "en": "Good evening!"
+          }
+        },
+        {
+          "ar": "كَيْفَ حَالُكَ؟",
+          "tr": {
+            "id": "Apa kabar?",
+            "en": "How are you?"
+          }
+        },
+        {
+          "ar": "أَنَا بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ.",
+          "tr": {
+            "id": "Saya baik, alhamdulillah.",
+            "en": "I'm fine, praise be to God."
+          }
+        },
+        {
+          "ar": "تُصْبِحُ عَلَى خَيْرٍ.",
+          "tr": {
+            "id": "Selamat tidur.",
+            "en": "Good night."
+          }
+        },
+        {
+          "ar": "إِلَى اللِّقَاءِ.",
+          "tr": {
+            "id": "Sampai jumpa lagi.",
+            "en": "See you."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "q01",
+          "ar": null,
+          "prompt": {
+            "id": "Nur menulis pesan ini pada waktu apa?",
+            "en": "When did Nur write this message?"
+          },
+          "options": [
+            {
+              "ar": "مَسَاءٌ",
+              "tr": {
+                "id": "sore/petang",
+                "en": "evening"
+              },
+              "correct": true
+            },
+            {
+              "ar": "صَبَاحٌ",
+              "tr": {
+                "id": "pagi",
+                "en": "morning"
+              },
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q02",
+          "ar": null,
+          "prompt": {
+            "id": "Bagaimana kabar Nur?",
+            "en": "How is Nur?"
+          },
+          "options": [
+            {
+              "tr": {
+                "id": "Baik",
+                "en": "Fine"
+              },
+              "correct": true
+            },
+            {
+              "tr": {
+                "id": "Tidak baik",
+                "en": "Not well"
+              },
+              "correct": false
+            },
+            {
+              "tr": {
+                "id": "Tidak disebutkan",
+                "en": "Not mentioned"
+              },
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q03",
+          "ar": null,
+          "prompt": {
+            "id": "Kalimat mana yang menanyakan kabar?",
+            "en": "Which sentence asks how someone is?"
+          },
+          "options": [
+            {
+              "ar": "كَيْفَ حَالُكَ؟",
+              "correct": true
+            },
+            {
+              "ar": "تُصْبِحُ عَلَى خَيْرٍ.",
+              "correct": false
+            },
+            {
+              "ar": "إِلَى اللِّقَاءِ.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q04",
+          "ar": null,
+          "prompt": {
+            "id": "Rizki membalas kalimat ke-1. Apa balasannya?",
+            "en": "Rizki answers sentence 1. What does he say?"
+          },
+          "options": [
+            {
+              "ar": "وَعَلَيْكُمُ السَّلَامُ.",
+              "correct": true
+            },
+            {
+              "ar": "صَبَاحُ النُّورِ.",
+              "correct": false
+            },
+            {
+              "ar": "عَفْوًا.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q05",
+          "ar": null,
+          "prompt": {
+            "id": "Rizki membalas kalimat ke-5. Nur perempuan. Apa balasannya?",
+            "en": "Rizki answers sentence 5. Nur is female. What does he say?"
+          },
+          "options": [
+            {
+              "ar": "وَأَنْتِ مِنْ أَهْلِهِ.",
+              "correct": true
+            },
+            {
+              "ar": "وَأَنْتَ مِنْ أَهْلِهِ.",
+              "correct": false
+            },
+            {
+              "ar": "مَسَاءُ النُّورِ.",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    "exam": [
+      {
+        "id": "k01",
+        "type": "pick-image",
+        "target": "v02",
+        "distractors": [
+          "v03",
+          "v01"
+        ]
+      },
+      {
+        "id": "k02",
+        "type": "pick-image",
+        "target": "v22",
+        "distractors": [
+          "v25",
+          "v27"
+        ]
+      },
+      {
+        "id": "k03",
+        "type": "pick-image",
+        "target": "v28",
+        "distractors": [
+          "v27",
+          "v26"
+        ]
+      },
+      {
+        "id": "k04",
+        "type": "listen-pick",
+        "target": "v05",
+        "distractors": [
+          "v04",
+          "v13"
+        ]
+      },
+      {
+        "id": "k05",
+        "type": "listen-pick",
+        "target": "v07",
+        "distractors": [
+          "v09",
+          "v26"
+        ]
+      },
+      {
+        "id": "k06",
+        "type": "listen-pick",
+        "target": "v26",
+        "distractors": [
+          "v23",
+          "v27"
+        ]
+      },
+      {
+        "id": "k07",
+        "type": "listen-pick",
+        "target": "v19",
+        "distractors": [
+          "v18",
+          "v17"
+        ]
+      },
+      {
+        "id": "k08",
+        "type": "pick-image",
+        "target": "v30",
+        "distractors": [
+          "v11",
+          "v12"
+        ]
+      },
+      {
+        "id": "k09",
+        "type": "listen-pick",
+        "target": "v12",
+        "distractors": [
+          "v06",
+          "v10"
+        ]
+      },
+      {
+        "id": "k10",
+        "type": "pick-image",
+        "target": "v24",
+        "distractors": [
+          "v22",
+          "v28"
+        ]
+      }
+    ]
+  },
+  {
+    "wahdah": 2,
+    "title": {
+      "ar": "مَنْ أَنْتَ؟",
+      "tr": {
+        "id": "Siapa kamu?",
+        "en": "Who are you?"
+      }
+    },
+    "canDo": {
+      "id": "Saya bisa menyebut nama, negara asal, dan bahasa yang saya pakai, lalu menanyakan hal yang sama kepada orang lain.",
+      "en": "I can say my name, where I am from and which languages I speak, and ask others the same."
+    },
+    "vocab": [
+      {
+        "id": "v01",
+        "ar": "مَنْ",
+        "tr": {
+          "id": "siapa",
+          "en": "who"
+        },
+        "digit": null
+      },
+      {
+        "id": "v02",
+        "ar": "مَا",
+        "tr": {
+          "id": "apa",
+          "en": "what"
+        },
+        "digit": null
+      },
+      {
+        "id": "v03",
+        "ar": "أَيْنَ",
+        "tr": {
+          "id": "di mana",
+          "en": "where"
+        },
+        "digit": null
+      },
+      {
+        "id": "v04",
+        "ar": "مِنْ",
+        "tr": {
+          "id": "dari",
+          "en": "from"
+        },
+        "digit": null
+      },
+      {
+        "id": "v05",
+        "ar": "اسْمٌ",
+        "tr": {
+          "id": "nama",
+          "en": "name"
+        },
+        "digit": null
+      },
+      {
+        "id": "v06",
+        "ar": "هُوَ",
+        "tr": {
+          "id": "dia (laki-laki)",
+          "en": "he"
+        },
+        "digit": null
+      },
+      {
+        "id": "v07",
+        "ar": "هِيَ",
+        "tr": {
+          "id": "dia (perempuan)",
+          "en": "she"
+        },
+        "digit": null
+      },
+      {
+        "id": "v08",
+        "ar": "نَحْنُ",
+        "tr": {
+          "id": "kami, kita",
+          "en": "we"
+        },
+        "digit": null
+      },
+      {
+        "id": "v09",
+        "ar": "هَلْ",
+        "tr": {
+          "id": "apakah",
+          "en": "question word for yes/no questions"
+        },
+        "digit": null
+      },
+      {
+        "id": "v10",
+        "ar": "بَلَدٌ",
+        "tr": {
+          "id": "negara, negeri",
+          "en": "country"
+        },
+        "digit": null
+      },
+      {
+        "id": "v11",
+        "ar": "لُغَةٌ",
+        "tr": {
+          "id": "bahasa",
+          "en": "language"
+        },
+        "digit": null
+      },
+      {
+        "id": "v12",
+        "ar": "يَتَكَلَّمُ",
+        "tr": {
+          "id": "berbicara (dia laki-laki)",
+          "en": "he speaks"
+        },
+        "digit": null
+      },
+      {
+        "id": "v13",
+        "ar": "قَلِيلًا",
+        "tr": {
+          "id": "sedikit",
+          "en": "a little"
+        },
+        "digit": null
+      },
+      {
+        "id": "v14",
+        "ar": "طَالِبٌ",
+        "tr": {
+          "id": "pelajar, mahasiswa",
+          "en": "student"
+        },
+        "digit": null
+      },
+      {
+        "id": "v15",
+        "ar": "صَدِيقٌ",
+        "tr": {
+          "id": "teman",
+          "en": "friend"
+        },
+        "digit": null
+      },
+      {
+        "id": "v16",
+        "ar": "أَيْضًا",
+        "tr": {
+          "id": "juga",
+          "en": "also, too"
+        },
+        "digit": null
+      },
+      {
+        "id": "v17",
+        "ar": "تَشَرَّفْنَا",
+        "tr": {
+          "id": "senang berkenalan",
+          "en": "nice to meet you"
+        },
+        "digit": null
+      },
+      {
+        "id": "v18",
+        "ar": "إِنْدُونِيسِيَا",
+        "tr": {
+          "id": "Indonesia",
+          "en": "Indonesia"
+        },
+        "digit": null
+      },
+      {
+        "id": "v19",
+        "ar": "مَالِيزِيَا",
+        "tr": {
+          "id": "Malaysia",
+          "en": "Malaysia"
+        },
+        "digit": null
+      },
+      {
+        "id": "v20",
+        "ar": "عُمَانُ",
+        "tr": {
+          "id": "Oman",
+          "en": "Oman"
+        },
+        "digit": null
+      },
+      {
+        "id": "v21",
+        "ar": "الْيَابَانُ",
+        "tr": {
+          "id": "Jepang",
+          "en": "Japan"
+        },
+        "digit": null
+      },
+      {
+        "id": "v22",
+        "ar": "نَيْجِيرِيَا",
+        "tr": {
+          "id": "Nigeria",
+          "en": "Nigeria"
+        },
+        "digit": null
+      },
+      {
+        "id": "v23",
+        "ar": "مِصْرُ",
+        "tr": {
+          "id": "Mesir",
+          "en": "Egypt"
+        },
+        "digit": null
+      },
+      {
+        "id": "v24",
+        "ar": "تُرْكِيَا",
+        "tr": {
+          "id": "Turki",
+          "en": "Turkey"
+        },
+        "digit": null
+      },
+      {
+        "id": "v25",
+        "ar": "الْبَرَازِيلُ",
+        "tr": {
+          "id": "Brasil",
+          "en": "Brazil"
+        },
+        "digit": null
+      },
+      {
+        "id": "v26",
+        "ar": "إِنْدُونِيسِيٌّ",
+        "tr": {
+          "id": "orang Indonesia (laki-laki)",
+          "en": "Indonesian (male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v27",
+        "ar": "عُمَانِيٌّ",
+        "tr": {
+          "id": "orang Oman (laki-laki)",
+          "en": "Omani (male)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v28",
+        "ar": "الْعَرَبِيَّةُ",
+        "tr": {
+          "id": "bahasa Arab",
+          "en": "Arabic"
+        },
+        "digit": null
+      },
+      {
+        "id": "v29",
+        "ar": "الْإِنْدُونِيسِيَّةُ",
+        "tr": {
+          "id": "bahasa Indonesia",
+          "en": "Indonesian (language)"
+        },
+        "digit": null
+      },
+      {
+        "id": "v30",
+        "ar": "الْإِنْجِلِيزِيَّةُ",
+        "tr": {
+          "id": "bahasa Inggris",
+          "en": "English"
+        },
+        "digit": null
+      },
+      {
+        "id": "v31",
+        "ar": "الْيَابَانِيَّةُ",
+        "tr": {
+          "id": "bahasa Jepang",
+          "en": "Japanese"
+        },
+        "digit": null
+      },
+      {
+        "id": "v32",
+        "ar": "التُّرْكِيَّةُ",
+        "tr": {
+          "id": "bahasa Turki",
+          "en": "Turkish"
+        },
+        "digit": null
+      },
+      {
+        "id": "v33",
+        "ar": "الْمَلَايُوِيَّةُ",
+        "tr": {
+          "id": "bahasa Melayu",
+          "en": "Malay"
+        },
+        "digit": null
+      },
+      {
+        "id": "v34",
+        "ar": "الْبُرْتُغَالِيَّةُ",
+        "tr": {
+          "id": "bahasa Portugis",
+          "en": "Portuguese"
+        },
+        "digit": null
+      }
+    ],
+    "patterns": [
+      {
+        "ar": "مَا اسْمُكِ؟ — اسْمِي يُوكِي.",
+        "tr": {
+          "id": "Siapa namamu? — Namaku Yuki.",
+          "en": "What's your name? — My name is Yuki."
+        }
+      },
+      {
+        "ar": "مَا اسْمُكَ؟ — اسْمِي سَالِمٌ.",
+        "tr": {
+          "id": "Siapa namamu? — Namaku Salim.",
+          "en": "What's your name? — My name is Salim."
+        }
+      },
+      {
+        "ar": "أَنَا مِنْ إِنْدُونِيسِيَا.",
+        "tr": {
+          "id": "Saya dari Indonesia.",
+          "en": "I am from Indonesia."
+        }
+      },
+      {
+        "ar": "أَنَا مِنَ الْيَابَانِ.",
+        "tr": {
+          "id": "Saya dari Jepang.",
+          "en": "I am from Japan."
+        }
+      },
+      {
+        "ar": "مِنْ أَيْنَ أَنْتَ؟",
+        "tr": {
+          "id": "Kamu dari mana?",
+          "en": "Where are you from?"
+        }
+      },
+      {
+        "ar": "هَلْ تَتَكَلَّمُ الْعَرَبِيَّةَ؟",
+        "tr": {
+          "id": "Apakah kamu berbicara bahasa Arab?",
+          "en": "Do you speak Arabic?"
+        }
+      },
+      {
+        "ar": "هِيَ مِنَ الْيَابَانِ.",
+        "tr": {
+          "id": "Dia (perempuan) dari Jepang.",
+          "en": "She is from Japan."
+        }
+      },
+      {
+        "ar": "هَلْ تَتَكَلَّمِينَ الْإِنْجِلِيزِيَّةَ؟",
+        "tr": {
+          "id": "Apakah kamu berbicara bahasa Inggris?",
+          "en": "Do you speak English?"
+        }
+      },
+      {
+        "ar": "أَتَكَلَّمُ الْعَرَبِيَّةَ قَلِيلًا.",
+        "tr": {
+          "id": "Saya bisa sedikit berbahasa Arab.",
+          "en": "I speak a little Arabic."
+        }
+      }
+    ],
+    "dialogue": [
+      {
+        "ar": "صَبَاحُ الْخَيْرِ. أَنَا سَالِمٌ. مَا اسْمُكِ؟",
+        "tr": {
+          "id": "Selamat pagi. Saya Salim. Siapa namamu?",
+          "en": "Good morning. I'm Salim. What's your name?"
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "صَبَاحُ النُّورِ. اسْمِي يُوكِي.",
+        "tr": {
+          "id": "Selamat pagi. Namaku Yuki.",
+          "en": "Good morning. My name is Yuki."
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "تَشَرَّفْنَا. مِنْ أَيْنَ أَنْتِ؟",
+        "tr": {
+          "id": "Senang berkenalan. Kamu dari mana?",
+          "en": "Nice to meet you. Where are you from?"
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "أَنَا مِنَ الْيَابَانِ. وَأَنْتَ؟",
+        "tr": {
+          "id": "Saya dari Jepang. Kamu?",
+          "en": "I'm from Japan. And you?"
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "أَنَا مِنْ عُمَانَ. هَلْ تَتَكَلَّمِينَ الْعَرَبِيَّةَ؟",
+        "tr": {
+          "id": "Saya dari Oman. Apakah kamu berbicara bahasa Arab?",
+          "en": "I'm from Oman. Do you speak Arabic?"
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "نَعَمْ، قَلِيلًا. أَتَكَلَّمُ الْيَابَانِيَّةَ وَالْإِنْجِلِيزِيَّةَ.",
+        "tr": {
+          "id": "Ya, sedikit. Saya berbicara bahasa Jepang dan bahasa Inggris.",
+          "en": "Yes, a little. I speak Japanese and English."
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "السَّلَامُ عَلَيْكُمْ. أَنَا مُوسَى، مِنْ نَيْجِيرِيَا.",
+        "tr": {
+          "id": "Assalamu'alaikum. Saya Musa, dari Nigeria.",
+          "en": "Peace be upon you. I'm Musa, from Nigeria."
+        },
+        "speaker": "مُوسَى"
+      },
+      {
+        "ar": "وَعَلَيْكُمُ السَّلَامُ. اسْمِي نُورٌ، أَنَا مِنْ مَالِيزِيَا.",
+        "tr": {
+          "id": "Wa'alaikumussalam. Namaku Nur, saya dari Malaysia.",
+          "en": "And peace be upon you. My name is Nur, I'm from Malaysia."
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "أَهْلًا وَسَهْلًا. مَنْ هُوَ؟",
+        "tr": {
+          "id": "Halo. Siapa dia?",
+          "en": "Hello. Who is he?"
+        },
+        "speaker": "مُوسَى"
+      },
+      {
+        "ar": "هُوَ رِزْقِي، صَدِيقِي. هُوَ مِنْ إِنْدُونِيسِيَا.",
+        "tr": {
+          "id": "Dia Rizki, temanku. Dia dari Indonesia.",
+          "en": "He is Rizki, my friend. He is from Indonesia."
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "هَلْ أَنْتِ طَالِبَةٌ؟",
+        "tr": {
+          "id": "Apakah kamu pelajar?",
+          "en": "Are you a student?"
+        },
+        "speaker": "مُوسَى"
+      },
+      {
+        "ar": "نَعَمْ، نَحْنُ طُلَّابٌ. وَأَنْتَ؟",
+        "tr": {
+          "id": "Ya, kami pelajar. Kamu?",
+          "en": "Yes, we are students. And you?"
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "أَنَا طَالِبٌ أَيْضًا. تَشَرَّفْنَا!",
+        "tr": {
+          "id": "Saya juga pelajar. Senang berkenalan!",
+          "en": "I'm a student too. Nice to meet you!"
+        },
+        "speaker": "مُوسَى"
+      }
+    ],
+    "qiraah": {
+      "sentences": [
+        {
+          "ar": "اسْمِي رِزْقِي.",
+          "tr": {
+            "id": "Namaku Rizki.",
+            "en": "My name is Rizki."
+          }
+        },
+        {
+          "ar": "أَنَا طَالِبٌ مِنْ إِنْدُونِيسِيَا.",
+          "tr": {
+            "id": "Saya pelajar dari Indonesia.",
+            "en": "I am a student from Indonesia."
+          }
+        },
+        {
+          "ar": "أَتَكَلَّمُ الْإِنْدُونِيسِيَّةَ.",
+          "tr": {
+            "id": "Saya berbicara bahasa Indonesia.",
+            "en": "I speak Indonesian."
+          }
+        },
+        {
+          "ar": "وَأَتَكَلَّمُ الْعَرَبِيَّةَ قَلِيلًا.",
+          "tr": {
+            "id": "Saya juga bisa sedikit berbahasa Arab.",
+            "en": "And I speak a little Arabic."
+          }
+        },
+        {
+          "ar": "صَدِيقَتِي نُورٌ مِنْ مَالِيزِيَا.",
+          "tr": {
+            "id": "Temanku Nur dari Malaysia.",
+            "en": "My friend Nur is from Malaysia."
+          }
+        },
+        {
+          "ar": "هِيَ تَتَكَلَّمُ الْمَلَايُوِيَّةَ.",
+          "tr": {
+            "id": "Dia berbicara bahasa Melayu.",
+            "en": "She speaks Malay."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "q01",
+          "ar": null,
+          "prompt": {
+            "id": "Rizki dari negara mana?",
+            "en": "Which country is Rizki from?"
+          },
+          "options": [
+            {
+              "ar": "إِنْدُونِيسِيَا",
+              "correct": true
+            },
+            {
+              "ar": "مَالِيزِيَا",
+              "correct": false
+            },
+            {
+              "ar": "عُمَانُ",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q02",
+          "ar": "هَلْ رِزْقِي طَالِبٌ؟",
+          "prompt": {
+            "id": "Jawab pertanyaan ini.",
+            "en": "Answer the question."
+          },
+          "options": [
+            {
+              "ar": "نَعَمْ",
+              "correct": true
+            },
+            {
+              "ar": "لَا",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q03",
+          "ar": null,
+          "prompt": {
+            "id": "Bahasa apa yang Rizki bicarakan sedikit?",
+            "en": "Which language does Rizki speak a little?"
+          },
+          "options": [
+            {
+              "ar": "الْعَرَبِيَّةُ",
+              "correct": true
+            },
+            {
+              "ar": "الْإِنْدُونِيسِيَّةُ",
+              "correct": false
+            },
+            {
+              "ar": "الْيَابَانِيَّةُ",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q04",
+          "ar": null,
+          "prompt": {
+            "id": "Siapa Nur?",
+            "en": "Who is Nur?"
+          },
+          "options": [
+            {
+              "tr": {
+                "id": "Teman Rizki",
+                "en": "Rizki's friend"
+              },
+              "correct": true
+            },
+            {
+              "tr": {
+                "id": "Guru Rizki",
+                "en": "Rizki's teacher"
+              },
+              "correct": false
+            },
+            {
+              "tr": {
+                "id": "Kakak Rizki",
+                "en": "Rizki's sister"
+              },
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q05",
+          "ar": "هَلْ نُورٌ مِنْ إِنْدُونِيسِيَا؟",
+          "prompt": {
+            "id": "Jawab pertanyaan ini.",
+            "en": "Answer the question."
+          },
+          "options": [
+            {
+              "ar": "لَا",
+              "correct": true
+            },
+            {
+              "ar": "نَعَمْ",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    "exam": [
+      {
+        "id": "k01",
+        "type": "pick-image",
+        "target": "v21",
+        "distractors": [
+          "v23",
+          "v19"
+        ]
+      },
+      {
+        "id": "k02",
+        "type": "pick-image",
+        "target": "v24",
+        "distractors": [
+          "v25",
+          "v18"
+        ]
+      },
+      {
+        "id": "k03",
+        "type": "pick-image",
+        "target": "v15",
+        "distractors": [
+          "v14",
+          "v11"
+        ]
+      },
+      {
+        "id": "k04",
+        "type": "pick-image",
+        "target": "v14",
+        "distractors": [
+          "v15",
+          "v08"
+        ]
+      },
+      {
+        "id": "k05",
+        "type": "listen-pick",
+        "target": "v01",
+        "distractors": [
+          "v02",
+          "v09"
+        ]
+      },
+      {
+        "id": "k06",
+        "type": "listen-pick",
+        "target": "v03",
+        "distractors": [
+          "v04",
+          "v16"
+        ]
+      },
+      {
+        "id": "k07",
+        "type": "listen-pick",
+        "target": "v07",
+        "distractors": [
+          "v06",
+          "v08"
+        ]
+      },
+      {
+        "id": "k08",
+        "type": "listen-pick",
+        "target": "v28",
+        "distractors": [
+          "v30",
+          "v32"
+        ]
+      },
+      {
+        "id": "k09",
+        "type": "listen-pick",
+        "target": "v05",
+        "distractors": [
+          "v10",
+          "v11"
+        ]
+      },
+      {
+        "id": "k10",
+        "type": "match",
+        "mode": "ar-tr",
+        "pairs": [
+          "v16",
+          "v13",
+          "v08",
+          "v10"
+        ]
+      }
+    ]
+  },
+  {
+    "wahdah": 3,
+    "title": {
+      "ar": "الْأَرْقَامُ",
+      "tr": {
+        "id": "Angka",
+        "en": "Numbers"
+      }
+    },
+    "canDo": {
+      "id": "Saya bisa menyebut dan memahami angka 0 sampai 20, menyebut umur saya, serta menyebut dan mencatat nomor telepon atau nomor kamar.",
+      "en": "I can say and understand numbers from 0 to 20, say my age, and give or note down a phone or room number."
+    },
+    "vocab": [
+      {
+        "id": "v01",
+        "ar": "صِفْرٌ",
+        "tr": {
+          "id": "0 (nol)",
+          "en": "0 (zero)"
+        },
+        "digit": "٠ (0)"
+      },
+      {
+        "id": "v02",
+        "ar": "وَاحِدٌ",
+        "tr": {
+          "id": "1 (satu)",
+          "en": "1 (one)"
+        },
+        "digit": "١ (1)"
+      },
+      {
+        "id": "v03",
+        "ar": "اثْنَانِ",
+        "tr": {
+          "id": "2 (dua)",
+          "en": "2 (two)"
+        },
+        "digit": "٢ (2)"
+      },
+      {
+        "id": "v04",
+        "ar": "ثَلَاثَةٌ",
+        "tr": {
+          "id": "3 (tiga)",
+          "en": "3 (three)"
+        },
+        "digit": "٣ (3)"
+      },
+      {
+        "id": "v05",
+        "ar": "أَرْبَعَةٌ",
+        "tr": {
+          "id": "4 (empat)",
+          "en": "4 (four)"
+        },
+        "digit": "٤ (4)"
+      },
+      {
+        "id": "v06",
+        "ar": "خَمْسَةٌ",
+        "tr": {
+          "id": "5 (lima)",
+          "en": "5 (five)"
+        },
+        "digit": "٥ (5)"
+      },
+      {
+        "id": "v07",
+        "ar": "سِتَّةٌ",
+        "tr": {
+          "id": "6 (enam)",
+          "en": "6 (six)"
+        },
+        "digit": "٦ (6)"
+      },
+      {
+        "id": "v08",
+        "ar": "سَبْعَةٌ",
+        "tr": {
+          "id": "7 (tujuh)",
+          "en": "7 (seven)"
+        },
+        "digit": "٧ (7)"
+      },
+      {
+        "id": "v09",
+        "ar": "ثَمَانِيَةٌ",
+        "tr": {
+          "id": "8 (delapan)",
+          "en": "8 (eight)"
+        },
+        "digit": "٨ (8)"
+      },
+      {
+        "id": "v10",
+        "ar": "تِسْعَةٌ",
+        "tr": {
+          "id": "9 (sembilan)",
+          "en": "9 (nine)"
+        },
+        "digit": "٩ (9)"
+      },
+      {
+        "id": "v11",
+        "ar": "عَشَرَةٌ",
+        "tr": {
+          "id": "10 (sepuluh)",
+          "en": "10 (ten)"
+        },
+        "digit": "١٠ (10)"
+      },
+      {
+        "id": "v12",
+        "ar": "أَحَدَ عَشَرَ",
+        "tr": {
+          "id": "11 (sebelas)",
+          "en": "11 (eleven)"
+        },
+        "digit": "١١ (11)"
+      },
+      {
+        "id": "v13",
+        "ar": "اثْنَا عَشَرَ",
+        "tr": {
+          "id": "12 (dua belas)",
+          "en": "12 (twelve)"
+        },
+        "digit": "١٢ (12)"
+      },
+      {
+        "id": "v14",
+        "ar": "ثَلَاثَةَ عَشَرَ",
+        "tr": {
+          "id": "13 (tiga belas)",
+          "en": "13 (thirteen)"
+        },
+        "digit": "١٣ (13)"
+      },
+      {
+        "id": "v15",
+        "ar": "أَرْبَعَةَ عَشَرَ",
+        "tr": {
+          "id": "14 (empat belas)",
+          "en": "14 (fourteen)"
+        },
+        "digit": "١٤ (14)"
+      },
+      {
+        "id": "v16",
+        "ar": "خَمْسَةَ عَشَرَ",
+        "tr": {
+          "id": "15 (lima belas)",
+          "en": "15 (fifteen)"
+        },
+        "digit": "١٥ (15)"
+      },
+      {
+        "id": "v17",
+        "ar": "سِتَّةَ عَشَرَ",
+        "tr": {
+          "id": "16 (enam belas)",
+          "en": "16 (sixteen)"
+        },
+        "digit": "١٦ (16)"
+      },
+      {
+        "id": "v18",
+        "ar": "سَبْعَةَ عَشَرَ",
+        "tr": {
+          "id": "17 (tujuh belas)",
+          "en": "17 (seventeen)"
+        },
+        "digit": "١٧ (17)"
+      },
+      {
+        "id": "v19",
+        "ar": "ثَمَانِيَةَ عَشَرَ",
+        "tr": {
+          "id": "18 (delapan belas)",
+          "en": "18 (eighteen)"
+        },
+        "digit": "١٨ (18)"
+      },
+      {
+        "id": "v20",
+        "ar": "تِسْعَةَ عَشَرَ",
+        "tr": {
+          "id": "19 (sembilan belas)",
+          "en": "19 (nineteen)"
+        },
+        "digit": "١٩ (19)"
+      },
+      {
+        "id": "v21",
+        "ar": "عِشْرُونَ",
+        "tr": {
+          "id": "20 (dua puluh)",
+          "en": "20 (twenty)"
+        },
+        "digit": "٢٠ (20)"
+      },
+      {
+        "id": "v22",
+        "ar": "رَقْمٌ",
+        "tr": {
+          "id": "nomor, angka",
+          "en": "number"
+        },
+        "digit": null
+      },
+      {
+        "id": "v23",
+        "ar": "عُمْرٌ",
+        "tr": {
+          "id": "umur",
+          "en": "age"
+        },
+        "digit": null
+      },
+      {
+        "id": "v24",
+        "ar": "سَنَةٌ",
+        "tr": {
+          "id": "tahun",
+          "en": "year"
+        },
+        "digit": null
+      },
+      {
+        "id": "v25",
+        "ar": "كَمْ",
+        "tr": {
+          "id": "berapa",
+          "en": "how many, how much"
+        },
+        "digit": null
+      },
+      {
+        "id": "v26",
+        "ar": "هَاتِفٌ",
+        "tr": {
+          "id": "telepon",
+          "en": "telephone"
+        },
+        "digit": null
+      },
+      {
+        "id": "v27",
+        "ar": "غُرْفَةٌ",
+        "tr": {
+          "id": "kamar, ruangan",
+          "en": "room"
+        },
+        "digit": null
+      },
+      {
+        "id": "v28",
+        "ar": "سَفِينَةٌ",
+        "tr": {
+          "id": "kapal",
+          "en": "ship"
+        },
+        "digit": null
+      },
+      {
+        "id": "v29",
+        "ar": "فِي",
+        "tr": {
+          "id": "di, di dalam",
+          "en": "in"
+        },
+        "digit": null
+      }
+    ],
+    "patterns": [
+      {
+        "ar": "كَمْ عُمْرُكِ يَا نُورُ؟",
+        "tr": {
+          "id": "Berapa umurmu, Nur?",
+          "en": "How old are you, Nur?"
+        }
+      },
+      {
+        "ar": "عُمْرِي عِشْرُونَ سَنَةً.",
+        "tr": {
+          "id": "Umurku dua puluh tahun.",
+          "en": "I am twenty years old."
+        }
+      },
+      {
+        "ar": "مَا رَقْمُ هَاتِفِكِ؟",
+        "tr": {
+          "id": "Berapa nomor teleponmu?",
+          "en": "What's your phone number?"
+        }
+      },
+      {
+        "ar": "رَقْمُ هَاتِفِي: ثَلَاثَةٌ، صِفْرٌ، سَبْعَةٌ.",
+        "tr": {
+          "id": "Nomor teleponku: tiga, nol, tujuh.",
+          "en": "My phone number is: three, zero, seven."
+        }
+      },
+      {
+        "ar": "كَمْ عُمْرُكَ يَا سَالِمُ؟",
+        "tr": {
+          "id": "Berapa umurmu, Salim?",
+          "en": "How old are you, Salim?"
+        }
+      },
+      {
+        "ar": "مَا رَقْمُ هَاتِفِكَ؟",
+        "tr": {
+          "id": "Berapa nomor teleponmu?",
+          "en": "What's your phone number?"
+        }
+      },
+      {
+        "ar": "رَقْمُ غُرْفَتِي سَبْعَةَ عَشَرَ.",
+        "tr": {
+          "id": "Nomor kamarku tujuh belas.",
+          "en": "My room number is seventeen."
+        }
+      },
+      {
+        "ar": "عِشْرُونَ غُرْفَةً فِي السَّفِينَةِ.",
+        "tr": {
+          "id": "Dua puluh kamar di kapal.",
+          "en": "Twenty rooms on the ship."
+        }
+      },
+      {
+        "ar": "كَمْ غُرْفَةً فِي السَّفِينَةِ؟",
+        "tr": {
+          "id": "Ada berapa kamar di kapal?",
+          "en": "How many rooms are on the ship?"
+        }
+      }
+    ],
+    "dialogue": [
+      {
+        "ar": "كَمْ عُمْرُكِ يَا يُوكِي؟",
+        "tr": {
+          "id": "Berapa umurmu, Yuki?",
+          "en": "How old are you, Yuki?"
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "عُمْرِي عِشْرُونَ سَنَةً. وَأَنْتِ؟",
+        "tr": {
+          "id": "Umurku dua puluh tahun. Kamu?",
+          "en": "I'm twenty. And you?"
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "عُمْرِي عِشْرُونَ سَنَةً أَيْضًا!",
+        "tr": {
+          "id": "Umurku juga dua puluh tahun!",
+          "en": "I'm twenty too!"
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "مَا رَقْمُ هَاتِفِكِ؟",
+        "tr": {
+          "id": "Berapa nomor teleponmu?",
+          "en": "What's your phone number?"
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "رَقْمُ هَاتِفِي: صِفْرٌ، تِسْعَةٌ، ثَلَاثَةٌ، سَبْعَةٌ، اثْنَانِ، خَمْسَةٌ.",
+        "tr": {
+          "id": "Nomor teleponku: nol, sembilan, tiga, tujuh, dua, lima.",
+          "en": "My phone number is: zero, nine, three, seven, two, five."
+        },
+        "speaker": "نُور"
+      },
+      {
+        "ar": "شُكْرًا يَا نُورُ!",
+        "tr": {
+          "id": "Terima kasih, Nur!",
+          "en": "Thank you, Nur!"
+        },
+        "speaker": "يُوكِي"
+      },
+      {
+        "ar": "يَا سَالِمُ، مَا رَقْمُ غُرْفَتِكَ؟",
+        "tr": {
+          "id": "Salim, berapa nomor kamarmu?",
+          "en": "Salim, what's your room number?"
+        },
+        "speaker": "مُوسَى"
+      },
+      {
+        "ar": "رَقْمُ غُرْفَتِي سَبْعَةَ عَشَرَ. وَأَنْتَ؟",
+        "tr": {
+          "id": "Nomor kamarku tujuh belas. Kamu?",
+          "en": "My room number is seventeen. And you?"
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "رَقْمُ غُرْفَتِي اثْنَا عَشَرَ.",
+        "tr": {
+          "id": "Nomor kamarku dua belas.",
+          "en": "My room number is twelve."
+        },
+        "speaker": "مُوسَى"
+      },
+      {
+        "ar": "كَمْ غُرْفَةً فِي السَّفِينَةِ؟",
+        "tr": {
+          "id": "Ada berapa kamar di kapal ini?",
+          "en": "How many rooms are on the ship?"
+        },
+        "speaker": "سَالِم"
+      },
+      {
+        "ar": "عِشْرُونَ غُرْفَةً.",
+        "tr": {
+          "id": "Dua puluh kamar.",
+          "en": "Twenty rooms."
+        },
+        "speaker": "مُوسَى"
+      },
+      {
+        "ar": "شُكْرًا يَا مُوسَى. إِلَى اللِّقَاءِ.",
+        "tr": {
+          "id": "Terima kasih, Musa. Sampai jumpa.",
+          "en": "Thank you, Musa. See you."
+        },
+        "speaker": "سَالِم"
+      }
+    ],
+    "qiraah": {
+      "sentences": [
+        {
+          "ar": "اسْمِي مُوسَى.",
+          "tr": {
+            "id": "Namaku Musa.",
+            "en": "My name is Musa."
+          }
+        },
+        {
+          "ar": "أَنَا مِنْ نَيْجِيرِيَا.",
+          "tr": {
+            "id": "Saya dari Nigeria.",
+            "en": "I am from Nigeria."
+          }
+        },
+        {
+          "ar": "عُمْرِي عِشْرُونَ سَنَةً.",
+          "tr": {
+            "id": "Umurku dua puluh tahun.",
+            "en": "I am twenty years old."
+          }
+        },
+        {
+          "ar": "رَقْمُ غُرْفَتِي فِي السَّفِينَةِ اثْنَا عَشَرَ.",
+          "tr": {
+            "id": "Nomor kamarku di kapal dua belas.",
+            "en": "My room number on the ship is twelve."
+          }
+        },
+        {
+          "ar": "رَقْمُ هَاتِفِي: ثَمَانِيَةٌ، أَرْبَعَةٌ، صِفْرٌ، سِتَّةٌ، وَاحِدٌ.",
+          "tr": {
+            "id": "Nomor teleponku: delapan, empat, nol, enam, satu.",
+            "en": "My phone number is: eight, four, zero, six, one."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "q01",
+          "ar": "كَمْ عُمْرُ مُوسَى؟",
+          "prompt": {
+            "id": "Jawab pertanyaan ini.",
+            "en": "Answer the question."
+          },
+          "options": [
+            {
+              "tr": {
+                "id": "20",
+                "en": "20"
+              },
+              "correct": true
+            },
+            {
+              "tr": {
+                "id": "12",
+                "en": "12"
+              },
+              "correct": false
+            },
+            {
+              "tr": {
+                "id": "8",
+                "en": "8"
+              },
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q02",
+          "ar": null,
+          "prompt": {
+            "id": "Berapa nomor kamar Musa?",
+            "en": "What is Musa's room number?"
+          },
+          "options": [
+            {
+              "tr": {
+                "id": "12",
+                "en": "12"
+              },
+              "correct": true
+            },
+            {
+              "tr": {
+                "id": "17",
+                "en": "17"
+              },
+              "correct": false
+            },
+            {
+              "tr": {
+                "id": "20",
+                "en": "20"
+              },
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q03",
+          "ar": null,
+          "prompt": {
+            "id": "Berapa nomor telepon Musa?",
+            "en": "What is Musa's phone number?"
+          },
+          "options": [
+            {
+              "tr": {
+                "id": "84061",
+                "en": "84061"
+              },
+              "correct": true
+            },
+            {
+              "tr": {
+                "id": "84016",
+                "en": "84016"
+              },
+              "correct": false
+            },
+            {
+              "tr": {
+                "id": "48061",
+                "en": "48061"
+              },
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q04",
+          "ar": "هَلْ مُوسَى مِنْ مِصْرَ؟",
+          "prompt": {
+            "id": "Jawab pertanyaan ini.",
+            "en": "Answer the question."
+          },
+          "options": [
+            {
+              "ar": "لَا",
+              "correct": true
+            },
+            {
+              "ar": "نَعَمْ",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q05",
+          "ar": null,
+          "prompt": {
+            "id": "Kamar Musa ada di mana?",
+            "en": "Where is Musa's room?"
+          },
+          "options": [
+            {
+              "tr": {
+                "id": "Di kapal",
+                "en": "On the ship"
+              },
+              "correct": true
+            },
+            {
+              "tr": {
+                "id": "Di sekolah",
+                "en": "At school"
+              },
+              "correct": false
+            },
+            {
+              "tr": {
+                "id": "Di rumah",
+                "en": "At home"
+              },
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    "exam": [
+      {
+        "id": "k01",
+        "type": "listen-pick",
+        "target": "v08",
+        "distractors": [
+          "v18",
+          "v02"
+        ]
+      },
+      {
+        "id": "k02",
+        "type": "listen-pick",
+        "target": "v13",
+        "distractors": [
+          "v03",
+          "v21"
+        ]
+      },
+      {
+        "id": "k03",
+        "type": "listen-pick",
+        "target": "v10",
+        "distractors": [
+          "v20",
+          "v08"
+        ]
+      },
+      {
+        "id": "k04",
+        "type": "listen-pick",
+        "target": "v16",
+        "distractors": [
+          "v06",
+          "v15"
+        ]
+      },
+      {
+        "id": "k05",
+        "type": "listen-pick",
+        "target": "v01",
+        "distractors": [
+          "v02",
+          "v11"
+        ]
+      },
+      {
+        "id": "k06",
+        "type": "match",
+        "mode": "ar-tr",
+        "pairs": [
+          "v04",
+          "v07",
+          "v12",
+          "v19"
+        ]
+      },
+      {
+        "id": "k07",
+        "type": "pick-image",
+        "target": "v26",
+        "distractors": [
+          "v28",
+          "v27"
+        ]
+      },
+      {
+        "id": "k08",
+        "type": "pick-image",
+        "target": "v28",
+        "distractors": [
+          "v27",
+          "v26"
+        ]
+      },
+      {
+        "id": "k09",
+        "type": "listen-pick",
+        "target": "v23",
+        "distractors": [
+          "v24",
+          "v22"
+        ]
+      },
+      {
+        "id": "k10",
+        "type": "listen-pick",
+        "target": "v25",
+        "distractors": [
+          "v29",
+          "v22"
+        ]
+      }
+    ]
+  }
+]

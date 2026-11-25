@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom';
 import type { FormEvent } from 'react';
 import { useProfile } from '../store';
-import { l, UNITS } from '../domain/content';
+import { l, unitsFor } from '../domain/content';
 import { isActivityUnlocked, isUnitUnlocked, masteryPct } from '../domain/progress';
 import { filterVocabulary, masteryFilter, vocabularySessionId } from '../domain/vocabulary';
 import type { MasteryFilter } from '../domain/vocabulary';
@@ -28,7 +28,7 @@ export default function Vocabulary() {
   if (previousSearch !== searchKey) {
     setPreviousSearch(searchKey); setQuery(appliedQuery); setStatus(appliedStatus);
   }
-  const unit = UNITS.find(u => u.id === Number(unitId));
+  const unit = unitsFor(profile).find(u => u.id === Number(unitId));
   if (!unit || !isUnitUnlocked(profile, unit.id)) return <Navigate to="/" replace />;
   const matches = filterVocabulary(unit, profile.mastery, appliedQuery, appliedStatus), pct = masteryPct(profile, unit);
   const submit = (event: FormEvent<HTMLFormElement>) => {
