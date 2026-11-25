@@ -72,6 +72,8 @@ Alur yang sudah diimplementasikan: bahasa ID/EN → kustomisasi hudhud → mulai
 - Hiwar dapat memakai **Web Speech API** setelah tindakan pengguna dan izin mikrofon. Transkrip dibandingkan dengan teks yang dinormalisasi; hasil ini bukan penilaian makhraj. Jika tidak tersedia/gagal, pengguna bisa lanjut tanpa mikrofon; bagian itu ditandai untuk pengulangan dan tidak dihitung sebagai jawaban benar.
 - Tiga hint gratis per hari menurut tanggal lokal; tambahan 10 kurma, maksimal lima pembelian sehari. Hint ditawarkan setelah dua jawaban salah berturut-turut atau 20 detik tanpa interaksi saat halaman terlihat. Kuota hanya terpakai setelah diklik, maksimal satu per soal, tanpa hint dalam ujian. Hint mengurangi pilihan yang salah atau membantu urutan; pilihan yang dieliminasi tidak dapat dikirim sebagai jawaban. XP jawaban benar dengan hint menjadi setengah, dibulatkan ke bawah (5 → 2 XP), dan pemakaiannya tetap tercatat setelah reload.
 
+Globe Rihlah memakai proyeksi ortografis D3 dengan batas negara Natural Earth 1:110m (v5.1.2, domain publik) yang disertakan dalam build dan tersedia offline setelah cache siap. Ikon **الْخَرِيطَةُ** membuka halaman globe tersendiri. Geser untuk memutar atau cubit untuk zoom, pilih penanda pelabuhan, atau buka tampilan rute Jakarta–Muscat. Garis rute menggambarkan perjalanan Midad.
+
 Build statis berada di `dist/app/`, terpisah dari `dist/paket-aset/`. Hash routing membuat halaman bisa dimuat ulang tanpa aturan rewrite server.
 
 ## PWA dan offline
