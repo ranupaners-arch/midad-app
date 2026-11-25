@@ -1,22 +1,37 @@
 import { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { activities, activityKey, l, UNITS } from '../domain/content';
+import { activities, activityKey, l, unitsFor } from '../domain/content';
 import { isActivityUnlocked, isUnitUnlocked, lessonCheckpoint, masteryPct, openChest } from '../domain/progress';
 import { useProfile } from '../store';
 import { Button, Dialog, Mascot, Progress, Text, Tr } from '../ui/Common';
 import { Icon } from '../ui/Icon';
 
+const languageNotes = new Map([
+  [1, l(
+    '«مَسَاءُ الْخَيْرِ» تَحِيَّةُ الْمَسَاءِ، وَ«تُصْبِحُ عَلَى خَيْرٍ» تُقَالُ قَبْلَ النَّوْمِ. فِي «حَالُكَ» وَ«حَالُكِ» تَدُلُّ النِّهَايَةُ عَلَى مَنْ تُخَاطِبُهُ. وَ«آسِفٌ» أَوْ «آسِفَةٌ» تَدُلُّ عَلَى مَنْ يَعْتَذِرُ.',
+    'مَسَاءُ الْخَيْرِ adalah sapaan sore atau malam. تُصْبِحُ عَلَى خَيْرٍ diucapkan sebelum tidur. Akhiran ـكَ dan ـكِ pada حَالُكَ dan حَالُكِ mengikuti lawan bicara. Pilihan آسِفٌ atau آسِفَةٌ mengikuti orang yang meminta maaf.',
+    'Use مَسَاءُ الْخَيْرِ to greet someone in the evening and تُصْبِحُ عَلَى خَيْرٍ before sleep. The endings in حَالُكَ and حَالُكِ mark who you are speaking to. The forms آسِفٌ and آسِفَةٌ mark who is apologizing.',
+  )],
+  [3, l(
+    'نَقُولُ: عُمْرِي عِشْرُونَ سَنَةً، وَرَقْمُ غُرْفَتِي اثْنَا عَشَرَ. وَنَقْرَأُ رَقْمَ الْهَاتِفِ رَقْمًا رَقْمًا.',
+    'Umur: dua puluh tahun. Nomor kamar: dua belas. Untuk nomor telepon, baca tiap digit secara terpisah. Misalnya, 84061 dibaca delapan, empat, nol, enam, satu.',
+    'Age: twenty years. Room number: twelve. Read a phone number one digit at a time. For example, 84061 is eight, four, zero, six, one.',
+  )],
+]);
+
 export default function UnitScreen() {
   const { unitId } = useParams(), { profile, update } = useProfile();
   const [chest, setChest] = useState(false);
-  const unit = UNITS.find(u => u.id === Number(unitId));
+  const unit = unitsFor(profile).find(u => u.id === Number(unitId));
   if (!unit || !isUnitUnlocked(profile, unit.id)) return <Navigate to="/" replace />;
   const list = activities(unit), pct = masteryPct(profile, unit);
+  const note = unit.curriculum === 'shaharil' ? languageNotes.get(unit.id) : undefined;
   const chestUnlocked = profile.completedActivities.includes(activityKey(unit.id, 'dialogue'));
   const icons = { vocabulary: 'book', pattern: 'pen', dialogue: 'greeting', reading: 'book', practice: 'compass', quiz: 'trophy' };
   return <div className="screen unit-screen">
     <Link to="/" className="back-link"><Icon name="back" /> رِحْلَتِي</Link>
     <div className="unit-screen-heading"><span className="eyebrow">الْوَحْدَةُ <span className="number">{unit.id}</span> · <span lang="en" dir="ltr">A1</span></span><h1 id="main-title" tabIndex={-1}><Text text={unit.title} /></h1><p className="muted"><Text text={unit.subtitle} /></p></div>
+    {note && <aside className="reading-card" aria-label="مُلَاحَظَةٌ لُغَوِيَّةٌ"><Text text={note} force /></aside>}
     <section className="mastery-card" aria-label="إِتْقَانُ الْمُفْرَدَاتِ"><Mascot emote={pct >= 80 ? 'cheer' : 'think'} decorative /><div><b><Text text={l('قَطْرَةً قَطْرَةً، تَتَقَدَّمُ', 'Sedikit demi sedikit, kamu bertumbuh', 'Little by little, you grow')} /></b><span className="mastery-detail"><span className="number">{unit.words.filter(w => (profile.mastery[w.idKey] ?? 0) >= 3).length}/{unit.words.length}</span> كَلِمَةً مَحْفُوظَةً</span><Progress value={pct} label="نِسْبَةُ الْمُفْرَدَاتِ الْمَحْفُوظَةِ" /></div><span className="percentage number">{pct}%</span></section>
     <Link className="vocabulary-open-link" to={`/unit/${unit.id}/words`}><Icon name="book" /><span><Text text={l('مُفْرَدَاتُ هَذِهِ الْوَحْدَةِ', 'Kosakata dan penguasaan wahdah ini', 'This unit’s vocabulary and mastery')} /></span><span className="number">{unit.words.length}</span></Link>
     <ol className="activity-list" role="list">{list.map((activity, index) => {

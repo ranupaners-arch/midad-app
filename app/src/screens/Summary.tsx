@@ -1,6 +1,6 @@
 import { Link, Navigate } from 'react-router-dom';
 import { demoCompleted } from '../domain/checkpoints';
-import { l, UNITS } from '../domain/content';
+import { l, unitsFor } from '../domain/content';
 import { masteryPct } from '../domain/progress';
 import { pendingReviews } from '../domain/reviews';
 import { useProfile } from '../store';
@@ -10,13 +10,13 @@ import { Icon } from '../ui/Icon';
 export default function Summary() {
   const { profile } = useProfile();
   if (!demoCompleted(profile)) return <Navigate to="/" replace />;
-  const total = UNITS.reduce((sum, unit) => sum + unit.words.length, 0);
-  const mastered = UNITS.flatMap(unit => unit.words).filter(word => (profile.mastery[word.idKey] ?? 0) >= 3).length;
-  const reviews = pendingReviews(profile).length, remainingUnit = UNITS.find(unit => masteryPct(profile, unit) < 100);
+  const total = unitsFor(profile).reduce((sum, unit) => sum + unit.words.length, 0);
+  const mastered = unitsFor(profile).flatMap(unit => unit.words).filter(word => (profile.mastery[word.idKey] ?? 0) >= 3).length;
+  const reviews = pendingReviews(profile).length, remainingUnit = unitsFor(profile).find(unit => masteryPct(profile, unit) < 100);
   return <div className="screen summary-screen"><Link className="back-link" to="/"><Icon name="back" /> رِحْلَتِي</Link>
     <div className="summary-hero"><Mascot emote="cheer" decorative /><span className="eyebrow">ثَلَاثُ مَحَطَّاتٍ، وَبِدَايَةُ رِحْلَةٍ</span><h1 id="main-title" tabIndex={-1}><Text text={l('حَصِيلَةُ رِحْلَتِي', 'Hasil perjalananmu', 'Your journey so far')} /></h1><p><Text text={l('أَكْمَلْتَ الْوَحَدَاتِ الثَّلَاثَ الْأُولَى. كُلُّ مُرَاجَعَةٍ تَجْعَلُ خُطْوَتَكَ أَثْبَتَ.', 'Tiga wahdah pertama selesai. Kamu bisa terus menguatkan kosakata, mengulang kuis, dan melatih bagian yang terlewat.', 'Your first three units are complete. Keep strengthening vocabulary, replaying quizzes and practicing what you missed.')} force /></p></div>
     <dl className="summary-stats"><div><dt>وَحَدَاتٌ مُكْتَمِلَةٌ</dt><dd className="number">3/3</dd></div><div><dt>كَلِمَاتٌ مَحْفُوظَةٌ</dt><dd className="number">{mastered}/{total}</dd></div><div><dt>لِلْمُرَاجَعَةِ</dt><dd className="number">{reviews}</dd></div></dl>
-    <section aria-labelledby="summary-units-title"><h2 id="summary-units-title"><Text text={l('مَا أَنْجَزْتَهُ', 'Yang sudah kamu capai', 'What you have achieved')} /></h2><ol className="summary-units" role="list">{UNITS.map(unit => {
+    <section aria-labelledby="summary-units-title"><h2 id="summary-units-title"><Text text={l('مَا أَنْجَزْتَهُ', 'Yang sudah kamu capai', 'What you have achieved')} /></h2><ol className="summary-units" role="list">{unitsFor(profile).map(unit => {
       const count = unit.words.filter(word => (profile.mastery[word.idKey] ?? 0) >= 3).length;
       return <li key={unit.id}><div className="summary-unit-title"><span className="summary-unit-icon"><Icon name="check" /></span><h3><Text text={unit.title} /></h3></div><dl className="summary-unit-facts"><div><dt>أَفْضَلُ نَتِيجَةٍ</dt><dd className="number">{profile.bestScores[unit.id] ?? 0}%</dd></div><div><dt>كَلِمَاتٌ مَحْفُوظَةٌ</dt><dd className="number">{count}/{unit.words.length}</dd></div></dl><Progress value={masteryPct(profile, unit)} label={`إِتْقَانُ مُفْرَدَاتِ ${unit.title.ar}`} /><Link className="summary-unit-link" to={`/unit/${unit.id}`}><Text text={l('رَاجِعْ هَذِهِ الْوَحْدَةَ', 'Ulangi wahdah ini', 'Review this unit')} /></Link></li>;
     })}</ol></section>

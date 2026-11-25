@@ -33,6 +33,7 @@ export default function QuestionBody({ question: q, locked, quiz, hinted, onAnsw
     {q.reading && <article className="reading-card"><span className="reading-label"><Icon name="book" /> اِقْرَأْ</span><p lang="ar">{q.reading.ar}</p>{!quiz && <Tr text={q.reading} />}</article>}
     {q.kind === 'study' ? <div className="study-card"><div className="study-badges"><span><Icon name="book" /> اُنْظُرْ</span><span><Icon name="sound" /> اِسْتَمِعْ</span><span><Icon name="mic" /> أَعِدْ</span></div><WordPicture symbol={q.word?.symbol ?? 'book'} /><p className="study-word" lang="ar">{q.text?.ar}</p>{q.text && <Tr text={q.text} />}</div> : q.text && q.kind !== 'order' && <div className={`question-cue ${q.kind === 'speak' ? 'dialogue-cue' : ''}`}>
       {q.kind === 'speak' && <Mascot emote="think" decorative />}
+      {q.speaker && <span className="small-label dialogue-speaker" lang="ar">{q.speaker}</span>}
       {isListeningQuestion && audio.available && !revealed ? <button className="listen-orb" aria-label="اِسْتَمِعْ إِلَى الْكَلِمَةِ" disabled={locked} onClick={() => audio.speak(q.text!.ar)}><Icon name="sound" /></button> : <p className="arabic-cue" lang="ar">{q.text.ar}</p>}
       {showTranslation && !isListeningQuestion && <Tr text={q.text} />}
       {isListeningQuestion && audio.available && <button className="text-button" onClick={() => setRevealed(v => !v)}>{revealed ? 'إِخْفَاءُ النَّصِّ' : 'عَرْضُ النَّصِّ'}</button>}

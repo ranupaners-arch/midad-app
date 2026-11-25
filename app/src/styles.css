@@ -332,6 +332,7 @@ a.activity-card:hover { border-color: var(--brand); }
 .md-tile { font-size: 1.625rem; }
 .word-bank .md-tile:disabled { color: transparent; background: var(--surface-200); box-shadow: none; border-color: transparent; opacity: 1; }
 .dialogue-cue { padding: 12px 20px 24px; }
+.dialogue-speaker { display: block; margin-block: 4px; }
 .dialogue-cue .mascot { inline-size: 108px; margin: -12px auto 0; }
 .speech-controls { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; margin-block: 24px; }
 .speech-controls .translation { text-align: center; }
@@ -342,7 +343,7 @@ a.activity-card:hover { border-color: var(--brand); }
 .transcript { border: 1px solid var(--line); padding: 10px 16px; border-radius: 12px; font: 500 1.5rem/1.8 var(--font-arabic); }
 .reading-card { padding: 20px; background: var(--surface-100); border: 2px solid var(--line); border-radius: 20px; margin-block-end: 24px; }
 .reading-label { display: flex; align-items: center; gap: 8px; color: var(--brand-ink); font-size: .875rem; margin-block-end: 12px; }
-.reading-card > p { font: 500 1.625rem/2 var(--font-arabic); }
+.reading-card > p { white-space: pre-line; font: 500 1.625rem/2 var(--font-arabic); }
 .feedback-panel { position: sticky; inset-block-end: 16px; border: 2px solid var(--success); background: var(--success-soft); color: var(--success-ink); padding: 16px; border-radius: 20px; box-shadow: var(--overlay); z-index: 3; margin-block: 24px; }
 .feedback-panel.wrong { border-color: var(--danger); background: var(--danger-soft); color: var(--danger-ink); }
 .feedback-panel.skipped { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-ink); }
