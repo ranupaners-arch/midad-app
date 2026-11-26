@@ -5,6 +5,7 @@ import { answerReview, beginReview, questionSource } from './reviews';
 import { filterVocabulary, vocabularySessionId } from './vocabulary';
 import type { Profile } from './types';
 import { hasRepeatedMistakes } from './hints';
+import shaharil from './shaharil.json' with { type: 'json' };
 
 const now = new Date(2026, 10, 23, 14), unit = UNITS[0], quiz = activities(unit).find(a => a.kind === 'quiz')!;
 const eligible = () => ({ ...createProfile(now), completedActivities: activities(unit).filter(a => a.kind !== 'quiz').map(a => `u1:${a.id}`), mastery: Object.fromEntries(unit.words.map(w => [w.idKey, 3])) });
@@ -80,6 +81,25 @@ describe('vocabulary browsing and hint eligibility', () => {
 
 
 describe('Shaharil demo material', () => {
+  it('provides specific Arabic reading questions with one answer and language-independent identities', () => {
+    for (const source of shaharil) {
+      const unit = SHAHARIL_UNITS[source.wahdah - 1];
+      const reading = activities(unit).find(a => a.kind === 'reading')!;
+      const arabic = questions(unit, reading, 'id'), english = questions(unit, reading, 'en');
+      expect(new Set(arabic.map(q => q.prompt.ar)).size).toBe(5);
+      source.qiraah.questions.forEach((item, index) => {
+        expect(item.ar).toMatch(/[\u0600-\u06ff].*؟$/u);
+        expect(item.options.filter(option => option.correct)).toHaveLength(1);
+        expect(arabic[index].id).toBe(`u${unit.id}-s-reading-${item.id}`);
+        expect(arabic[index].prompt.ar).toBe(item.ar);
+        expect(arabic[index].prompt.id).not.toBe('Jawab pertanyaan ini.');
+        expect(english[index].answer).toBe(arabic[index].answer);
+        expect(english[index].choices?.map(c => c.id)).toEqual(arabic[index].choices?.map(c => c.id));
+      });
+    }
+    expect(SHAHARIL_UNITS[0].reading.ar).toMatch(/^كَتَبَتْ نُورٌ/);
+  });
+
   it('exposes three complete units with resolvable bilingual questions', () => {
     expect(SHAHARIL_UNITS.map(unit => unit.words.length)).toEqual([30, 34, 29]);
     for (const unit of SHAHARIL_UNITS) for (const lang of ['id', 'en'] as const) {

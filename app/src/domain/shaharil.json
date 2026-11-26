@@ -500,7 +500,7 @@
       "questions": [
         {
           "id": "q01",
-          "ar": null,
+          "ar": "فِي أَيِّ وَقْتٍ كَتَبَتْ نُورٌ هَذِهِ الرِّسَالَةَ؟",
           "prompt": {
             "id": "Nur menulis pesan ini pada waktu apa?",
             "en": "When did Nur write this message?"
@@ -526,7 +526,7 @@
         },
         {
           "id": "q02",
-          "ar": null,
+          "ar": "كَيْفَ حَالُ نُورٍ؟",
           "prompt": {
             "id": "Bagaimana kabar Nur?",
             "en": "How is Nur?"
@@ -537,27 +537,30 @@
                 "id": "Baik",
                 "en": "Fine"
               },
-              "correct": true
+              "correct": true,
+              "ar": "بِخَيْرٍ"
             },
             {
               "tr": {
                 "id": "Tidak baik",
                 "en": "Not well"
               },
-              "correct": false
+              "correct": false,
+              "ar": "لَيْسَتْ بِخَيْرٍ"
             },
             {
               "tr": {
                 "id": "Tidak disebutkan",
                 "en": "Not mentioned"
               },
-              "correct": false
+              "correct": false,
+              "ar": "لَمْ يُذْكَرْ"
             }
           ]
         },
         {
           "id": "q03",
-          "ar": null,
+          "ar": "أَيُّ جُمْلَةٍ تَسْأَلُ عَنِ الْحَالِ؟",
           "prompt": {
             "id": "Kalimat mana yang menanyakan kabar?",
             "en": "Which sentence asks how someone is?"
@@ -579,7 +582,7 @@
         },
         {
           "id": "q04",
-          "ar": null,
+          "ar": "بِمَاذَا يَرُدُّ رِزْقِي عَلَى الْجُمْلَةِ الْأُولَى؟",
           "prompt": {
             "id": "Rizki membalas kalimat ke-1. Apa balasannya?",
             "en": "Rizki answers sentence 1. What does he say?"
@@ -601,7 +604,7 @@
         },
         {
           "id": "q05",
-          "ar": null,
+          "ar": "نُورٌ فَتَاةٌ. بِمَاذَا يَرُدُّ رِزْقِي عَلَى الْجُمْلَةِ الْخَامِسَةِ؟",
           "prompt": {
             "id": "Rizki membalas kalimat ke-5. Nur perempuan. Apa balasannya?",
             "en": "Rizki answers sentence 5. Nur is female. What does he say?"
@@ -621,7 +624,14 @@
             }
           ]
         }
-      ]
+      ],
+      "context": {
+        "ar": "كَتَبَتْ نُورٌ رِسَالَةً إِلَى رِزْقِي:",
+        "tr": {
+          "id": "Nur menulis pesan kepada Rizki:",
+          "en": "Nur wrote a message to Rizki:"
+        }
+      }
     },
     "exam": [
       {
@@ -1269,7 +1279,7 @@
       "questions": [
         {
           "id": "q01",
-          "ar": null,
+          "ar": "مِنْ أَيِّ بَلَدٍ رِزْقِي؟",
           "prompt": {
             "id": "Rizki dari negara mana?",
             "en": "Which country is Rizki from?"
@@ -1293,8 +1303,8 @@
           "id": "q02",
           "ar": "هَلْ رِزْقِي طَالِبٌ؟",
           "prompt": {
-            "id": "Jawab pertanyaan ini.",
-            "en": "Answer the question."
+            "id": "Apakah Rizki seorang pelajar?",
+            "en": "Is Rizki a student?"
           },
           "options": [
             {
@@ -1309,7 +1319,7 @@
         },
         {
           "id": "q03",
-          "ar": null,
+          "ar": "أَيَّ لُغَةٍ يَتَكَلَّمُ رِزْقِي قَلِيلًا؟",
           "prompt": {
             "id": "Bahasa apa yang Rizki bicarakan sedikit?",
             "en": "Which language does Rizki speak a little?"
@@ -1331,7 +1341,7 @@
         },
         {
           "id": "q04",
-          "ar": null,
+          "ar": "مَنْ نُورٌ؟",
           "prompt": {
             "id": "Siapa Nur?",
             "en": "Who is Nur?"
@@ -1342,21 +1352,24 @@
                 "id": "Teman Rizki",
                 "en": "Rizki's friend"
               },
-              "correct": true
+              "correct": true,
+              "ar": "صَدِيقَةُ رِزْقِي"
             },
             {
               "tr": {
                 "id": "Guru Rizki",
                 "en": "Rizki's teacher"
               },
-              "correct": false
+              "correct": false,
+              "ar": "مُعَلِّمَةُ رِزْقِي"
             },
             {
               "tr": {
                 "id": "Kakak Rizki",
                 "en": "Rizki's sister"
               },
-              "correct": false
+              "correct": false,
+              "ar": "أُخْتُ رِزْقِي"
             }
           ]
         },
@@ -1364,8 +1377,8 @@
           "id": "q05",
           "ar": "هَلْ نُورٌ مِنْ إِنْدُونِيسِيَا؟",
           "prompt": {
-            "id": "Jawab pertanyaan ini.",
-            "en": "Answer the question."
+            "id": "Apakah Nur dari Indonesia?",
+            "en": "Is Nur from Indonesia?"
           },
           "options": [
             {
@@ -1969,8 +1982,8 @@
           "id": "q01",
           "ar": "كَمْ عُمْرُ مُوسَى؟",
           "prompt": {
-            "id": "Jawab pertanyaan ini.",
-            "en": "Answer the question."
+            "id": "Berapa umur Musa?",
+            "en": "How old is Musa?"
           },
           "options": [
             {
@@ -1998,7 +2011,7 @@
         },
         {
           "id": "q02",
-          "ar": null,
+          "ar": "مَا رَقْمُ غُرْفَةِ مُوسَى؟",
           "prompt": {
             "id": "Berapa nomor kamar Musa?",
             "en": "What is Musa's room number?"
@@ -2029,7 +2042,7 @@
         },
         {
           "id": "q03",
-          "ar": null,
+          "ar": "مَا رَقْمُ هَاتِفِ مُوسَى؟",
           "prompt": {
             "id": "Berapa nomor telepon Musa?",
             "en": "What is Musa's phone number?"
@@ -2062,8 +2075,8 @@
           "id": "q04",
           "ar": "هَلْ مُوسَى مِنْ مِصْرَ؟",
           "prompt": {
-            "id": "Jawab pertanyaan ini.",
-            "en": "Answer the question."
+            "id": "Apakah Musa dari Mesir?",
+            "en": "Is Musa from Egypt?"
           },
           "options": [
             {
@@ -2078,7 +2091,7 @@
         },
         {
           "id": "q05",
-          "ar": null,
+          "ar": "أَيْنَ غُرْفَةُ مُوسَى؟",
           "prompt": {
             "id": "Kamar Musa ada di mana?",
             "en": "Where is Musa's room?"
@@ -2089,21 +2102,24 @@
                 "id": "Di kapal",
                 "en": "On the ship"
               },
-              "correct": true
+              "correct": true,
+              "ar": "فِي السَّفِينَةِ"
             },
             {
               "tr": {
                 "id": "Di sekolah",
                 "en": "At school"
               },
-              "correct": false
+              "correct": false,
+              "ar": "فِي الْمَدْرَسَةِ"
             },
             {
               "tr": {
                 "id": "Di rumah",
                 "en": "At home"
               },
-              "correct": false
+              "correct": false,
+              "ar": "فِي الْبَيْتِ"
             }
           ]
         }
