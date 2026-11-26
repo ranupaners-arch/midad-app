@@ -357,6 +357,11 @@ a.activity-card:hover { border-color: var(--brand); }
 .viewport-page #main-content { display: flex; flex-direction: column; flex: 1; min-block-size: 0; overflow-y: auto; }
 .in-lesson .lesson-screen { display: flex; flex-direction: column; flex: 1; min-block-size: 0; overflow: hidden; }
 .in-lesson .lesson-header { flex: none; }
+.in-lesson:has(.lesson-screen) .main-column { position: relative; }
+.in-lesson:has(.lesson-screen) .topbar { display: contents; }
+.in-lesson:has(.lesson-screen) .topbar > :not(.translation-toggle) { display: none; }
+.in-lesson:has(.lesson-screen) .translation-toggle { position: absolute; inset-block-start: 24px; inset-inline-end: 32px; z-index: 2; }
+.in-lesson .lesson-header { padding-inline-end: 100px; }
 .in-lesson .question-body { display: flex; flex-direction: column; flex: 1; min-block-size: 0; }
 .in-lesson .question-content { position: relative; flex: 1; min-block-size: 0; overflow-y: auto; overscroll-behavior-y: contain; padding: 4px 4px 12px; margin-inline: -4px; scrollbar-width: thin; }
 .question-actions { padding-block-start: 12px; }
@@ -576,7 +581,7 @@ a.activity-card:hover { border-color: var(--brand); }
 .wardrobe-screen .page-heading { flex: none; margin-block-end: 8px; }
 .wardrobe-content { position: relative; flex: 1; min-block-size: 0; overflow-y: auto; overscroll-behavior-y: contain; padding: 4px; margin-inline: -4px; scrollbar-width: thin; }
 .wardrobe-stage { display: flex; align-items: center; justify-content: center; gap: 12px; border: 2px solid var(--line); border-radius: 24px; background: var(--brand-soft); text-align: center; padding: 8px 12px; }
-.wardrobe-stage .mascot { inline-size: 100px; max-inline-size: 100%; flex: none; }
+.wardrobe-stage .mascot { inline-size: 64px; max-inline-size: 100%; flex: none; }
 .wardrobe-stage p { font: 700 1.875rem/1.4 var(--font-arabic); color: var(--brand-ink); }
 .animal-picker { margin-block: 12px; }
 .animal-picker > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
@@ -668,6 +673,8 @@ a.activity-card:hover { border-color: var(--brand); }
   .lesson-screen { padding: 12px 16px 16px; }
   .in-lesson .topbar { min-block-size: 56px; padding-block: 4px; }
   .lesson-header { margin-block-end: 10px; }
+  .in-lesson .lesson-header { margin-block-end: 6px; padding-inline-end: 56px; }
+  .in-lesson:has(.lesson-screen) .translation-toggle { inset-block-start: 12px; inset-inline-end: 16px; }
   .lesson-kicker { margin-block-end: 4px; }
   .question-title { font-size: 1.375rem; line-height: 1.65; margin-block-end: 10px; }
   .lesson-save-note { display: none; }

@@ -1,0 +1,1457 @@
+[
+  {
+    "name": "unit-320",
+    "viewport": [
+      320,
+      568
+    ],
+    "document": [
+      305,
+      1830
+    ],
+    "elements": {
+      ".unit-start": [
+        {
+          "text": "اِبْدَأِ التَّعَلُّمَ",
+          "x": 16,
+          "y": 370.046875,
+          "width": 273,
+          "height": 52.046875,
+          "bottom": 422.09375,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".activity-card": [
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الْأُولَى10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌاِبْدَأْ",
+          "x": 16,
+          "y": 442.09375,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 534.28125,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "التَّرَاكِيبُخُطْوَةٌ نَحْوَ الْإِتْقَانِمُقْفَلٌ",
+          "x": 16,
+          "y": 550.28125,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 642.46875,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الثَّانِيَةُ10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌمُقْفَلٌ",
+          "x": 16,
+          "y": 658.46875,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 750.65625,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْحِوَارُاُنْظُرْ، وَاسْتَمِعْ، وَأَعِدْمُقْفَلٌ",
+          "x": 16,
+          "y": 766.65625,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 858.84375,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الثَّالِثَةُ10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌمُقْفَلٌ",
+          "x": 16,
+          "y": 990.625,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 1082.8125,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْقِرَاءَةُاِقْرَأْ وَافْهَمْمُقْفَلٌ",
+          "x": 16,
+          "y": 1098.8125,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 1191,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "التَّدْرِيبَاتُخُطْوَةٌ نَحْوَ الْإِتْقَانِمُقْفَلٌ",
+          "x": 16,
+          "y": 1207,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 1299.1875,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "اخْتِبَارُ الْوَحْدَةِ١٠ أَسْئِلَةٍ · النَّجَاحُ مِنْ ٨٠٪مُقْفَلٌ",
+          "x": 16,
+          "y": 1391.5625,
+          "width": 273,
+          "height": 92.1875,
+          "bottom": 1483.75,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        }
+      ],
+      ".question-content": [],
+      ".reading-passage": [],
+      ".question-actions button": [],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 491.609375,
+          "width": 305,
+          "height": 76.390625,
+          "bottom": 568,
+          "scrollHeight": 74,
+          "clientHeight": 74
+        }
+      ]
+    }
+  },
+  {
+    "name": "wardrobe-320",
+    "viewport": [
+      320,
+      568
+    ],
+    "document": [
+      305,
+      568
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [],
+      ".reading-passage": [],
+      ".question-actions button": [],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [
+        {
+          "text": "هُدْهُدٌ",
+          "x": 16,
+          "y": 143.078125,
+          "width": 273,
+          "height": 84,
+          "bottom": 227.078125,
+          "scrollHeight": 80,
+          "clientHeight": 80
+        }
+      ],
+      ".animal-picker label": [
+        {
+          "text": "هُدْهُدٌ",
+          "x": 238.40625,
+          "y": 239.078125,
+          "width": 50.59375,
+          "height": 108.5,
+          "bottom": 347.578125,
+          "scrollHeight": 105,
+          "clientHeight": 105
+        },
+        {
+          "text": "قِطٌّ200",
+          "x": 182.8125,
+          "y": 239.078125,
+          "width": 50.59375,
+          "height": 108.5,
+          "bottom": 347.578125,
+          "scrollHeight": 105,
+          "clientHeight": 105
+        },
+        {
+          "text": "جَمَلٌ٢",
+          "x": 127.203125,
+          "y": 239.078125,
+          "width": 50.609375,
+          "height": 108.5,
+          "bottom": 347.578125,
+          "scrollHeight": 105,
+          "clientHeight": 105
+        },
+        {
+          "text": "سُلَحْفَاةٌ٧",
+          "x": 71.609375,
+          "y": 239.078125,
+          "width": 50.59375,
+          "height": 108.5,
+          "bottom": 347.578125,
+          "scrollHeight": 105,
+          "clientHeight": 105
+        },
+        {
+          "text": "مَهَاعُمَانُ",
+          "x": 16.015625,
+          "y": 239.078125,
+          "width": 50.59375,
+          "height": 108.5,
+          "bottom": 347.578125,
+          "scrollHeight": 105,
+          "clientHeight": 105
+        }
+      ],
+      ".wardrobe-content": [
+        {
+          "text": "هُدْهُدٌاخْتَرْ رَفِيقَكَهُدْهُدٌقِطٌّ200جَمَلٌ٢سُلَحْفَاةٌ٧مَهَاعُمَانُاللَّوْنُالنَّمَطُ",
+          "x": 12,
+          "y": 139.078125,
+          "width": 281,
+          "height": 259.484375,
+          "bottom": 398.5625,
+          "scrollHeight": 606,
+          "clientHeight": 259
+        }
+      ],
+      ".wardrobe-save": [
+        {
+          "text": "احْفَظْ رَفِيقَكَ",
+          "x": 16,
+          "y": 406.5625,
+          "width": 273,
+          "height": 73.046875,
+          "bottom": 479.609375,
+          "scrollHeight": 72,
+          "clientHeight": 72
+        }
+      ],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 491.609375,
+          "width": 305,
+          "height": 76.390625,
+          "bottom": 568,
+          "scrollHeight": 74,
+          "clientHeight": 74
+        }
+      ]
+    }
+  },
+  {
+    "name": "study-320",
+    "viewport": [
+      320,
+      568
+    ],
+    "document": [
+      305,
+      568
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْمُفْرَدَاتُ · 1/3اُنْظُرْ، وَاسْتَمِعْ، وَأَعِدْLihat, dengar, dan ulangiصَبَاحٌpagiالص",
+          "x": 12,
+          "y": 66,
+          "width": 281,
+          "height": 412.953125,
+          "bottom": 478.953125,
+          "scrollHeight": 485,
+          "clientHeight": 413
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "مُتَابَعَة",
+          "x": 16,
+          "y": 491.953125,
+          "width": 273,
+          "height": 52.046875,
+          "bottom": 544,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "choice-320",
+    "viewport": [
+      320,
+      568
+    ],
+    "document": [
+      305,
+      568
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْمُفْرَدَاتُ · 1/3مَا مَعْنَى هَذِهِ الْكَلِمَةِ؟مَسَاءُ النُّورِمَا مَعْنَى هَذِهِ الْك",
+          "x": 12,
+          "y": 66,
+          "width": 281,
+          "height": 416.953125,
+          "bottom": 482.953125,
+          "scrollHeight": 418,
+          "clientHeight": 417
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "تَحَقَّقْ",
+          "x": 16,
+          "y": 495.953125,
+          "width": 273,
+          "height": 52.046875,
+          "bottom": 548,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "reading-320",
+    "viewport": [
+      320,
+      568
+    ],
+    "document": [
+      305,
+      568
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْقِرَاءَةُفِي أَيِّ وَقْتٍ كَتَبَتْ نُورٌ هَذِهِ الرِّسَالَةَ؟Nur menulis pesan ini pada",
+          "x": 12,
+          "y": 66,
+          "width": 281,
+          "height": 416.953125,
+          "bottom": 482.953125,
+          "scrollHeight": 417,
+          "clientHeight": 417
+        }
+      ],
+      ".reading-passage": [
+        {
+          "text": "اِقْرَأْكَتَبَتْ نُورٌ رِسَالَةً إِلَى رِزْقِي:\n1. السَّلَامُ عَلَيْكُمْ يَا رِزْقِي.\n2. م",
+          "x": 16,
+          "y": 208.078125,
+          "width": 273,
+          "height": 130.625,
+          "bottom": 338.703125,
+          "scrollHeight": 425,
+          "clientHeight": 127
+        }
+      ],
+      ".question-actions button": [
+        {
+          "text": "تَحَقَّقْ",
+          "x": 16,
+          "y": 495.953125,
+          "width": 273,
+          "height": 52.046875,
+          "bottom": 548,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "dialogue-320",
+    "viewport": [
+      320,
+      568
+    ],
+    "document": [
+      305,
+      568
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْحِوَارُاِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَDengarkan, lalu ulangi kalimat iniرِزْقِيالسَ",
+          "x": 12,
+          "y": 66,
+          "width": 281,
+          "height": 412.953125,
+          "bottom": 478.953125,
+          "scrollHeight": 413,
+          "clientHeight": 413
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "لَا أَسْتَطِيعُ التَّحَدُّثَ الْآنَ",
+          "x": 16,
+          "y": 491.953125,
+          "width": 273,
+          "height": 52.046875,
+          "bottom": 544,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "unit-360",
+    "viewport": [
+      360,
+      640
+    ],
+    "document": [
+      345,
+      1830
+    ],
+    "elements": {
+      ".unit-start": [
+        {
+          "text": "اِبْدَأِ التَّعَلُّمَ",
+          "x": 16,
+          "y": 370.046875,
+          "width": 313,
+          "height": 52.046875,
+          "bottom": 422.09375,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".activity-card": [
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الْأُولَى10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌاِبْدَأْ",
+          "x": 16,
+          "y": 442.09375,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 534.28125,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "التَّرَاكِيبُخُطْوَةٌ نَحْوَ الْإِتْقَانِمُقْفَلٌ",
+          "x": 16,
+          "y": 550.28125,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 642.46875,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الثَّانِيَةُ10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌمُقْفَلٌ",
+          "x": 16,
+          "y": 658.46875,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 750.65625,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْحِوَارُاُنْظُرْ، وَاسْتَمِعْ، وَأَعِدْمُقْفَلٌ",
+          "x": 16,
+          "y": 766.65625,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 858.84375,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الثَّالِثَةُ10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌمُقْفَلٌ",
+          "x": 16,
+          "y": 990.625,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 1082.8125,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْقِرَاءَةُاِقْرَأْ وَافْهَمْمُقْفَلٌ",
+          "x": 16,
+          "y": 1098.8125,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 1191,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "التَّدْرِيبَاتُخُطْوَةٌ نَحْوَ الْإِتْقَانِمُقْفَلٌ",
+          "x": 16,
+          "y": 1207,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 1299.1875,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "اخْتِبَارُ الْوَحْدَةِ١٠ أَسْئِلَةٍ · النَّجَاحُ مِنْ ٨٠٪مُقْفَلٌ",
+          "x": 16,
+          "y": 1391.5625,
+          "width": 313,
+          "height": 92.1875,
+          "bottom": 1483.75,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        }
+      ],
+      ".question-content": [],
+      ".reading-passage": [],
+      ".question-actions button": [],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 563.609375,
+          "width": 345,
+          "height": 76.390625,
+          "bottom": 640,
+          "scrollHeight": 74,
+          "clientHeight": 74
+        }
+      ]
+    }
+  },
+  {
+    "name": "wardrobe-360",
+    "viewport": [
+      360,
+      640
+    ],
+    "document": [
+      345,
+      640
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [],
+      ".reading-passage": [],
+      ".question-actions button": [],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [
+        {
+          "text": "هُدْهُدٌ",
+          "x": 16,
+          "y": 143.078125,
+          "width": 313,
+          "height": 84,
+          "bottom": 227.078125,
+          "scrollHeight": 80,
+          "clientHeight": 80
+        }
+      ],
+      ".animal-picker label": [
+        {
+          "text": "هُدْهُدٌ",
+          "x": 270.40625,
+          "y": 239.078125,
+          "width": 58.59375,
+          "height": 116.5,
+          "bottom": 355.578125,
+          "scrollHeight": 113,
+          "clientHeight": 113
+        },
+        {
+          "text": "قِطٌّ200",
+          "x": 206.8125,
+          "y": 239.078125,
+          "width": 58.59375,
+          "height": 116.5,
+          "bottom": 355.578125,
+          "scrollHeight": 113,
+          "clientHeight": 113
+        },
+        {
+          "text": "جَمَلٌ٢",
+          "x": 143.203125,
+          "y": 239.078125,
+          "width": 58.609375,
+          "height": 116.5,
+          "bottom": 355.578125,
+          "scrollHeight": 113,
+          "clientHeight": 113
+        },
+        {
+          "text": "سُلَحْفَاةٌ٧",
+          "x": 79.609375,
+          "y": 239.078125,
+          "width": 58.59375,
+          "height": 116.5,
+          "bottom": 355.578125,
+          "scrollHeight": 113,
+          "clientHeight": 113
+        },
+        {
+          "text": "مَهَاعُمَانُ",
+          "x": 16.015625,
+          "y": 239.078125,
+          "width": 58.59375,
+          "height": 116.5,
+          "bottom": 355.578125,
+          "scrollHeight": 113,
+          "clientHeight": 113
+        }
+      ],
+      ".wardrobe-content": [
+        {
+          "text": "هُدْهُدٌاخْتَرْ رَفِيقَكَهُدْهُدٌقِطٌّ200جَمَلٌ٢سُلَحْفَاةٌ٧مَهَاعُمَانُاللَّوْنُالنَّمَطُ",
+          "x": 12,
+          "y": 139.078125,
+          "width": 321,
+          "height": 331.484375,
+          "bottom": 470.5625,
+          "scrollHeight": 614,
+          "clientHeight": 331
+        }
+      ],
+      ".wardrobe-save": [
+        {
+          "text": "احْفَظْ رَفِيقَكَ",
+          "x": 16,
+          "y": 478.5625,
+          "width": 313,
+          "height": 73.046875,
+          "bottom": 551.609375,
+          "scrollHeight": 72,
+          "clientHeight": 72
+        }
+      ],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 563.609375,
+          "width": 345,
+          "height": 76.390625,
+          "bottom": 640,
+          "scrollHeight": 74,
+          "clientHeight": 74
+        }
+      ]
+    }
+  },
+  {
+    "name": "study-360",
+    "viewport": [
+      360,
+      640
+    ],
+    "document": [
+      345,
+      640
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْمُفْرَدَاتُ · 1/3اُنْظُرْ، وَاسْتَمِعْ، وَأَعِدْLihat, dengar, dan ulangiصَبَاحٌpagiالص",
+          "x": 12,
+          "y": 66,
+          "width": 321,
+          "height": 484.953125,
+          "bottom": 550.953125,
+          "scrollHeight": 485,
+          "clientHeight": 485
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "مُتَابَعَة",
+          "x": 16,
+          "y": 563.953125,
+          "width": 313,
+          "height": 52.046875,
+          "bottom": 616,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "choice-360",
+    "viewport": [
+      360,
+      640
+    ],
+    "document": [
+      345,
+      640
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْمُفْرَدَاتُ · 1/3مَا مَعْنَى هَذِهِ الْكَلِمَةِ؟مَسَاءُ النُّورِمَا مَعْنَى هَذِهِ الْك",
+          "x": 12,
+          "y": 66,
+          "width": 321,
+          "height": 488.953125,
+          "bottom": 554.953125,
+          "scrollHeight": 489,
+          "clientHeight": 489
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "تَحَقَّقْ",
+          "x": 16,
+          "y": 567.953125,
+          "width": 313,
+          "height": 52.046875,
+          "bottom": 620,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "reading-360",
+    "viewport": [
+      360,
+      640
+    ],
+    "document": [
+      345,
+      640
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْقِرَاءَةُفِي أَيِّ وَقْتٍ كَتَبَتْ نُورٌ هَذِهِ الرِّسَالَةَ؟Nur menulis pesan ini pada",
+          "x": 12,
+          "y": 66,
+          "width": 321,
+          "height": 488.953125,
+          "bottom": 554.953125,
+          "scrollHeight": 489,
+          "clientHeight": 489
+        }
+      ],
+      ".reading-passage": [
+        {
+          "text": "اِقْرَأْكَتَبَتْ نُورٌ رِسَالَةً إِلَى رِزْقِي:\n1. السَّلَامُ عَلَيْكُمْ يَا رِزْقِي.\n2. م",
+          "x": 16,
+          "y": 171.78125,
+          "width": 313,
+          "height": 147.1875,
+          "bottom": 318.96875,
+          "scrollHeight": 400,
+          "clientHeight": 143
+        }
+      ],
+      ".question-actions button": [
+        {
+          "text": "تَحَقَّقْ",
+          "x": 16,
+          "y": 567.953125,
+          "width": 313,
+          "height": 52.046875,
+          "bottom": 620,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "dialogue-360",
+    "viewport": [
+      360,
+      640
+    ],
+    "document": [
+      345,
+      640
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْحِوَارُاِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَDengarkan, lalu ulangi kalimat iniرِزْقِيالسَ",
+          "x": 12,
+          "y": 66,
+          "width": 321,
+          "height": 484.953125,
+          "bottom": 550.953125,
+          "scrollHeight": 485,
+          "clientHeight": 485
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "لَا أَسْتَطِيعُ التَّحَدُّثَ الْآنَ",
+          "x": 16,
+          "y": 563.953125,
+          "width": 313,
+          "height": 52.046875,
+          "bottom": 616,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "unit-390",
+    "viewport": [
+      390,
+      664
+    ],
+    "document": [
+      375,
+      1830
+    ],
+    "elements": {
+      ".unit-start": [
+        {
+          "text": "اِبْدَأِ التَّعَلُّمَ",
+          "x": 20,
+          "y": 370.046875,
+          "width": 335,
+          "height": 52.046875,
+          "bottom": 422.09375,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".activity-card": [
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الْأُولَى10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌاِبْدَأْ",
+          "x": 20,
+          "y": 442.09375,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 534.28125,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "التَّرَاكِيبُخُطْوَةٌ نَحْوَ الْإِتْقَانِمُقْفَلٌ",
+          "x": 20,
+          "y": 550.28125,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 642.46875,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الثَّانِيَةُ10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌمُقْفَلٌ",
+          "x": 20,
+          "y": 658.46875,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 750.65625,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْحِوَارُاُنْظُرْ، وَاسْتَمِعْ، وَأَعِدْمُقْفَلٌ",
+          "x": 20,
+          "y": 766.65625,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 858.84375,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْمُفْرَدَاتُ · الْجَلْسَةُ الثَّالِثَةُ10 كَلِمَاتٍ · تَعَلُّمٌ وَمُرَاجَعَةٌمُقْفَلٌ",
+          "x": 20,
+          "y": 990.625,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 1082.8125,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "الْقِرَاءَةُاِقْرَأْ وَافْهَمْمُقْفَلٌ",
+          "x": 20,
+          "y": 1098.8125,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 1191,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "التَّدْرِيبَاتُخُطْوَةٌ نَحْوَ الْإِتْقَانِمُقْفَلٌ",
+          "x": 20,
+          "y": 1207,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 1299.1875,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        },
+        {
+          "text": "اخْتِبَارُ الْوَحْدَةِ١٠ أَسْئِلَةٍ · النَّجَاحُ مِنْ ٨٠٪مُقْفَلٌ",
+          "x": 20,
+          "y": 1391.5625,
+          "width": 335,
+          "height": 92.1875,
+          "bottom": 1483.75,
+          "scrollHeight": 88,
+          "clientHeight": 88
+        }
+      ],
+      ".question-content": [],
+      ".reading-passage": [],
+      ".question-actions button": [],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 587.609375,
+          "width": 375,
+          "height": 76.390625,
+          "bottom": 664,
+          "scrollHeight": 74,
+          "clientHeight": 74
+        }
+      ]
+    }
+  },
+  {
+    "name": "wardrobe-390",
+    "viewport": [
+      390,
+      664
+    ],
+    "document": [
+      375,
+      664
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [],
+      ".reading-passage": [],
+      ".question-actions button": [],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [
+        {
+          "text": "هُدْهُدٌ",
+          "x": 20,
+          "y": 143.078125,
+          "width": 335,
+          "height": 84,
+          "bottom": 227.078125,
+          "scrollHeight": 80,
+          "clientHeight": 80
+        }
+      ],
+      ".animal-picker label": [
+        {
+          "text": "هُدْهُدٌ",
+          "x": 294.40625,
+          "y": 239.078125,
+          "width": 60.59375,
+          "height": 118.5,
+          "bottom": 357.578125,
+          "scrollHeight": 115,
+          "clientHeight": 115
+        },
+        {
+          "text": "قِطٌّ200",
+          "x": 225.8125,
+          "y": 239.078125,
+          "width": 60.59375,
+          "height": 118.5,
+          "bottom": 357.578125,
+          "scrollHeight": 115,
+          "clientHeight": 115
+        },
+        {
+          "text": "جَمَلٌ٢",
+          "x": 157.203125,
+          "y": 239.078125,
+          "width": 60.609375,
+          "height": 118.5,
+          "bottom": 357.578125,
+          "scrollHeight": 115,
+          "clientHeight": 115
+        },
+        {
+          "text": "سُلَحْفَاةٌ٧",
+          "x": 88.609375,
+          "y": 239.078125,
+          "width": 60.59375,
+          "height": 118.5,
+          "bottom": 357.578125,
+          "scrollHeight": 115,
+          "clientHeight": 115
+        },
+        {
+          "text": "مَهَاعُمَانُ",
+          "x": 20.015625,
+          "y": 239.078125,
+          "width": 60.59375,
+          "height": 118.5,
+          "bottom": 357.578125,
+          "scrollHeight": 115,
+          "clientHeight": 115
+        }
+      ],
+      ".wardrobe-content": [
+        {
+          "text": "هُدْهُدٌاخْتَرْ رَفِيقَكَهُدْهُدٌقِطٌّ200جَمَلٌ٢سُلَحْفَاةٌ٧مَهَاعُمَانُاللَّوْنُالنَّمَطُ",
+          "x": 16,
+          "y": 139.078125,
+          "width": 343,
+          "height": 355.484375,
+          "bottom": 494.5625,
+          "scrollHeight": 620,
+          "clientHeight": 355
+        }
+      ],
+      ".wardrobe-save": [
+        {
+          "text": "احْفَظْ رَفِيقَكَ",
+          "x": 20,
+          "y": 502.5625,
+          "width": 335,
+          "height": 73.046875,
+          "bottom": 575.609375,
+          "scrollHeight": 72,
+          "clientHeight": 72
+        }
+      ],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 587.609375,
+          "width": 375,
+          "height": 76.390625,
+          "bottom": 664,
+          "scrollHeight": 74,
+          "clientHeight": 74
+        }
+      ]
+    }
+  },
+  {
+    "name": "study-390",
+    "viewport": [
+      390,
+      664
+    ],
+    "document": [
+      375,
+      664
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْمُفْرَدَاتُ · 1/3اُنْظُرْ، وَاسْتَمِعْ، وَأَعِدْLihat, dengar, dan ulangiصَبَاحٌpagiالص",
+          "x": 12,
+          "y": 66,
+          "width": 351,
+          "height": 508.953125,
+          "bottom": 574.953125,
+          "scrollHeight": 509,
+          "clientHeight": 509
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "مُتَابَعَة",
+          "x": 16,
+          "y": 587.953125,
+          "width": 343,
+          "height": 52.046875,
+          "bottom": 640,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "choice-390",
+    "viewport": [
+      390,
+      664
+    ],
+    "document": [
+      375,
+      664
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْمُفْرَدَاتُ · 1/3مَا مَعْنَى هَذِهِ الْكَلِمَةِ؟مَسَاءُ النُّورِمَا مَعْنَى هَذِهِ الْك",
+          "x": 12,
+          "y": 66,
+          "width": 351,
+          "height": 512.953125,
+          "bottom": 578.953125,
+          "scrollHeight": 513,
+          "clientHeight": 513
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "تَحَقَّقْ",
+          "x": 16,
+          "y": 591.953125,
+          "width": 343,
+          "height": 52.046875,
+          "bottom": 644,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "reading-390",
+    "viewport": [
+      390,
+      664
+    ],
+    "document": [
+      375,
+      664
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْقِرَاءَةُفِي أَيِّ وَقْتٍ كَتَبَتْ نُورٌ هَذِهِ الرِّسَالَةَ؟Nur menulis pesan ini pada",
+          "x": 12,
+          "y": 66,
+          "width": 351,
+          "height": 512.953125,
+          "bottom": 578.953125,
+          "scrollHeight": 513,
+          "clientHeight": 513
+        }
+      ],
+      ".reading-passage": [
+        {
+          "text": "اِقْرَأْكَتَبَتْ نُورٌ رِسَالَةً إِلَى رِزْقِي:\n1. السَّلَامُ عَلَيْكُمْ يَا رِزْقِي.\n2. م",
+          "x": 16,
+          "y": 171.78125,
+          "width": 343,
+          "height": 152.71875,
+          "bottom": 324.5,
+          "scrollHeight": 400,
+          "clientHeight": 149
+        }
+      ],
+      ".question-actions button": [
+        {
+          "text": "تَحَقَّقْ",
+          "x": 16,
+          "y": 591.953125,
+          "width": 343,
+          "height": 52.046875,
+          "bottom": 644,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "dialogue-390",
+    "viewport": [
+      390,
+      664
+    ],
+    "document": [
+      375,
+      664
+    ],
+    "elements": {
+      ".unit-start": [],
+      ".activity-card": [],
+      ".question-content": [
+        {
+          "text": "الْحِوَارُاِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَDengarkan, lalu ulangi kalimat iniرِزْقِيالسَ",
+          "x": 12,
+          "y": 66,
+          "width": 351,
+          "height": 508.953125,
+          "bottom": 574.953125,
+          "scrollHeight": 509,
+          "clientHeight": 509
+        }
+      ],
+      ".reading-passage": [],
+      ".question-actions button": [
+        {
+          "text": "لَا أَسْتَطِيعُ التَّحَدُّثَ الْآنَ",
+          "x": 16,
+          "y": 587.953125,
+          "width": 343,
+          "height": 52.046875,
+          "bottom": 640,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      ],
+      ".feedback-panel": [],
+      ".wardrobe-stage": [],
+      ".animal-picker label": [],
+      ".wardrobe-content": [],
+      ".wardrobe-save": [],
+      ".mobile-nav": [
+        {
+          "text": "رِحْلَتِيرَفِيقِيحِسَابِي",
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "scrollHeight": 0,
+          "clientHeight": 0
+        }
+      ]
+    }
+  }
+]

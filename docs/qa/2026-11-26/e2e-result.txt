@@ -1,0 +1,8 @@
+  ✓  31 [chromium] › tests/mobile-layout.spec.ts:33:5 › 390×664 lesson actions › choices and pending feedback stay reachable through reload and advance (1.4s)
+  ✓  32 [chromium] › tests/mobile-layout.spec.ts:53:5 › 390×664 lesson actions › all reading passages work with either translation setting and enlarged text (2.2s)
+  ✓  33 [chromium] › tests/mobile-layout.spec.ts:80:5 › 390×664 lesson actions › unavailable audio and denied microphone keep the skip action reachable (1.2s)
+  ✓  34 [chromium] › tests/mobile-layout.spec.ts:104:5 › 390×664 lesson actions › the unit starts above the fold and resumes the saved question (1.4s)
+  ✓  35 [chromium] › tests/mobile-layout.spec.ts:125:5 › 390×664 lesson actions › companion options and save remain separate and the selection persists (2.0s)
+  ✓   1 [chromium] › tests/app.spec.ts:30:1 › mobile demo journey from onboarding to all three units and rewards (2.3m)
+
+  35 passed (2.3m)
