@@ -51,7 +51,7 @@ function Lesson({ unit, activity }: { unit: Unit; activity: Activity }) {
   return <div className="lesson-screen" data-testid="lesson-content">
     <header className="lesson-header"><Link className="icon-button" to={`/unit/${unit.id}`} aria-label="حِفْظُ الدَّرْسِ وَالْعَوْدَةُ"><Icon name="cross" /></Link><Progress value={session.cursor / bank.length * 100} label="تَقَدُّمُ الدَّرْسِ" /><span className="number small-label">{session.cursor + 1}/{bank.length}</span></header>
     <div className="lesson-kicker"><span>{activity.title.ar}{activity.session ? ` · ${activity.session}/3` : ''}</span>{quiz && <span><Icon name="lock" /> الْاِخْتِبَارُ</span>}</div>
-    <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} force={unit.curriculum === 'shaharil' && !!q.reading} />}</h1>
+    <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} />}</h1>
     <QuestionBody key={q.id} question={q} locked={!!response} quiz={quiz} hinted={session.hintAt === session.cursor} onAnswer={handleAnswer} onStudy={() => update(p => advanceSession(answerQuestion(p, q, true)))} />
     {!response && !quiz && q.kind !== 'study' && <HintOffer question={q} />}
     {response && <div className={`feedback-panel ${response.skipped ? 'skipped' : response.correct ? 'correct' : 'wrong'}`} role="status">

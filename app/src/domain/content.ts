@@ -95,7 +95,8 @@ export const SHAHARIL_UNITS: Unit[] = shaharil.map(source => {
   const audioFolder = `w${String(source.wahdah).padStart(2, '0')}`;
   const localized = (item: { ar: string; tr: { id: string; en: string } }) => l(item.ar, item.tr.id, item.tr.en);
   const lines = source.qiraah.sentences.map(localized);
-  const reading = (lang: keyof Localized) => lines.map((line, index) => `${index + 1}. ${line[lang]}`).join('\n');
+  const context = source.qiraah.context && localized(source.qiraah.context);
+  const reading = (lang: keyof Localized) => [context?.[lang], ...lines.map((line, index) => `${index + 1}. ${line[lang]}`)].filter(Boolean).join('\n');
   return {
     id: source.wahdah,
     curriculum: 'shaharil',
@@ -165,7 +166,7 @@ export function questions(unit: Unit, activity: Activity, lang: Language, versio
   if (activity.kind === 'reading' && source) return source.qiraah.questions.map(item => ({
     id: `${prefix}-${item.id}`,
     kind: 'choice',
-    prompt: l(item.ar || 'أَجِبْ عَنِ السُّؤَالِ', item.prompt.id, item.prompt.en),
+    prompt: l(item.ar, item.prompt.id, item.prompt.en),
     reading: unit.reading,
     choices: shuffled(item.options.map((option, i) => 'ar' in option
       ? { id: String(i), text: option.ar, lang: 'ar' as const }
