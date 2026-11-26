@@ -92,6 +92,7 @@ export const UNITS: Unit[] = [
 
 export const SHAHARIL_UNITS: Unit[] = shaharil.map(source => {
   const original = UNITS[source.wahdah - 1];
+  const audioFolder = `w${String(source.wahdah).padStart(2, '0')}`;
   const localized = (item: { ar: string; tr: { id: string; en: string } }) => l(item.ar, item.tr.id, item.tr.en);
   const lines = source.qiraah.sentences.map(localized);
   const reading = (lang: keyof Localized) => lines.map((line, index) => `${index + 1}. ${line[lang]}`).join('\n');
@@ -103,12 +104,13 @@ export const SHAHARIL_UNITS: Unit[] = shaharil.map(source => {
     words: source.vocab.map(word => ({
       ...localized(word),
       idKey: `u${source.wahdah}-s-${word.id}`,
+      audioKey: `${audioFolder}/${word.id}`,
       symbol: word.digit?.match(/\((\d+)\)/)?.[1]
         ?? original.words.find(candidate => candidate.ar === word.ar)?.symbol
         ?? 'book',
     })),
     patterns: source.patterns.map(pattern => ({ words: pattern.ar.split(' '), translation: pattern.tr })),
-    dialogue: source.dialogue.map(line => ({ ...localized(line), speaker: line.speaker })),
+    dialogue: source.dialogue.map(line => ({ ...localized(line), speaker: line.speaker, audioKey: `${audioFolder}/${line.id}` })),
     reading: l(reading('ar'), reading('id'), reading('en')),
     comprehension: [],
   };
@@ -159,7 +161,7 @@ export function questions(unit: Unit, activity: Activity, lang: Language, versio
     ];
   }
   if (activity.kind === 'pattern') return unit.patterns.map((p, i) => ({ id: `${prefix}-${i}`, kind: 'order', prompt: l('رَتِّبِ الْكَلِمَاتِ', 'Susun kata menjadi kalimat', 'Put the words in order'), words: p.words, text: l(p.words.join(' '), p.translation.id, p.translation.en) }));
-  if (activity.kind === 'dialogue') return unit.dialogue.map(({ speaker, ...text }, i) => ({ id: `${prefix}-${i}`, kind: 'speak', prompt: l('اِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَ', 'Dengarkan, lalu ulangi kalimat ini', 'Listen, then repeat this sentence'), text, speaker }));
+  if (activity.kind === 'dialogue') return unit.dialogue.map(({ speaker, audioKey, ...text }, i) => ({ id: `${prefix}-${i}`, kind: 'speak', prompt: l('اِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَ', 'Dengarkan, lalu ulangi kalimat ini', 'Listen, then repeat this sentence'), text, speaker, audioKey }));
   if (activity.kind === 'reading' && source) return source.qiraah.questions.map(item => ({
     id: `${prefix}-${item.id}`,
     kind: 'choice',

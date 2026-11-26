@@ -68,13 +68,17 @@ Alur yang sudah diimplementasikan: bahasa ID/EN → kustomisasi hudhud → mulai
 - Cadangan profil v1 lama tetap dapat dibaca. Field pengulangan dan `savedSessions` yang belum ada diberi nilai awal tanpa menghapus progres atau sesi aktif; kesalahan yang masih tersimpan dalam sesi aktif lama dipulihkan ke daftar. Kesalahan dari sesi lama yang datanya sudah tidak ada tidak direka ulang. Checkpoint yang kuncinya tidak cocok dengan wahdah/aktivitas di dalamnya diabaikan, dan sesi aktif menjadi sumber utama bila sebuah cadangan memuat duplikat checkpoint.
 - Sesi menyimpan `questionVersion`: sesi baru memakai versi 2; sesi lama tanpa field ini memakai versi 1. Kuis versi 1 tetap berisi 10 soal kosakata dengan urutan, checkpoint, feedback, dan aturan hadiah sebelumnya. Daftar pengulangan tetap mengenali soal kuis lama, termasuk dua soal yang diganti pada versi 2. Versi yang belum dikenal tidak ditulis ulang otomatis.
 - Tema mengikuti sistem atau pilihan pengguna; UI Arab/RTL, terjemahan opsional, radio native, dialog native, dan reduced motion. Terjemahan dikunci pada soal arti dan ujian.
-- Audio demo memakai **SpeechSynthesis dengan suara Arab perangkat**, jika tersedia. Ini belum rekaman penutur asli. Suara lokal diprioritaskan; suara layanan jarak jauh tidak dipilih saat offline. Perangkat tanpa suara Arab yang dapat digunakan mendapat latihan teks.
+- Mufradat dan hiwar Shaharil memprioritaskan **rekaman MP3** yang disertakan dalam build. Tombol dengar memutar rekaman pada 1× atau 0,75×. Bila file belum disertakan atau gagal diputar, aplikasi memakai **SpeechSynthesis** jika perangkat menyediakan suara Arab yang sesuai, lalu menawarkan teks bila audio tidak tersedia. Suara sintetis jarak jauh tidak dipilih saat offline.
 - Hiwar dapat memakai **Web Speech API** setelah tindakan pengguna dan izin mikrofon. Transkrip dibandingkan dengan teks yang dinormalisasi; hasil ini bukan penilaian makhraj. Jika tidak tersedia/gagal, pengguna bisa lanjut tanpa mikrofon; bagian itu ditandai untuk pengulangan dan tidak dihitung sebagai jawaban benar.
 - Tiga hint gratis per hari menurut tanggal lokal; tambahan 10 kurma, maksimal lima pembelian sehari. Hint ditawarkan setelah dua jawaban salah berturut-turut atau 20 detik tanpa interaksi saat halaman terlihat. Kuota hanya terpakai setelah diklik, maksimal satu per soal, tanpa hint dalam ujian. Hint mengurangi pilihan yang salah atau membantu urutan; pilihan yang dieliminasi tidak dapat dikirim sebagai jawaban. XP jawaban benar dengan hint menjadi setengah, dibulatkan ke bawah (5 → 2 XP), dan pemakaiannya tetap tercatat setelah reload.
 
 Globe Rihlah memakai proyeksi ortografis D3 dengan batas negara Natural Earth 1:110m (v5.1.2, domain publik) yang disertakan dalam build dan tersedia offline setelah cache siap. Ikon **الْخَرِيطَةُ** membuka halaman globe tersendiri. Geser untuk memutar atau cubit untuk zoom, pilih penanda pelabuhan, atau buka tampilan rute Jakarta–Muscat. Garis rute menggambarkan perjalanan Midad.
 
 Build statis berada di `dist/app/`, terpisah dari `dist/paket-aset/`. Hash routing membuat halaman bisa dimuat ulang tanpa aturan rewrite server.
+
+## Rekaman mufradat dan hiwar
+
+Simpan satu klip MP3 per entri di `app/src/assets/audio/w01/`, `w02/`, atau `w03/`. Nama file mengikuti ID materi, misalnya `v01.mp3` untuk mufradat dan `h01.mp3` untuk baris hiwar. Hiwar pertama wahdah Salam memakai `w01/h01.mp3` sampai `w01/h06.mp3` sesuai urutan di `app/src/domain/shaharil.json`. Build memasukkan file yang ada ke cache PWA. Saat mikrofon dinyalakan, audio yang sedang berjalan berhenti.
 
 ## PWA dan offline
 

@@ -2,7 +2,7 @@ import type { MascotConfig } from '../../../design-system/assets/maskot/mascot.m
 
 export type Language = 'id' | 'en';
 export type Localized = { ar: string; id: string; en: string };
-export type Vocabulary = Localized & { idKey: string; symbol: string };
+export type Vocabulary = Localized & { idKey: string; symbol: string; audioKey?: string };
 export type ActivityKind = 'vocabulary' | 'pattern' | 'dialogue' | 'reading' | 'practice' | 'quiz';
 export type Activity = { id: string; kind: ActivityKind; title: Localized; session?: number; words?: Vocabulary[] };
 export type Choice = { id: string; text: string; lang: 'ar' | Language };
@@ -13,6 +13,7 @@ export type Question = {
   text?: Localized;
   word?: Vocabulary;
   speaker?: string;
+  audioKey?: string;
   choices?: Choice[];
   answer?: string;
   words?: string[];
@@ -27,7 +28,7 @@ export type Unit = {
   subtitle: Localized;
   words: Vocabulary[];
   patterns: { words: string[]; translation: Omit<Localized, 'ar'> }[];
-  dialogue: (Localized & { speaker?: string })[];
+  dialogue: (Localized & { speaker?: string; audioKey?: string })[];
   reading: Localized;
   comprehension: { prompt: Localized; choices: string[]; answer: number }[];
 };

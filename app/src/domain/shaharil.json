@@ -349,7 +349,8 @@
           "id": "Assalamu'alaikum, Nur.",
           "en": "Peace be upon you, Nur."
         },
-        "speaker": "رِزْقِي"
+        "speaker": "رِزْقِي",
+        "id": "h01"
       },
       {
         "ar": "وَعَلَيْكُمُ السَّلَامُ يَا رِزْقِي.",
@@ -357,7 +358,8 @@
           "id": "Wa'alaikumussalam, Rizki.",
           "en": "And peace be upon you, Rizki."
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h02"
       },
       {
         "ar": "صَبَاحُ الْخَيْرِ!",
@@ -365,7 +367,8 @@
           "id": "Selamat pagi!",
           "en": "Good morning!"
         },
-        "speaker": "رِزْقِي"
+        "speaker": "رِزْقِي",
+        "id": "h03"
       },
       {
         "ar": "صَبَاحُ النُّورِ. كَيْفَ حَالُكَ؟",
@@ -373,7 +376,8 @@
           "id": "Selamat pagi. Apa kabar?",
           "en": "Good morning. How are you?"
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h04"
       },
       {
         "ar": "أَنَا بِخَيْرٍ، وَالْحَمْدُ لِلَّهِ. وَأَنْتِ؟",
@@ -381,7 +385,8 @@
           "id": "Saya baik, alhamdulillah. Kamu?",
           "en": "I'm fine, praise be to God. And you?"
         },
-        "speaker": "رِزْقِي"
+        "speaker": "رِزْقِي",
+        "id": "h05"
       },
       {
         "ar": "الْحَمْدُ لِلَّهِ، أَنَا بِخَيْرٍ. شُكْرًا.",
@@ -389,7 +394,8 @@
           "id": "Alhamdulillah, saya baik. Terima kasih.",
           "en": "Praise be to God, I'm fine. Thank you."
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h06"
       },
       {
         "ar": "آسِفَةٌ!",
@@ -397,7 +403,8 @@
           "id": "Maaf!",
           "en": "Sorry!"
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h07"
       },
       {
         "ar": "لَا بَأْسَ. مَسَاءُ الْخَيْرِ.",
@@ -405,7 +412,8 @@
           "id": "Tidak apa-apa. Selamat malam.",
           "en": "It's okay. Good evening."
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h08"
       },
       {
         "ar": "مَسَاءُ النُّورِ. كَيْفَ حَالُكَ؟",
@@ -413,7 +421,8 @@
           "id": "Selamat malam. Apa kabar?",
           "en": "Good evening. How are you?"
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h09"
       },
       {
         "ar": "أَنَا بِخَيْرٍ، شُكْرًا.",
@@ -421,7 +430,8 @@
           "id": "Saya baik, terima kasih.",
           "en": "I'm fine, thank you."
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h10"
       },
       {
         "ar": "تُصْبِحُ عَلَى خَيْرٍ.",
@@ -429,7 +439,8 @@
           "id": "Selamat tidur.",
           "en": "Good night."
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h11"
       },
       {
         "ar": "وَأَنْتِ مِنْ أَهْلِهِ. مَعَ السَّلَامَةِ.",
@@ -437,7 +448,8 @@
           "id": "Kamu juga. Selamat jalan.",
           "en": "You too. Goodbye."
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h12"
       }
     ],
     "qiraah": {
@@ -1097,7 +1109,8 @@
           "id": "Selamat pagi. Saya Salim. Siapa namamu?",
           "en": "Good morning. I'm Salim. What's your name?"
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h01"
       },
       {
         "ar": "صَبَاحُ النُّورِ. اسْمِي يُوكِي.",
@@ -1105,7 +1118,8 @@
           "id": "Selamat pagi. Namaku Yuki.",
           "en": "Good morning. My name is Yuki."
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h02"
       },
       {
         "ar": "تَشَرَّفْنَا. مِنْ أَيْنَ أَنْتِ؟",
@@ -1113,7 +1127,8 @@
           "id": "Senang berkenalan. Kamu dari mana?",
           "en": "Nice to meet you. Where are you from?"
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h03"
       },
       {
         "ar": "أَنَا مِنَ الْيَابَانِ. وَأَنْتَ؟",
@@ -1121,7 +1136,8 @@
           "id": "Saya dari Jepang. Kamu?",
           "en": "I'm from Japan. And you?"
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h04"
       },
       {
         "ar": "أَنَا مِنْ عُمَانَ. هَلْ تَتَكَلَّمِينَ الْعَرَبِيَّةَ؟",
@@ -1129,7 +1145,8 @@
           "id": "Saya dari Oman. Apakah kamu berbicara bahasa Arab?",
           "en": "I'm from Oman. Do you speak Arabic?"
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h05"
       },
       {
         "ar": "نَعَمْ، قَلِيلًا. أَتَكَلَّمُ الْيَابَانِيَّةَ وَالْإِنْجِلِيزِيَّةَ.",
@@ -1137,7 +1154,8 @@
           "id": "Ya, sedikit. Saya berbicara bahasa Jepang dan bahasa Inggris.",
           "en": "Yes, a little. I speak Japanese and English."
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h06"
       },
       {
         "ar": "السَّلَامُ عَلَيْكُمْ. أَنَا مُوسَى، مِنْ نَيْجِيرِيَا.",
@@ -1145,7 +1163,8 @@
           "id": "Assalamu'alaikum. Saya Musa, dari Nigeria.",
           "en": "Peace be upon you. I'm Musa, from Nigeria."
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h07"
       },
       {
         "ar": "وَعَلَيْكُمُ السَّلَامُ. اسْمِي نُورٌ، أَنَا مِنْ مَالِيزِيَا.",
@@ -1153,7 +1172,8 @@
           "id": "Wa'alaikumussalam. Namaku Nur, saya dari Malaysia.",
           "en": "And peace be upon you. My name is Nur, I'm from Malaysia."
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h08"
       },
       {
         "ar": "أَهْلًا وَسَهْلًا. مَنْ هُوَ؟",
@@ -1161,7 +1181,8 @@
           "id": "Halo. Siapa dia?",
           "en": "Hello. Who is he?"
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h09"
       },
       {
         "ar": "هُوَ رِزْقِي، صَدِيقِي. هُوَ مِنْ إِنْدُونِيسِيَا.",
@@ -1169,7 +1190,8 @@
           "id": "Dia Rizki, temanku. Dia dari Indonesia.",
           "en": "He is Rizki, my friend. He is from Indonesia."
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h10"
       },
       {
         "ar": "هَلْ أَنْتِ طَالِبَةٌ؟",
@@ -1177,7 +1199,8 @@
           "id": "Apakah kamu pelajar?",
           "en": "Are you a student?"
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h11"
       },
       {
         "ar": "نَعَمْ، نَحْنُ طُلَّابٌ. وَأَنْتَ؟",
@@ -1185,7 +1208,8 @@
           "id": "Ya, kami pelajar. Kamu?",
           "en": "Yes, we are students. And you?"
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h12"
       },
       {
         "ar": "أَنَا طَالِبٌ أَيْضًا. تَشَرَّفْنَا!",
@@ -1193,7 +1217,8 @@
           "id": "Saya juga pelajar. Senang berkenalan!",
           "en": "I'm a student too. Nice to meet you!"
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h13"
       }
     ],
     "qiraah": {
@@ -1798,7 +1823,8 @@
           "id": "Berapa umurmu, Yuki?",
           "en": "How old are you, Yuki?"
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h01"
       },
       {
         "ar": "عُمْرِي عِشْرُونَ سَنَةً. وَأَنْتِ؟",
@@ -1806,7 +1832,8 @@
           "id": "Umurku dua puluh tahun. Kamu?",
           "en": "I'm twenty. And you?"
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h02"
       },
       {
         "ar": "عُمْرِي عِشْرُونَ سَنَةً أَيْضًا!",
@@ -1814,7 +1841,8 @@
           "id": "Umurku juga dua puluh tahun!",
           "en": "I'm twenty too!"
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h03"
       },
       {
         "ar": "مَا رَقْمُ هَاتِفِكِ؟",
@@ -1822,7 +1850,8 @@
           "id": "Berapa nomor teleponmu?",
           "en": "What's your phone number?"
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h04"
       },
       {
         "ar": "رَقْمُ هَاتِفِي: صِفْرٌ، تِسْعَةٌ، ثَلَاثَةٌ، سَبْعَةٌ، اثْنَانِ، خَمْسَةٌ.",
@@ -1830,7 +1859,8 @@
           "id": "Nomor teleponku: nol, sembilan, tiga, tujuh, dua, lima.",
           "en": "My phone number is: zero, nine, three, seven, two, five."
         },
-        "speaker": "نُور"
+        "speaker": "نُور",
+        "id": "h05"
       },
       {
         "ar": "شُكْرًا يَا نُورُ!",
@@ -1838,7 +1868,8 @@
           "id": "Terima kasih, Nur!",
           "en": "Thank you, Nur!"
         },
-        "speaker": "يُوكِي"
+        "speaker": "يُوكِي",
+        "id": "h06"
       },
       {
         "ar": "يَا سَالِمُ، مَا رَقْمُ غُرْفَتِكَ؟",
@@ -1846,7 +1877,8 @@
           "id": "Salim, berapa nomor kamarmu?",
           "en": "Salim, what's your room number?"
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h07"
       },
       {
         "ar": "رَقْمُ غُرْفَتِي سَبْعَةَ عَشَرَ. وَأَنْتَ؟",
@@ -1854,7 +1886,8 @@
           "id": "Nomor kamarku tujuh belas. Kamu?",
           "en": "My room number is seventeen. And you?"
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h08"
       },
       {
         "ar": "رَقْمُ غُرْفَتِي اثْنَا عَشَرَ.",
@@ -1862,7 +1895,8 @@
           "id": "Nomor kamarku dua belas.",
           "en": "My room number is twelve."
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h09"
       },
       {
         "ar": "كَمْ غُرْفَةً فِي السَّفِينَةِ؟",
@@ -1870,7 +1904,8 @@
           "id": "Ada berapa kamar di kapal ini?",
           "en": "How many rooms are on the ship?"
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h10"
       },
       {
         "ar": "عِشْرُونَ غُرْفَةً.",
@@ -1878,7 +1913,8 @@
           "id": "Dua puluh kamar.",
           "en": "Twenty rooms."
         },
-        "speaker": "مُوسَى"
+        "speaker": "مُوسَى",
+        "id": "h11"
       },
       {
         "ar": "شُكْرًا يَا مُوسَى. إِلَى اللِّقَاءِ.",
@@ -1886,7 +1922,8 @@
           "id": "Terima kasih, Musa. Sampai jumpa.",
           "en": "Thank you, Musa. See you."
         },
-        "speaker": "سَالِم"
+        "speaker": "سَالِم",
+        "id": "h12"
       }
     ],
     "qiraah": {

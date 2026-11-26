@@ -1,28 +1,94 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { pickArabicVoice } from '../domain/speech';
 
-export function useAudio() {
-  const [available, setAvailable] = useState(false);
+export function useAudio(recordingUrl?: string) {
+  const [voiceAvailable, setVoiceAvailable] = useState(false);
+  const [failedUrl, setFailedUrl] = useState<string>();
   const [playing, setPlaying] = useState(false);
   const utterance = useRef<SpeechSynthesisUtterance | null>(null);
+  const recording = useRef<HTMLAudioElement | null>(null);
+
+  const release = useCallback(() => {
+    const clip = recording.current;
+    if (clip) {
+      recording.current = null;
+      clip.onended = null;
+      clip.onerror = null;
+      clip.pause();
+    }
+    const u = utterance.current;
+    if (u) {
+      utterance.current = null;
+      u.onend = null;
+      u.onerror = null;
+      speechSynthesis.cancel();
+    }
+  }, []);
+
   useEffect(() => {
     if (!('speechSynthesis' in window)) return;
-    const load = () => setAvailable(!!pickArabicVoice(speechSynthesis.getVoices(), navigator.onLine));
-    load(); speechSynthesis.addEventListener('voiceschanged', load);
-    window.addEventListener('online', load); window.addEventListener('offline', load);
-    return () => { speechSynthesis.removeEventListener('voiceschanged', load); window.removeEventListener('online', load); window.removeEventListener('offline', load); if (utterance.current) { utterance.current.onend = null; utterance.current.onerror = null; speechSynthesis.cancel(); } };
+    const load = () => setVoiceAvailable(!!pickArabicVoice(speechSynthesis.getVoices(), navigator.onLine));
+    load();
+    speechSynthesis.addEventListener('voiceschanged', load);
+    window.addEventListener('online', load);
+    window.addEventListener('offline', load);
+    return () => {
+      speechSynthesis.removeEventListener('voiceschanged', load);
+      window.removeEventListener('online', load);
+      window.removeEventListener('offline', load);
+    };
   }, []);
-  const speak = useCallback((text: string, slow = false) => {
+
+  useEffect(() => release, [release, recordingUrl]);
+
+  const stop = useCallback(() => { release(); setPlaying(false); }, [release]);
+  const speakSynthetic = useCallback((text: string, rate: number) => {
     if (!('speechSynthesis' in window)) return false;
     const voice = pickArabicVoice(speechSynthesis.getVoices(), navigator.onLine);
     if (!voice) return false;
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = voice.lang; u.voice = voice; u.rate = slow ? .75 : 1;
-    u.onend = () => setPlaying(false); u.onerror = () => setPlaying(false);
-    utterance.current = u; setPlaying(true); speechSynthesis.speak(u); return true;
+    u.lang = voice.lang;
+    u.voice = voice;
+    u.rate = rate;
+    const finish = () => {
+      if (utterance.current !== u) return;
+      utterance.current = null;
+      setPlaying(false);
+    };
+    u.onend = finish;
+    u.onerror = finish;
+    utterance.current = u;
+    setPlaying(true);
+    speechSynthesis.speak(u);
+    return true;
   }, []);
-  return { available, playing, speak };
+
+  const hasRecording = !!recordingUrl && failedUrl !== recordingUrl;
+  const speak = useCallback((text: string, slow = false) => {
+    stop();
+    const rate = slow ? 0.75 : 1;
+    if (!hasRecording || !recordingUrl) return speakSynthetic(text, rate);
+
+    const clip = new Audio(recordingUrl);
+    recording.current = clip;
+    clip.playbackRate = rate;
+    clip.onended = () => {
+      if (recording.current === clip) stop();
+    };
+    const failed = () => {
+      if (recording.current !== clip) return;
+      stop();
+      setFailedUrl(recordingUrl);
+      speakSynthetic(text, rate);
+    };
+    clip.onerror = failed;
+    setPlaying(true);
+    void clip.play().catch(failed);
+    return true;
+  }, [hasRecording, recordingUrl, speakSynthetic, stop]);
+
+  return { available: hasRecording || voiceAvailable, playing, speak, stop };
 }
 
 type Recognition = {
