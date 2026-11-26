@@ -15,7 +15,7 @@ async function answer(page: Page, q: Question, wrong = false) {
   await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', q.id);
   if (q.kind === 'study') { await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click(); return; }
   if (q.kind === 'order') for (const word of q.words!) await page.locator('.word-bank button:enabled').and(page.getByRole('button', { name: word, exact: true })).first().click();
-  else if (q.kind === 'speak') { await page.locator('.speech-controls .md-btn').click(); await page.locator('.feedback-panel button').click(); return; }
+  else if (q.kind === 'speak') { await page.locator('.speech-skip').click(); await page.locator('.feedback-panel button').click(); return; }
   else { const choice = wrong ? q.choices!.find(c => c.id !== q.answer)! : q.choices!.find(c => c.id === q.answer)!; await page.locator(`input[type="radio"][value="${choice.id}"]`).locator('..').click(); }
   await page.getByTestId('check-answer').click();
   await expect(page.locator('.feedback-panel')).toBeVisible();
@@ -40,7 +40,11 @@ test('mobile demo journey from onboarding to all three units and rewards', async
   await expect(page.locator('.journey-screen')).toBeVisible();
   await page.locator('a.unit-link[href="#/unit/1"]').click();
   const unit = SHAHARIL_UNITS[0];
-  await expect(page.getByText(/Akhiran ـكَ dan ـكِ mengikuti|mengikuti lawan bicara/)).toBeVisible();
+  await expect(page.locator('.language-note')).not.toHaveAttribute('open');
+  await page.locator('.language-note summary').click();
+  await expect(page.locator('.language-note p')).toBeVisible();
+  await expect(page.locator('.language-note .translation')).toHaveCount(0);
+  await page.locator('.language-note summary').click();
   for (const activity of activities(unit)) {
     await page.locator(`a.activity-card[href="#/unit/1/lesson/${activity.id}"]`).click();
     await expect(page.locator('.question-body')).toBeVisible();
@@ -143,7 +147,8 @@ test('mobile layout, globe route cards, wardrobe save, theme and accessible scre
   await expect(startUnit).toHaveAttribute('href', '#/unit/1');
   await expect(startUnit).toHaveClass(/md-btn--secondary/);
   await expect(card.getByText('2. Banten', { exact: true })).toBeVisible();
-  await expect(card.getByText('Terkunci', { exact: true })).toHaveCount(2);
+  await expect(card.getByText('مُقْفَلٌ', { exact: true })).toHaveCount(2);
+  await expect(card.getByText('Terkunci', { exact: true })).toHaveCount(0);
   const pinBounds = (await jakarta.boundingBox())!, cardBounds = (await card.boundingBox())!;
   expect(cardBounds.y).toBeGreaterThanOrEqual(pinBounds.y + pinBounds.height);
   expect(cardBounds.y - (pinBounds.y + pinBounds.height)).toBeLessThanOrEqual(12);
@@ -238,7 +243,7 @@ test('recognition accepts a matching transcript; denied microphone remains skipp
   await page.locator('.feedback-panel button').click();
   await page.getByRole('button', { name: 'ابْدَأِ التَّسْجِيلَ', exact: true }).click();
   await expect(page.locator('.speech-message')).toContainText('لَمْ يُسْمَحْ');
-  await page.locator('.speech-controls .md-btn').click();
+  await page.locator('.speech-skip').click();
   await expect(page.locator('.feedback-panel.skipped')).toBeVisible();
   const current = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   expect(current.session.answers[1]).toMatchObject({ correct: false, skipped: true });
@@ -276,7 +281,7 @@ test('skipped speaking remains in the review list after another skip', async ({ 
   await seed(page, initial);
   await page.goto('/#/review');
   await page.getByRole('button', { name: 'اِبْدَأِ الْمُرَاجَعَةَ', exact: true }).click();
-  await page.locator('.speech-controls .md-btn').click();
+  await page.locator('.speech-skip').click();
   await page.locator('.feedback-panel button').click();
   await expect(page.locator('.result-screen')).toBeVisible();
   await page.reload();

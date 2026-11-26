@@ -5,11 +5,11 @@ import { geoDistance, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
 import type { FeatureCollection, LineString } from 'geojson';
 import routes from '../../../design-system/assets/rihlah/routes.json';
 import geography from '../assets/world-countries.json?url';
-import { unitsFor } from '../domain/content';
+import { l, unitsFor } from '../domain/content';
 import { isUnitUnlocked } from '../domain/progress';
 import { useProfile } from '../store';
 import { Icon } from './Icon';
-import { Tr } from './Common';
+import { Text, Tr } from './Common';
 
 type Position = [number, number];
 type Camera = { center: Position; zoom: number };
@@ -262,9 +262,9 @@ export default function JourneyMap() {
             <div><b lang="ar">{units[index].title.ar}</b><span className="small-label" dir="ltr">{index + 1}. {port}</span><Tr text={units[index].title} small /></div>
             {unlocked
               ? <Link className="md-btn md-btn--secondary" to={`/unit/${index + 1}`} aria-label={copy(`Buka wahdah ${port}`, `Open ${port} unit`)}>اِفْتَحْ</Link>
-              : <span className="locked-caption">{copy('Terkunci', 'Locked')}</span>}
+              : <span className="locked-caption"><Text text={l('مُقْفَلٌ', 'Terkunci', 'Locked')} /></span>}
           </li>;
-        })}</ul> : <p className="locked-caption">{copy('Belum tersedia', 'Coming later')}</p>}
+        })}</ul> : <p className="locked-caption"><Text text={l('غَيْرُ مُتَاحٍ بَعْدُ', 'Belum tersedia', 'Coming later')} /></p>}
       </section>}
     </div>
   </main>;

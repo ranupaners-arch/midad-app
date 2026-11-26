@@ -50,15 +50,15 @@ function Lesson({ unit, activity }: { unit: Unit; activity: Activity }) {
   const correctText = q.kind === 'order' || q.kind === 'speak' ? q.text?.ar : q.choices?.find(c => c.id === q.answer)?.text;
   return <div className="lesson-screen" data-testid="lesson-content">
     <header className="lesson-header"><Link className="icon-button" to={`/unit/${unit.id}`} aria-label="حِفْظُ الدَّرْسِ وَالْعَوْدَةُ"><Icon name="cross" /></Link><Progress value={session.cursor / bank.length * 100} label="تَقَدُّمُ الدَّرْسِ" /><span className="number small-label">{session.cursor + 1}/{bank.length}</span></header>
-    <div className="lesson-kicker"><span>{activity.title.ar}{activity.session ? ` · ${activity.session}/3` : ''}</span>{quiz && <span><Icon name="lock" /> الْاِخْتِبَارُ</span>}</div>
-    <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} />}</h1>
-    <QuestionBody key={q.id} question={q} locked={!!response} quiz={quiz} hinted={session.hintAt === session.cursor} onAnswer={handleAnswer} onStudy={() => update(p => advanceSession(answerQuestion(p, q, true)))} />
-    {!response && !quiz && q.kind !== 'study' && <HintOffer question={q} />}
-    {response && <div className={`feedback-panel ${response.skipped ? 'skipped' : response.correct ? 'correct' : 'wrong'}`} role="status">
+    <QuestionBody key={q.id} question={q} locked={!!response} quiz={quiz} hinted={session.hintAt === session.cursor} onAnswer={handleAnswer} onStudy={() => update(p => advanceSession(answerQuestion(p, q, true)))}
+      heading={<><div className="lesson-kicker"><span>{activity.title.ar}{activity.session ? ` · ${activity.session}/3` : ''}</span>{quiz && <span><Icon name="lock" /> الْاِخْتِبَارُ</span>}</div>
+    <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} />}</h1></>}
+      hint={!response && !quiz && q.kind !== 'study' && <HintOffer question={q} />}
+      feedback={response && <div className={`feedback-panel ${response.skipped ? 'skipped' : response.correct ? 'correct' : 'wrong'}`} role="status">
       <div className="feedback-copy"><Icon name={response.skipped ? 'book' : response.correct ? 'check' : 'cross'} /><div><b>{response.skipped ? 'سَنُرَاجِعُهَا لَاحِقًا' : response.correct ? 'أَحْسَنْتَ!' : 'لَا بَأْسَ، نَتَعَلَّمُ مَعًا'}</b>{!response.correct && !response.skipped && <><span className="small-label">الْإِجَابَةُ الصَّحِيحَةُ:</span><span className={`correct-answer ${q.meaningTest ? 'native-answer' : ''}`} lang={q.meaningTest ? profile.language : 'ar'} dir={q.meaningTest ? 'ltr' : 'rtl'}>{correctText}</span>{!quiz && q.text && <Tr text={q.text} force />}</>}{response.skipped && <span className="small-label">لَمْ تُحْتَسَبْ كَإِجَابَةٍ صَحِيحَةٍ</span>}</div><Mascot emote={response.correct ? 'cheer' : 'think'} decorative /></div>
       <Button className="full-width" variant={response.correct ? 'success' : response.skipped ? 'primary' : 'danger'} autoFocus onClick={() => update(advanceSession)}>{response.correct || response.skipped ? 'مُتَابَعَة' : 'فَهِمْتُ'}</Button>
     </div>}
-    <p className="lesson-save-note"><Icon name="check" /><Text text={l('يُحْفَظُ تَقَدُّمُكَ تِلْقَائِيًّا.', 'Progres tersimpan otomatis. Kamu bisa melanjutkan nanti.', 'Progress saves automatically. You can continue later.')} /></p>
+    />
   </div>;
 }
 
