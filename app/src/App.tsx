@@ -29,6 +29,7 @@ export default function App() {
   const location = useLocation();
   const reviewing = location.pathname === '/review';
   const showingMap = location.pathname === '/map';
+  const showingJourney = location.pathname === '/';
   const choosingCompanion = location.pathname === '/wardrobe';
   const lesson = location.pathname.includes('/lesson/') || reviewing && !!profile.reviewSession;
   const activeUnit = unitsFor(profile).find(u => u.id === profile.session?.unitId);
@@ -47,7 +48,7 @@ export default function App() {
     <a className="skip-link" href="#main-title" onClick={event => { event.preventDefault(); document.getElementById('main-title')?.focus(); }}>اِنْتَقِلْ إِلَى الْمُحْتَوَى</a>
     <AppAvailability learning={lesson} />
     {storageError && <div className="storage-warning" role="status"><Text text={l('تَعَذَّرَ حِفْظُ التَّقَدُّمِ عَلَى هَذَا الْجِهَازِ. سَيَضِيعُ التَّقَدُّمُ الْجَدِيدُ عِنْدَ إِغْلَاقِ الصَّفْحَةِ.', 'Penyimpanan tidak tersedia atau datanya tidak terbaca. Progres baru hanya bertahan selama halaman terbuka. Data lama tidak ditimpa.', 'Storage is unavailable or unreadable. New progress lasts only while this page is open. Existing data is not overwritten.')} force /></div>}
-    {!profile.onboarded ? <Routes><Route path="/welcome" element={<Welcome />} /><Route path="*" element={<Navigate to="/welcome" replace />} /></Routes> : showingMap ? <Suspense><JourneyMap /></Suspense> : <div className={`app-layout ${lesson ? 'in-lesson' : ''} ${choosingCompanion ? 'in-wardrobe' : ''} ${lesson || choosingCompanion ? 'viewport-page' : ''}`}>
+    {!profile.onboarded ? <Routes><Route path="/welcome" element={<Welcome />} /><Route path="*" element={<Navigate to="/welcome" replace />} /></Routes> : showingMap ? <Suspense><JourneyMap /></Suspense> : <div className={`app-layout ${lesson ? 'in-lesson' : ''} ${choosingCompanion ? 'in-wardrobe' : ''} ${showingJourney ? 'in-journey' : ''} ${lesson || choosingCompanion || showingJourney ? 'viewport-page' : ''}`}>
       <aside className="sidebar">
         <NavLink to="/" className="brand-link" aria-label="مِدَاد — رِحْلَتِي"><Logo /></NavLink>
         <nav aria-label="التَّنَقُّلُ الرَّئِيسِيُّ" className="desktop-nav">{navigation.map(n => <NavLink key={n.to} to={n.to} end={n.to === '/'} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><Icon name={n.icon} /><span><Text text={n.label} /></span></NavLink>)}</nav>
