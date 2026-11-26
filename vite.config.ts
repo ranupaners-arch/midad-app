@@ -25,7 +25,7 @@ export default defineConfig({
       clientsClaim: true,
       skipWaiting: false,
       navigateFallback: 'index.html',
-      globPatterns: ['**/*.{js,css,html,svg,png,woff2,woff,txt}'],
+      globPatterns: ['**/*.{js,css,html,svg,png,woff2,woff,txt,mp3}', '**/world-countries-*.json'],
       runtimeCaching: [],
     },
     devOptions: { enabled: false },

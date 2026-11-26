@@ -1,4 +1,4 @@
-import { activities, questions, UNITS } from './content';
+import { activities, questions, SHAHARIL_UNITS, UNITS } from './content';
 import { localDay, validDay } from './calendar';
 import type { ActivityKind, Answer, Language, Profile, Question, ReviewEntry, ReviewSession } from './types';
 
@@ -8,8 +8,8 @@ export function questionSource(id: string, language: Language): QuestionSource |
   let directory = directories.get(language);
   if (!directory) {
     // Retain legacy quiz sources so saved mistakes and in-progress v1 exams remain usable.
-    directory = new Map(UNITS.flatMap(unit => activities(unit).flatMap(activity => {
-      const bank = activity.kind === 'quiz' ? [...questions(unit, activity, language, 1), ...questions(unit, activity, language, 2)] : questions(unit, activity, language);
+    directory = new Map([...UNITS, ...SHAHARIL_UNITS].flatMap(unit => activities(unit).flatMap(activity => {
+      const bank = activity.kind === 'quiz' && !unit.curriculum ? [...questions(unit, activity, language, 1), ...questions(unit, activity, language, 2)] : questions(unit, activity, language);
       return bank.map(question => [question.id, { unitId: unit.id, activityId: activity.id, activityKind: activity.kind, question }] as const);
     })));
     directories.set(language, directory);

@@ -5,9 +5,10 @@ import { createProfile, parseProfile, STORAGE_KEY } from './domain/progress';
 
 type Store = { profile: Profile; update: (fn: (p: Profile) => Profile) => void; storageError: boolean; reset: () => void; restore: (profile: Profile) => void };
 const Context = createContext<Store | null>(null);
+const newProfile = (): Profile => ({ ...createProfile(), curriculum: 'shaharil' });
 function load() {
-  try { const raw = localStorage.getItem(STORAGE_KEY); return { profile: raw ? parseProfile(JSON.parse(raw)) : createProfile(), storageError: false }; }
-  catch { return { profile: createProfile(), storageError: true }; }
+  try { const raw = localStorage.getItem(STORAGE_KEY); return { profile: raw ? parseProfile(JSON.parse(raw)) : newProfile(), storageError: false }; }
+  catch { return { profile: newProfile(), storageError: true }; }
 }
 
 export function ProfileProvider({ children }: { children: ReactNode }) {
@@ -22,7 +23,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const sync = (event: StorageEvent) => {
       if (event.key !== STORAGE_KEY) return;
-      try { setProfile(event.newValue ? parseProfile(JSON.parse(event.newValue)) : createProfile()); } catch { setStorageError(true); }
+      try { setProfile(event.newValue ? parseProfile(JSON.parse(event.newValue)) : newProfile()); } catch { setStorageError(true); }
     };
     window.addEventListener('storage', sync);
     return () => window.removeEventListener('storage', sync);
@@ -33,7 +34,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
   }, [profile.theme]);
   const reset = () => {
     try { localStorage.removeItem(STORAGE_KEY); setStorageError(false); } catch { setStorageError(true); }
-    setProfile(createProfile());
+    setProfile(newProfile());
   };
   const restore = (next: Profile) => {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); setStorageError(false); } catch { setStorageError(true); }

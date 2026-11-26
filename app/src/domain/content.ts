@@ -1,4 +1,5 @@
-import type { Activity, Language, Localized, Question, QuestionVersion, Unit, Vocabulary } from './types';
+import shaharil from './shaharil.json' with { type: 'json' };
+import type { Profile, Activity, Language, Localized, Question, QuestionVersion, Unit, Vocabulary } from './types';
 
 export const l = (ar: string, id: string, en: string): Localized => ({ ar, id, en });
 const vocabulary = (unit: number, rows: string[][]): Vocabulary[] => rows.map(([ar, id, en, symbol], i) => ({ ...l(ar, id, en), idKey: `u${unit}-w${i + 1}`, symbol }));
@@ -89,6 +90,35 @@ export const UNITS: Unit[] = [
   },
 ];
 
+export const SHAHARIL_UNITS: Unit[] = shaharil.map(source => {
+  const original = UNITS[source.wahdah - 1];
+  const audioFolder = `w${String(source.wahdah).padStart(2, '0')}`;
+  const localized = (item: { ar: string; tr: { id: string; en: string } }) => l(item.ar, item.tr.id, item.tr.en);
+  const lines = source.qiraah.sentences.map(localized);
+  const context = source.qiraah.context && localized(source.qiraah.context);
+  const reading = (lang: keyof Localized) => [context?.[lang], ...lines.map((line, index) => `${index + 1}. ${line[lang]}`)].filter(Boolean).join('\n');
+  return {
+    id: source.wahdah,
+    curriculum: 'shaharil',
+    title: localized(source.title),
+    subtitle: l(original.subtitle.ar, source.canDo.id, source.canDo.en),
+    words: source.vocab.map(word => ({
+      ...localized(word),
+      idKey: `u${source.wahdah}-s-${word.id}`,
+      audioKey: `${audioFolder}/${word.id}`,
+      symbol: word.digit?.match(/\((\d+)\)/)?.[1]
+        ?? original.words.find(candidate => candidate.ar === word.ar)?.symbol
+        ?? 'book',
+    })),
+    patterns: source.patterns.map(pattern => ({ words: pattern.ar.split(' '), translation: pattern.tr })),
+    dialogue: source.dialogue.map(line => ({ ...localized(line), speaker: line.speaker, audioKey: `${audioFolder}/${line.id}` })),
+    reading: l(reading('ar'), reading('id'), reading('en')),
+    comprehension: [],
+  };
+});
+
+export const unitsFor = (profile: Pick<Profile, 'curriculum'>) => profile.curriculum === 'shaharil' ? SHAHARIL_UNITS : UNITS;
+
 export const ACTIVITY_TITLES = {
   vocabulary: l('الْمُفْرَدَاتُ', 'Kosakata', 'Vocabulary'), pattern: l('التَّرَاكِيبُ', 'Susun kalimat', 'Sentence patterns'),
   dialogue: l('الْحِوَارُ', 'Percakapan', 'Dialogue'), reading: l('الْقِرَاءَةُ', 'Bacaan', 'Reading'), practice: l('التَّدْرِيبَاتُ', 'Latihan', 'Practice'), quiz: l('اخْتِبَارُ الْوَحْدَةِ', 'Kuis wahdah', 'Unit quiz'),
@@ -122,7 +152,8 @@ function wordQuestion(unit: Unit, word: Vocabulary, lang: Language, index: numbe
 }
 
 export function questions(unit: Unit, activity: Activity, lang: Language, version: QuestionVersion = 2): Question[] {
-  const prefix = `u${unit.id}-${activity.id}`;
+  const prefix = `u${unit.id}-${unit.curriculum === 'shaharil' ? 's-' : ''}${activity.id}`;
+  const source = unit.curriculum === 'shaharil' ? shaharil[unit.id - 1] : undefined;
   if (activity.kind === 'vocabulary') {
     const words = activity.words!;
     return [
@@ -131,12 +162,33 @@ export function questions(unit: Unit, activity: Activity, lang: Language, versio
     ];
   }
   if (activity.kind === 'pattern') return unit.patterns.map((p, i) => ({ id: `${prefix}-${i}`, kind: 'order', prompt: l('رَتِّبِ الْكَلِمَاتِ', 'Susun kata menjadi kalimat', 'Put the words in order'), words: p.words, text: l(p.words.join(' '), p.translation.id, p.translation.en) }));
-  if (activity.kind === 'dialogue') return unit.dialogue.map((text, i) => ({ id: `${prefix}-${i}`, kind: 'speak', prompt: l('اِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَ', 'Dengarkan, lalu ulangi kalimat ini', 'Listen, then repeat this sentence'), text }));
+  if (activity.kind === 'dialogue') return unit.dialogue.map(({ speaker, audioKey, ...text }, i) => ({ id: `${prefix}-${i}`, kind: 'speak', prompt: l('اِسْتَمِعْ ثُمَّ أَعِدِ الْجُمْلَةَ', 'Dengarkan, lalu ulangi kalimat ini', 'Listen, then repeat this sentence'), text, speaker, audioKey }));
+  if (activity.kind === 'reading' && source) return source.qiraah.questions.map(item => ({
+    id: `${prefix}-${item.id}`,
+    kind: 'choice',
+    prompt: l(item.ar, item.prompt.id, item.prompt.en),
+    reading: unit.reading,
+    choices: shuffled(item.options.map((option, i) => 'ar' in option
+      ? { id: String(i), text: option.ar, lang: 'ar' as const }
+      : { id: String(i), text: option.tr[lang], lang }), Number(item.id.slice(1)) + 41),
+    answer: String(item.options.findIndex(option => option.correct)),
+  }));
   if (activity.kind === 'reading') return unit.comprehension.map((q, i) => ({ id: `${prefix}-${i}`, kind: 'choice', prompt: q.prompt, reading: unit.reading, choices: q.choices.map((text, j) => ({ id: String(j), text, lang: 'ar' })), answer: String(q.answer) }));
   if (activity.kind === 'practice') return [
     ...shuffled(unit.words, unit.id * 7).slice(0, 4).map((w, i) => wordQuestion(unit, w, lang, i, prefix, i % 2)),
     ...unit.patterns.slice(0, 2).map((p, i): Question => ({ id: `${prefix}-order-${i}`, kind: 'order', prompt: l('رَتِّبِ الْكَلِمَاتِ', 'Susun kata menjadi kalimat', 'Put the words in order'), words: p.words, text: l(p.words.join(' '), p.translation.id, p.translation.en) })),
   ];
+  if (source) return source.exam.map((item, i) => {
+    const [target, ...distractors] = ('pairs' in item && item.pairs) || [item.target!, ...item.distractors!];
+    const words = [target, ...distractors].map(id => unit.words.find(word => word.idKey === `u${unit.id}-s-${id}`)!);
+    const question = wordQuestion(unit, words[0], lang, i, prefix, item.type === 'listen-pick' ? 1 : 0);
+    return {
+      ...question,
+      choices: shuffled(words, i + unit.id * 19).map(word => ({
+        id: word.idKey, text: question.meaningTest ? word[lang] : word.ar, lang: question.meaningTest ? lang : 'ar',
+      })),
+    };
+  });
   const vocabulary = shuffled(unit.words, unit.id * 73).slice(0, version === 1 ? 10 : 8).map((w, i) => wordQuestion(unit, w, lang, i, prefix, i % 2));
   if (version === 1) return vocabulary;
   return [...vocabulary, ...unit.patterns.slice(0, 2).map((p, i): Question => ({ id: `${prefix}-pattern-${i}`, kind: 'order', prompt: l('رَتِّبِ الْكَلِمَاتِ', 'Susun kata menjadi kalimat', 'Put the words in order'), words: p.words, text: l(p.words.join(' '), p.translation.id, p.translation.en) }))];

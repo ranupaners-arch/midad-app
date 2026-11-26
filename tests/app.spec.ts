@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { activities, questions, UNITS } from '../app/src/domain/content';
+import { activities, questions, SHAHARIL_UNITS, UNITS } from '../app/src/domain/content';
 import { placementQuestions } from '../app/src/domain/placement';
 import { createProfile, STORAGE_KEY } from '../app/src/domain/progress';
 import type { Question } from '../app/src/domain/types';
@@ -14,8 +14,8 @@ async function seed(page: Page, changes = {}) {
 async function answer(page: Page, q: Question, wrong = false) {
   await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', q.id);
   if (q.kind === 'study') { await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click(); return; }
-  if (q.kind === 'order') for (const word of q.words!) await page.locator('.word-bank').getByRole('button', { name: word, exact: true }).click();
-  else if (q.kind === 'speak') { await page.locator('.speech-controls .md-btn').click(); await page.locator('.feedback-panel button').click(); return; }
+  if (q.kind === 'order') for (const word of q.words!) await page.locator('.word-bank button:enabled').and(page.getByRole('button', { name: word, exact: true })).first().click();
+  else if (q.kind === 'speak') { await page.locator('.speech-skip').click(); await page.locator('.feedback-panel button').click(); return; }
   else { const choice = wrong ? q.choices!.find(c => c.id !== q.answer)! : q.choices!.find(c => c.id === q.answer)!; await page.locator(`input[type="radio"][value="${choice.id}"]`).locator('..').click(); }
   await page.getByTestId('check-answer').click();
   await expect(page.locator('.feedback-panel')).toBeVisible();
@@ -27,8 +27,9 @@ function vocabularyCheckpoint(cursor: number, graded: boolean[] = []) {
   return { unitId: 1, activityId: 'vocab-1', questionVersion: 2 as const, cursor, answers: bank.slice(0, cursor).map((q, index) => ({ questionId: q.id, correct: index < 10 || (graded[index - 10] ?? true), skipped: false, hinted: false, wordId: q.word!.idKey })), hintAt: null };
 }
 
-test('onboarding, every activity in unit one, reward, reload and repeat without duplicate rewards', async ({ page }) => {
-  test.setTimeout(180000);
+test('mobile demo journey from onboarding to all three units and rewards', async ({ page }) => {
+  test.setTimeout(300000);
+  await page.setViewportSize({ width: 390, height: 844 });
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto('/');
   expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
@@ -38,13 +39,19 @@ test('onboarding, every activity in unit one, reward, reload and repeat without 
   await page.getByRole('button', { name: 'اِبْدَأْ', exact: true }).click();
   await expect(page.locator('.journey-screen')).toBeVisible();
   await page.locator('a.unit-link[href="#/unit/1"]').click();
-  const unit = UNITS[0];
+  const unit = SHAHARIL_UNITS[0];
+  await expect(page.locator('.language-note')).not.toHaveAttribute('open');
+  await page.locator('.language-note summary').click();
+  await expect(page.locator('.language-note p')).toBeVisible();
+  await expect(page.locator('.language-note .translation')).toHaveCount(0);
+  await page.locator('.language-note summary').click();
   for (const activity of activities(unit)) {
     await page.locator(`a.activity-card[href="#/unit/1/lesson/${activity.id}"]`).click();
     await expect(page.locator('.question-body')).toBeVisible();
     if (activity.id === 'vocab-1' || activity.id === 'pattern') expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
     if (activity.id === 'vocab-1') await page.getByRole('button', { name: 'تَرْجَمَة', exact: true }).click();
     for (const q of questions(unit, activity, 'id')) {
+      if (q.speaker) await expect(page.locator('.dialogue-speaker')).toHaveText(q.speaker);
       if (q.meaningTest || activity.kind === 'quiz') {
         await expect(page.getByRole('button', { name: 'التَّرْجَمَةُ مُقْفَلَةٌ فِي هَذَا السُّؤَالِ', exact: true })).toBeDisabled();
         await expect(page.locator('.question-cue .translation')).toHaveCount(0);
@@ -62,6 +69,26 @@ test('onboarding, every activity in unit one, reward, reload and repeat without 
   for (const q of questions(unit, activities(unit).find(a => a.kind === 'quiz')!, 'id')) await answer(page, q);
   await expect(page.locator('.result-screen')).toBeVisible();
   await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).dates, STORAGE_KEY)).toBe(50);
+  await page.locator('.result-actions a[href="#/unit/2"]').click();
+  for (const nextUnit of SHAHARIL_UNITS.slice(1)) {
+    for (const activity of activities(nextUnit)) {
+      await page.locator(`a.activity-card[href="#/unit/${nextUnit.id}/lesson/${activity.id}"]`).click();
+      for (const q of questions(nextUnit, activity, 'id')) await answer(page, q);
+      await expect(page.locator('.result-screen')).toBeVisible();
+      const destination = activity.kind !== 'quiz' ? `/unit/${nextUnit.id}` : nextUnit.id === 2 ? '/unit/3' : '/summary';
+      await page.locator(`.result-actions a[href="#${destination}"]`).click();
+    }
+  }
+
+  await expect(page.locator('.summary-stats')).toContainText('93/93');
+  await expect(page.locator('.summary-gift')).toBeVisible();
+  await expect(page.locator('.summary-units li')).toHaveCount(3);
+  await page.reload();
+  await expect(page.locator('.summary-stats')).toContainText('93/93');
+  const finished = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
+  expect(finished.rewardedUnits).toEqual([1, 2, 3]);
+  expect(finished.dates).toBe(150);
+  expect(finished.ownedSkins).toContain('sailor');
   expect(errors).toEqual([]);
 });
 
@@ -99,19 +126,52 @@ test('quiz failure has no reward; a later pass unlocks the next unit', async ({ 
   await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).ownedAnimals, STORAGE_KEY)).toContain('camel');
 });
 
-test('mobile layout, wardrobe save, theme, keyboard dialog dismissal and accessible screens', async ({ page }) => {
+test('mobile layout, globe route cards, wardrobe save, theme and accessible screens', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await seed(page);
   await page.goto('/');
   await expect(page.locator('.mobile-nav')).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  const mapLink = page.getByRole('link', { name: 'خَرِيطَةُ الرِّحْلَةِ', exact: true });
+  await expect(page.locator('.journey-hero')).toBeVisible();
+  await expect(page.locator('.globe-canvas')).toHaveCount(0);
+  await mapLink.click();
+  await expect(page).toHaveURL(/#\/map$/);
+  await expect(page.locator('.globe-canvas[data-land="ready"]')).toBeVisible();
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await expect(page.getByText('Natural Earth', { exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Tahapan rute' })).toHaveCount(0);
+  const jakarta = page.getByRole('button', { name: 'Jakarta', exact: true });
+  await jakarta.click();
+  const card = page.getByRole('region', { name: 'Jakarta', exact: true });
+  const startUnit = card.getByRole('link', { name: 'Buka wahdah Jakarta' });
+  await expect(startUnit).toHaveAttribute('href', '#/unit/1');
+  await expect(startUnit).toHaveClass(/md-btn--secondary/);
+  await expect(card.getByText('2. Banten', { exact: true })).toBeVisible();
+  await expect(card.getByText('مُقْفَلٌ', { exact: true })).toHaveCount(2);
+  await expect(card.getByText('Terkunci', { exact: true })).toHaveCount(0);
+  const pinBounds = (await jakarta.boundingBox())!, cardBounds = (await card.boundingBox())!;
+  expect(cardBounds.y).toBeGreaterThanOrEqual(pinBounds.y + pinBounds.height);
+  expect(cardBounds.y - (pinBounds.y + pinBounds.height)).toBeLessThanOrEqual(12);
+  await page.keyboard.press('Escape');
+  await expect(card).not.toBeVisible();
+  await expect(jakarta).toBeFocused();
+  await page.getByRole('button', { name: 'Lihat seluruh rute' }).click();
+  const muscat = page.getByRole('button', { name: 'Muscat', exact: true });
+  await expect(muscat).toBeInViewport();
+  const position = await muscat.boundingBox();
+  const bounds = (await page.locator('.globe-canvas').boundingBox())!;
+  await page.mouse.move(bounds.x + bounds.width / 2, bounds.y + bounds.height / 4);
+  await page.mouse.down();
+  await page.mouse.move(bounds.x + bounds.width / 2 + 50, bounds.y + bounds.height / 4 + 25, { steps: 8 });
+  await page.mouse.up();
+  await expect.poll(() => muscat.boundingBox()).not.toEqual(position);
+  await page.getByRole('button', { name: 'Lihat seluruh rute' }).click();
+  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   let scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
   expect(scan.violations).toEqual([]);
-  await page.getByRole('button', { name: 'خَرِيطَةُ الرِّحْلَةِ', exact: true }).click();
-  await expect(page.getByRole('dialog')).toBeVisible();
-  await page.keyboard.press('Escape');
-  await expect(page.getByRole('dialog')).not.toBeVisible();
-  await expect(page.getByRole('button', { name: 'خَرِيطَةُ الرِّحْلَةِ', exact: true })).toBeFocused();
+  await page.getByRole('link', { name: 'Kembali ke perjalanan' }).click();
+  await expect(page.locator('.globe-canvas')).toHaveCount(0);
   await page.locator('.mobile-nav a[href="#/wardrobe"]').click();
   scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
   expect(scan.violations).toEqual([]);
@@ -183,7 +243,7 @@ test('recognition accepts a matching transcript; denied microphone remains skipp
   await page.locator('.feedback-panel button').click();
   await page.getByRole('button', { name: 'ابْدَأِ التَّسْجِيلَ', exact: true }).click();
   await expect(page.locator('.speech-message')).toContainText('لَمْ يُسْمَحْ');
-  await page.locator('.speech-controls .md-btn').click();
+  await page.locator('.speech-skip').click();
   await expect(page.locator('.feedback-panel.skipped')).toBeVisible();
   const current = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   expect(current.session.answers[1]).toMatchObject({ correct: false, skipped: true });
@@ -221,7 +281,7 @@ test('skipped speaking remains in the review list after another skip', async ({ 
   await seed(page, initial);
   await page.goto('/#/review');
   await page.getByRole('button', { name: 'اِبْدَأِ الْمُرَاجَعَةَ', exact: true }).click();
-  await page.locator('.speech-controls .md-btn').click();
+  await page.locator('.speech-skip').click();
   await page.locator('.feedback-panel button').click();
   await expect(page.locator('.result-screen')).toBeVisible();
   await page.reload();
@@ -346,7 +406,7 @@ test('switching lessons preserves both pending answers, the used hint and XP thr
   await page.goto('/#/unit/1');
   await page.locator('a.activity-card[href="#/unit/1/lesson/pattern"]').click();
   const pattern = questions(UNITS[0], activities(UNITS[0]).find(a => a.id === 'pattern')!, 'id')[0];
-  for (const word of pattern.words!) await page.locator('.word-bank').getByRole('button', { name: word, exact: true }).click();
+  for (const word of pattern.words!) await page.locator('.word-bank button:enabled').and(page.getByRole('button', { name: word, exact: true })).first().click();
   await page.getByTestId('check-answer').click();
   await expect(page.locator('.feedback-panel.correct')).toBeVisible();
   await page.goto('/');
@@ -457,6 +517,7 @@ test('the completion summary remains unavailable until all three units have been
   const profile = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   expect(profile.dates).toBe(0); expect(profile.ownedSkins).not.toContain('sailor');
 });
+
 
 for (const passedA1 of [false, true]) {
   test(`placement ${passedA1 ? 'opens the A2 section and reports its limit' : 'recommends A1 below the threshold'}`, async ({ page }) => {
