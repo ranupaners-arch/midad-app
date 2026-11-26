@@ -37,6 +37,7 @@ for (const size of [{ width: 320, height: 568 }, { width: 360, height: 640 }, { 
         answers: bank.slice(0, cursor).map(q => ({ questionId: q.id, correct: true, skipped: false, hinted: false, wordId: q.word!.idKey })), hintAt: null } });
       await page.goto('/#/unit/1/lesson/vocab-1');
       await reachable(page.getByTestId('check-answer'));
+      for (const option of await page.locator('.answer-choice').all()) await reachable(option);
       await noPageOverflow(page);
       const wrong = bank[cursor].choices!.find(c => c.id !== bank[cursor].answer)!;
       await page.locator(`input[value="${wrong.id}"]`).locator('..').click();
