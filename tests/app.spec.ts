@@ -40,7 +40,11 @@ test('mobile demo journey from onboarding to all three units and rewards', async
   await expect(page.locator('.journey-screen')).toBeVisible();
   await page.locator('a.unit-link[href="#/unit/1"]').click();
   const unit = SHAHARIL_UNITS[0];
-  await expect(page.getByText(/Akhiran ـكَ dan ـكِ mengikuti|mengikuti lawan bicara/)).toBeVisible();
+  await expect(page.locator('.language-note')).not.toHaveAttribute('open');
+  await page.locator('.language-note summary').click();
+  await expect(page.locator('.language-note p')).toBeVisible();
+  await expect(page.locator('.language-note .translation')).toHaveCount(0);
+  await page.locator('.language-note summary').click();
   for (const activity of activities(unit)) {
     await page.locator(`a.activity-card[href="#/unit/1/lesson/${activity.id}"]`).click();
     await expect(page.locator('.question-body')).toBeVisible();
@@ -143,7 +147,8 @@ test('mobile layout, globe route cards, wardrobe save, theme and accessible scre
   await expect(startUnit).toHaveAttribute('href', '#/unit/1');
   await expect(startUnit).toHaveClass(/md-btn--secondary/);
   await expect(card.getByText('2. Banten', { exact: true })).toBeVisible();
-  await expect(card.getByText('Terkunci', { exact: true })).toHaveCount(2);
+  await expect(card.getByText('مُقْفَلٌ', { exact: true })).toHaveCount(2);
+  await expect(card.getByText('Terkunci', { exact: true })).toHaveCount(0);
   const pinBounds = (await jakarta.boundingBox())!, cardBounds = (await card.boundingBox())!;
   expect(cardBounds.y).toBeGreaterThanOrEqual(pinBounds.y + pinBounds.height);
   expect(cardBounds.y - (pinBounds.y + pinBounds.height)).toBeLessThanOrEqual(12);

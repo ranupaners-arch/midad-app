@@ -99,5 +99,51 @@ for (const size of [{ width: 320, height: 568 }, { width: 360, height: 640 }, { 
       expect(saved.session.answers[0]).toMatchObject({ skipped: true, correct: false });
       await noPageOverflow(page);
     });
+
+    test('the unit starts above the fold and resumes the saved question', async ({ page }) => {
+      await prepare(page, { translation: false });
+      await page.goto('/#/unit/1');
+      const start = page.locator('.unit-start');
+      await reachable(start);
+      await expect(page.locator('.language-note p')).toBeHidden();
+      await page.locator('.language-note summary').click();
+      await expect(page.locator('.language-note p')).toBeVisible();
+      await expect(page.locator('.language-note .translation')).toHaveCount(0);
+      await page.getByRole('button', { name: 'تَرْجَمَة', exact: true }).click();
+      await expect(page.locator('.language-note p .translation')).toBeVisible();
+      await start.click();
+      await page.locator('.question-actions button').click();
+      const savedId = await page.locator('.question-body').getAttribute('data-question-id');
+      await page.locator('.lesson-header a').click();
+      await reachable(start);
+      await expect(start).toHaveAttribute('href', '#/unit/1/lesson/vocab-1');
+      await start.click();
+      await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', savedId!);
+    });
+
+    test('companion options and save remain separate and the selection persists', async ({ page }) => {
+      await prepare(page);
+      await page.goto('/#/wardrobe');
+      const save = page.locator('.wardrobe-save button');
+      await reachable(save);
+      for (const index of [4, 0]) {
+        const animal = page.locator('.animal-picker label').nth(index);
+        await animal.scrollIntoViewIfNeeded();
+        await reachable(animal);
+        await animal.click();
+        await expect(animal.locator('input')).toBeChecked();
+        await reachable(save);
+      }
+      const pink = page.getByRole('radio', { name: 'وَرْدِيٌّ', exact: true });
+      await pink.locator('..').click();
+      await reachable(save);
+      await save.click();
+      await expect(page.locator('.saved-message')).toBeVisible();
+      await reachable(save);
+      await noPageOverflow(page);
+      await page.reload();
+      await expect(pink).toBeChecked();
+      await reachable(save);
+    });
   });
 }

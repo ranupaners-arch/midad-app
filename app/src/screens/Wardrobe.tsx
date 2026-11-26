@@ -40,7 +40,8 @@ export default function Wardrobe() {
     });
     setSaved(true);
   };
-  return <div className="screen wardrobe-screen"><div className="page-heading"><div><span className="eyebrow">وَاحِدٌ فِي كُلِّ رِحْلَةٍ</span><h1 id="main-title" tabIndex={-1}><Text text={l('رَفِيقِي', 'Teman belajarku', 'My companion')} /></h1></div><span className="stat stat-dates"><Icon name="dates" /><b className="number">{profile.dates}</b></span></div>
+  return <div className="screen wardrobe-screen"><div className="page-heading"><h1 id="main-title" tabIndex={-1}><Text text={l('رَفِيقِي', 'Teman belajarku', 'My companion')} /></h1><span className="stat stat-dates"><Icon name="dates" /><b className="number">{profile.dates}</b></span></div>
+    <div className="wardrobe-content">
     <div className="wardrobe-stage"><Mascot config={draft} /><p>{ANIMALS[draft.animal]}</p></div>
     <fieldset className="animal-picker"><legend>اخْتَرْ رَفِيقَكَ</legend><div>{Object.entries(ANIMALS).map(([key, name]) => <label key={key} className={draft.animal === key ? 'selected' : ''}><input className="sr-only" type="radio" name="animal" checked={draft.animal === key} onChange={() => { setDraft(validateMascotConfig({ ...MidadMascot.defaults(key as MascotConfig['animal']), skin: draft.skin, head: draft.head, neck: draft.neck, hand: draft.hand })); setSaved(false); }} /><Mascot config={{ animal: key as MascotConfig['animal'] }} decorative /><b>{name}</b>{!earned(key) && <span className="animal-lock"><Icon name="lock" />{key === 'cat' ? <span className="number">200</span> : key === 'camel' ? '٢' : key === 'turtle' ? '٧' : 'عُمَانُ'}</span>}</label>)}</div></fieldset>
     {!earned(draft.animal) && <p className="unlock-message"><Icon name="lock" /><Text text={draft.animal === 'cat' ? l('يُفْتَحُ بِمِائَتَيْ تَمْرَةٍ.', 'Kucing dapat dibeli dengan 200 kurma.', 'Unlock the cat for 200 dates.') : draft.animal === 'camel' ? l('يُفْتَحُ بَعْدَ الْوَحْدَةِ الثَّانِيَةِ.', 'Unta terbuka setelah lulus wahdah kedua.', 'Unlock the camel after passing unit two.') : draft.animal === 'turtle' ? l('يُفْتَحُ بِسِلْسِلَةِ سَبْعَةِ أَيَّامٍ.', 'Penyu terbuka setelah belajar tujuh hari berturut-turut.', 'Unlock the turtle with a seven-day streak.') : l('يُفْتَحُ عِنْدَ الْوُصُولِ إِلَى عُمَانَ.', 'Oryx terbuka saat tiba di Oman pada level 17, di luar demo ini.', 'Unlock the oryx upon reaching Oman at level 17, beyond this demo.')} /></p>}
@@ -53,6 +54,7 @@ export default function Wardrobe() {
         <b>{NAMES[key] ?? key}</b>{!owned && <span className="option-price">{price !== undefined ? <><Icon name="dates" /><span className="number">{price}</span></> : <><Icon name="lock" />{key === 'dishdasha' ? 'عُمَانُ' : 'بِالتَّقَدُّمِ'}</>}</span>}
       </label>;
     })}{slot === 'nose' && !A.hasNose && <p className="empty-options"><Text text={l('لِلْهُدْهُدِ مِنْقَارٌ، وَلَيْسَ لَهُ أَنْفٌ.', 'Hudhud punya paruh, sehingga tidak menggunakan pilihan hidung.', 'The hoopoe has a beak and does not use nose options.')} /></p>}</fieldset>
+    </div>
     <div className="wardrobe-save"><Button className="full-width" disabled={locked || cost > profile.dates} onClick={save}>{locked ? <><Icon name="lock" /> مُقْفَلٌ</> : cost > profile.dates ? 'تَمْرُكَ لَا يَكْفِي' : cost > 0 ? <><Icon name="dates" /> اشْتَرِ وَاحْفَظْ <span className="number">{cost}</span></> : 'احْفَظْ رَفِيقَكَ'}</Button>{saved && <p role="status" className="saved-message"><Icon name="check" /> تَمَّ الْحِفْظُ! سَيُرَافِقُكَ بِهَذَا الشَّكْلِ.</p>}</div>
   </div>;
 }
