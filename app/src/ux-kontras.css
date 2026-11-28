@@ -1,0 +1,2 @@
+/* Subteks terjemahan di tombol berlatar warna (utama, emas, sukses, bahaya) memakai warna teks tombolnya (--btn-fg: on-brand/on-gold/on-success/on-danger), bukan abu-abu ink-muted (kontras 1,16:1 di tombol utama hub wahdah). */
+.md-btn .translation { color: inherit; }
