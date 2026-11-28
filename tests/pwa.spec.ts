@@ -107,6 +107,16 @@ test('a service worker update waits for consent, then reloads without discarding
   } finally { server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve())); }
 });
 
+test('the top bar keeps translation, stats and logo on one row in the 375 px wardrobe (production fonts)', async ({ page }) => {
+  await prepare(page, { curriculum: 'shaharil', dates: 120, xp: 310 });
+  await page.setViewportSize({ width: 375, height: 740 });
+  await page.goto('/#/wardrobe');
+  await expect(page.locator('.wardrobe-stage')).toBeVisible();
+  await page.evaluate(() => document.fonts.ready);
+  const stats = (await page.locator('.stats-row').boundingBox())!, toggle = (await page.locator('.translation-toggle').boundingBox())!;
+  expect(toggle.y).toBeLessThan(stats.y + stats.height);
+});
+
 test('blocked service worker registration leaves online learning and saved progress usable', async ({ page }) => {
   await prepare(page);
   await page.addInitScript(() => { navigator.serviceWorker.register = () => Promise.reject(new Error('Blocked for test')); });
