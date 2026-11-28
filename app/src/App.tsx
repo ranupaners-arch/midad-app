@@ -55,7 +55,7 @@ export default function App() {
       <aside className="sidebar">
         <NavLink to="/" className="brand-link" aria-label="مِدَاد — رِحْلَتِي"><Logo /></NavLink>
         <nav aria-label="التَّنَقُّلُ الرَّئِيسِيُّ" className="desktop-nav">{navigation.map(n => <NavLink key={n.to} to={n.to} end={n.to === '/'} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><Icon name={n.icon} /><span><Text text={n.label} /></span></NavLink>)}</nav>
-        <div className="sidebar-bottom"><Companion className="sidebar-mascot" /></div>
+        <div className="sidebar-bottom"><Companion className="sidebar-mascot" bubbles={!lesson} /></div>
       </aside>
       <div className="main-column">
         <header className="topbar">

@@ -5,13 +5,14 @@ import type { Profile } from '../domain/types';
 import { availableHints, buyHint, localDay, parseProfile, streak } from '../domain/progress';
 import { l, unitsFor } from '../domain/content';
 import { useProfile } from '../store';
-import { Button, Dialog, Mascot, Progress, Text } from '../ui/Common';
+import { Button, Dialog, Progress, Text } from '../ui/Common';
 import { Icon } from '../ui/Icon';
 import { usePwa } from '../pwa';
 import { pendingReviews } from '../domain/reviews';
 import { demoCompleted } from '../domain/checkpoints';
 import aiLabel from '../domain/aiLabel.json';
 import { InfoButton } from '../ui/ItemInfo';
+import Companion from '../ui/Companion';
 
 export default function ProfileScreen() {
   const { profile, update, reset, restore, storageError } = useProfile(), navigate = useNavigate();
@@ -31,7 +32,7 @@ export default function ProfileScreen() {
     catch { setMessage('تَعَذَّرَ قِرَاءَةُ الْمِلَفِ. اِخْتَرْ نُسْخَةً صَحِيحَةً مِنْ مِدَاد.'); }
   };
   return <div className="screen profile-screen"><div className="page-heading"><div><h1 id="main-title" tabIndex={-1}><Text text={l('حِسَابِي', 'Profil dan pengaturan', 'Profile and settings')} /></h1></div></div>
-    <section className="profile-hero"><Mascot decorative /><div><span className="small-label">الْمُسْتَوَى</span><span className="level-tag" lang="en" dir="ltr">A1</span></div></section>
+    <section className="profile-hero"><Companion className="profile-companion" bubbles /><div><span className="small-label">الْمُسْتَوَى</span><span className="level-tag" lang="en" dir="ltr">A1</span></div></section>
     <div className="profile-stats"><div><InfoButton item="streak" className="tile-info" /><b className="number">{streak(profile)}</b><span>أَيَّامٌ مُتَتَالِيَةٌ</span></div><div><InfoButton item="mastery" className="tile-info" /><b className="number">{mastered}</b><span>كَلِمَاتٌ مَحْفُوظَةٌ</span></div><div><b className="number">{profile.rewardedUnits.length}</b><span>وَحَدَاتٌ مُكْتَمِلَةٌ</span></div></div>
     <details className="profile-details"><summary>تَقَدُّمُ الرِّحْلَةِ</summary><div>{unitsFor(profile).map(u => <div className="unit-score" key={u.id}><span>{u.title.ar}</span><Progress value={profile.bestScores[u.id] ?? 0} label={`أَفْضَلُ نَتِيجَةٍ: ${u.title.ar}`} /><b className="number">{profile.bestScores[u.id] ?? 0}%</b></div>)}</div></details>{demoCompleted(profile) && <Link className="md-btn md-btn--secondary full-width" to="/summary">حَصِيلَةُ رِحْلَتِي</Link>}
     <section className="profile-review"><h2>الْمُرَاجَعَةُ</h2><span className="number">{reviewCount}</span>{reviewCount || profile.reviewSession ? <Link className="text-button" to="/review">رَاجِعْ مَا فَاتَكَ</Link> : <span className="muted"><Text text={l('لَا أَسْئِلَةَ لِلْمُرَاجَعَةِ.', 'Belum ada soal untuk diulang.', 'No questions to review.')} /></span>}</section>
