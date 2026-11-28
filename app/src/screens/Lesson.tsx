@@ -9,6 +9,7 @@ import { Button, Mascot, Progress, Text, Tr, Vehicle } from '../ui/Common';
 import { Icon } from '../ui/Icon';
 import { feedbackSound } from '../ui/useAudio';
 import QuestionBody from '../ui/QuestionBody';
+import LevelUpTravel from '../ui/LevelUpTravel';
 import { pendingReviews } from '../domain/reviews';
 import { hasRepeatedMistakes } from '../domain/hints';
 import { useIdleHint } from '../ui/useIdleHint';
@@ -78,7 +79,7 @@ function LessonResult({ unit, activity, result, onRetry }: { unit: Unit; activit
   const list = activities(unit), next = list[list.findIndex(a => a.id === activity.id) + 1];
   return <div className="screen result-screen">
     <span className="eyebrow">{quiz ? 'نَتِيجَةُ الْاِخْتِبَارِ' : 'خُطْوَةٌ جَدِيدَةٌ فِي الرِّحْلَةِ'}</span>
-    {quiz && passed ? <div className="travel-celebration"><Vehicle /><span className="travel-spark one"><Icon name="star" /></span><span className="travel-spark two"><Icon name="star" /></span></div> : <Mascot className="result-mascot" emote={passed ? 'cheer' : 'think'} decorative />}
+    {quiz && passed && result.reward?.firstPass ? <LevelUpTravel level={unit.id + 1} /> : quiz && passed ? <div className="travel-celebration"><Vehicle /><span className="travel-spark one"><Icon name="star" /></span><span className="travel-spark two"><Icon name="star" /></span></div> : <Mascot className="result-mascot" emote={passed ? 'cheer' : 'think'} decorative />}
     <h1 id="main-title" tabIndex={-1}><Text text={passed ? l(quiz ? 'نَجَحْتَ فِي اخْتِبَارِ الْوَحْدَةِ!' : 'أَحْسَنْتَ!', quiz ? 'Kamu lulus kuis wahdah!' : 'Satu langkah selesai!', quiz ? 'You passed the unit quiz!' : 'One more step completed!') : l('نُحَاوِلُ مَرَّةً أُخْرَى', 'Mari mencoba lagi', 'Let’s try again')} /></h1>
     {quiz ? <><div className="score-display number">{result.score}<span>%</span></div><div className="result-stars" aria-label={`${result.reward?.stars ?? 0} نُجُومٍ`}>{[1, 2, 3].map(n => <Icon key={n} name="star" className={n <= (result.reward?.stars ?? 0) ? 'earned' : ''} />)}</div>
       {passed && result.reward?.firstPass ? <div className="reward-summary"><div><Icon name="dates" /><b className="number">+{result.reward.dates}</b><span>تَمْرَةً</span></div><div><Icon name="star" /><b className="number">+30</b><span>خِبْرَةٌ</span></div>{result.reward.skin && <div><Icon name="wardrobe" /><b>لِبَاسُ الْبَحَّارِ</b><span>هَدِيَّتُكَ</span></div>}</div> : passed ? <p className="muted"><Text text={l('مُرَاجَعَةٌ رَائِعَةٌ! سَبَقَ أَنْ اسْتَلَمْتَ هَدِيَّةَ هَذِهِ الْوَحْدَةِ.', 'Ulangan yang bagus! Hadiah wahdah ini sudah pernah diterima.', 'Great review! You have already received this unit’s reward.')} force /></p> : <p className="muted"><Text text={l('تَحْتَاجُ إِلَى ٨٠٪ لِلنَّجَاحِ. رَاجِعْ هَذِهِ الْكَلِمَاتِ ثُمَّ حَاوِلْ مِنْ جَدِيدٍ.', 'Nilai lulus adalah 80%. Pelajari jawaban di bawah ini, lalu coba kembali.', 'The pass mark is 80%. Review the answers below, then try again.')} force /></p>}

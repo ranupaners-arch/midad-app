@@ -1,0 +1,26 @@
+/* Animasi naik level (LevelUpTravel). Hanya token design system; file terpisah agar tidak bentrok dengan styles.css. */
+.lv { margin: 24px auto; }
+.lv .lv-sea { fill: var(--brand-soft); }
+.lv .lv-waves path { stroke: var(--brand); opacity: .35; }
+.lv .lv-route { stroke: var(--ink); opacity: .5; }
+.lv .lv-from circle { fill: var(--gold); stroke: #2a211a; stroke-width: 5; }
+.lv .lv-from path { stroke: #2a211a; }
+.lv .lv-dot { fill: var(--brand); stroke: #2a211a; stroke-width: 5; }
+.lv .lv-halo { stroke: var(--brand); opacity: .35; }
+.lv .lv-to text { fill: var(--on-brand); font: 800 26px var(--font-sans); }
+.lv .lv-next { fill: var(--surface-200); stroke: #2a211a; stroke-width: 5; }
+.lv .lv-rider .vh-boat { transform-box: fill-box; transform-origin: 50% 80%; }
+
+/* Spanduk di bawah peta (bukan menimpa), supaya kendaraan yang tiba tetap terlihat. */
+.lv .lv-banner { position: static; margin: 0 var(--space-4) var(--space-4); }
+
+/* Pelabuhan baru menyala dan spanduk muncul sesudah kendaraan tiba (~3,4 dtk). */
+.lv:not(.lv-static) .lv-to { animation: lv-arrive .5s ease-out 3.1s both; transform-box: fill-box; transform-origin: center; }
+.lv:not(.lv-static) .lv-banner { animation: lv-banner .5s ease-out 3.3s both; }
+.lv:not(.lv-static) .lv-rider .vh-boat { animation: lv-rock 1.3s ease-in-out infinite; }
+@keyframes lv-arrive { from { opacity: .25; transform: scale(.6); } to { opacity: 1; transform: scale(1); } }
+@keyframes lv-banner { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes lv-rock { 0%, 100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .lv .lv-to, .lv .lv-banner, .lv .lv-rider .vh-boat { animation: none; }
+}
