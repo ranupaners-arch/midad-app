@@ -6,6 +6,7 @@ import { isVehicleId, rideVehicle } from '../../../design-system/assets/maskot/v
 import { useProfile } from '../store';
 import type { Localized } from '../domain/types';
 import { Icon } from './Icon';
+import '../ux-kontras.css';
 
 export function Tr({ text, force = false, small = false }: { text: Localized; force?: boolean; small?: boolean }) {
   const { profile } = useProfile();
