@@ -17,6 +17,7 @@ import { pendingReviews, questionSource } from './domain/reviews';
 import AppAvailability from './ui/AppAvailability';
 import Vocabulary from './screens/Vocabulary';
 import Summary from './screens/Summary';
+import { InfoButton, ItemInfoHost, openItemInfo } from './ui/ItemInfo';
 
 const JourneyMap = lazy(() => import('./ui/JourneyMap'));
 
@@ -48,6 +49,7 @@ export default function App() {
   return <>
     <a className="skip-link" href="#main-title" onClick={event => { event.preventDefault(); document.getElementById('main-title')?.focus(); }}>اِنْتَقِلْ إِلَى الْمُحْتَوَى</a>
     <AppAvailability learning={lesson} />
+    <ItemInfoHost />
     {storageError && <div className="storage-warning" role="status"><Text text={l('تَعَذَّرَ حِفْظُ التَّقَدُّمِ عَلَى هَذَا الْجِهَازِ. سَيَضِيعُ التَّقَدُّمُ الْجَدِيدُ عِنْدَ إِغْلَاقِ الصَّفْحَةِ.', 'Penyimpanan tidak tersedia atau datanya tidak terbaca. Progres baru hanya bertahan selama halaman terbuka. Data lama tidak ditimpa.', 'Storage is unavailable or unreadable. New progress lasts only while this page is open. Existing data is not overwritten.')} force /></div>}
     {!profile.onboarded ? <Routes><Route path="/welcome" element={<Welcome />} /><Route path="*" element={<Navigate to="/welcome" replace />} /></Routes> : showingMap ? <Suspense><JourneyMap /></Suspense> : <div className={`app-layout ${lesson ? 'in-lesson' : ''} ${choosingCompanion ? 'in-wardrobe' : ''} ${showingJourney ? 'in-journey' : ''} ${lesson || choosingCompanion || showingJourney ? 'viewport-page' : ''}`}>
       <aside className="sidebar">
@@ -59,9 +61,9 @@ export default function App() {
         <header className="topbar">
           <NavLink to="/" className="mobile-logo" aria-label="مِدَاد"><Logo /></NavLink>
           <div className="stats-row" role="group" aria-label="إِحْصَائِيَّاتُكَ">
-            <span className="stat stat-streak" aria-label={`سِلْسِلَةٌ: ${streak(profile)} أَيَّامٍ`}><Icon name="lantern" /><b className="number">{streak(profile)}</b></span>
-            <span className="stat stat-dates" aria-label={`تَمْرٌ: ${profile.dates}`}><Icon name="dates" /><b className="number">{profile.dates}</b></span>
-            <span className="stat stat-xp" aria-label={`نِقَاطُ الْخِبْرَةِ: ${profile.xp}`}><Icon name="star" /><b className="number">{profile.xp}</b></span>
+            <button type="button" onClick={() => openItemInfo('streak')} className="stat stat-streak" aria-label={`سِلْسِلَةٌ: ${streak(profile)} أَيَّامٍ`}><Icon name="lantern" /><b className="number">{streak(profile)}</b></button>
+            <button type="button" onClick={() => openItemInfo('dates')} className="stat stat-dates" aria-label={`تَمْرٌ: ${profile.dates}`}><Icon name="dates" /><b className="number">{profile.dates}</b></button>
+            <button type="button" onClick={() => openItemInfo('xp')} className="stat stat-xp" aria-label={`نِقَاطُ الْخِبْرَةِ: ${profile.xp}`}><Icon name="star" /><b className="number">{profile.xp}</b></button>
           </div>
           <button className={`icon-button translation-toggle ${profile.translation ? 'selected' : ''}`} type="button" aria-label={translationLocked ? 'التَّرْجَمَةُ مُقْفَلَةٌ فِي هَذَا السُّؤَالِ' : 'تَرْجَمَة'} aria-pressed={profile.translation} disabled={translationLocked} onClick={() => update(p => ({ ...p, translation: !p.translation }))}><Icon name="translate" /><span>تَرْجَمَة</span></button>
         </header>
@@ -79,7 +81,7 @@ export default function App() {
         <nav className="mobile-nav" aria-label="التَّنَقُّلُ عَلَى الْهَاتِفِ">{navigation.map(n => <NavLink to={n.to} end={n.to === '/'} key={n.to} className={({ isActive }) => isActive ? 'active' : ''}><Icon name={n.icon} /><span>{n.label.ar}</span></NavLink>)}</nav>
       </div>
       <aside className="journey-aside">
-        <div className="aside-card"><div className="aside-title"><span className="mini-badge"><Icon name="book" /></span><h2>قَطَرَاتُ الْمَعْرِفَةِ</h2></div><p className="mastery-count"><b className="number">{count}</b><span> / <span className="number">{total}</span></span></p><p className="muted"><Text text={l('كَلِمَةً أَتْقَنْتَهَا', 'Kosakata yang sudah dikuasai', 'Vocabulary entries mastered')} /></p><Progress value={count / total * 100} label="الْمُفْرَدَاتُ الْمَحْفُوظَةُ" /></div>
+        <div className="aside-card"><div className="aside-title"><span className="mini-badge"><Icon name="book" /></span><h2>قَطَرَاتُ الْمَعْرِفَةِ</h2><InfoButton item="mastery" className="aside-info" /></div><p className="mastery-count"><b className="number">{count}</b><span> / <span className="number">{total}</span></span></p><p className="muted"><Text text={l('كَلِمَةً أَتْقَنْتَهَا', 'Kosakata yang sudah dikuasai', 'Vocabulary entries mastered')} /></p><Progress value={count / total * 100} label="الْمُفْرَدَاتُ الْمَحْفُوظَةُ" /></div>
         <div className="aside-card daily-card"><Icon name="lantern" /><h2>{profile.activityDays.includes(localDay()) ? 'فَانُوسُكَ مُضِيءٌ الْيَوْمَ!' : 'أَضِئْ فَانُوسَكَ الْيَوْمَ'}</h2></div>
         {pendingReviews(profile).length > 0 && <NavLink className="aside-review-link" to="/review"><Icon name="repeat" /> الْمُرَاجَعَةُ <span className="number">{pendingReviews(profile).length}</span></NavLink>}
       </aside>
