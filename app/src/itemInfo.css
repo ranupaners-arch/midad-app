@@ -1,5 +1,5 @@
 /* Lembar penjelasan item (ui/ItemInfo.tsx) dan tombol penghitung yang dapat diketuk. */
-button.stat { background: none; border: 0; padding: 0 4px; min-block-size: 44px; font: inherit; color: inherit; cursor: pointer; border-radius: 12px; }
+button.stat { background: none; border: 0; padding: 0 4px; min-block-size: 44px; min-inline-size: 44px; justify-content: center; font: inherit; color: inherit; cursor: pointer; border-radius: 12px; }
 button.stat.stat-streak { color: var(--lantern-ink); } button.stat.stat-dates { color: var(--date); } button.stat.stat-xp { color: var(--ink); }
 .item-info { display: flex; flex-direction: column; gap: 12px; }
 .item-info p { margin: 0; line-height: 1.9; }
@@ -8,14 +8,15 @@ button.stat.stat-streak { color: var(--lantern-ink); } button.stat.stat-dates { 
 .item-info-value svg.icon { inline-size: 36px; block-size: 36px; color: var(--gold-strong); }
 .item-info-use, .item-info-get { border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; background: var(--surface-100); }
 .item-info .translation { display: block; font-size: .875rem; }
-.info-button { display: inline-flex; align-items: center; justify-content: center; inline-size: 32px; block-size: 32px; min-inline-size: 32px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--surface-100); color: var(--ink-muted); cursor: pointer; padding: 0; flex: none; }
-.info-button .icon { inline-size: 18px; block-size: 18px; }
+.info-button { position: relative; display: inline-flex; align-items: center; justify-content: center; inline-size: 44px; block-size: 44px; min-inline-size: 44px; border: 0; background: transparent; padding: 0; flex: none; cursor: pointer; border-radius: 50%; color: var(--ink-muted); } /* area tap 44x44; lingkaran kecil 32 px digambar oleh ::before */
+.info-button::before { content: ''; position: absolute; inset: 6px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--surface-100); }
+.info-button .icon { position: relative; inline-size: 18px; block-size: 18px; }
 
 .profile-stats > div { position: relative; }
-.tile-info { position: absolute; inset-block-start: 6px; inset-inline-start: 6px; }
+.tile-info { position: absolute; inset-block-start: 0; inset-inline-start: 0; }
 .aside-title { align-items: center; }
 .aside-info { margin-inline-start: auto; }
 .settings-card { position: relative; }
-.card-info { position: absolute; inset-block-start: 14px; inset-inline-start: 14px; }
+.card-info { position: absolute; inset-block-start: 8px; inset-inline-start: 8px; }
 
 @media (max-width: 760px) { button.stat { padding-inline: 0; } }
