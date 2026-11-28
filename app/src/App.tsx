@@ -4,7 +4,8 @@ import { useProfile } from './store';
 import { localDay, streak } from './domain/progress';
 import { activities, l, questions, unitsFor } from './domain/content';
 import { Icon, Logo } from './ui/Icon';
-import { Mascot, Text, Progress } from './ui/Common';
+import { Text, Progress } from './ui/Common';
+import Companion from './ui/Companion';
 import Welcome from './screens/Welcome';
 import Journey from './screens/Journey';
 import UnitScreen from './screens/Unit';
@@ -52,7 +53,7 @@ export default function App() {
       <aside className="sidebar">
         <NavLink to="/" className="brand-link" aria-label="مِدَاد — رِحْلَتِي"><Logo /></NavLink>
         <nav aria-label="التَّنَقُّلُ الرَّئِيسِيُّ" className="desktop-nav">{navigation.map(n => <NavLink key={n.to} to={n.to} end={n.to === '/'} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><Icon name={n.icon} /><span><Text text={n.label} /></span></NavLink>)}</nav>
-        <div className="sidebar-bottom"><Mascot className="sidebar-mascot" decorative /></div>
+        <div className="sidebar-bottom"><Companion className="sidebar-mascot" /></div>
       </aside>
       <div className="main-column">
         <header className="topbar">
