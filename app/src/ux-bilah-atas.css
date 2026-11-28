@@ -1,0 +1,17 @@
+/* Bilah atas di HP sempit: pil penghitung dirapatkan supaya tombol terjemahan tidak terpotong, bahkan dengan angka 4 digit
+   (mis. 1250 kurma, 5000 XP). Area tap tidak dikecilkan: setiap pil dan tombol terjemahan tetap >= 44x44.
+   Dua tingkat: <= 400 px rapat ringan (ikon dan angka tetap ukuran semula), <= 340 px rapat penuh (ikon 20 px, angka .8125rem).
+   Selektor sengaja lebih spesifik daripada styles.css yang dimuat belakangan. Layar lebar tidak berubah. */
+@media (max-width: 400px) {
+  .main-column .topbar { gap: 6px; }
+  .main-column .topbar .stats-row { gap: 2px; }
+  .main-column .topbar .stats-row .stat { gap: 3px; }
+  .main-column .topbar .stats-row button.stat { padding-inline: 2px; min-inline-size: 44px; }
+  .main-column .topbar .translation-toggle { flex: none; min-inline-size: 44px; min-block-size: 44px; }
+  .main-column .topbar .mobile-logo { flex: 0 1 auto; min-inline-size: 0; }
+}
+@media (max-width: 340px) {
+  .main-column .topbar { padding-inline: 10px; }
+  .main-column .topbar .stats-row .stat { gap: 2px; font-size: .8125rem; }
+  .main-column .topbar .stats-row .stat .icon, .main-column .topbar .stats-row .stat .icon.icon-img { inline-size: 20px; block-size: 20px; }
+}
