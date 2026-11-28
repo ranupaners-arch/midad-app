@@ -17,6 +17,7 @@ import { pendingReviews, questionSource } from './domain/reviews';
 import AppAvailability from './ui/AppAvailability';
 import Vocabulary from './screens/Vocabulary';
 import Summary from './screens/Summary';
+import DemoOman from './screens/DemoOman';
 import { InfoButton, ItemInfoHost, openItemInfo } from './ui/ItemInfo';
 
 const JourneyMap = lazy(() => import('./ui/JourneyMap'));
@@ -76,6 +77,7 @@ export default function App() {
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/review" element={<Review />} />
           <Route path="/summary" element={<Summary />} />
+          <Route path="/demo/oman" element={<DemoOman />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes></main>
         <nav className="mobile-nav" aria-label="التَّنَقُّلُ عَلَى الْهَاتِفِ">{navigation.map(n => <NavLink to={n.to} end={n.to === '/'} key={n.to} className={({ isActive }) => isActive ? 'active' : ''}><Icon name={n.icon} /><span>{n.label.ar}</span></NavLink>)}</nav>

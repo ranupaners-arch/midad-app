@@ -1,0 +1,83 @@
+{
+ "portName": {
+  "ar": "مَسْقَطُ",
+  "id": "Muskat",
+  "en": "Muscat"
+ },
+ "portAfterIla": {
+  "ar": "مَسْقَطَ",
+  "id": "Muskat",
+  "en": "Muscat"
+ },
+ "banner": {
+  "ar": "وَصَلْتَ إِلَى مَسْقَطَ!",
+  "id": "Kamu tiba di Muskat!",
+  "en": "You have reached Muscat!"
+ },
+ "label": {
+  "region": {
+   "ar": "مِنْطَقَةٌ جَدِيدَةٌ",
+   "id": "Wilayah baru",
+   "en": "New region"
+  },
+  "vehicle": {
+   "ar": "سَفِينَةٌ جَدِيدَةٌ",
+   "id": "Kapal baru",
+   "en": "New ship"
+  },
+  "vocab": {
+   "ar": "كَلِمَاتٌ مِنْ عُمَانَ",
+   "id": "Kata-kata dari Oman",
+   "en": "Words from Oman"
+  }
+ },
+ "vocab": [
+  {
+   "ar": "اللُّبَانُ",
+   "id": "luban (getah wangi, frankincense)",
+   "en": "frankincense",
+   "note": {
+    "ar": "",
+    "id": "Getah harum dari pohon di Dhofar, Oman selatan; dibakar sebagai dupa.",
+    "en": "A fragrant resin from trees in Dhofar, southern Oman; burned as incense."
+   }
+  },
+  {
+   "ar": "الْحَلْوَى الْعُمَانِيَّةُ",
+   "id": "halwa Oman",
+   "en": "Omani halwa",
+   "note": {
+    "ar": "",
+    "id": "Manisan kental khas Oman yang sering disuguhkan kepada tamu.",
+    "en": "A thick Omani sweet often served to guests."
+   }
+  },
+  {
+   "ar": "الْقَهْوَةُ",
+   "id": "kopi",
+   "en": "coffee",
+   "note": {
+    "ar": "",
+    "id": "Di Oman, tamu biasanya disuguhi kopi bersama kurma.",
+    "en": "In Oman, guests are usually offered coffee with dates."
+   }
+  }
+ ],
+ "btn": {
+  "replay": {
+   "ar": "إِعَادَة",
+   "id": "Ulangi",
+   "en": "Replay"
+  },
+  "back": {
+   "ar": "رُجُوع",
+   "id": "Kembali",
+   "en": "Back"
+  }
+ },
+ "previewNote": {
+  "ar": "هَذِهِ رِحْلَةٌ تَجْرِيبِيَّةٌ فَقَطْ، وَالْمُسْتَوَى مُغْلَقٌ الْآنَ.",
+  "id": "Ini hanya pratinjau perjalanan; levelnya belum dibuka.",
+  "en": "This is only a preview trip; the level isn't open yet."
+ }
+}

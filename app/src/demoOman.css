@@ -1,0 +1,23 @@
+/* Halaman demo Oman (screens/DemoOman.tsx). Hanya token design system; file terpisah agar tidak bentrok dengan styles.css. */
+.demo-oman-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-block-end: 8px; }
+.demo-oman-head h1 { font-size: 2rem; }
+.oman-demo-badge { display: inline-flex; align-items: center; font: 700 .75rem/1 var(--font-sans); letter-spacing: .02em; color: var(--ink); border: 1.5px solid var(--line-strong); border-radius: 999px; padding: 4px 10px; background: var(--surface-100); }
+.demo-oman-note { border: 2px dashed var(--line-strong); border-radius: 16px; padding: 10px 14px; background: var(--gold-soft); color: var(--ink); margin-block: 0 8px; }
+.demo-oman-note .translation { color: inherit; text-align: start; }
+.oman-card { border: 2px solid var(--line); border-radius: 24px; background: var(--surface-100); padding: 16px; display: grid; gap: 14px; margin-block: 8px 16px; }
+.oman-row { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 4px 12px; }
+.oman-row > .translation { grid-column: 2; margin-block-start: 0; text-align: start; }
+.oman-label { font: 700 .875rem/1.6 var(--font-arabic); color: var(--ink-muted); }
+.oman-label .translation { font-size: .75rem; text-align: start; }
+.oman-name { font: 700 1.5rem/1.6 var(--font-arabic); }
+.oman-row-vehicle { grid-template-columns: auto 96px 1fr; }
+.oman-row-vehicle > .translation { grid-column: 3; }
+.oman-vehicle { inline-size: 96px; }
+.oman-vocab h3 { margin: 0 0 6px; }
+.oman-vocab ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.oman-vocab li { border: 1px solid var(--line); border-radius: 14px; padding: 8px 12px; background: var(--surface-000); }
+.oman-word { display: block; font: 700 1.5rem/1.7 var(--font-arabic); }
+.oman-vocab .translation { text-align: start; }
+.oman-actions { display: grid; gap: 10px; }
+/* HP pendek (mis. 320x568): peta dikecilkan (tetap utuh, ditengahkan di latar yang sama) supaya spanduk kedatangan terlihat tanpa gulir di atas bilah navigasi. */
+.demo-oman .lv svg.md-lvl__map { max-block-size: max(200px, calc(100svh - 340px)); }
