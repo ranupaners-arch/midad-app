@@ -1,0 +1,16 @@
+/* Lembar umpan balik (benar/salah): lebih ringkas di HP, satu area gulir saja, teks terjemahan tidak menyisakan satu kata sendirian.
+   Selektor sengaja lebih spesifik daripada styles.css (yang dimuat belakangan). */
+.feedback-panel .feedback-copy .translation, .feedback-panel .correct-answer.native-answer { text-wrap: balance; overflow-wrap: break-word; }
+@media (max-width: 760px) {
+  .in-lesson .question-actions { padding-block: 8px 0; overflow-y: auto; }                    /* satu-satunya area gulir bila isi sangat panjang */
+  .in-lesson .feedback-panel .feedback-copy { overflow: visible; }                            /* tanpa gulir bersarang di dalam lembar */
+  .question-actions .feedback-panel { padding: 8px 12px 10px; }
+  .feedback-panel .feedback-copy { align-items: flex-start; gap: 8px; margin-block-end: 6px; }
+  .feedback-panel .feedback-copy > .icon { inline-size: 24px; block-size: 24px; margin-block-start: 2px; }
+  .feedback-panel .feedback-copy .mascot { inline-size: 36px; }
+  .feedback-panel .feedback-copy b { font-size: 1rem; line-height: 1.5; }
+  .feedback-panel .feedback-copy .small-label { display: inline; margin-inline-end: 6px; line-height: 1.5; }
+  .feedback-panel .correct-answer { display: inline; font-size: 1.25rem; line-height: 1.6; }
+  .feedback-panel .correct-answer.native-answer { font-size: .9375rem; line-height: 1.6; }
+  .feedback-panel .feedback-copy .translation { font-size: .8125rem; line-height: 1.45; margin-block-start: 2px; }
+}@media (max-width: 340px) { .feedback-panel .feedback-copy .mascot { display: none; } } /* layar sangat sempit: maskot dekoratif disembunyikan agar teks tidak terbungkus banyak baris */

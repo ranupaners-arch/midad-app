@@ -15,6 +15,7 @@ import { hasRepeatedMistakes } from '../domain/hints';
 import { useIdleHint } from '../ui/useIdleHint';
 import Companion, { emitCompanion } from '../ui/Companion';
 import { useIdleCompanion } from '../ui/useIdleCompanion';
+import '../ux-umpanbalik.css';
 
 export default function LessonRoute() {
   const { unitId, activityId } = useParams(), { profile } = useProfile();
@@ -61,7 +62,7 @@ function Lesson({ unit, activity }: { unit: Unit; activity: Activity }) {
     <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} />}</h1></>}
       hint={!response && !quiz && q.kind !== 'study' && <HintOffer question={q} />}
       feedback={response && <div className={`feedback-panel ${response.skipped ? 'skipped' : response.correct ? 'correct' : 'wrong'}`} role="status">
-      <div className="feedback-copy"><Icon name={response.skipped ? 'book' : response.correct ? 'check' : 'cross'} /><div><b>{response.skipped ? 'سَنُرَاجِعُهَا لَاحِقًا' : response.correct ? 'أَحْسَنْتَ!' : 'لَا بَأْسَ، نَتَعَلَّمُ مَعًا'}</b>{!response.correct && !response.skipped && <><span className="small-label">الْإِجَابَةُ الصَّحِيحَةُ:</span><span className={`correct-answer ${q.meaningTest ? 'native-answer' : ''}`} lang={q.meaningTest ? profile.language : 'ar'} dir={q.meaningTest ? 'ltr' : 'rtl'}>{correctText}</span>{!quiz && q.text && <Tr text={q.text} force />}</>}{response.skipped && <span className="small-label">لَمْ تُحْتَسَبْ كَإِجَابَةٍ صَحِيحَةٍ</span>}</div><Mascot emote={response.correct ? 'cheer' : 'think'} decorative /></div>
+      <div className="feedback-copy"><Icon name={response.skipped ? 'book' : response.correct ? 'check' : 'cross'} /><div><b>{response.skipped ? 'سَنُرَاجِعُهَا لَاحِقًا' : response.correct ? 'أَحْسَنْتَ!' : 'لَا بَأْسَ، نَتَعَلَّمُ مَعًا'}</b>{!response.correct && !response.skipped && <><span className="small-label">الْإِجَابَةُ الصَّحِيحَةُ:</span><span className={`correct-answer ${q.meaningTest ? 'native-answer' : ''}`} lang={q.meaningTest ? profile.language : 'ar'} dir={q.meaningTest ? 'ltr' : 'rtl'}>{correctText}</span>{!quiz && q.text && q.text[profile.language] !== correctText && <Tr text={q.text} force />}</>}{response.skipped && <span className="small-label">لَمْ تُحْتَسَبْ كَإِجَابَةٍ صَحِيحَةٍ</span>}</div><Mascot emote={response.correct ? 'cheer' : 'think'} decorative /></div>
       <Button className="full-width" variant={response.correct ? 'success' : response.skipped ? 'primary' : 'danger'} autoFocus onClick={() => update(advanceSession)}>{response.correct || response.skipped ? 'مُتَابَعَة' : 'فَهِمْتُ'}</Button>
     </div>}
     />
