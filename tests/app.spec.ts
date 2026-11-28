@@ -27,68 +27,134 @@ function vocabularyCheckpoint(cursor: number, graded: boolean[] = []) {
   return { unitId: 1, activityId: 'vocab-1', questionVersion: 2 as const, cursor, answers: bank.slice(0, cursor).map((q, index) => ({ questionId: q.id, correct: index < 10 || (graded[index - 10] ?? true), skipped: false, hinted: false, wordId: q.word!.idKey })), hintAt: null };
 }
 
-test('mobile demo journey from onboarding to all three units and rewards', async ({ page }) => {
+test('mobile demo journey from onboarding to all three units and rewards', async ({ page }, testInfo) => {
   test.setTimeout(300000);
-  await page.setViewportSize({ width: 390, height: 844 });
-  const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
+  await page.setViewportSize({ width: 390, height: 664 });
+  const errors: string[] = [], stages: string[] = [];
+  let testedQuestions = 0;
+  page.on('pageerror', e => errors.push(e.message));
+  const capture = async (name: string) => {
+    await page.evaluate(() => document.fonts.ready);
+    const path = testInfo.outputPath(`${String(stages.length + 1).padStart(2, '0')}-${name}.png`);
+    await page.screenshot({ path });
+    await testInfo.attach(name, { path, contentType: 'image/png' });
+    stages.push(name);
+    console.log(`WORKFLOW ${name}`);
+  };
   await page.goto('/');
+  await expect(page.locator('.welcome')).toBeVisible();
+  await capture('layar-awal-pilih-bahasa');
   expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
   await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click();
   await page.getByRole('radio', { name: 'فَيْرُوزِيٌّ', exact: true }).locator('..').click();
+  await capture('pilih-maskot');
   await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click();
+  await capture('pilih-titik-mulai');
   await page.getByRole('button', { name: 'اِبْدَأْ', exact: true }).click();
   await expect(page.locator('.journey-screen')).toBeVisible();
-  await page.locator('a.unit-link[href="#/unit/1"]').click();
-  const unit = SHAHARIL_UNITS[0];
-  await expect(page.locator('.language-note')).not.toHaveAttribute('open');
-  await page.locator('.language-note summary').click();
-  await expect(page.locator('.language-note p')).toBeVisible();
-  await expect(page.locator('.language-note .translation')).toHaveCount(0);
-  await page.locator('.language-note summary').click();
-  for (const activity of activities(unit)) {
-    await page.locator(`a.activity-card[href="#/unit/1/lesson/${activity.id}"]`).click();
-    await expect(page.locator('.question-body')).toBeVisible();
-    if (activity.id === 'vocab-1' || activity.id === 'pattern') expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
-    if (activity.id === 'vocab-1') await page.getByRole('button', { name: 'تَرْجَمَة', exact: true }).click();
-    for (const q of questions(unit, activity, 'id')) {
-      if (q.speaker) await expect(page.locator('.dialogue-speaker')).toHaveText(q.speaker);
-      if (q.meaningTest || activity.kind === 'quiz') {
-        await expect(page.getByRole('button', { name: 'التَّرْجَمَةُ مُقْفَلَةٌ فِي هَذَا السُّؤَالِ', exact: true })).toBeDisabled();
-        await expect(page.locator('.question-cue .translation')).toHaveCount(0);
-      }
-      await answer(page, q);
-    }
-    await expect(page.locator('.result-screen')).toBeVisible();
-    await page.locator('.result-actions a[href="#/unit/1"]').click();
-  }
-  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).rewardedUnits, STORAGE_KEY)).toEqual([1]);
-  const saved = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
-  expect(saved.dates).toBe(50); expect(saved.mascot.color).toBe('teal');
-  await page.reload();
-  await page.locator('a.activity-card[href="#/unit/1/lesson/quiz"]').click();
-  for (const q of questions(unit, activities(unit).find(a => a.kind === 'quiz')!, 'id')) await answer(page, q);
-  await expect(page.locator('.result-screen')).toBeVisible();
-  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).dates, STORAGE_KEY)).toBe(50);
-  await page.locator('.result-actions a[href="#/unit/2"]').click();
-  for (const nextUnit of SHAHARIL_UNITS.slice(1)) {
-    for (const activity of activities(nextUnit)) {
-      await page.locator(`a.activity-card[href="#/unit/${nextUnit.id}/lesson/${activity.id}"]`).click();
-      for (const q of questions(nextUnit, activity, 'id')) await answer(page, q);
-      await expect(page.locator('.result-screen')).toBeVisible();
-      const destination = activity.kind !== 'quiz' ? `/unit/${nextUnit.id}` : nextUnit.id === 2 ? '/unit/3' : '/summary';
-      await page.locator(`.result-actions a[href="#${destination}"]`).click();
+  await capture('beranda-baru');
+  await page.getByRole('link', { name: 'خَرِيطَةُ الرِّحْلَةِ', exact: true }).click();
+  await expect(page.locator('.globe-canvas[data-land="ready"]')).toBeVisible();
+  await page.getByRole('button', { name: 'Jakarta', exact: true }).click();
+  await capture('globe-pilih-jakarta');
+  await page.getByRole('link', { name: 'Buka wahdah Jakarta', exact: true }).click();
+
+  for (const unit of SHAHARIL_UNITS) {
+    await expect(page.locator('.unit-screen')).toBeVisible();
+    await capture(`wahdah-${unit.id}`);
+    await page.locator('.unit-start').click();
+    const list = activities(unit);
+    for (const [activityIndex, activity] of list.entries()) {
+      await test.step(`Wahdah ${unit.id}: ${activity.id}`, async () => {
+        const bank = questions(unit, activity, 'id');
+        await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', bank[0].id);
+        if (unit.id === 1 && activity.id === 'vocab-1') {
+          await page.getByRole('button', { name: 'تَرْجَمَة', exact: true }).click();
+          expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
+        }
+        if (unit.id === 1) await capture(`contoh-${activity.id}`);
+        for (const [questionIndex, q] of bank.entries()) {
+          if (q.speaker) await expect(page.locator('.dialogue-speaker')).toHaveText(q.speaker);
+          if (q.meaningTest || activity.kind === 'quiz') {
+            await expect(page.getByRole('button', { name: 'التَّرْجَمَةُ مُقْفَلَةٌ فِي هَذَا السُّؤَالِ', exact: true })).toBeDisabled();
+            await expect(page.locator('.question-cue .translation')).toHaveCount(0);
+          }
+          await expect(page.locator('.question-actions > button')).toBeInViewport({ ratio: 1 });
+          if (unit.id === 1 && activity.kind === 'reading' && questionIndex === 0) {
+            const wrong = q.choices!.find(choice => choice.id !== q.answer)!;
+            await page.locator(`input[value="${wrong.id}"]`).locator('..').click();
+            await page.getByTestId('check-answer').click();
+            await expect(page.locator('.feedback-panel.wrong')).toBeVisible();
+            await capture('jawaban-salah');
+            await page.reload();
+            await expect(page.locator('.feedback-panel.wrong')).toBeVisible();
+            await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', q.id);
+            await page.locator('.feedback-panel button').click();
+          } else await answer(page, q);
+          testedQuestions++;
+          if (unit.id === 1 && activity.id === 'vocab-1' && questionIndex === 2) {
+            await page.reload();
+            await expect(page.locator('.question-body')).toHaveAttribute('data-question-id', bank[3].id);
+          }
+        }
+        await expect(page.locator('.result-screen')).toBeVisible();
+        const target = activity.kind === 'quiz' ? unit.id < 3 ? `/unit/${unit.id + 1}` : '/summary'
+          : `/unit/${unit.id}/lesson/${list[activityIndex + 1].id}`;
+        if (activity.kind === 'quiz') {
+          await expect(page.locator('.score-display')).toContainText('100');
+          await capture(`lulus-wahdah-${unit.id}`);
+        }
+        await page.locator(`.result-actions a[href="#${target}"]`).click();
+      });
     }
   }
 
+  await expect(page.locator('.summary-screen')).toBeVisible();
   await expect(page.locator('.summary-stats')).toContainText('93/93');
   await expect(page.locator('.summary-gift')).toBeVisible();
   await expect(page.locator('.summary-units li')).toHaveCount(3);
+  await capture('ringkasan-akhir');
   await page.reload();
   await expect(page.locator('.summary-stats')).toContainText('93/93');
   const finished = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   expect(finished.rewardedUnits).toEqual([1, 2, 3]);
   expect(finished.dates).toBe(150);
   expect(finished.ownedSkins).toContain('sailor');
+  expect(finished.mascot.color).toBe('teal');
+  // Keep evidence of the primary path before testing optional reward detours.
+  await testInfo.attach('hasil-alur-utama', { body: JSON.stringify({ testedQuestions, stages,
+    rewardedUnits: finished.rewardedUnits, dates: finished.dates, mastery: '93/93',
+    pendingReviews: Object.keys(finished.reviews).length, chestRewards: finished.chestRewards, errors }, null, 2), contentType: 'application/json' });
+
+  await page.locator('.summary-gift a').click();
+  await page.getByRole('button', { name: 'الْكِسْوَةُ', exact: true }).click();
+  await page.getByRole('radio', { name: 'لِبَاسُ الْبَحَّارِ', exact: true }).locator('..').click();
+  await page.locator('.wardrobe-save button').click();
+  await expect(page.locator('.saved-message')).toBeVisible();
+  await capture('pakai-hadiah-pelaut');
+  await page.reload();
+  const equipped = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
+  expect(equipped.mascot.skin).toBe('sailor');
+
+  await page.locator('.mobile-nav a[href="#/"]').click();
+  await page.locator('.demo-complete-card').click();
+  await page.locator('.summary-unit-link[href="#/unit/1"]').click();
+  await page.locator('.chest-card').click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await capture('peti-hiwar');
+  await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click();
+  await page.locator('.chest-card').click();
+  await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click();
+  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).dates, STORAGE_KEY)).toBe(160);
+
+  await page.locator('a.activity-card[href="#/unit/1/lesson/quiz"]').click();
+  for (const q of questions(SHAHARIL_UNITS[0], activities(SHAHARIL_UNITS[0]).find(a => a.kind === 'quiz')!, 'id')) await answer(page, q);
+  await expect(page.locator('.result-screen')).toBeVisible();
+  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).dates, STORAGE_KEY)).toBe(160);
+  await page.locator('.result-actions a[href="#/unit/1"]').click();
+  await page.locator('.mobile-nav a[href="#/"]').click();
+  await page.locator('.demo-complete-card').click();
+  await capture('akhir-setelah-reload-dan-ulangan');
   expect(errors).toEqual([]);
 });
 

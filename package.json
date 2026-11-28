@@ -20,6 +20,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run --config vitest.config.ts",
     "test:e2e": "playwright test",
+    "test:workflow": "npm run build && playwright test --config playwright.workflow.config.ts",
     "test:pwa": "npm run build && playwright test --config playwright.pwa.config.ts"
   },
   "dependencies": {

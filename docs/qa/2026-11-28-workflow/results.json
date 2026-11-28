@@ -1,0 +1,65 @@
+{
+  "startedAtUTC": "2026-11-26T10:05:09.969000+00:00",
+  "durationSeconds": 148.6,
+  "viewport": {
+    "width": 390,
+    "height": 664
+  },
+  "buildCommit": "75eee7e",
+  "browserTests": {
+    "total": 7,
+    "expected": 7,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "ok": true
+  },
+  "pwaTests": {
+    "passed": 4
+  },
+  "primaryPath": {
+    "testedQuestions": 498,
+    "stages": [
+      "layar-awal-pilih-bahasa",
+      "pilih-maskot",
+      "pilih-titik-mulai",
+      "beranda-baru",
+      "globe-pilih-jakarta",
+      "wahdah-1",
+      "contoh-vocab-1",
+      "contoh-pattern",
+      "contoh-vocab-2",
+      "contoh-dialogue",
+      "contoh-vocab-3",
+      "contoh-reading",
+      "jawaban-salah",
+      "contoh-practice",
+      "contoh-quiz",
+      "lulus-wahdah-1",
+      "wahdah-2",
+      "lulus-wahdah-2",
+      "wahdah-3",
+      "lulus-wahdah-3",
+      "ringkasan-akhir"
+    ],
+    "rewardedUnits": [
+      1,
+      2,
+      3
+    ],
+    "dates": 150,
+    "mastery": "93/93",
+    "pendingReviews": 38,
+    "chestRewards": {},
+    "errors": []
+  },
+  "afterOptionalChest": {
+    "dates": 160,
+    "quizRepeatDates": 160,
+    "equippedSkin": "sailor"
+  },
+  "limitations": [
+    "Speaking was skipped on the full path; speech-recognition success/denial used a test stub.",
+    "No native speaker recordings were played."
+  ]
+}
