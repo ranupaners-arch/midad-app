@@ -1,0 +1,305 @@
+{
+ "items": {
+  "w1-v01": {
+   "scene": "w1-v01",
+   "mode": "solo",
+   "emote": "cheer"
+  },
+  "w1-v02": {
+   "scene": "w1-v02",
+   "mode": "solo"
+  },
+  "w1-v03": {
+   "scene": "w1-v03",
+   "mode": "solo",
+   "emote": "sleep"
+  },
+  "w1-v04": {
+   "scene": "w1-v04",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "lambai"
+  },
+  "w1-v05": {
+   "scene": "w1-v04",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "lambai"
+  },
+  "w1-v06": {
+   "scene": "w1-v01",
+   "mode": "duo",
+   "emote": "cheer"
+  },
+  "w1-v07": {
+   "scene": "w1-v01",
+   "mode": "duo",
+   "emote": "cheer"
+  },
+  "w1-v08": {
+   "scene": "w1-v02",
+   "mode": "duo",
+   "emote": "cheer"
+  },
+  "w1-v09": {
+   "scene": "w1-v02",
+   "mode": "duo",
+   "emote": "cheer"
+  },
+  "w1-v10": {
+   "scene": "w1-v10",
+   "mode": "solo",
+   "emote": "cheer",
+   "emoji": "peluk-ramah"
+  },
+  "w1-v11": {
+   "scene": "umum-dek-siang",
+   "mode": "solo",
+   "emote": "cheer",
+   "emoji": "lambai"
+  },
+  "w1-v12": {
+   "scene": "w1-v12",
+   "mode": "solo",
+   "emote": "sleep"
+  },
+  "w1-v13": {
+   "scene": "w1-v12",
+   "mode": "duo",
+   "emote": "sleep"
+  },
+  "w1-v14": {
+   "scene": "w1-v14",
+   "mode": "solo",
+   "emote": "think"
+  },
+  "w1-v15": {
+   "scene": "w1-v15",
+   "mode": "solo",
+   "emote": "cheer",
+   "emoji": "senyum-lebar"
+  },
+  "w1-v16": {
+   "scene": "w1-v16",
+   "mode": "solo",
+   "emote": "cheer",
+   "emoji": "tangan-doa"
+  },
+  "w1-v17": {
+   "scene": "umum-dek-siang",
+   "mode": "solo",
+   "emote": "cheer",
+   "emoji": "angkat-tangan"
+  },
+  "w1-v18": {
+   "scene": "umum-dek-siang",
+   "mode": "duo",
+   "emoji": "laki-laki"
+  },
+  "w1-v19": {
+   "scene": "umum-dek-siang",
+   "mode": "duo",
+   "emoji": "perempuan",
+   "friendFemale": true
+  },
+  "w1-v22": {
+   "scene": "w1-v22",
+   "mode": "duo",
+   "emote": "cheer"
+  },
+  "w1-v23": {
+   "scene": "w1-v22",
+   "mode": "duo",
+   "emote": "cheer"
+  },
+  "w1-v24": {
+   "scene": "w1-v24",
+   "mode": "solo"
+  },
+  "w1-v25": {
+   "scene": "w1-v25",
+   "mode": "duo",
+   "emote": "sad"
+  },
+  "w1-v26": {
+   "scene": "w1-v25",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "senyum-tipis"
+  },
+  "w1-v27": {
+   "scene": "w1-v27",
+   "mode": "pojok",
+   "emote": "cheer"
+  },
+  "w1-v28": {
+   "scene": "w1-v28",
+   "mode": "pojok",
+   "emote": "sad"
+  },
+  "w1-v29": {
+   "scene": "w1-v29",
+   "mode": "solo",
+   "emote": "cheer",
+   "emoji": "lambai"
+  },
+  "w1-v30": {
+   "scene": "w1-v30",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "lambai"
+  },
+  "w2-v05": {
+   "scene": "w2-v05",
+   "mode": "solo"
+  },
+  "w2-v06": {
+   "scene": "umum-dek-siang",
+   "mode": "duo",
+   "emoji": "laki-laki"
+  },
+  "w2-v07": {
+   "scene": "umum-dek-siang",
+   "mode": "duo",
+   "emoji": "perempuan",
+   "friendFemale": true
+  },
+  "w2-v08": {
+   "scene": "umum-dek-siang",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "dua-siluet"
+  },
+  "w2-v10": {
+   "scene": "w2-v10",
+   "mode": "none"
+  },
+  "w2-v11": {
+   "scene": "w2-v11",
+   "mode": "none"
+  },
+  "w2-v12": {
+   "scene": "w2-v12",
+   "mode": "solo",
+   "emote": "cheer"
+  },
+  "w2-v13": {
+   "scene": "umum-dek-siang",
+   "mode": "solo",
+   "emoji": "kurang"
+  },
+  "w2-v14": {
+   "scene": "w2-v14",
+   "mode": "solo"
+  },
+  "w2-v15": {
+   "scene": "umum-dek-bendera",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "teman"
+  },
+  "w2-v17": {
+   "scene": "umum-dek-bendera",
+   "mode": "duo",
+   "emote": "cheer",
+   "emoji": "senyum-lebar"
+  },
+  "w2-v18": {
+   "scene": "w2-v18",
+   "mode": "none"
+  },
+  "w2-v19": {
+   "scene": "w2-v19",
+   "mode": "none"
+  },
+  "w2-v20": {
+   "scene": "w2-v20",
+   "mode": "none"
+  },
+  "w2-v21": {
+   "scene": "w2-v21",
+   "mode": "none"
+  },
+  "w2-v22": {
+   "scene": "w2-v22",
+   "mode": "none"
+  },
+  "w2-v23": {
+   "scene": "w2-v23",
+   "mode": "none"
+  },
+  "w2-v24": {
+   "scene": "w2-v24",
+   "mode": "none"
+  },
+  "w2-v25": {
+   "scene": "w2-v25",
+   "mode": "none"
+  },
+  "w2-v26": {
+   "scene": "w2-v18",
+   "mode": "none"
+  },
+  "w2-v27": {
+   "scene": "w2-v20",
+   "mode": "none"
+  },
+  "w2-v28": {
+   "scene": "w2-v28",
+   "mode": "none"
+  },
+  "w2-v29": {
+   "scene": "w2-v29",
+   "mode": "none"
+  },
+  "w2-v30": {
+   "scene": "w2-v30",
+   "mode": "none"
+  },
+  "w2-v31": {
+   "scene": "w2-v31",
+   "mode": "none"
+  },
+  "w2-v32": {
+   "scene": "w2-v32",
+   "mode": "none"
+  },
+  "w2-v33": {
+   "scene": "w2-v33",
+   "mode": "none"
+  },
+  "w2-v34": {
+   "scene": "w2-v34",
+   "mode": "none"
+  },
+  "w3-v22": {
+   "scene": "w3-v22",
+   "mode": "none"
+  },
+  "w3-v23": {
+   "scene": "w3-v23",
+   "mode": "solo",
+   "emote": "cheer"
+  },
+  "w3-v24": {
+   "scene": "w3-v24",
+   "mode": "none"
+  },
+  "w3-v26": {
+   "scene": "w3-v26",
+   "mode": "none"
+  },
+  "w3-v27": {
+   "scene": "w3-v27",
+   "mode": "none"
+  },
+  "w3-v28": {
+   "scene": "w3-v28",
+   "mode": "none"
+  },
+  "w3-v29": {
+   "scene": "w3-v29",
+   "mode": "none"
+  }
+ }
+}
