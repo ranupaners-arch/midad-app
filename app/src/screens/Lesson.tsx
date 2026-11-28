@@ -13,6 +13,8 @@ import LevelUpTravel from '../ui/LevelUpTravel';
 import { pendingReviews } from '../domain/reviews';
 import { hasRepeatedMistakes } from '../domain/hints';
 import { useIdleHint } from '../ui/useIdleHint';
+import Companion, { emitCompanion } from '../ui/Companion';
+import { useIdleCompanion } from '../ui/useIdleCompanion';
 
 export default function LessonRoute() {
   const { unitId, activityId } = useParams(), { profile } = useProfile();
@@ -40,17 +42,20 @@ function Lesson({ unit, activity }: { unit: Unit; activity: Activity }) {
     setResult({ score: sessionScore(session), reward: completed.reward, mistakes: bank.filter(q => session.answers.some(a => a.questionId === q.id && !a.correct)) });
     update(p => completeSession(p).profile);
   }, [session, bank.length, profile, result, update]);
+  const idleQuestion = session ? bank[session.cursor] : undefined;
+  useIdleCompanion(!!idleQuestion && idleQuestion.kind !== 'study' && !feedbackVisible && !result, currentQuestionId ?? '');
   if (result) return <LessonResult unit={unit} activity={activity} result={result} onRetry={() => { setResult(null); update(p => beginSession(p, unit.id, activity.id)); }} />;
   if (!session || session.cursor >= bank.length) return <div className="screen" role="status">جَارٍ تَجْهِيزُ الدَّرْسِ…</div>;
   const q = bank[session.cursor], response = session.answers[session.cursor];
   const quiz = activity.kind === 'quiz';
   const handleAnswer = (correct: boolean, skipped = false) => {
     update(p => answerQuestion(p, q, correct, skipped));
+    if (!skipped) emitCompanion(correct ? 'right' : 'wrong');
     if (profile.sound && !skipped) feedbackSound(correct);
   };
   const correctText = q.kind === 'order' || q.kind === 'speak' ? q.text?.ar : q.choices?.find(c => c.id === q.answer)?.text;
   return <div className="lesson-screen" data-testid="lesson-content">
-    <header className="lesson-header"><Link className="icon-button" to={`/unit/${unit.id}`} aria-label="حِفْظُ الدَّرْسِ وَالْعَوْدَةُ"><Icon name="cross" /></Link><Progress value={session.cursor / bank.length * 100} label="تَقَدُّمُ الدَّرْسِ" /><span className="number small-label">{session.cursor + 1}/{bank.length}</span></header>
+    <header className="lesson-header"><Link className="icon-button" to={`/unit/${unit.id}`} aria-label="حِفْظُ الدَّرْسِ وَالْعَوْدَةُ"><Icon name="cross" /></Link><Progress value={session.cursor / bank.length * 100} label="تَقَدُّمُ الدَّرْسِ" /><span className="number small-label">{session.cursor + 1}/{bank.length}</span><Companion className="lesson-companion" decorative /></header>
     <QuestionBody key={q.id} question={q} locked={!!response} quiz={quiz} hinted={session.hintAt === session.cursor} onAnswer={handleAnswer} onStudy={() => update(p => advanceSession(answerQuestion(p, q, true)))}
       heading={<><div className="lesson-kicker"><span>{activity.title.ar}{activity.session ? ` · ${activity.session}/3` : ''}</span>{quiz && <span><Icon name="lock" /> الْاِخْتِبَارُ</span>}</div>
     <h1 id="main-title" tabIndex={-1} className="question-title">{q.prompt.ar}{!quiz && <Tr text={q.prompt} />}</h1></>}
