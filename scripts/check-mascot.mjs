@@ -2,12 +2,12 @@
 // Memastikan daftar nilai di mascot.d.mts / vehicles.d.mts sama dengan runtime mascot.js / vehicles.js,
 // dan validateMascotConfig menolak nilai liar. Pakai: node scripts/check-mascot.mjs
 import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const dir = join(dirname(fileURLToPath(import.meta.url)), '../design-system/assets/maskot');
-const { MidadMascot, validateMascotConfig, renderMascot } = await import(join(dir, 'mascot.mjs'));
-const { MidadVehicles } = await import(join(dir, 'vehicles.mjs'));
+const { MidadMascot, validateMascotConfig, renderMascot } = await import(pathToFileURL(join(dir, 'mascot.mjs')).href);
+const { MidadVehicles } = await import(pathToFileURL(join(dir, 'vehicles.mjs')).href);
 
 const union = (src, name) => {
   const m = src.match(new RegExp(`type ${name} = ([^;]+);`));

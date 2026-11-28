@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
-import { resolve, extname } from 'node:path';
+import { resolve, extname, sep } from 'node:path';
 import type { Page } from '@playwright/test';
 import { createProfile, STORAGE_KEY } from '../app/src/domain/progress';
 import { activities, questions, SHAHARIL_UNITS, UNITS } from '../app/src/domain/content';
@@ -74,7 +74,7 @@ test('a service worker update waits for consent, then reloads without discarding
     try {
       const pathname = decodeURIComponent(new URL(req.url!, 'http://localhost').pathname);
       const path = resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
-      if (!path.startsWith(root + '/')) { res.writeHead(403).end(); return; }
+      if (!path.startsWith(root + sep)) { res.writeHead(403).end(); return; }
       let body: Buffer | string = await readFile(path);
       if (pathname === '/sw.js') body = body.toString() + `\n// Update lifecycle test revision ${revision}\n`;
       res.writeHead(200, { 'content-type': types[extname(path)] ?? 'application/octet-stream', 'cache-control': 'no-store' }).end(body);
