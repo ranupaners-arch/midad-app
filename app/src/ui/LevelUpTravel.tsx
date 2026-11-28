@@ -1,4 +1,5 @@
 import { useId, useMemo } from 'react';
+import type { Localized } from '../domain/types';
 import routes from '../../../design-system/assets/rihlah/routes.json';
 import { isVehicleId, rideVehicle } from '../../../design-system/assets/maskot/vehicles.mjs';
 import strings from '../domain/levelup-strings.json';
@@ -19,15 +20,15 @@ function prefersReducedMotion() {
  * Animasi naik level: maskot (lengkap dengan skin/itemnya) berlayar dari pelabuhan yang baru selesai ke pelabuhan berikutnya.
  * `level` = nomor wahdah tujuan. Reduced motion: kendaraan langsung tampil di pelabuhan baru.
  */
-export default function LevelUpTravel({ level, vehicle = 'pinisi' }: { level: number; vehicle?: string }) {
+export default function LevelUpTravel({ level, vehicle = 'pinisi', port: portOverride, banner: bannerOverride, showLevel = true }: { level: number; vehicle?: string; port?: string; banner?: Localized; showLevel?: boolean }) {
   const { profile } = useProfile();
   const pathId = `lv-leg-${useId().replace(/[^a-zA-Z0-9]/g, '')}`;
   const reduce = useMemo(prefersReducedMotion, []);
   const ports = routes.routes.id[0].ports;
-  const port = ports[Math.min(level - 1, ports.length - 1)] ?? '';
-  const banner = { ar: strings.banner.ar.replace('{port}', port), id: strings.banner.id.replace('{port}', port), en: strings.banner.en.replace('{port}', port) }, lang = profile.language;
+  const port = portOverride ?? ports[Math.min(level - 1, ports.length - 1)] ?? '';
+  const banner = bannerOverride ?? { ar: strings.banner.ar.replace('{port}', port), id: strings.banner.id.replace('{port}', port), en: strings.banner.en.replace('{port}', port) }, lang = profile.language;
   const ride = useMemo(() => rideVehicle(isVehicleId(vehicle) ? vehicle : 'pinisi', profile.mascot, { attrs: 'x="-80" y="-78" width="160" height="100"' }), [vehicle, profile.mascot]);
-  return <div className={`md-lvl lv ${reduce ? 'lv-static' : ''}`} role="status" aria-live="polite" data-testid="level-up" data-level={level}>
+  return <div className={`md-lvl lv ${reduce ? 'lv-static' : ''}`} role="status" aria-live="polite" data-testid="level-up" data-level={showLevel ? level : undefined} data-port={portOverride}>
     <svg className="md-lvl__map" viewBox="0 0 440 520" aria-hidden="true">
       <rect className="lv-sea" width="440" height="520" />
       <g className="lv-waves" fill="none" strokeWidth="4" strokeLinecap="round"><path d="M20 120 q20 -10 40 0 t40 0" /><path d="M300 300 q20 -10 40 0 t40 0" /><path d="M40 420 q20 -10 40 0 t40 0" /></g>
@@ -35,7 +36,7 @@ export default function LevelUpTravel({ level, vehicle = 'pinisi' }: { level: nu
       <path id={pathId} d={LEG} fill="none" />
       <g transform={`translate(${FROM.x} ${FROM.y})`} className="lv-from"><circle r="26" /><path d="M -8 -1 l 6 7 l 11 -13" fill="none" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" /></g>
       {/* Animasi CSS ada di <g> dalam: transform CSS pada <g> luar akan menimpa atribut translate(). */}
-      <g transform={`translate(${TO.x} ${TO.y})`}><g className="lv-to"><circle className="lv-halo" r="38" fill="none" strokeWidth="4" /><circle className="lv-dot" r="30" /><text y="9" textAnchor="middle" className="number">{level}</text></g></g>
+      <g transform={`translate(${TO.x} ${TO.y})`}><g className="lv-to"><circle className="lv-halo" r="38" fill="none" strokeWidth="4" /><circle className="lv-dot" r="30" />{showLevel ? <text y="9" textAnchor="middle" className="number">{level}</text> : <path className="lv-star" d="m0 -14 4.4 9 9.8 1.4 -7.1 6.9 1.7 9.8 -8.8 -4.6 -8.8 4.6 1.7 -9.8 -7.1 -6.9 9.8 -1.4Z" />}</g></g>
       <g transform={`translate(${NEXT.x} ${NEXT.y})`}><circle className="lv-next" r="18" /></g>
       <g className="lv-rider" transform={reduce ? `translate(${TO.x} ${TO.y})` : undefined}>
         {!reduce && <animateMotion dur={`${TRAVEL_SECONDS}s`} fill="freeze" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href={`#${pathId}`} /></animateMotion>}

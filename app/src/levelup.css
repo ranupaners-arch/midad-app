@@ -24,3 +24,6 @@
 @media (prefers-reduced-motion: reduce) {
   .lv .lv-to, .lv .lv-banner, .lv .lv-rider .vh-boat { animation: none; }
 }
+
+/* Tujuan tanpa nomor level (halaman demo): bintang kecil sebagai penanda pelabuhan. */
+.lv .lv-star { fill: var(--on-brand); stroke: none; }
