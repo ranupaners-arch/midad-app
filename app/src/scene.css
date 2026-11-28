@@ -13,3 +13,6 @@
 @media (max-width: 720px) {
   .word-scene { inline-size: clamp(120px, 27svh, 176px); margin-block: 4px 8px; }
 }
+/* Keterangan ilustrasi AI di Profil (tepat di atas baris versi aplikasi). */
+.app-note { text-align: center; color: var(--ink-muted); font-size: .875rem; line-height: 1.8; margin-block-start: 28px; }
+.app-note + .app-version { margin-block-start: 4px; }
