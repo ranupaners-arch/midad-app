@@ -8,6 +8,7 @@ import { l } from '../domain/content';
 import { useProfile } from '../store';
 import { Button, Mascot, Text } from '../ui/Common';
 import { Icon } from '../ui/Icon';
+import '../wardrobe.css';
 
 const ANIMALS = { hudhud: 'هُدْهُدٌ', cat: 'قِطٌّ', camel: 'جَمَلٌ', turtle: 'سُلَحْفَاةٌ', oryx: 'مَهَا' };
 type Slot = 'color' | 'style' | 'eyes' | 'nose' | 'mouth' | 'hand' | 'head' | 'neck' | 'skin';

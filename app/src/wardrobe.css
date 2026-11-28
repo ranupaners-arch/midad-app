@@ -1,0 +1,28 @@
+/* Lemari/Rafiqi: preview companion BESAR dan terkunci (position: sticky di dalam daftar yang bergulir); opsi bergulir di bawah/di kanannya.
+   Tanpa mengubah struktur JSX (hanya impor CSS ini), jadi tidak bentrok dengan patch lain di Wardrobe.tsx.
+   HP: preview menempel di atas (±31% tinggi layar, 25% di layar <= 700 px); tombol simpan = footer yang tetap terlihat.
+   Desktop (>= 900 px): dua kolom; preview di kiri FISIK (kolom ke-2 grid RTL), opsi di kanan. Urutan DOM tidak diubah (preview, opsi). */
+.wardrobe-screen .wardrobe-content { padding-block-start: 0; }
+.wardrobe-screen .wardrobe-stage { position: sticky; inset-block-start: 0; z-index: 3; flex-direction: row; gap: 16px; block-size: clamp(150px, 31svh, 260px); padding: 8px 16px; min-block-size: 0; background: var(--brand-soft); box-shadow: 0 6px 0 var(--surface-000); }
+.wardrobe-screen .wardrobe-stage .mascot { block-size: 100%; inline-size: auto; aspect-ratio: 1 / 1; max-inline-size: none; flex: none; }
+.wardrobe-screen .wardrobe-stage .mascot svg { inline-size: 100%; block-size: 100%; }
+.wardrobe-screen .wardrobe-stage p { font-size: 1.5rem; }
+@media (min-width: 900px) {
+  .app-layout.in-wardrobe { grid-template-columns: 224px minmax(0, 1fr); max-inline-size: 1110px; }
+  .in-wardrobe .journey-aside { display: none; }
+  /* dua kolom tanpa grid: preview mengambang di kiri fisik (float: left, tetap menempel lewat sticky); opsi memakai sisa lebar di kanan */
+  .wardrobe-screen .wardrobe-content > .wardrobe-stage { float: left; inline-size: 380px; flex-direction: column; justify-content: center; block-size: auto; padding: 20px 16px 16px; box-shadow: none; }
+  .wardrobe-screen .wardrobe-content > :not(.wardrobe-stage) { margin-inline-end: 412px; }
+  .wardrobe-screen .wardrobe-content::after { content: ''; display: block; clear: both; }  .wardrobe-screen .wardrobe-stage .mascot { block-size: clamp(220px, 42svh, 380px); }
+  .wardrobe-screen .wardrobe-stage p { font-size: 1.875rem; }
+}
+/* HP: rapatkan bagian atas supaya daftar opsi yang bergulir tetap lega (tinggi layar kecil: 667 px). */
+@media (max-width: 760px) {
+  .wardrobe-screen .page-heading { margin-block-end: 2px; }
+  .wardrobe-screen h1 { font-size: 1.5rem; }
+  .wardrobe-screen .wardrobe-save { padding-block: 8px 0; }
+  .wardrobe-screen .animal-picker { margin-block: 12px 8px; }
+  .wardrobe-screen .customization-tabs { margin-block: 8px 2px; padding-block-end: 8px; }
+  .in-wardrobe .topbar .stats-row { gap: 8px; } /* bar atas satu baris di 375 px (font produksi lebih lebar daripada server dev) */
+}
+@media (max-width: 760px) and (max-height: 700px) { .wardrobe-screen .wardrobe-stage { block-size: clamp(120px, 25svh, 175px); } }
