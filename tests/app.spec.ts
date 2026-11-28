@@ -127,8 +127,8 @@ test('mobile demo journey from onboarding to all three units and rewards', async
     pendingReviews: Object.keys(finished.reviews).length, chestRewards: finished.chestRewards, errors }, null, 2), contentType: 'application/json' });
 
   await page.locator('.summary-gift a').click();
-  await page.getByRole('button', { name: 'الْكِسْوَةُ', exact: true }).click();
-  await page.getByRole('radio', { name: 'لِبَاسُ الْبَحَّارِ', exact: true }).locator('..').click();
+  await page.getByRole('button', { name: /^الْكِسْوَةُ/ }).click();      // tab lemari: ada terjemahan di bawah nama saat tombol terjemahan menyala
+  await page.getByRole('radio', { name: /^لِبَاسُ الْبَحَّارِ/ }).locator('..').click();
   await page.locator('.wardrobe-save button').click();
   await expect(page.locator('.saved-message')).toBeVisible();
   await capture('pakai-hadiah-pelaut');

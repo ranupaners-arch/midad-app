@@ -1,0 +1,435 @@
+{
+ "_catatan": "DRAF terjemahan ID/EN istilah lemari (nama Arab dari Wardrobe.tsx). Disusun dari nama kunci; mohon dicek user/Shaharil.",
+ "names": {
+  "none": {
+   "id": "Tidak ada",
+   "en": "None"
+  },
+  "orange": {
+   "id": "Jingga",
+   "en": "Orange"
+  },
+  "teal": {
+   "id": "Hijau kebiruan (pirus)",
+   "en": "Teal"
+  },
+  "pink": {
+   "id": "Merah muda",
+   "en": "Pink"
+  },
+  "sky": {
+   "id": "Biru langit",
+   "en": "Sky blue"
+  },
+  "lavender": {
+   "id": "Ungu lavender",
+   "en": "Lavender"
+  },
+  "mint": {
+   "id": "Hijau mint",
+   "en": "Mint"
+  },
+  "ginger": {
+   "id": "Jahe (jingga kekuningan)",
+   "en": "Ginger"
+  },
+  "grey": {
+   "id": "Abu-abu",
+   "en": "Grey"
+  },
+  "black": {
+   "id": "Hitam",
+   "en": "Black"
+  },
+  "sand": {
+   "id": "Pasir",
+   "en": "Sand"
+  },
+  "cream": {
+   "id": "Krem",
+   "en": "Cream"
+  },
+  "brown": {
+   "id": "Cokelat",
+   "en": "Brown"
+  },
+  "white": {
+   "id": "Putih",
+   "en": "White"
+  },
+  "green": {
+   "id": "Hijau",
+   "en": "Green"
+  },
+  "sea": {
+   "id": "Biru",
+   "en": "Blue"
+  },
+  "olive": {
+   "id": "Zaitun",
+   "en": "Olive"
+  },
+  "coral": {
+   "id": "Karang",
+   "en": "Coral"
+  },
+  "rose": {
+   "id": "Merah muda muda",
+   "en": "Light pink"
+  },
+  "fan": {
+   "id": "Seperti kipas",
+   "en": "Fan-like"
+  },
+  "spiky": {
+   "id": "Runcing",
+   "en": "Spiky"
+  },
+  "curly": {
+   "id": "Keriting",
+   "en": "Curly"
+  },
+  "tuft": {
+   "id": "Pendek",
+   "en": "Short"
+  },
+  "swept": {
+   "id": "Terurai",
+   "en": "Swept"
+  },
+  "flower": {
+   "id": "Dengan bunga",
+   "en": "With a flower"
+  },
+  "patches": {
+   "id": "Bercak-bercak",
+   "en": "Patched"
+  },
+  "tabby": {
+   "id": "Bergaris",
+   "en": "Tabby"
+  },
+  "plain": {
+   "id": "Polos",
+   "en": "Plain"
+  },
+  "mask": {
+   "id": "Bertopeng",
+   "en": "Masked"
+  },
+  "fringe": {
+   "id": "Berponi",
+   "en": "Fringe"
+  },
+  "tall": {
+   "id": "Tinggi",
+   "en": "Tall"
+  },
+  "bald": {
+   "id": "Tanpa rambut",
+   "en": "Bald"
+  },
+  "plates": {
+   "id": "Lempengan",
+   "en": "Plates"
+  },
+  "stripes": {
+   "id": "Garis-garis",
+   "en": "Stripes"
+  },
+  "spots": {
+   "id": "Bintik-bintik",
+   "en": "Spots"
+  },
+  "gold": {
+   "id": "Emas",
+   "en": "Gold"
+  },
+  "straight": {
+   "id": "Lurus",
+   "en": "Straight"
+  },
+  "curved": {
+   "id": "Melengkung",
+   "en": "Curved"
+  },
+  "short": {
+   "id": "Pendek",
+   "en": "Short"
+  },
+  "spiral": {
+   "id": "Spiral",
+   "en": "Spiral"
+  },
+  "round": {
+   "id": "Bulat",
+   "en": "Round"
+  },
+  "happy": {
+   "id": "Bahagia",
+   "en": "Happy"
+  },
+  "sleepy": {
+   "id": "Mengantuk",
+   "en": "Sleepy"
+  },
+  "star": {
+   "id": "Berkilau",
+   "en": "Sparkling"
+  },
+  "determined": {
+   "id": "Tegas",
+   "en": "Determined"
+  },
+  "wink": {
+   "id": "Mengedip",
+   "en": "Winking"
+  },
+  "dot": {
+   "id": "Kecil",
+   "en": "Small"
+  },
+  "sad": {
+   "id": "Sedih",
+   "en": "Sad"
+  },
+  "up": {
+   "id": "Melihat ke atas",
+   "en": "Looking up"
+  },
+  "lashes": {
+   "id": "Berbulu mata",
+   "en": "With lashes"
+  },
+  "long": {
+   "id": "Panjang",
+   "en": "Long"
+  },
+  "smile": {
+   "id": "Tersenyum",
+   "en": "Smiling"
+  },
+  "laugh": {
+   "id": "Tertawa",
+   "en": "Laughing"
+  },
+  "small": {
+   "id": "Kecil",
+   "en": "Small"
+  },
+  "w": {
+   "id": "Seperti kucing",
+   "en": "Cat-like"
+  },
+  "tongue": {
+   "id": "Lidah",
+   "en": "Tongue"
+  },
+  "o": {
+   "id": "Terkejut",
+   "en": "Surprised"
+  },
+  "grin": {
+   "id": "Bergigi",
+   "en": "Toothy grin"
+  },
+  "frown": {
+   "id": "Cemberut",
+   "en": "Frowning"
+  },
+  "flat": {
+   "id": "Tenang",
+   "en": "Calm"
+  },
+  "tri": {
+   "id": "Segitiga",
+   "en": "Triangle"
+  },
+  "button": {
+   "id": "Kancing",
+   "en": "Button"
+  },
+  "camel": {
+   "id": "Lubang hidung",
+   "en": "Nostrils"
+  },
+  "heart": {
+   "id": "Hati",
+   "en": "Heart"
+  },
+  "oval": {
+   "id": "Oval",
+   "en": "Oval"
+  },
+  "dots": {
+   "id": "Dua titik",
+   "en": "Two dots"
+  },
+  "qalam": {
+   "id": "Pena kalam",
+   "en": "Qalam pen"
+  },
+  "inkpot": {
+   "id": "Tempat tinta",
+   "en": "Inkpot"
+  },
+  "book": {
+   "id": "Buku",
+   "en": "Book"
+  },
+  "lantern": {
+   "id": "Lentera",
+   "en": "Lantern"
+  },
+  "dates": {
+   "id": "Kurma",
+   "en": "Dates"
+  },
+  "dhow": {
+   "id": "Kapal layar",
+   "en": "Dhow"
+  },
+  "telescope": {
+   "id": "Teropong",
+   "en": "Telescope"
+  },
+  "scroll": {
+   "id": "Peta",
+   "en": "Map"
+  },
+  "kumma": {
+   "id": "Kumma (topi Oman)",
+   "en": "Kumma (Omani cap)"
+  },
+  "mussar": {
+   "id": "Mussar (sorban Oman)",
+   "en": "Mussar (Omani turban)"
+  },
+  "peci": {
+   "id": "Peci",
+   "en": "Peci cap"
+  },
+  "scarf": {
+   "id": "Syal",
+   "en": "Scarf"
+  },
+  "sailor": {
+   "id": "Baju pelaut",
+   "en": "Sailor outfit"
+  },
+  "vest": {
+   "id": "Rompi",
+   "en": "Vest"
+  },
+  "batik": {
+   "id": "Batik",
+   "en": "Batik"
+  },
+  "dishdasha": {
+   "id": "Dishdasha",
+   "en": "Dishdasha"
+  },
+  "koko": {
+   "id": "Baju koko",
+   "en": "Koko shirt"
+  },
+  "nakhoda": {
+   "id": "Nakhoda",
+   "en": "Captain"
+  },
+  "scholar": {
+   "id": "Jubah ulama",
+   "en": "Scholar robe"
+  },
+  "goldbisht": {
+   "id": "Bisyt emas",
+   "en": "Gold bisht"
+  },
+  "nightink": {
+   "id": "Tinta malam",
+   "en": "Night ink"
+  }
+ },
+ "animals": {
+  "hudhud": {
+   "id": "Hudhud",
+   "en": "Hoopoe"
+  },
+  "cat": {
+   "id": "Kucing",
+   "en": "Cat"
+  },
+  "camel": {
+   "id": "Unta",
+   "en": "Camel"
+  },
+  "turtle": {
+   "id": "Penyu",
+   "en": "Turtle"
+  },
+  "oryx": {
+   "id": "Oryx",
+   "en": "Oryx"
+  }
+ },
+ "slots": {
+  "color": {
+   "id": "Warna",
+   "en": "Color"
+  },
+  "style": {
+   "id": "Pola",
+   "en": "Pattern"
+  },
+  "eyes": {
+   "id": "Mata",
+   "en": "Eyes"
+  },
+  "mouth": {
+   "id": "Mulut / Paruh",
+   "en": "Mouth / Beak"
+  },
+  "nose": {
+   "id": "Hidung",
+   "en": "Nose"
+  },
+  "hand": {
+   "id": "Alat",
+   "en": "Tools"
+  },
+  "head": {
+   "id": "Kepala",
+   "en": "Head"
+  },
+  "neck": {
+   "id": "Leher",
+   "en": "Neck"
+  },
+  "skin": {
+   "id": "Pakaian",
+   "en": "Outfit"
+  }
+ },
+ "ui": {
+  "save": {
+   "id": "Simpan teman belajarmu",
+   "en": "Save your companion"
+  },
+  "buy": {
+   "id": "Beli dan simpan",
+   "en": "Buy and save"
+  },
+  "poor": {
+   "id": "Kurmamu belum cukup",
+   "en": "Not enough dates"
+  },
+  "locked": {
+   "id": "Terkunci",
+   "en": "Locked"
+  },
+  "saved": {
+   "id": "Tersimpan! Ia akan menemanimu dengan tampilan ini.",
+   "en": "Saved! It will accompany you looking like this."
+  }
+ }
+}
