@@ -20,7 +20,7 @@ const cmp = (label, a, b) => { if (a !== b) errors.push(`${label}\n  tipe:    ${
 
 const mdts = readFileSync(join(dir, 'mascot.d.mts'), 'utf8');
 const map = { Animal: 'ANIMALS', Eyes: 'EYES', Beak: 'BEAKS', Mouth: 'MOUTHS', Nose: 'NOSES', HeadItem: 'HEAD',
-  NeckItem: 'NECK', HandItem: 'HAND', Skin: 'SKINS', Tier: 'TIERS', Emote: 'EMOTES' };
+  NeckItem: 'NECK', HandItem: 'HAND', Skin: 'SKINS', Tier: 'TIERS', Emote: 'EMOTES', Mark: 'MARK' };
 for (const [t, k] of Object.entries(map)) cmp(t, union(mdts, t), keys(MidadMascot[k]));
 cmp('VehicleId', union(readFileSync(join(dir, 'vehicles.d.mts'), 'utf8'), 'VehicleId'), keys(MidadVehicles.V));
 

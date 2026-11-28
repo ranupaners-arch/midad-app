@@ -11,6 +11,8 @@ export type HandItem = 'none' | 'qalam' | 'inkpot' | 'book' | 'lantern' | 'dates
 export type Skin = 'none' | 'sailor' | 'vest' | 'batik' | 'dishdasha' | 'koko' | 'nakhoda' | 'scholar' | 'goldbisht' | 'nightink';
 export type Tier = 'common' | 'rare' | 'epic' | 'legendary';
 export type Emote = 'cheer' | 'sad' | 'think' | 'surprised' | 'sleep';
+/** Penanda tokoh cerita (bukan item lemari): 'female' = pita dan rok. */
+export type Mark = 'none' | 'female';
 
 export interface MascotConfig {
   animal: Animal;
@@ -28,6 +30,7 @@ export interface MascotConfig {
   neck: NeckItem;
   skin: Skin;
   emote?: Emote;
+  mark?: Mark;
 }
 
 export interface RenderOptions {
@@ -61,6 +64,7 @@ export interface MidadMascotApi {
   HEAD: Record<HeadItem, unknown>;
   NECK: Record<NeckItem, unknown>;
   HAND: Record<HandItem, unknown>;
+  MARK: Record<Mark, unknown>;
 }
 
 export declare const MidadMascot: MidadMascotApi;

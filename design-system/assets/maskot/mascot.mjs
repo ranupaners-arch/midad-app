@@ -35,6 +35,7 @@ export function validateMascotConfig(raw) {
     skin: has(M.SKINS, cfg.skin) ? cfg.skin : 'none',
   };
   if (has(M.EMOTES, cfg.emote)) out.emote = cfg.emote;
+  if (has(M.MARK, cfg.mark) && cfg.mark !== 'none') out.mark = cfg.mark;
   return /** @type {import('./mascot.mjs').MascotConfig} */ (out);
 }
 

@@ -109,6 +109,24 @@
   };
 
 
+  // ---------- character marks (bukan item lemari: penanda tokoh cerita, mis. tokoh perempuan di ilustrasi kosakata) ----------
+  // Digambar di atas badan bersama, jadi pas untuk kelima hewan. Warna tetap (bukan var(--mb)) agar terbaca di atas semua warna bulu dan di mode gelap.
+  const ROSE = '#e56b8a', ROSED = '#b8405f';
+  const MARK = {
+    none: { body: () => '', head: () => '' },
+    female: {
+      // rok mengembang menutup pangkal kaki; hanya telapak yang terlihat di bawahnya
+      body: () => `<path d="M 146 384 C 200 398 312 398 366 384 L 398 452 C 330 466 182 466 114 452 Z" fill="${ROSE}" ${SW}/>` +
+        `<path d="M 188 398 L 168 458 M 256 402 L 256 462 M 324 398 L 344 458" stroke="${ROSED}" stroke-width="5" stroke-linecap="round" fill="none"/>` +
+        `<path d="M 150 388 C 200 402 312 402 362 388" fill="none" stroke="${ROSED}" stroke-width="7" stroke-linecap="round"/>`,
+      // pita di puncak kepala
+      head: () => `<g transform="translate(256 166)"><path d="M 0 0 C -14 -30 -56 -34 -58 -8 C -59 16 -22 16 0 0 Z" fill="${ROSE}" stroke="${O}" stroke-width="5" stroke-linejoin="round"/>` +
+        `<path d="M 0 0 C 14 -30 56 -34 58 -8 C 59 16 22 16 0 0 Z" fill="${ROSE}" stroke="${O}" stroke-width="5" stroke-linejoin="round"/>` +
+        `<path d="M -16 -8 L -40 -12 M 16 -8 L 40 -12" stroke="${ROSED}" stroke-width="4" stroke-linecap="round"/>` +
+        `<circle r="12" fill="${ROSED}" stroke="${O}" stroke-width="5"/></g>`
+    }
+  };
+
   // ---------- skins / outer (clipped to the shared body, so they fit every animal) ----------
   const NAVY = '#1f3a5f', GOLDC = '#e9b949', GOLDD = '#b5871a';
   const kawung = (cx, cy) => [0, 90, 180, 270].map(a => `<ellipse cx="${cx}" cy="${cy - 9}" rx="5" ry="9" transform="rotate(${a} ${cx} ${cy})" fill="#f3e3d6"/>`).join('') + `<circle cx="${cx}" cy="${cy}" r="3" fill="#7c4a2d"/>`;
@@ -267,13 +285,14 @@
     const mouth = A.mouthKind === 'beak' ? (BEAKS[c.mouth] || BEAKS.long)() : (MOUTHS[c.mouth] || MOUTHS.smile)();
     const nose = A.hasNose && c.nose && NOSES[c.nose] ? NOSES[c.nose]() : '';
     const skin = (SKINS[c.skin] || SKINS.none).draw();
+    const mark = MARK[c.mark] || MARK.none;
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${opts.viewBox || '0 0 512 512'}" ${opts.attrs || ''} class="mm ${opts.cls || ''}" style="--mb:${col[0]};--mbd:${col[1]};--mbl:${col[2]};--ma:${col[3]}" role="img" aria-label="${opts.label || animal}">` +
       `<defs><clipPath id="${clip}"><path d="${BODY_D}"/></clipPath></defs>` +
       SHADOW + `<g class="mm-all">` + A.back(c, id) + LEGS[A.legs]() + `<g class="mm-back">` + limb(-1, !!(em && em.raise)) + `</g>` +
-      `<path d="${BODY_D}" fill="var(--mb)"/>` + A.over(c, clip) + (skin ? `<g clip-path="url(#${clip})">${skin}</g>` : '') + `<path d="${BODY_D}" fill="none" ${SW}/>` +
+      `<path d="${BODY_D}" fill="var(--mb)"/>` + A.over(c, clip) + (skin ? `<g clip-path="url(#${clip})">${skin}</g>` : '') + `<path d="${BODY_D}" fill="none" ${SW}/>` + mark.body() +
       (NECK[c.neck] || NECK.none)() + `<g class="mm-eyes">` + (EYES[c.eyes] || EYES.round)() + `</g>` + nose + mouth +
-      (HEAD[c.head] || HEAD.none)() + `<g class="mm-front">` + limb(1, holding || !!(em && em.raise)) + (HAND[c.hand] || HAND.none)() + `</g></g></svg>`;
+      (HEAD[c.head] || HEAD.none)() + mark.head() + `<g class="mm-front">` + limb(1, holding || !!(em && em.raise)) + (HAND[c.hand] || HAND.none)() + `</g></g></svg>`;
   }
 
-  g.MidadMascot = { render, defaults, SKINS, TIERS, EMOTES, ANIMALS, EYES, BEAKS, NOSES, MOUTHS, HEAD, NECK, HAND };
+  g.MidadMascot = { render, defaults, SKINS, TIERS, EMOTES, ANIMALS, EYES, BEAKS, NOSES, MOUTHS, HEAD, NECK, HAND, MARK };
 })(typeof window !== 'undefined' ? window : globalThis);
