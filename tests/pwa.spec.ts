@@ -5,6 +5,7 @@ import { resolve, extname, sep } from 'node:path';
 import type { Page } from '@playwright/test';
 import { createProfile, STORAGE_KEY } from '../app/src/domain/progress';
 import { activities, questions, SHAHARIL_UNITS, UNITS } from '../app/src/domain/content';
+import { sceneFor } from '../app/src/domain/scenes';
 import AxeBuilder from '@axe-core/playwright';
 
 async function prepare(page: Page, changes = {}) {
@@ -130,4 +131,32 @@ test('the completed journey summary remains readable after an offline reload wit
   await expect(page.locator('.summary-gift')).toBeVisible();
   const saved = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   expect(saved.dates).toBe(150); expect(saved.xp).toBe(90);
+});
+
+test('vocabulary illustrations and emoji badges are precached: study cards stay complete while offline', async ({ page, context }) => {
+  const external: string[] = [], errors: string[] = [];
+  page.on('request', req => { if (new URL(req.url()).origin !== 'http://127.0.0.1:4173') external.push(req.url()); });
+  page.on('pageerror', e => errors.push(e.message));
+  const unit = SHAHARIL_UNITS[0];
+  const cards = questions(unit, activities(unit)[0], 'id').filter(q => q.kind === 'study');
+  const withEmoji = cards.findIndex(q => sceneFor(q.word?.audioKey)?.emoji);
+  expect(withEmoji).toBeGreaterThan(0);
+  await prepare(page, { curriculum: 'shaharil' });
+  await page.goto('/');
+  await ready(page);
+  await context.setOffline(true);
+  await page.goto('/#/unit/1/lesson/vocab-1');
+  await page.reload();
+  for (let i = 0; i <= withEmoji; i++) {
+    const def = sceneFor(cards[i].word?.audioKey);
+    if (def) {
+      const bg = page.locator('.study-card .ws-bg');
+      await expect(bg).toHaveAttribute('src', /\.webp$/);
+      await expect.poll(() => bg.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+    }
+    if (i < withEmoji) await page.getByRole('button', { name: 'مُتَابَعَة', exact: true }).click();
+  }
+  await expect.poll(() => page.locator('.study-card .ws-emoji img').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+  await expect(page.locator('.study-card .word-picture')).toHaveCount(0);
+  expect(external).toEqual([]); expect(errors).toEqual([]);
 });

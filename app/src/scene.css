@@ -1,0 +1,18 @@
+/* Ilustrasi kosakata (WordScene). Hanya token design system; file terpisah agar tidak bentrok dengan styles.css. */
+.word-scene { position: relative; inline-size: min(224px, 64vw); aspect-ratio: 1; margin: 8px auto 12px; clip-path: circle(50% at 50% 50%); }
+.word-scene .ws-bg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; }
+/* Maskot dipotong mengikuti bulatan badge (clip-path di wadah), posisi dan ukuran dalam persen lebar badge. */
+.word-scene .ws-ch { position: absolute; aspect-ratio: 1; line-height: 0; }
+.word-scene .ws-ch svg { inline-size: 100%; block-size: 100%; display: block; }
+.word-scene .ws-flip { transform: scaleX(-1); }
+.word-scene .ws-emoji {
+  position: absolute; inset-block-start: 14%; inset-inline-end: 16%; inline-size: 22%; aspect-ratio: 1; display: grid; place-items: center;
+  border-radius: 50%; background: var(--surface-100); border: 2px solid var(--line-strong); box-shadow: var(--edge-card);
+}
+.word-scene .ws-emoji img { inline-size: 66%; block-size: 66%; display: block; }
+@media (max-width: 720px) {
+  .word-scene { inline-size: clamp(120px, 27svh, 176px); margin-block: 4px 8px; }
+}
+/* Keterangan ilustrasi AI di Profil (tepat di atas baris versi aplikasi). */
+.app-note { text-align: center; color: var(--ink-muted); font-size: .875rem; line-height: 1.8; margin-block-start: 28px; }
+.app-note + .app-version { margin-block-start: 4px; }
