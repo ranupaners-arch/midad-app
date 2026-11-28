@@ -1,0 +1,8 @@
+/* Terjemahan kecil di bawah nama dan istilah lemari (ui/WardrobeTr.tsx). */
+.wardrobe-screen .translation { display: block; text-align: center; line-height: 1.35; }
+.customization-option > b + .translation, .animal-picker label > b + .translation { margin-block-start: 2px; font-size: .75rem; }
+.customization-tabs > button { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4; }
+.customization-tabs > button .translation { font-size: .6875rem; font-weight: 500; color: inherit; }
+.wardrobe-stage p .translation { font: 500 .9375rem/1.4 var(--font-sans); margin-block-start: 2px; }
+.wardrobe-save .translation { margin-block-start: 6px; font-size: .8125rem; }
+@media (max-width: 760px) { .animal-picker label > b + .translation { font-size: .625rem; line-height: 1.2; } }

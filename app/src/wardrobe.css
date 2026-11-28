@@ -13,7 +13,7 @@
   /* dua kolom tanpa grid: preview mengambang di kiri fisik (float: left, tetap menempel lewat sticky); opsi memakai sisa lebar di kanan */
   .wardrobe-screen .wardrobe-content > .wardrobe-stage { float: left; inline-size: 380px; flex-direction: column; justify-content: center; block-size: auto; padding: 20px 16px 16px; box-shadow: none; }
   .wardrobe-screen .wardrobe-content > :not(.wardrobe-stage) { margin-inline-end: 412px; }
-  .wardrobe-screen .wardrobe-content::after { content: ''; display: block; clear: both; }  .wardrobe-screen .wardrobe-stage .mascot { block-size: clamp(220px, 42svh, 380px); }
+  .wardrobe-screen .wardrobe-content::after { content: ''; display: block; clear: both; }  .wardrobe-screen .wardrobe-stage .mascot { block-size: clamp(220px, 37svh, 360px); }
   .wardrobe-screen .wardrobe-stage p { font-size: 1.875rem; }
 }
 /* HP: rapatkan bagian atas supaya daftar opsi yang bergulir tetap lega (tinggi layar kecil: 667 px). */
@@ -26,3 +26,6 @@
   .in-wardrobe .topbar .stats-row { gap: 8px; } /* bar atas satu baris di 375 px (font produksi lebih lebar daripada server dev) */
 }
 @media (max-width: 760px) and (max-height: 700px) { .wardrobe-screen .wardrobe-stage { block-size: clamp(120px, 25svh, 175px); } }
+/* Elemen yang difokus (Tab) atau digulirkan ke tampilan tidak boleh tersembunyi di bawah preview yang menempel di atas (HP/tablet). */
+@media (max-width: 899px) { .wardrobe-screen .wardrobe-content { scroll-padding-block-start: calc(clamp(150px, 31svh, 260px) + 12px); } }
+@media (max-width: 760px) and (max-height: 700px) { .wardrobe-screen .wardrobe-content { scroll-padding-block-start: calc(clamp(120px, 25svh, 175px) + 12px); } }
