@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import type { MascotConfig } from '../../../design-system/assets/maskot/mascot.mjs';
 import { Mascot, Text } from './Common';
 import { Icon } from './Icon';
-import { ICONS, ITEM_KEYS, itemText } from './ItemInfo';
-import type { ItemKey } from './ItemInfo';
+import { bubbleAt } from './bubbleContent';
+import type { BubbleContent } from './bubbleContent';
 import '../companion.css';
 
 /**
@@ -55,11 +55,11 @@ export function useCompanionReaction(): { reaction: Reaction | null; tap: () => 
 export const BUBBLE_MS = 9000;
 
 /** `decorative`: versi kecil di layar belajar; dapat diketuk tetapi tidak masuk urutan fokus maupun pembaca layar.
- *  `bubbles`: ketuk companion juga memunculkan balon berisi satu penjelasan item (kegunaan atau cara mendapat, bergilir; teks Shaharil).
+ *  `bubbles`: ketuk companion juga memunculkan balon bergilir: penjelasan item, tips memakai app, motivasi belajar, mahfuzhat (ui/bubbleContent.ts; teks Shaharil).
  *  Di layar soal/ujian bubbles dimatikan: ketuk hanya bereaksi agar tidak mengalihkan perhatian. */
 export default function Companion({ className = '', decorative = false, bubbles = false, label = 'رَفِيقُكَ فِي الرِّحْلَةِ', onTap }: { className?: string; decorative?: boolean; bubbles?: boolean; label?: string; onTap?: () => void }) {
   const { reaction, tap } = useCompanionReaction();
-  const [bubble, setBubble] = useState<{ item: ItemKey; part: 'use' | 'get' } | null>(null);
+  const [bubble, setBubble] = useState<BubbleContent | null>(null);
   const turn = useRef(0), hide = useRef<ReturnType<typeof setTimeout>>(undefined);
   const close = () => { clearTimeout(hide.current); setBubble(null); };
   useEffect(() => () => clearTimeout(hide.current), []);
@@ -71,8 +71,7 @@ export default function Companion({ className = '', decorative = false, bubbles 
   }, [bubble]);
   useEffect(() => { if (!bubbles) close(); }, [bubbles]);
   const explain = () => {
-    const i = turn.current++ % (ITEM_KEYS.length * 2);
-    setBubble({ item: ITEM_KEYS[i >> 1], part: i % 2 ? 'get' : 'use' });
+    setBubble(bubbleAt(turn.current++));
     clearTimeout(hide.current); hide.current = setTimeout(() => setBubble(null), BUBBLE_MS);
   };
   return <>
@@ -81,8 +80,8 @@ export default function Companion({ className = '', decorative = false, bubbles 
       onClick={() => { tap(); onTap?.(); if (bubbles) explain(); }}>
       <Mascot emote={reaction?.emote} decorative />
     </button>
-    {bubbles && <div aria-live="polite" className="companion-status">{bubble && <button type="button" className="companion-bubble" data-testid="companion-bubble" data-item={bubble.item} data-part={bubble.part} onClick={close}>
-      <Icon name={ICONS[bubble.item]} /><span><Text text={itemText(bubble.item)[bubble.part]} /></span>
+    {bubbles && <div aria-live="polite" className="companion-status">{bubble && <button type="button" className={`companion-bubble kind-${bubble.kind}`} data-testid="companion-bubble" data-kind={bubble.kind} data-id={bubble.id} data-item={bubble.item} data-part={bubble.part} onClick={close}>
+      <Icon name={bubble.icon} /><span><Text text={bubble.text} /></span>
     </button>}</div>}
   </>;
 }
