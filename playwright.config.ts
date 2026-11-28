@@ -12,5 +12,6 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   use: { baseURL: 'http://127.0.0.1:5173', actionTimeout: 10000, reducedMotion: 'reduce', trace: 'retain-on-failure', launchOptions: { executablePath } },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
-  webServer: { command: 'npm run dev', url: 'http://127.0.0.1:5173', reuseExistingServer: !process.env.CI, timeout: 30000 },
+  webServer: { command: 'npm run dev', env: { VITE_DEMO_UNLOCK_ALL: '0' }, // tes bawaan menguji ekonomi asli; tes mode demo memakai ?demo=1
+    url: 'http://127.0.0.1:5173', reuseExistingServer: !process.env.CI, timeout: 30000 },
 });
