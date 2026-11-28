@@ -6,7 +6,9 @@ import { activities, questions, SHAHARIL_UNITS } from '../app/src/domain/content
 import { createProfile, STORAGE_KEY } from '../app/src/domain/progress';
 
 const info = JSON.parse(readFileSync('app/src/domain/itemInfo.json', 'utf8')) as Record<string, Record<'name' | 'use' | 'get', { ar: string; id: string; en: string }>>;
+const companionTexts = JSON.parse(readFileSync('app/src/domain/companionTexts.json', 'utf8')) as Record<'tip' | 'motivasi' | 'mahfuzhat', { ar: string; id: string; en: string }[]>;
 const ORDER = ['xp', 'dates', 'streak', 'hint', 'mastery'];
+const box = async (page: Page, selector: string) => (await page.locator(selector).boundingBox())!;
 const CONTINUE = 'مُتَابَعَة';
 
 async function open(page: Page, route: string, viewport: { width: number; height: number }, changes: object = {}) {
@@ -19,23 +21,43 @@ async function open(page: Page, route: string, viewport: { width: number; height
 const sidebar = (page: Page) => page.locator('.sidebar .companion');
 const bubble = (page: Page) => page.getByTestId('companion-bubble');
 
-test('ketuk companion di sidebar: balon bergiliran menjelaskan kegunaan lalu cara mendapat tiap item (teks Shaharil), companion bereaksi', async ({ page }) => {
+test('ketuk companion di sidebar: balon bergilir antar penjelasan item, tips pakai app, motivasi, dan mahfuzhat (teks Shaharil), companion bereaksi', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await open(page, '/#/', { width: 1280, height: 800 });
-  for (let i = 0; i < ORDER.length * 2 + 1; i++) {
+  const kinds = ['item', 'tip', 'motivasi', 'mahfuzhat'] as const;
+  const seen = new Set<string>();
+  for (let n = 0; n < 4 * ORDER.length * 2 + 1; n++) {                              // 41 ketukan: seluruh 10 penjelasan item, lalu mengulang
     await sidebar(page).click();
-    const item = ORDER[(i >> 1) % ORDER.length], part = i % 2 ? 'get' : 'use';
-    await expect(bubble(page)).toHaveAttribute('data-item', item);
-    await expect(bubble(page)).toHaveAttribute('data-part', part);
-    await expect(bubble(page)).toContainText(info[item][part].ar);
+    const kind = kinds[n % 4], k = Math.floor(n / 4);
+    await expect(bubble(page)).toHaveAttribute('data-kind', kind);
+    if (kind === 'item') {
+      const i = k % (ORDER.length * 2), item = ORDER[i >> 1], part = i % 2 ? 'get' : 'use';
+      await expect(bubble(page)).toHaveAttribute('data-item', item); await expect(bubble(page)).toHaveAttribute('data-part', part);
+      await expect(bubble(page)).toContainText(info[item][part].ar); seen.add(`item:${item}.${part}`);
+    } else {
+      const list = companionTexts[kind], idx = k % list.length;
+      await expect(bubble(page)).toHaveAttribute('data-id', `${kind}.${idx + 1}`);
+      await expect(bubble(page)).toContainText(list[idx].ar); seen.add(`${kind}:${idx}`);
+    }
     await expect(sidebar(page)).not.toHaveAttribute('data-emote', 'none');
-    await page.clock.fastForward(1900);                              // reaksi selesai, balon tetap
+    await page.clock.fastForward(1900);                                               // reaksi selesai, balon tetap
     await expect(sidebar(page)).toHaveAttribute('data-emote', 'none');
     await expect(bubble(page)).toBeVisible();
   }
+  expect(seen.size).toBe(ORDER.length * 2 + companionTexts.tip.length + companionTexts.motivasi.length + companionTexts.mahfuzhat.length);
   expect(errors).toEqual([]);
 });
 
+test('balon mahfuzhat memuat kutipan lengkap dan tetap di dalam sidebar (teks terpanjang)', async ({ page }) => {
+  await open(page, '/#/', { width: 1280, height: 800 });
+  const s = await box(page, '.sidebar');
+  for (let n = 0; n < 4 * companionTexts.mahfuzhat.length; n++) {
+    await sidebar(page).click();
+    if (n % 4 !== 3) continue;
+    const b = await bubble(page).boundingBox();
+    expect(b && b.x >= s.x - 1 && b.x + b.width <= s.x + s.width + 1).toBe(true);
+  }
+});
 test('balon: hilang otomatis (9 dtk), ketuk menutup, Escape menutup, tidak keluar dari sidebar', async ({ page }) => {
   await open(page, '/#/', { width: 1280, height: 800 });
   await sidebar(page).click();
