@@ -1,3 +1,4 @@
+import '../ux-lemari-tab.css';
 import { useState } from 'react';
 import type { MascotConfig } from '../../../design-system/assets/maskot/mascot.mjs';
 import { MidadMascot, validateMascotConfig } from '../../../design-system/assets/maskot/mascot.mjs';

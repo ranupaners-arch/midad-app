@@ -1,0 +1,3 @@
+/* Jarak antara teks Arab dan terjemahan sebaris pada ringkasan (summary) hub wahdah dan tombol teks tes tahdid ("رجوع" / "Kembali ke pilihan awal").
+   Penyebab: .translation berarah ltr, sehingga margin-inline-start jatuh di sisi yang salah (tidak ada jarak). Pakai margin fisik di sisi yang menghadap teks Arab. */
+.other-lessons > summary .translation, .unit-note > summary .translation, .welcome-placement > .text-button .translation { margin-inline-start: 0; margin-right: 10px; }
