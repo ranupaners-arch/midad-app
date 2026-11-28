@@ -160,3 +160,18 @@ test('vocabulary illustrations and emoji badges are precached: study cards stay 
   await expect(page.locator('.study-card .word-picture')).toHaveCount(0);
   expect(external).toEqual([]); expect(errors).toEqual([]);
 });
+
+test('kurma and lantern icons are precached: the top bar stays complete while offline', async ({ page, context }) => {
+  const external: string[] = [];
+  page.on('request', req => { if (new URL(req.url()).origin !== 'http://127.0.0.1:4173') external.push(req.url()); });
+  await prepare(page, { curriculum: 'shaharil' });
+  await page.goto('/');
+  await ready(page);
+  await context.setOffline(true);
+  await page.reload();
+  for (const selector of ['.stat-dates img.icon-img', '.stat-streak img.icon-img']) {
+    await expect(page.locator(selector)).toHaveAttribute('src', /\.webp$/);
+    await expect.poll(() => page.locator(selector).evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+  }
+  expect(external).toEqual([]);
+});

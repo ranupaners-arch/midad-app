@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import type { CSSProperties } from 'react';
+import { iconImageUrl } from './iconAssets';
+import '../icons.css';
 
 const paths: Record<string, string> = {
   route: 'M5 5a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 14a2 2 0 1 0 4 0 2 2 0 0 0-4 0ZM7 7v5a3 3 0 0 0 3 3h4a3 3 0 0 1 3 3M17 6V3m0 0 4 2-4 2',
@@ -28,7 +31,10 @@ const paths: Record<string, string> = {
   plus: 'M12 4v16M4 12h16', back: 'm9 5 7 7-7 7', repeat: 'M4 7h12a5 5 0 0 1 0 10H4m4-14L4 7l4 4m0 2-4 4 4 4',
   settings: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-6 2 3 4-1 2 4-2 3 2 3-2 4-4-1-2 3-3-3-4 1-2-4 2-3-2-3 2-4 4 1 3-3Z',
 };
+/** Kurma dan lentera memakai gambar WebP (Gemini); bila gagal dimuat jatuh ke ikon garis SVG di bawah. */
 export function Icon({ name, className = '', style }: { name: string; className?: string; style?: CSSProperties }) {
+  const [failed, setFailed] = useState(false), image = failed ? undefined : iconImageUrl(name);
+  if (image) return <img className={`icon icon-img ${className}`} style={style} src={image} alt="" width={24} height={24} aria-hidden="true" onError={() => setFailed(true)} />;
   return <svg className={`icon ${className}`} style={style} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name] ?? paths.book} /></svg>;
 }
 export function Logo() { return <span className="logo"><svg viewBox="0 0 40 44" aria-hidden="true"><path d="M20 1C15 11 4 21 4 29a16 16 0 0 0 32 0C36 21 25 11 20 1Z" fill="currentColor"/><path d="m14 29 12-12 4 4-12 12-7 3Z" fill="var(--gold)"/></svg><span>مِدَاد<span className="logo-latin" lang="en" dir="ltr">MIDAD</span></span></span>; }

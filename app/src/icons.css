@@ -1,0 +1,6 @@
+/* Ikon raster kurma/lentera (ui/Icon.tsx). Ukuran dasar mengikuti .icon; di bar atas sedikit lebih besar agar terbaca. */
+.icon-img { object-fit: contain; display: inline-block; }
+.stat .icon.icon-img { inline-size: 28px; block-size: 28px; } /* lebih spesifik dari .stat .icon (20 px) di HP, yang dimuat belakangan */
+.daily-card > .icon.icon-img { inline-size: 44px; block-size: 44px; }
+.profile-stats .icon.icon-img { inline-size: 36px; block-size: 36px; }
+@media (max-width: 760px) { .stat .icon.icon-img { inline-size: 24px; block-size: 24px; } } /* HP: bar atas tetap satu baris */
