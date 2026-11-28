@@ -1,0 +1,87 @@
+{
+ "xp": {
+  "name": {
+   "ar": "نِقَاطُ الْخِبْرَةِ",
+   "id": "Poin pengalaman (XP)",
+   "en": "Experience points (XP)"
+  },
+  "use": {
+   "ar": "هَذِهِ النِّقَاطُ تُبَيِّنُ تَقَدُّمَكَ، وَلَا تَشْتَرِي بِهَا شَيْئًا.",
+   "id": "Poin ini menunjukkan kemajuanmu, tetapi tidak bisa dipakai untuk membeli.",
+   "en": "These points show your progress, but you can't buy anything with them."
+  },
+  "get": {
+   "ar": "لِأَوَّلِ إِجَابَةٍ صَحِيحَةٍ فِي كُلِّ سُؤَالِ تَدْرِيبٍ 5 نِقَاطٍ، وَلِأَوَّلِ نَجَاحٍ فِي اخْتِبَارِ الْوَحْدَةِ 30 نُقْطَةً.",
+   "id": "Benar pertama kali di tiap soal latihan: 5 poin. Lulus ujian wahdah pertama kali: 30 poin.",
+   "en": "First correct answer on each practice question: 5 points. First unit test pass: 30 points."
+  }
+ },
+ "dates": {
+  "name": {
+   "ar": "تَمْرٌ",
+   "id": "Kurma",
+   "en": "Dates"
+  },
+  "use": {
+   "ar": "بِالتَّمْرِ تَشْتَرِي قَطَرَاتِ مُسَاعَدَةٍ، وَرُفَقَاءَ وَمَلَابِسَ وَأَدَوَاتٍ فِي «رَفِيقِي».",
+   "id": "Pakai kurma untuk membeli tetes bantuan, teman belajar, baju, dan perlengkapan di Rafiqi.",
+   "en": "Use dates to buy help drops, study buddies, clothes and gear in Rafiqi."
+  },
+  "get": {
+   "ar": "تَأْخُذُ 30 تَمْرَةً عِنْدَ نَجَاحِكَ فِي اخْتِبَارِ الْوَحْدَةِ أَوَّلَ مَرَّةٍ، وَ10 تَمَرَاتٍ مِنْ صُنْدُوقِ الْهَدِيَّةِ.",
+   "id": "Dapat 30 kurma saat pertama lulus ujian wahdah, dan 10 kurma dari peti hadiah.",
+   "en": "Get 30 dates when you first pass a unit test, and 10 dates from the reward chest."
+  }
+ },
+ "streak": {
+  "name": {
+   "ar": "الْأَيَّامُ الْمُتَتَالِيَةُ",
+   "id": "Hari beruntun",
+   "en": "Day streak"
+  },
+  "use": {
+   "ar": "الْفَانُوسُ يُبَيِّنُ أَيَّامَ تَعَلُّمِكَ الْمُتَتَالِيَةَ، وَبَعْدَ 7 أَيَّامٍ تَحْصُلُ عَلَى السُّلَحْفَاةِ.",
+   "id": "Lentera menunjukkan hari belajarmu yang beruntun; 7 hari beruntun membuka teman penyu.",
+   "en": "The lantern shows your learning streak; a 7-day streak unlocks the turtle buddy."
+  },
+  "get": {
+   "ar": "أَجِبْ إِجَابَةً صَحِيحَةً عَنْ سُؤَالٍ وَاحِدٍ عَلَى الْأَقَلِّ كُلَّ يَوْمٍ، وَإِذَا تَرَكْتَ يَوْمًا تَبْدَأُ مِنْ جَدِيدٍ.",
+   "id": "Jawab benar minimal satu soal setiap hari; jika terlewat sehari, hitungan mulai dari awal.",
+   "en": "Answer at least one question correctly every day; miss a day and the streak starts over."
+  }
+ },
+ "hint": {
+  "name": {
+   "ar": "قَطَرَاتُ الْمُسَاعَدَةِ",
+   "id": "Tetes bantuan",
+   "en": "Help drops"
+  },
+  "use": {
+   "ar": "الْقَطْرَةُ تُعْطِيكَ تَلْمِيحًا فِي سُؤَالِ التَّدْرِيبِ، فَتَأْخُذُ نُقْطَتَيْنِ بَدَلَ 5، وَلَا تَلْمِيحَ فِي الِاخْتِبَارِ.",
+   "id": "Tetes memberi petunjuk di soal latihan (poinnya 2, bukan 5); tidak tersedia saat ujian.",
+   "en": "A drop gives a hint on a practice question (2 points instead of 5); not available in tests."
+  },
+  "get": {
+   "ar": "لَكَ 3 قَطَرَاتٍ مَجَّانًا كُلَّ يَوْمٍ، وَثَمَنُ الْقَطْرَةِ الزَّائِدَةِ 10 تَمَرَاتٍ، حَتَّى 5 فِي الْيَوْمِ.",
+   "id": "Dapat 3 tetes gratis tiap hari; tetes tambahan 10 kurma, paling banyak 5 per hari.",
+   "en": "You get 3 free drops a day; extra drops cost 10 dates each, up to 5 a day."
+  }
+ },
+ "mastery": {
+  "name": {
+   "ar": "قَطَرَاتُ الْمَعْرِفَةِ",
+   "id": "Tetes pengetahuan (kata dikuasai)",
+   "en": "Knowledge drops (mastered words)"
+  },
+  "use": {
+   "ar": "يُفْتَحُ اخْتِبَارُ الْوَحْدَةِ عِنْدَمَا تُتْقِنُ 80% مِنْ كَلِمَاتِهَا عَلَى الْأَقَلِّ.",
+   "id": "Ujian wahdah terbuka setelah kamu menguasai minimal 80% kata di wahdah itu.",
+   "en": "The unit test opens once you master at least 80% of its words."
+  },
+  "get": {
+   "ar": "تُتْقِنُ الْكَلِمَةَ عِنْدَمَا تُجِيبُ عَنْهَا إِجَابَةً صَحِيحَةً فِي 3 تَدْرِيبَاتٍ مُخْتَلِفَةٍ.",
+   "id": "Kata dihitung dikuasai setelah kamu menjawabnya benar di 3 soal latihan berbeda.",
+   "en": "A word counts as mastered after you answer it correctly in 3 different practice questions."
+  }
+ }
+}
