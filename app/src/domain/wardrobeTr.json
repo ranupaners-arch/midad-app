@@ -1,5 +1,5 @@
 {
- "_catatan": "DRAF terjemahan ID/EN istilah lemari (nama Arab dari Wardrobe.tsx). Disusun dari nama kunci; mohon dicek user/Shaharil.",
+ "_catatan": "DRAF terjemahan ID/EN istilah lemari (nama Arab dari Wardrobe.tsx). Disusun dari nama kunci, lalu 15 baris dikoreksi sesuai arti kata Arabnya oleh Shaharil (28 Nov, koreksi bagian A); semua: cek user. Catatan bagian B (usulan mengganti teks Arab) belum diterapkan: menunggu keputusan user.",
  "names": {
   "none": {
    "id": "Tidak ada",
@@ -10,8 +10,8 @@
    "en": "Orange"
   },
   "teal": {
-   "id": "Hijau kebiruan (pirus)",
-   "en": "Teal"
+   "id": "Biru pirus",
+   "en": "Turquoise"
   },
   "pink": {
    "id": "Merah muda",
@@ -22,15 +22,15 @@
    "en": "Sky blue"
   },
   "lavender": {
-   "id": "Ungu lavender",
-   "en": "Lavender"
+   "id": "Ungu",
+   "en": "Violet"
   },
   "mint": {
    "id": "Hijau mint",
    "en": "Mint"
   },
   "ginger": {
-   "id": "Jahe (jingga kekuningan)",
+   "id": "Pirang kemerahan",
    "en": "Ginger"
   },
   "grey": {
@@ -42,8 +42,8 @@
    "en": "Black"
   },
   "sand": {
-   "id": "Pasir",
-   "en": "Sand"
+   "id": "Warna pasir",
+   "en": "Sandy"
   },
   "cream": {
    "id": "Krem",
@@ -66,15 +66,15 @@
    "en": "Blue"
   },
   "olive": {
-   "id": "Zaitun",
-   "en": "Olive"
+   "id": "Hijau zaitun",
+   "en": "Olive green"
   },
   "coral": {
-   "id": "Karang",
+   "id": "Merah koral",
    "en": "Coral"
   },
   "rose": {
-   "id": "Merah muda muda",
+   "id": "Merah muda terang",
    "en": "Light pink"
   },
   "fan": {
@@ -95,19 +95,19 @@
   },
   "swept": {
    "id": "Terurai",
-   "en": "Swept"
+   "en": "Flowing"
   },
   "flower": {
    "id": "Dengan bunga",
    "en": "With a flower"
   },
   "patches": {
-   "id": "Bercak-bercak",
-   "en": "Patched"
+   "id": "Belang-belang",
+   "en": "Patchy"
   },
   "tabby": {
    "id": "Bergaris",
-   "en": "Tabby"
+   "en": "Striped"
   },
   "plain": {
    "id": "Polos",
@@ -118,7 +118,7 @@
    "en": "Masked"
   },
   "fringe": {
-   "id": "Berponi",
+   "id": "Poni",
    "en": "Fringe"
   },
   "tall": {
@@ -142,8 +142,8 @@
    "en": "Spots"
   },
   "gold": {
-   "id": "Emas",
-   "en": "Gold"
+   "id": "Keemasan",
+   "en": "Golden"
   },
   "straight": {
    "id": "Lurus",
@@ -234,8 +234,8 @@
    "en": "Toothy grin"
   },
   "frown": {
-   "id": "Cemberut",
-   "en": "Frowning"
+   "id": "Sedih",
+   "en": "Sad"
   },
   "flat": {
    "id": "Tenang",
@@ -286,8 +286,8 @@
    "en": "Dates"
   },
   "dhow": {
-   "id": "Kapal layar",
-   "en": "Dhow"
+   "id": "Kapal",
+   "en": "Ship"
   },
   "telescope": {
    "id": "Teropong",
@@ -338,8 +338,8 @@
    "en": "Captain"
   },
   "scholar": {
-   "id": "Jubah ulama",
-   "en": "Scholar robe"
+   "id": "Ulama",
+   "en": "Scholar"
   },
   "goldbisht": {
    "id": "Bisyt emas",
