@@ -16,7 +16,7 @@ import '../itemInfo.css';
 export type ItemKey = 'xp' | 'dates' | 'streak' | 'hint' | 'mastery';
 export const ITEM_KEYS: ItemKey[] = ['xp', 'dates', 'streak', 'hint', 'mastery'];
 export const itemText = (item: ItemKey): { name: Localized; use: Localized; get: Localized } => info[item];
-const ICONS: Record<ItemKey, string> = { xp: 'star', dates: 'dates', streak: 'lantern', hint: 'drop', mastery: 'book' };
+export const ICONS: Record<ItemKey, string> = { xp: 'star', dates: 'dates', streak: 'lantern', hint: 'drop', mastery: 'book' };
 
 const bus = new EventTarget();
 export const openItemInfo = (item: ItemKey) => bus.dispatchEvent(new CustomEvent('item-info', { detail: item }));
