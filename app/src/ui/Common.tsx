@@ -1,3 +1,4 @@
+import '../ux-kecil.css';
 import { useEffect, useId, useMemo, useRef } from 'react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import type { MascotConfig } from '../../../design-system/assets/maskot/mascot.mjs';

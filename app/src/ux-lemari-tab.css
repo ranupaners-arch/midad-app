@@ -1,0 +1,5 @@
+/* Tab kategori Rafiqi di layar sempit: bisa digeser dengan jelas. Tepi memudar menandakan masih ada tab di luar layar; padding 20 px menjaga tab pertama
+   dan terakhir terbaca penuh di ujung gulir; snap membuat tab berhenti rapi. */
+.wardrobe-screen .customization-tabs { padding-inline: 20px; scroll-snap-type: x proximity; scroll-padding-inline: 20px; overscroll-behavior-x: contain;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%); }
+.wardrobe-screen .customization-tabs > button { scroll-snap-align: center; }
