@@ -2,6 +2,7 @@ import { validateMascotConfig } from '../../../design-system/assets/maskot/masco
 import { UNITS, unitsFor, activities, activityKey, questions } from './content';
 import type { Answer, Language, Profile, Question, Session, Unit } from './types';
 import { dayNumber, localDay, validDay } from './calendar';
+import { demoUnlockAll } from './demo';
 import { parseReviews, parseReviewSession, questionSource, recordLearningAnswer } from './reviews';
 export { localDay } from './calendar';
 
@@ -65,10 +66,12 @@ export function parseProfile(raw: unknown, now = new Date()): Profile {
     reviews: parseReviews(r.reviews, r.language === 'en' ? 'en' : 'id'),
     reviewSession: parseReviewSession(r.reviewSession, r.language === 'en' ? 'en' : 'id'),
   };
-  if (!p.ownedAnimals.includes(p.mascot.animal)) p.mascot = validateMascotConfig({});
-  if (!p.ownedSkins.includes(p.mascot.skin)) p.mascot.skin = 'none';
-  if (!p.ownedItems.includes(`hand:${p.mascot.hand}`)) p.mascot.hand = 'qalam';
-  for (const slot of ['head', 'neck'] as const) if (!p.ownedItems.includes(`${slot}:${p.mascot[slot]}`)) p.mascot[slot] = 'none';
+  if (!demoUnlockAll()) { // mode demo membiarkan pilihan companion apa adanya (kepemilikan tidak diubah)
+    if (!p.ownedAnimals.includes(p.mascot.animal)) p.mascot = validateMascotConfig({});
+    if (!p.ownedSkins.includes(p.mascot.skin)) p.mascot.skin = 'none';
+    if (!p.ownedItems.includes(`hand:${p.mascot.hand}`)) p.mascot.hand = 'qalam';
+    for (const slot of ['head', 'neck'] as const) if (!p.ownedItems.includes(`${slot}:${p.mascot[slot]}`)) p.mascot[slot] = 'none';
+  }
   p.session = parseSession(r.session, p);
   p.savedSessions = Object.fromEntries(Object.entries(record(r.savedSessions)).flatMap(([key, value]) => {
     if (!activityKeys.includes(key)) return [];
@@ -212,7 +215,9 @@ export function purchase(p: Profile, category: 'animal' | 'skin' | 'item', key: 
 export function equipMascot(p: Profile, raw: unknown, now = new Date()): Profile {
   const mascot = validateMascotConfig(raw);
   const ownedAnimals = [...new Set([...p.ownedAnimals, ...(p.rewardedUnits.includes(2) ? ['camel'] : []), ...(streak(p, now) >= 7 ? ['turtle'] : [])])];
-  if (!ownedAnimals.includes(mascot.animal) || !p.ownedSkins.includes(mascot.skin)) return p;
-  if (['hand', 'head', 'neck'].some(slot => !p.ownedItems.includes(`${slot}:${mascot[slot as 'hand' | 'head' | 'neck']}`))) return p;
+  if (!demoUnlockAll()) {
+    if (!ownedAnimals.includes(mascot.animal) || !p.ownedSkins.includes(mascot.skin)) return p;
+    if (['hand', 'head', 'neck'].some(slot => !p.ownedItems.includes(`${slot}:${mascot[slot as 'hand' | 'head' | 'neck']}`))) return p;
+  }
   return { ...p, ownedAnimals, mascot };
 }
