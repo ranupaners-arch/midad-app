@@ -1,0 +1,118 @@
+{
+ "tip": [
+  {
+   "ar": "اسْتَمِعْ، ثُمَّ أَعِدْ بِصَوْتِكَ: 80% مِنَ الْكَلِمَاتِ تَكْفِي، وَبَعْدَ 3 مُحَاوَلَاتٍ تَسْتَطِيعُ الْمُتَابَعَةَ.",
+   "id": "Dengar, lalu ulangi dengan suaramu: 80% kata cocok sudah cukup; setelah 3 kali coba, boleh lanjut.",
+   "en": "Listen, then repeat out loud: 80% of the words is enough, and after 3 tries you can move on."
+  },
+  {
+   "ar": "زِرُّ «تَرْجَمَة» يُظْهِرُ الْمَعْنَى تَحْتَ النَّصِّ، وَلَا يَعْمَلُ فِي الِاخْتِبَارِ وَأَسْئِلَةِ الْمَعْنَى.",
+   "id": "Tombol Terjemahan menampilkan arti di bawah teks Arab; terkunci saat ujian dan soal makna.",
+   "en": "The Translation button shows the meaning under the Arabic; it's locked in tests and meaning questions."
+  },
+  {
+   "ar": "إِذَا ضَغَطْتَ زِرَّ X حُفِظَ دَرْسُكَ، وَتَعُودُ إِلَيْهِ مِنَ الْمَكَانِ نَفْسِهِ.",
+   "id": "Tekan X di pelajaran: pelajaranmu tersimpan dan bisa dilanjutkan dari titik yang sama.",
+   "en": "Tap X in a lesson: it's saved, and you can pick up from the same spot."
+  },
+  {
+   "ar": "الْأَسْئِلَةُ الَّتِي أَخْطَأْتَ فِيهَا تَجِدُهَا فِي «الْمُرَاجَعَةِ» لِتَتَدَرَّبَ عَلَيْهَا مَرَّةً أُخْرَى.",
+   "id": "Soal yang salah dikumpulkan di Ulasan supaya bisa kamu latih lagi.",
+   "en": "Questions you got wrong go to Review so you can practise them again."
+  },
+  {
+   "ar": "تَقَدُّمُكَ مَحْفُوظٌ فِي هَذَا الْمُتَصَفِّحِ فَقَطْ، فَاحْفَظْ نُسْخَةً احْتِيَاطِيَّةً مِنَ الْمِلَفِّ الشَّخْصِيِّ.",
+   "id": "Progresmu hanya tersimpan di browser ini; buat cadangan dan pulihkan lewat Profil.",
+   "en": "Your progress is saved only in this browser; back it up and restore it from your Profile."
+  },
+  {
+   "ar": "بَعْدَ أَنْ تَفْتَحَ الدَّرْسَ مَرَّةً مَعَ الْإِنْتَرْنِتِ، تَسْتَطِيعُ أَنْ تَدْرُسَهُ بِدُونِ الْإِنْتَرْنِتِ.",
+   "id": "Pelajaran yang sudah pernah dibuka dengan internet tetap bisa dipakai tanpa internet.",
+   "en": "Once a lesson has been opened online, you can use it without the internet."
+  },
+  {
+   "ar": "فِي «رَفِيقِي» تُغَيِّرُ حَيَوَانِي وَلَوْنِي وَعَيْنَيَّ وَفَمِي وَأَدَوَاتِي، وَاضْغَطْ عَلَيَّ لِتَعْرِفَ أَكْثَرَ.",
+   "id": "Di Rafiqi kamu bisa mengganti hewan, warna, mata, mulut, dan perlengkapanku; ketuk aku untuk info.",
+   "en": "In Rafiqi you can change my animal, colour, eyes, mouth and gear; tap me to learn more."
+  },
+  {
+   "ar": "فِي الْمِلَفِّ الشَّخْصِيِّ تَخْتَارُ الْوَضْعَ الْفَاتِحَ أَوِ الدَّاكِنَ، وَأَصْوَاتَ الصَّوَابِ وَالْخَطَأِ.",
+   "id": "Di Profil kamu bisa memilih tema terang atau gelap, dan bunyi jawaban benar/salah.",
+   "en": "In Profile you can choose a light or dark theme, and the right/wrong answer sounds."
+  }
+ ],
+ "motivasi": [
+  {
+   "ar": "الْقَلِيلُ كُلَّ يَوْمٍ خَيْرٌ مِنَ الْكَثِيرِ مَرَّةً وَاحِدَةً.",
+   "id": "Sedikit setiap hari lebih baik daripada banyak tapi hanya sekali.",
+   "en": "A little every day is better than a lot just once."
+  },
+  {
+   "ar": "لَا بَأْسَ بِالْخَطَأِ، فَكُلُّ خَطَأٍ دَرْسٌ جَدِيدٌ.",
+   "id": "Salah itu tidak apa-apa; setiap kesalahan adalah pelajaran baru.",
+   "en": "Mistakes are okay; every mistake is a new lesson."
+  },
+  {
+   "ar": "كَلِمَاتٌ كَثِيرَةٌ فِي لُغَتِكَ مِنَ الْعَرَبِيَّةِ، مِثْلُ «كِتَاب» وَ«وَقْت» وَ«عِلْم».",
+   "id": "Banyak kata dalam bahasamu berasal dari bahasa Arab, seperti kitab, waktu, dan ilmu.",
+   "en": "Many words in your language come from Arabic, like kitab, waktu and ilmu."
+  },
+  {
+   "ar": "أَنْتَ تَقْرَأُ الْحُرُوفَ الْعَرَبِيَّةَ الْآنَ، وَهَذِهِ بِدَايَةٌ رَائِعَةٌ!",
+   "id": "Kamu sudah bisa membaca huruf Arab sekarang, dan itu awal yang hebat!",
+   "en": "You can read Arabic letters now, and that's a great start!"
+  },
+  {
+   "ar": "كُلُّ كَلِمَةٍ جَدِيدَةٍ خُطْوَةٌ فِي رِحْلَتِكَ.",
+   "id": "Setiap kata baru adalah satu langkah dalam perjalananmu.",
+   "en": "Every new word is a step on your journey."
+  },
+  {
+   "ar": "تَكَلَّمْ وَلَا تَخَفْ، فَبِالتَّدْرِيبِ يَتَحَسَّنُ نُطْقُكَ.",
+   "id": "Bicaralah tanpa takut; dengan latihan, pelafalanmu makin baik.",
+   "en": "Speak without fear; with practice, your pronunciation gets better."
+  }
+ ],
+ "mahfuzhat": [
+  {
+   "ar": "مَنْ جَدَّ وَجَدَ.",
+   "id": "Siapa bersungguh-sungguh, dia akan berhasil.",
+   "en": "Whoever works hard will succeed."
+  },
+  {
+   "ar": "مَنْ صَبَرَ ظَفِرَ.",
+   "id": "Siapa bersabar, dia akan beruntung.",
+   "en": "Whoever is patient will win."
+  },
+  {
+   "ar": "مَنْ سَارَ عَلَى الدَّرْبِ وَصَلَ.",
+   "id": "Siapa berjalan di jalannya, dia akan sampai.",
+   "en": "Whoever keeps to the path will arrive."
+  },
+  {
+   "ar": "لِكُلِّ مُجْتَهِدٍ نَصِيبٌ.",
+   "id": "Setiap orang yang bersungguh-sungguh akan mendapat bagiannya.",
+   "en": "Everyone who strives gets their share."
+  },
+  {
+   "ar": "الْوَقْتُ كَالسَّيْفِ، إِنْ لَمْ تَقْطَعْهُ قَطَعَكَ.",
+   "id": "Waktu itu seperti pedang; jika tidak kamu pakai dengan baik, ia akan memotongmu.",
+   "en": "Time is like a sword: if you don't cut it, it cuts you."
+  },
+  {
+   "ar": "خَيْرُ جَلِيسٍ فِي الزَّمَانِ كِتَابُ. — الْمُتَنَبِّي",
+   "id": "Teman duduk terbaik sepanjang masa adalah buku. — al-Mutanabbi",
+   "en": "The best companion at any time is a book. — al-Mutanabbi"
+  },
+  {
+   "ar": "رَبِّ زِدْنِي عِلْمًا. [طه: 114]",
+   "id": "Ya Tuhanku, tambahkanlah ilmu kepadaku. (QS. Taha: 114)",
+   "en": "My Lord, increase me in knowledge. (Qur'an 20:114)"
+  },
+  {
+   "ar": "إِنَّ مَعَ الْعُسْرِ يُسْرًا. [الشَّرْح: 6]",
+   "id": "Sesungguhnya bersama kesulitan ada kemudahan. (QS. Asy-Syarh: 6)",
+   "en": "Indeed, with hardship comes ease. (Qur'an 94:6)"
+  }
+ ]
+}
